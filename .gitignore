@@ -1,0 +1,10 @@
+.DS_Store
+
+# Big files (exceed GitHub's 100MB limit or just bloat)
+*.pdf
+*.zip
+
+# OS / editor
+Thumbs.db
+.idea/
+.vscode/
