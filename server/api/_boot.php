@@ -25,12 +25,18 @@ function db(): PDO {
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             title TEXT NOT NULL,
             kind TEXT NOT NULL DEFAULT "weekly",
+            subtitle TEXT NOT NULL DEFAULT "",
             when_text TEXT NOT NULL DEFAULT "",
             age TEXT NOT NULL DEFAULT "",
             note TEXT NOT NULL DEFAULT "",
             sort INTEGER NOT NULL DEFAULT 0,
             active INTEGER NOT NULL DEFAULT 1
         )');
+        /* Миграция для баз, созданных до появления темы события. */
+        $cols = $pdo->query('PRAGMA table_info(events)')->fetchAll();
+        if (!in_array('subtitle', array_column($cols, 'name'), true)) {
+            $pdo->exec('ALTER TABLE events ADD COLUMN subtitle TEXT NOT NULL DEFAULT ""');
+        }
         $pdo->exec('CREATE TABLE IF NOT EXISTS settings (k TEXT PRIMARY KEY, v TEXT NOT NULL)');
         $pdo->exec('CREATE TABLE IF NOT EXISTS leads (
             id INTEGER PRIMARY KEY AUTOINCREMENT,

@@ -81,6 +81,7 @@ if ($act !== '' && $act !== 'login') {
         if ($title === '') back('Название не может быть пустым');
         $args = [
             $title,
+            trim((string)($_POST['subtitle'] ?? '')),
             in_array($_POST['kind'] ?? '', ['weekly', 'special'], true) ? $_POST['kind'] : 'weekly',
             trim((string)$_POST['when_text']),
             trim((string)$_POST['age']),
@@ -90,12 +91,12 @@ if ($act !== '' && $act !== 'login') {
         ];
         if ($id > 0) {
             $args[] = $id;
-            db()->prepare('UPDATE events SET title=?,kind=?,when_text=?,age=?,note=?,sort=?,active=?
+            db()->prepare('UPDATE events SET title=?,subtitle=?,kind=?,when_text=?,age=?,note=?,sort=?,active=?
                            WHERE id=?')->execute($args);
             back('Событие обновлено');
         }
-        db()->prepare('INSERT INTO events (title,kind,when_text,age,note,sort,active)
-                       VALUES (?,?,?,?,?,?,?)')->execute($args);
+        db()->prepare('INSERT INTO events (title,subtitle,kind,when_text,age,note,sort,active)
+                       VALUES (?,?,?,?,?,?,?,?)')->execute($args);
         back('Событие добавлено');
     }
     if ($act === 'toggle') {
@@ -199,8 +200,12 @@ button.danger{background:#4a1d2a;color:#ff9db3}
       <input type="hidden" name="csrf" value="<?= csrf() ?>">
       <input type="hidden" name="do" value="save">
       <input type="hidden" name="id" value="<?= (int)($edit['id'] ?? 0) ?>">
-      <label>Название</label>
-      <input type="text" name="title" value="<?= h($edit['title'] ?? '') ?>" required>
+      <label>Название события (тема)</label>
+      <input type="text" name="title" value="<?= h($edit['title'] ?? '') ?>"
+             placeholder="Лапка-табалапка" required>
+      <label>Что это (тип)</label>
+      <input type="text" name="subtitle" value="<?= h($edit['subtitle'] ?? '') ?>"
+             placeholder="Мастер-класс">
       <div class="row">
         <div><label>Когда</label>
           <input type="text" name="when_text" placeholder="Каждую пятницу и субботу"
@@ -212,7 +217,7 @@ button.danger{background:#4a1d2a;color:#ff9db3}
         <div><label>Тип</label>
           <select name="kind">
             <option value="weekly"  <?= ($edit['kind'] ?? '') === 'weekly'  ? 'selected' : '' ?>>Постоянное</option>
-            <option value="special" <?= ($edit['kind'] ?? '') === 'special' ? 'selected' : '' ?>>Раз в месяц</option>
+            <option value="special" <?= ($edit['kind'] ?? '') === 'special' ? 'selected' : '' ?>>Большое событие месяца</option>
           </select></div>
         <div><label>Порядок</label>
           <input type="number" name="sort" value="<?= (int)($edit['sort'] ?? count($events)) ?>"></div>
@@ -236,7 +241,8 @@ button.danger{background:#4a1d2a;color:#ff9db3}
       <tr class="<?= $e['active'] ? '' : 'off' ?>">
         <td><b><?= h($e['title']) ?></b>
           <span class="tag <?= $e['kind'] === 'special' ? 's' : 'w' ?>">
-            <?= $e['kind'] === 'special' ? 'раз в месяц' : 'постоянное' ?></span>
+            <?= $e['kind'] === 'special' ? 'событие месяца' : 'постоянное' ?></span>
+          <?php if ($e['subtitle']): ?><div class="hint"><?= h($e['subtitle']) ?></div><?php endif; ?>
           <?php if (!$e['active']): ?> <span class="tag" style="background:#3a3a4c">скрыто</span><?php endif; ?>
           <?php if ($e['note']): ?><div class="hint"><?= h($e['note']) ?></div><?php endif; ?></td>
         <td><?= h($e['when_text']) ?></td>

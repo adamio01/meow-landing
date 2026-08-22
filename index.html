@@ -1041,6 +1041,13 @@ section { position: relative; }
   margin-bottom: 10px;
 }
 .sched__card--special .sched__name { color: var(--white); }
+.sched__sub {
+  font-family: var(--ff-body); font-weight: 700;
+  font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--gray-2);
+  margin-bottom: 8px;
+}
+.sched__card--special .sched__sub { color: rgba(255,255,255,0.55); }
 .sched__when {
   font-family: var(--ff-body); font-weight: 700;
   font-size: 14px; color: var(--pink);
@@ -2389,24 +2396,26 @@ section { position: relative; }
       <article class="sched__card">
         <span class="sched__kind">Постоянное</span>
         <h3 class="sched__name">Аниматоры</h3>
+        <div class="sched__sub">Тему уточняем</div>
         <div class="sched__when">Каждую пятницу</div>
       </article>
       <article class="sched__card">
         <span class="sched__kind">Постоянное</span>
         <h3 class="sched__name">Аниматоры</h3>
+        <div class="sched__sub">Тему уточняем</div>
         <div class="sched__when">Каждую субботу</div>
       </article>
       <article class="sched__card">
         <span class="sched__kind">Постоянное</span>
-        <h3 class="sched__name">Мастер-класс</h3>
-        <div class="sched__when">Каждое воскресенье</div>
-        <p class="sched__note">В&nbsp;это воскресенье — тарабалапки</p>
+        <h3 class="sched__name">Лапка-табалапка</h3>
+        <div class="sched__sub">Мастер-класс</div>
+        <div class="sched__when">В&nbsp;это воскресенье</div>
       </article>
       <article class="sched__card sched__card--special">
-        <span class="sched__kind">Раз в&nbsp;месяц</span>
+        <span class="sched__kind">Большое событие месяца</span>
         <h3 class="sched__name">Баттл флип челлендж</h3>
+        <div class="sched__sub">Чемпионат</div>
         <div class="sched__when">Дату уточняем</div>
-        <p class="sched__note">Чемпионат — раз в&nbsp;месяц</p>
       </article>
     </div>
 
@@ -3420,8 +3429,9 @@ document.querySelectorAll('[data-conf]').forEach(b => {
       if (!d.ok || !Array.isArray(d.events) || !d.events.length) return;
       grid.innerHTML = d.events.map(e => `
         <article class="sched__card${e.kind === 'special' ? ' sched__card--special' : ''}">
-          <span class="sched__kind">${e.kind === 'special' ? 'Раз в\u00a0месяц' : 'Постоянное'}</span>
+          <span class="sched__kind">${e.kind === 'special' ? 'Большое событие месяца' : 'Постоянное'}</span>
           <h3 class="sched__name">${esc(e.title)}</h3>
+          ${e.sub  ? `<div class="sched__sub">${esc(e.sub)}</div>` : ''}
           ${e.when ? `<div class="sched__when">${esc(e.when)}</div>` : ''}
           ${e.note ? `<p class="sched__note">${esc(e.note)}</p>` : ''}
           ${e.age  ? `<div class="sched__age">${esc(e.age)}</div>` : ''}

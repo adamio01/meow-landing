@@ -7,6 +7,7 @@ header('Access-Control-Allow-Origin: *');
 $rows = array_map(static function (array $e): array {
     return [
         'title' => $e['title'],
+        'sub'   => $e['subtitle'],
         'kind'  => $e['kind'],
         'when'  => $e['when_text'],
         'age'   => $e['age'],
