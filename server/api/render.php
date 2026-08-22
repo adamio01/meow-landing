@@ -20,18 +20,35 @@ function cms_overrides(): array {
     return $out;
 }
 
-/** Текст из редактора -> HTML. Перенос строки = <br>, *слово* = выделение. */
+/**
+ * Текст из редактора -> HTML.
+ *   перенос строки  -> <br>
+ *   *слово*         -> жирный
+ *   ~слово~         -> выделение цветом
+ *   [текст](ссылка) -> ссылка
+ */
 function cms_to_html(string $t): string {
     $t = str_replace(["\r\n", "\r"], "\n", $t);
     $t = htmlspecialchars($t, ENT_NOQUOTES, 'UTF-8');
-    $t = preg_replace('/\*([^*\n]+)\*/u', '<em>$1</em>', $t);
+
+    $t = preg_replace_callback('~\[([^\]\n]+)\]\(([^)\s]+)\)~u', static function (array $m): string {
+        $url = $m[2];
+        /* Пускаем только безопасные схемы. */
+        if (!preg_match('~^(https?://|tel:|mailto:|/|#)~i', $url)) return $m[1];
+        return '<a href="' . htmlspecialchars($url, ENT_QUOTES, 'UTF-8') . '">' . $m[1] . '</a>';
+    }, $t);
+
+    $t = preg_replace('~\*([^*\n]+)\*~u', '<b>$1</b>', $t);
+    $t = preg_replace('#\x7E([^\x7E\n]+)\x7E#u', '<em>$1</em>', $t);
     return nl2br($t, false);
 }
 
-/** HTML из шаблона -> текст для редактора. */
+/** HTML из шаблона -> текст для редактора (обратное преобразование). */
 function cms_to_text(string $h): string {
     $h = preg_replace('~<br\s*/?>~i', "\n", $h);
-    $h = preg_replace('~<em[^>]*>(.*?)</em>~is', '*$1*', $h);
+    $h = preg_replace('~<a[^>]*href="([^"]*)"[^>]*>(.*?)</a>~is', '[$2]($1)', $h);
+    $h = preg_replace('~<(?:b|strong)[^>]*>(.*?)</(?:b|strong)>~is', '*$1*', $h);
+    $h = preg_replace('~<em[^>]*>(.*?)</em>~is', '~$1~', $h);
     $h = strip_tags($h);
     return trim(html_entity_decode($h, ENT_QUOTES, 'UTF-8'));
 }

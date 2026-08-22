@@ -6,7 +6,12 @@
 <title>MEOW — детский развлекательный центр в Махачкале, ТРЦ «Этажи» | игровые зоны, дни рождения, мастер-классы</title>
 <meta name="description" content="Детский развлекательный центр MEOW в Махачкале, ТРЦ «Этажи», 4 этаж. Игровой лабиринт, батуты, ниндзя-парк, игровые автоматы. Дни рождения под ключ, аниматоры, мастер-классы, ресторан «Иль Патио». Работаем ежедневно 10:00–22:00. Тел. +7 988 293 80 08" />
 <meta name="keywords" content="детский центр Махачкала, развлекательный центр Махачкала, детская игровая комната Махачкала, где отметить день рождения ребёнка Махачкала, детский день рождения Махачкала, аниматоры Махачкала, мастер-классы для детей Махачкала, батуты Махачкала, лабиринт для детей, ТРЦ Этажи Махачкала, куда сходить с ребёнком Махачкала, детские праздники Дагестан" />
-<meta name="theme-color" content="#FFFFFF" />
+<meta name="theme-color" content="#F9C930" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/photos/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/photos/favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/photos/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 <link rel="canonical" href="https://meow-mkh.ru/" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <meta name="geo.region" content="RU-DA" />
@@ -397,11 +402,13 @@ h1, h2, h3, h4 {
 .hero__visual {
   position: relative;
   aspect-ratio: 4/5;
-  height: min(68vh, 560px);
+  height: clamp(420px, 64vh, 560px);
   width: auto;
   margin: 50px auto 0 0;
   justify-self: start;
 }
+@media (min-width: 1600px) { .hero__visual { height: clamp(560px, 66vh, 700px); } }
+@media (min-width: 1920px) { .hero__visual { height: clamp(620px, 68vh, 780px); } }
 .hero__slider {
   position: relative;
   width: 100%; height: 100%;
@@ -570,6 +577,8 @@ section { position: relative; }
   margin-bottom: 56px;
 }
 .sect__head-left { max-width: 760px; }
+@media (min-width: 1600px) { .sect__head-left { max-width: 950px; } }
+@media (min-width: 1920px) { .sect__head-left { max-width: 1060px; } }
 .sect__caption { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
 .sect__caption .line { width: 40px; height: 1.5px; background: currentColor; }
 .sect__title {
@@ -1120,6 +1129,9 @@ section { position: relative; }
   color: var(--gray-2); margin-bottom: 12px;
 }
 
+.hero__sub b { color: var(--ink); }
+.faq__answer a { color: var(--pink); font-weight: 700; }
+
 /* =====================================================
    IL PATIO — black section with restaurant photo
 ===================================================== */
@@ -1601,7 +1613,7 @@ section { position: relative; }
   display: grid;
   grid-template-columns: 1.05fr 1fr;
   gap: 30px;
-  align-items: stretch;
+  align-items: start;
 }
 .faq {
   background: var(--paper);
@@ -1626,7 +1638,8 @@ section { position: relative; }
 .faq__item summary::-webkit-details-marker { display: none; }
 .faq__item summary::after {
   content: "+";
-  font-family: var(--ff-display); font-size: 26px;
+  font-family: var(--ff-body); font-weight: 700;
+  font-size: 24px; line-height: 1;
   width: 36px; height: 36px;
   border-radius: 50%;
   background: var(--ink); color: var(--paper);
@@ -2314,7 +2327,7 @@ section { position: relative; }
       </h1>
 
       <p class="hero__sub">
-        <b style="color:var(--ink);">MEOW</b> — развлекательный центр для&nbsp;всей семьи. Игровые зоны под&nbsp;каждый возраст, ресторан «Иль&nbsp;Патио», праздники и&nbsp;мастер-классы. ТРЦ&nbsp;«Этажи», 4&nbsp;этаж.
+        <b>MEOW</b> — развлекательный центр для&nbsp;всей семьи. Игровые зоны под&nbsp;каждый возраст, ресторан «Иль&nbsp;Патио», праздники и&nbsp;мастер-классы. ТРЦ&nbsp;«Этажи», 4&nbsp;этаж.
       </p>
 
       <div class="hero__ctas">
@@ -2583,7 +2596,7 @@ section { position: relative; }
         <span class="patio__visual-tag">★ Часть сети «Иль Патио» с&nbsp;1993</span>
         <div class="patio__visual-overlay">
           <h4>На территории центра</h4>
-          <p>Махачкала, ТРЦ «Этажи», 4 этаж · работает до&nbsp;23:00</p>
+          <p>Махачкала, ТРЦ «Этажи», 4 этаж · работает до&nbsp;22:00</p>
         </div>
       </div>
       <div class="patio__content">
@@ -2958,7 +2971,7 @@ section { position: relative; }
         <li><details class="faq__item" open><summary>Сколько стоит билет?</summary><div class="faq__answer">У&nbsp;нас два парка. <b>Малый парк</b> (до 5&nbsp;лет): от&nbsp;400&nbsp;₽ в&nbsp;будни до&nbsp;600&nbsp;₽ в&nbsp;выходные. <b>Большой парк</b> (5–12&nbsp;лет): от&nbsp;650&nbsp;₽ до&nbsp;1&nbsp;200&nbsp;₽. Для&nbsp;семей с&nbsp;3+&nbsp;детьми — особая цена за&nbsp;каждого. Точный прайс — в&nbsp;разделе «Цены».</div></details></li>
         <li><details class="faq__item"><summary>Какие есть абонементы?</summary><div class="faq__answer">Три варианта: <b>8&nbsp;посещений</b> за&nbsp;4&nbsp;800&nbsp;₽ (на&nbsp;2&nbsp;месяца), <b>20&nbsp;посещений</b> за&nbsp;10&nbsp;000&nbsp;₽ (на&nbsp;6&nbsp;месяцев), <b>40&nbsp;посещений</b> за&nbsp;16&nbsp;000&nbsp;₽ (на&nbsp;12&nbsp;месяцев). Оформляется в&nbsp;центре при&nbsp;первом визите. Не&nbsp;более 5&nbsp;посещений за&nbsp;раз, абонемент привязан к&nbsp;одному ребёнку.</div></details></li>
         <li><details class="faq__item"><summary>С какого возраста можно прийти?</summary><div class="faq__answer">С&nbsp;любого. <b>Малый парк</b> — для&nbsp;детей до&nbsp;5&nbsp;лет: мягкая сенсорная зона, развивающие модули, тёплый пол. <b>Большой парк</b> — для&nbsp;5–12&nbsp;лет: батуты, аэрохоккей, лабиринт, VR-зона и&nbsp;спорт.</div></details></li>
-        <li><details class="faq__item"><summary>Как заказать день рождения?</summary><div class="faq__answer">Оставьте заявку в&nbsp;форме справа или позвоните <a href="tel:+79882938008" style="color:var(--pink);font-weight:700;">+7&nbsp;988&nbsp;293&nbsp;80&nbsp;08</a>&nbsp;— менеджер свяжется за&nbsp;15&nbsp;минут. Можем добавить аниматора, мастер-класс или фотографа.</div></details></li>
+        <li><details class="faq__item"><summary>Как заказать день рождения?</summary><div class="faq__answer">Оставьте заявку в&nbsp;форме справа или позвоните <a href="tel:+79882938008">+7&nbsp;988&nbsp;293&nbsp;80&nbsp;08</a>&nbsp;— менеджер свяжется за&nbsp;15&nbsp;минут. Можем добавить аниматора, мастер-класс или фотографа.</div></details></li>
         <li><details class="faq__item"><summary>Что есть для взрослых?</summary><div class="faq__answer">На&nbsp;территории работает итальянский ресторан <b>«Иль&nbsp;Патио»</b> — паста ручной работы, кофе LavAzza. Можно наблюдать за&nbsp;игровой зоной. Wi-Fi бесплатный.</div></details></li>
         <li><details class="faq__item"><summary>Где вы находитесь и&nbsp;как добраться?</summary><div class="faq__answer">Махачкала, проспект Гамидова, 61. ТРЦ&nbsp;«Этажи», 4&nbsp;этаж. Удобный заезд с&nbsp;Гамидова, парковка на&nbsp;200&nbsp;мест. Работаем ежедневно с&nbsp;10:00 до&nbsp;22:00.</div></details></li>
         <li><details class="faq__item"><summary>Нужна ли сменная обувь?</summary><div class="faq__answer">В&nbsp;игровых зонах дети играют в&nbsp;носочках — так чище и&nbsp;безопаснее на&nbsp;мягких покрытиях. В&nbsp;ресторане «Иль&nbsp;Патио» — в&nbsp;своей обуви.</div></details></li>

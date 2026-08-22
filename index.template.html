@@ -6,7 +6,12 @@
 <title>MEOW — детский развлекательный центр в Махачкале, ТРЦ «Этажи» | игровые зоны, дни рождения, мастер-классы</title>
 <meta name="description" content="Детский развлекательный центр MEOW в Махачкале, ТРЦ «Этажи», 4 этаж. Игровой лабиринт, батуты, ниндзя-парк, игровые автоматы. Дни рождения под ключ, аниматоры, мастер-классы, ресторан «Иль Патио». Работаем ежедневно 10:00–22:00. Тел. +7 988 293 80 08" />
 <meta name="keywords" content="детский центр Махачкала, развлекательный центр Махачкала, детская игровая комната Махачкала, где отметить день рождения ребёнка Махачкала, детский день рождения Махачкала, аниматоры Махачкала, мастер-классы для детей Махачкала, батуты Махачкала, лабиринт для детей, ТРЦ Этажи Махачкала, куда сходить с ребёнком Махачкала, детские праздники Дагестан" />
-<meta name="theme-color" content="#FFFFFF" />
+<meta name="theme-color" content="#F9C930" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/photos/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/photos/favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/photos/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 <link rel="canonical" href="https://meow-mkh.ru/" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <meta name="geo.region" content="RU-DA" />
@@ -397,11 +402,13 @@ h1, h2, h3, h4 {
 .hero__visual {
   position: relative;
   aspect-ratio: 4/5;
-  height: min(68vh, 560px);
+  height: clamp(420px, 64vh, 560px);
   width: auto;
   margin: 50px auto 0 0;
   justify-self: start;
 }
+@media (min-width: 1600px) { .hero__visual { height: clamp(560px, 66vh, 700px); } }
+@media (min-width: 1920px) { .hero__visual { height: clamp(620px, 68vh, 780px); } }
 .hero__slider {
   position: relative;
   width: 100%; height: 100%;
@@ -570,6 +577,8 @@ section { position: relative; }
   margin-bottom: 56px;
 }
 .sect__head-left { max-width: 760px; }
+@media (min-width: 1600px) { .sect__head-left { max-width: 950px; } }
+@media (min-width: 1920px) { .sect__head-left { max-width: 1060px; } }
 .sect__caption { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
 .sect__caption .line { width: 40px; height: 1.5px; background: currentColor; }
 .sect__title {
@@ -1120,6 +1129,9 @@ section { position: relative; }
   color: var(--gray-2); margin-bottom: 12px;
 }
 
+.hero__sub b { color: var(--ink); }
+.faq__answer a { color: var(--pink); font-weight: 700; }
+
 /* =====================================================
    IL PATIO — black section with restaurant photo
 ===================================================== */
@@ -1601,7 +1613,7 @@ section { position: relative; }
   display: grid;
   grid-template-columns: 1.05fr 1fr;
   gap: 30px;
-  align-items: stretch;
+  align-items: start;
 }
 .faq {
   background: var(--paper);
@@ -1626,7 +1638,8 @@ section { position: relative; }
 .faq__item summary::-webkit-details-marker { display: none; }
 .faq__item summary::after {
   content: "+";
-  font-family: var(--ff-display); font-size: 26px;
+  font-family: var(--ff-body); font-weight: 700;
+  font-size: 24px; line-height: 1;
   width: 36px; height: 36px;
   border-radius: 50%;
   background: var(--ink); color: var(--paper);
@@ -2242,7 +2255,7 @@ section { position: relative; }
   <div class="wrap nav__inner">
     <a href="#" class="nav__brand">
       <img class="nav__cat" src="photos/cat-mascot.png" alt="MEOW" data-cms="i1">
-      <span class="nav__brand-name">MEOW</span>
+      <span class="nav__brand-name" data-cms="f187">MEOW</span>
     </a>
     <div class="nav__menu">
       <a href="#schedule">Расписание</a>
@@ -2302,7 +2315,7 @@ section { position: relative; }
     <div class="hero__content">
       <div class="hero__top">
         <span class="dot"></span>
-        <span class="cap">Махачкала · ТРЦ «Этажи», 4&nbsp;этаж</span>
+        <span class="cap" data-cms="f130">Махачкала · ТРЦ «Этажи», 4&nbsp;этаж</span>
       </div>
 
       <h1 class="hero__title">
@@ -2314,7 +2327,7 @@ section { position: relative; }
       </h1>
 
       <p class="hero__sub" data-cms="f1">
-        <b style="color:var(--ink);">MEOW</b> — развлекательный центр для&nbsp;всей семьи. Игровые зоны под&nbsp;каждый возраст, ресторан «Иль&nbsp;Патио», праздники и&nbsp;мастер-классы. ТРЦ&nbsp;«Этажи», 4&nbsp;этаж.
+        <b>MEOW</b> — развлекательный центр для&nbsp;всей семьи. Игровые зоны под&nbsp;каждый возраст, ресторан «Иль&nbsp;Патио», праздники и&nbsp;мастер-классы. ТРЦ&nbsp;«Этажи», 4&nbsp;этаж.
       </p>
 
       <div class="hero__ctas">
@@ -2336,36 +2349,36 @@ section { position: relative; }
         <div class="hero__slide active">
           <img src="photos/meow/m29.jpg" alt="Игровые зоны" data-cms="i4">
           <div class="hero__caption">
-            <span class="hero__caption-num">01 / 05 · ИГРЫ</span>
-            <span class="hero__caption-text">Три зоны<br>под <em>каждый</em> возраст</span>
+            <span class="hero__caption-num" data-cms="f145">01 / 05 · ИГРЫ</span>
+            <span class="hero__caption-text" data-cms="f150">Три зоны<br>под <em>каждый</em> возраст</span>
           </div>
         </div>
         <div class="hero__slide">
           <img src="photos/meow/m05.jpg" alt="Сухой бассейн" data-cms="i5">
           <div class="hero__caption">
-            <span class="hero__caption-num">02 / 05 · ЛАБИРИНТ</span>
-            <span class="hero__caption-text">Горки, тоннели<br>и&nbsp;<em>сухой бассейн</em></span>
+            <span class="hero__caption-num" data-cms="f146">02 / 05 · ЛАБИРИНТ</span>
+            <span class="hero__caption-text" data-cms="f151">Горки, тоннели<br>и&nbsp;<em>сухой бассейн</em></span>
           </div>
         </div>
         <div class="hero__slide">
           <img src="photos/meow/m08.jpg" alt="Праздники" data-cms="i6">
           <div class="hero__caption">
-            <span class="hero__caption-num">03 / 05 · ПРАЗДНИКИ</span>
-            <span class="hero__caption-text">Под ключ<br>за&nbsp;<em>15 минут</em></span>
+            <span class="hero__caption-num" data-cms="f147">03 / 05 · ПРАЗДНИКИ</span>
+            <span class="hero__caption-text" data-cms="f152">Под ключ<br>за&nbsp;<em>15 минут</em></span>
           </div>
         </div>
         <div class="hero__slide">
           <img src="photos/meow/m15.jpg" alt="Эмоции" data-cms="i7">
           <div class="hero__caption">
-            <span class="hero__caption-num">04 / 05 · ЭМОЦИИ</span>
-            <span class="hero__caption-text">Чувства,<br>в&nbsp;которые <em>возвращаются</em></span>
+            <span class="hero__caption-num" data-cms="f148">04 / 05 · ЭМОЦИИ</span>
+            <span class="hero__caption-text" data-cms="f153">Чувства,<br>в&nbsp;которые <em>возвращаются</em></span>
           </div>
         </div>
         <div class="hero__slide">
           <img src="photos/meow/m24.jpg" alt="Иль Патио" data-cms="i8">
           <div class="hero__caption">
-            <span class="hero__caption-num">05 / 05 · РЕСТОРАН</span>
-            <span class="hero__caption-text">«Иль&nbsp;Патио»<br>на&nbsp;<em>территории</em></span>
+            <span class="hero__caption-num" data-cms="f149">05 / 05 · РЕСТОРАН</span>
+            <span class="hero__caption-text" data-cms="f154">«Иль&nbsp;Патио»<br>на&nbsp;<em>территории</em></span>
           </div>
         </div>
         <div class="hero__dots" id="heroDots"></div>
@@ -2437,7 +2450,7 @@ section { position: relative; }
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap">№01 / Расписание</span></div>
+        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f131">№01 / Расписание</span></div>
         <h2 class="sect__title" data-cms="f4">Что у&nbsp;нас<br>на&nbsp;<em>этой</em> неделе</h2>
       </div>
       <p class="sect__sub" data-cms="f15">Аниматоры и&nbsp;мастер-классы идут постоянно, раз в&nbsp;месяц собираем большое событие. Участие бесплатное — нужна только запись.</p>
@@ -2486,7 +2499,7 @@ section { position: relative; }
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap">№02 / Зоны</span></div>
+        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f132">№02 / Зоны</span></div>
         <h2 class="sect__title" data-cms="f5">3&nbsp;мира<br>для <em>всех</em> возрастов</h2>
       </div>
       <p class="sect__sub" data-cms="f16">Три отдельных парка под&nbsp;разный возраст и&nbsp;рост. Безопасное мягкое покрытие, видеонаблюдение и&nbsp;аниматоры всегда рядом.</p>
@@ -2497,8 +2510,8 @@ section { position: relative; }
         <div class="zone__photo">
           <img src="photos/meow/m02.jpg" alt="Малый парк" data-cms="i9">
           <div class="zone__top">
-            <span class="zone__age">0–5 ЛЕТ</span>
-            <span class="zone__index">01 / 03</span>
+            <span class="zone__age" data-cms="f155">0–5 ЛЕТ</span>
+            <span class="zone__index" data-cms="f158">01 / 03</span>
           </div>
         </div>
         <div class="zone__body">
@@ -2521,8 +2534,8 @@ section { position: relative; }
         <div class="zone__photo">
           <img src="photos/meow/m22.jpg" alt="Большой парк" data-cms="i10">
           <div class="zone__top">
-            <span class="zone__age">5–12 ЛЕТ</span>
-            <span class="zone__index">02 / 03</span>
+            <span class="zone__age" data-cms="f156">5–12 ЛЕТ</span>
+            <span class="zone__index" data-cms="f159">02 / 03</span>
           </div>
         </div>
         <div class="zone__body">
@@ -2545,8 +2558,8 @@ section { position: relative; }
         <div class="zone__photo">
           <img src="photos/meow/m25.jpg" alt="Зона игровых аппаратов" data-cms="i11">
           <div class="zone__top">
-            <span class="zone__age">1–99 ЛЕТ</span>
-            <span class="zone__index">03 / 03</span>
+            <span class="zone__age" data-cms="f157">1–99 ЛЕТ</span>
+            <span class="zone__index" data-cms="f160">03 / 03</span>
           </div>
         </div>
         <div class="zone__body">
@@ -2572,7 +2585,7 @@ section { position: relative; }
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line" style="background:rgba(255,255,255,0.6)"></span><span class="cap cap--white">№03 / Ресторан</span></div>
+        <div class="sect__caption"><span class="line" style="background:rgba(255,255,255,0.6)"></span><span class="cap cap--white" data-cms="f133">№03 / Ресторан</span></div>
         <h2 class="sect__title" data-cms="f6">Едим всей<br><em>семьёй</em></h2>
       </div>
     </div>
@@ -2580,16 +2593,16 @@ section { position: relative; }
     <div class="patio__hero r">
       <div class="patio__visual">
         <img src="photos/meow/m01.jpg" alt="Ресторан Иль Патио" data-cms="i12">
-        <span class="patio__visual-tag">★ Часть сети «Иль Патио» с&nbsp;1993</span>
+        <span class="patio__visual-tag" data-cms="f164">★ Часть сети «Иль Патио» с&nbsp;1993</span>
         <div class="patio__visual-overlay">
-          <h4>На территории центра</h4>
-          <p>Махачкала, ТРЦ «Этажи», 4 этаж · работает до&nbsp;23:00</p>
+          <h4 data-cms="f163">На территории центра</h4>
+          <p>Махачкала, ТРЦ «Этажи», 4 этаж · работает до&nbsp;22:00</p>
         </div>
       </div>
       <div class="patio__content">
-        <div class="patio__label">Ресторан на&nbsp;территории</div>
+        <div class="patio__label" data-cms="f161">Ресторан на&nbsp;территории</div>
         <img class="patio__logo" src="photos/IP_logo.png" alt="iL Патио 1993 — итальянский ресторан" data-cms="i13">
-        <p class="patio__copy">
+        <p class="patio__copy" data-cms="f162">
           Итальянский ресторан внутри центра. Печь, паста, авторские торты на&nbsp;заказ. Пока ребёнок играет — вы&nbsp;спокойно ужинаете.
         </p>
         <div class="patio__chips">
@@ -2610,11 +2623,11 @@ section { position: relative; }
     <!-- Авторские торты — мини-блок с галереей -->
     <div class="cakes r">
       <div class="cakes__head">
-        <div class="cakes__caption">
+        <div class="cakes__caption" data-cms="f172">
           <span class="line" style="background:rgba(255,255,255,0.6)"></span>
-          <span class="cap cap--white">Авторские торты от&nbsp;шеф-кондитера</span>
+          <span class="cap cap--white" data-cms="f134">Авторские торты от&nbsp;шеф-кондитера</span>
         </div>
-        <h3 class="cakes__title">Торт под&nbsp;<em>событие</em>&nbsp;— на&nbsp;заказ</h3>
+        <h3 class="cakes__title" data-cms="f173">Торт под&nbsp;<em>событие</em>&nbsp;— на&nbsp;заказ</h3>
       </div>
       <div class="cakes__slider" id="cakesSlider">
         <div class="cakes__cell"><img src="photos/cakes/cake01.jpg" alt="Авторский торт" data-cms="i14"></div>
@@ -2633,7 +2646,7 @@ section { position: relative; }
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap cap--white">№04 / Атмосфера</span></div>
+        <div class="sect__caption"><span class="line"></span><span class="cap cap--white" data-cms="f135">№04 / Атмосфера</span></div>
         <h2 class="sect__title" data-cms="f7">Как у&nbsp;нас<br><em>весело</em></h2>
       </div>
       <p class="sect__sub" data-cms="f17">В&nbsp;Instagram @meow_mkh — новые фото каждый день, расписание мастер-классов и&nbsp;истории про&nbsp;маленьких гостей.</p>
@@ -2684,7 +2697,7 @@ section { position: relative; }
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line" style="background:rgba(255,255,255,0.6)"></span><span class="cap cap--white">№05 / Праздники</span></div>
+        <div class="sect__caption"><span class="line" style="background:rgba(255,255,255,0.6)"></span><span class="cap cap--white" data-cms="f136">№05 / Праздники</span></div>
         <h2 class="sect__title" data-cms="f8">Большой день<br><em>в&nbsp;одном</em>&nbsp;звонке</h2>
       </div>
       <p class="sect__sub" style="color:rgba(255,255,255,0.8);" data-cms="f18">День рождения, выпускной, корпоратив. Берём организацию на&nbsp;себя — вам остаётся только наслаждаться.</p>
@@ -2693,7 +2706,7 @@ section { position: relative; }
     <div class="party__split r">
       <div class="party__visual">
         <img src="photos/meow/m18.jpg" alt="Праздник" data-cms="i36">
-        <span class="party__visual-tag">Под ключ</span>
+        <span class="party__visual-tag" data-cms="f165">Под ключ</span>
         <span class="party__visual-circle"><span><b>15</b>минут<br>и&nbsp;ответ</span></span>
       </div>
 
@@ -2719,7 +2732,7 @@ section { position: relative; }
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap">№06 / Мастер-классы</span></div>
+        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f137">№06 / Мастер-классы</span></div>
         <h2 class="sect__title" data-cms="f9">Каждый день<br>— <em>новое</em></h2>
       </div>
       <p class="sect__sub" data-cms="f19">Расписание обновляется еженедельно. Можно записаться отдельно или включить в&nbsp;программу праздника.</p>
@@ -2790,7 +2803,7 @@ section { position: relative; }
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap">№07 / Цены</span></div>
+        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f138">№07 / Цены</span></div>
         <h2 class="sect__title" data-cms="f10">Прайс на&nbsp;<em>посещение</em></h2>
       </div>
       <p class="sect__sub" data-cms="f20">Два парка под&nbsp;разный возраст. Для&nbsp;семей с&nbsp;3+&nbsp;детьми — специальная цена за&nbsp;каждого ребёнка.</p>
@@ -2821,7 +2834,7 @@ section { position: relative; }
             <span class="park__price" data-cms="f78">400<span class="cur">₽</span></span>
           </li>
         </ul>
-        <div class="park__legend">Вторая цена — для&nbsp;семей с&nbsp;3+&nbsp;детьми</div>
+        <div class="park__legend" data-cms="f166">Вторая цена — для&nbsp;семей с&nbsp;3+&nbsp;детьми</div>
       </div>
 
       <div class="park park--big r" data-d="2">
@@ -2847,33 +2860,33 @@ section { position: relative; }
             <span class="park__price" data-cms="f82">700<span class="cur">₽</span></span>
           </li>
         </ul>
-        <div class="park__legend">Вторая цена — для&nbsp;семей с&nbsp;3+&nbsp;детьми</div>
+        <div class="park__legend" data-cms="f167">Вторая цена — для&nbsp;семей с&nbsp;3+&nbsp;детьми</div>
       </div>
     </div>
 
     <!-- Абонементы -->
     <div class="abo">
       <div class="abo__head r">
-        <div class="sect__caption"><span class="line"></span><span class="cap">Абонементы</span></div>
+        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f139">Абонементы</span></div>
         <h3 class="abo__title" data-cms="f83">На&nbsp;посещение <em>игровых парков</em></h3>
       </div>
 
       <div class="abo__grid">
         <div class="abo__card r" data-d="1">
-          <div class="abo__visits"><b>8</b><span>посещений</span></div>
+          <div class="abo__visits" data-cms="f169"><b>8</b><span>посещений</span></div>
           <div class="abo__period" data-cms="f87">2 месяца</div>
           <div class="abo__price" data-cms="f84">4 800<span class="cur">₽</span></div>
           <div class="abo__perv" data-cms="f90">600&nbsp;₽ за&nbsp;посещение</div>
         </div>
         <div class="abo__card abo__card--feat r" data-d="2">
-          <span class="abo__tag">★ Хит</span>
-          <div class="abo__visits"><b>20</b><span>посещений</span></div>
+          <span class="abo__tag" data-cms="f168">★ Хит</span>
+          <div class="abo__visits" data-cms="f170"><b>20</b><span>посещений</span></div>
           <div class="abo__period" data-cms="f88">6 месяцев</div>
           <div class="abo__price" data-cms="f85">10 000<span class="cur">₽</span></div>
           <div class="abo__perv" data-cms="f91">500&nbsp;₽ за&nbsp;посещение</div>
         </div>
         <div class="abo__card r" data-d="3">
-          <div class="abo__visits"><b>40</b><span>посещений</span></div>
+          <div class="abo__visits" data-cms="f171"><b>40</b><span>посещений</span></div>
           <div class="abo__period" data-cms="f89">12 месяцев</div>
           <div class="abo__price" data-cms="f86">16 000<span class="cur">₽</span></div>
           <div class="abo__perv" data-cms="f92">400&nbsp;₽ за&nbsp;посещение</div>
@@ -2896,7 +2909,7 @@ section { position: relative; }
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap">№08 / Отзывы</span></div>
+        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f140">№08 / Отзывы</span></div>
         <h2 class="sect__title" data-cms="f11">Нам доверяют<br><em>главное</em></h2>
       </div>
       <p class="sect__sub" data-cms="f21">★ 4.9 на&nbsp;Google&nbsp;Maps, Яндекс.Картах и&nbsp;2ГИС. Больше 600&nbsp;отзывов от&nbsp;родителей.</p>
@@ -2952,13 +2965,13 @@ section { position: relative; }
 <section class="sect" id="cta">
   <div class="wrap contact">
     <div class="faq r">
-      <div class="sect__caption"><span class="line"></span><span class="cap">№09 / FAQ</span></div>
+      <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f141">№09 / FAQ</span></div>
       <h3 class="faq__title">Часто спрашивают</h3>
       <ul class="faq__list">
         <li><details class="faq__item" open><summary data-cms="f106">Сколько стоит билет?</summary><div class="faq__answer" data-cms="f113">У&nbsp;нас два парка. <b>Малый парк</b> (до 5&nbsp;лет): от&nbsp;400&nbsp;₽ в&nbsp;будни до&nbsp;600&nbsp;₽ в&nbsp;выходные. <b>Большой парк</b> (5–12&nbsp;лет): от&nbsp;650&nbsp;₽ до&nbsp;1&nbsp;200&nbsp;₽. Для&nbsp;семей с&nbsp;3+&nbsp;детьми — особая цена за&nbsp;каждого. Точный прайс — в&nbsp;разделе «Цены».</div></details></li>
         <li><details class="faq__item"><summary data-cms="f107">Какие есть абонементы?</summary><div class="faq__answer" data-cms="f114">Три варианта: <b>8&nbsp;посещений</b> за&nbsp;4&nbsp;800&nbsp;₽ (на&nbsp;2&nbsp;месяца), <b>20&nbsp;посещений</b> за&nbsp;10&nbsp;000&nbsp;₽ (на&nbsp;6&nbsp;месяцев), <b>40&nbsp;посещений</b> за&nbsp;16&nbsp;000&nbsp;₽ (на&nbsp;12&nbsp;месяцев). Оформляется в&nbsp;центре при&nbsp;первом визите. Не&nbsp;более 5&nbsp;посещений за&nbsp;раз, абонемент привязан к&nbsp;одному ребёнку.</div></details></li>
         <li><details class="faq__item"><summary data-cms="f108">С какого возраста можно прийти?</summary><div class="faq__answer" data-cms="f115">С&nbsp;любого. <b>Малый парк</b> — для&nbsp;детей до&nbsp;5&nbsp;лет: мягкая сенсорная зона, развивающие модули, тёплый пол. <b>Большой парк</b> — для&nbsp;5–12&nbsp;лет: батуты, аэрохоккей, лабиринт, VR-зона и&nbsp;спорт.</div></details></li>
-        <li><details class="faq__item"><summary data-cms="f109">Как заказать день рождения?</summary><div class="faq__answer" data-cms="f116">Оставьте заявку в&nbsp;форме справа или позвоните <a href="tel:+79882938008" style="color:var(--pink);font-weight:700;">+7&nbsp;988&nbsp;293&nbsp;80&nbsp;08</a>&nbsp;— менеджер свяжется за&nbsp;15&nbsp;минут. Можем добавить аниматора, мастер-класс или фотографа.</div></details></li>
+        <li><details class="faq__item"><summary data-cms="f109">Как заказать день рождения?</summary><div class="faq__answer" data-cms="f116">Оставьте заявку в&nbsp;форме справа или позвоните <a href="tel:+79882938008">+7&nbsp;988&nbsp;293&nbsp;80&nbsp;08</a>&nbsp;— менеджер свяжется за&nbsp;15&nbsp;минут. Можем добавить аниматора, мастер-класс или фотографа.</div></details></li>
         <li><details class="faq__item"><summary data-cms="f110">Что есть для взрослых?</summary><div class="faq__answer" data-cms="f117">На&nbsp;территории работает итальянский ресторан <b>«Иль&nbsp;Патио»</b> — паста ручной работы, кофе LavAzza. Можно наблюдать за&nbsp;игровой зоной. Wi-Fi бесплатный.</div></details></li>
         <li><details class="faq__item"><summary data-cms="f111">Где вы находитесь и&nbsp;как добраться?</summary><div class="faq__answer" data-cms="f118">Махачкала, проспект Гамидова, 61. ТРЦ&nbsp;«Этажи», 4&nbsp;этаж. Удобный заезд с&nbsp;Гамидова, парковка на&nbsp;200&nbsp;мест. Работаем ежедневно с&nbsp;10:00 до&nbsp;22:00.</div></details></li>
         <li><details class="faq__item"><summary data-cms="f112">Нужна ли сменная обувь?</summary><div class="faq__answer" data-cms="f119">В&nbsp;игровых зонах дети играют в&nbsp;носочках — так чище и&nbsp;безопаснее на&nbsp;мягких покрытиях. В&nbsp;ресторане «Иль&nbsp;Патио» — в&nbsp;своей обуви.</div></details></li>
@@ -2966,7 +2979,7 @@ section { position: relative; }
     </div>
 
     <div class="cta r">
-      <div class="sect__caption"><span class="line" style="background:rgba(255,255,255,0.6)"></span><span class="cap cap--white">Звонок за&nbsp;15&nbsp;минут</span></div>
+      <div class="sect__caption"><span class="line" style="background:rgba(255,255,255,0.6)"></span><span class="cap cap--white" data-cms="f142">Звонок за&nbsp;15&nbsp;минут</span></div>
       <h3 class="cta__title" data-cms="f120">Запишитесь —<br>перезвоним</h3>
       <p class="cta__sub" data-cms="f121">Подбор тарифа, бронь праздника, любые вопросы. Оставьте контакт — администратор свяжется в&nbsp;течение 15&nbsp;минут.</p>
       <form class="cta__form" id="ctaForm">
@@ -2977,7 +2990,7 @@ section { position: relative; }
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </button>
       </form>
-      <div class="cta__small">Нажимая кнопку, вы соглашаетесь с&nbsp;обработкой персональных данных</div>
+      <div class="cta__small" data-cms="f193">Нажимая кнопку, вы соглашаетесь с&nbsp;обработкой персональных данных</div>
     </div>
   </div>
 </section>
@@ -2987,22 +3000,22 @@ section { position: relative; }
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap">№10 / Правила</span></div>
+        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f143">№10 / Правила</span></div>
         <h2 class="sect__title" data-cms="f12">Правила <em>посещения</em><br>центра</h2>
       </div>
       <p class="sect__sub" data-cms="f22">Ознакомьтесь, пожалуйста, перед визитом. Правила созданы для&nbsp;комфорта и&nbsp;безопасности всех гостей.</p>
     </div>
 
     <div class="rules__grid r">
-      <div class="rule"><span class="rule__n">01</span><p>Вход с&nbsp;едой и&nbsp;напитками воспрещён.</p></div>
-      <div class="rule"><span class="rule__n">02</span><p>Во избежание отравлений запрещается приносить с&nbsp;собой торты. Авторские торты можно заказать у&nbsp;нас.</p></div>
-      <div class="rule"><span class="rule__n">03</span><p>Билеты в&nbsp;Большой и&nbsp;Малый парки обмену и&nbsp;возврату не&nbsp;подлежат, как и&nbsp;возврат средств с&nbsp;игральных карточек.</p></div>
-      <div class="rule"><span class="rule__n">04</span><p>В&nbsp;игровые парки допускаются физически здоровые дети.</p></div>
-      <div class="rule"><span class="rule__n">05</span><p>В&nbsp;Большой парк допускаются дети от&nbsp;5 до&nbsp;12 лет и&nbsp;ростом до&nbsp;130&nbsp;см.</p></div>
-      <div class="rule"><span class="rule__n">06</span><p>В&nbsp;Малый парк допускаются дети до&nbsp;5&nbsp;лет, родителям разрешается нахождение в&nbsp;парке вместе с&nbsp;ребёнком.</p></div>
-      <div class="rule"><span class="rule__n">07</span><p>Если ребёнок испачкал игровую зону, родители несут материальную ответственность 5&nbsp;000&nbsp;₽ за&nbsp;уборку клининговой компанией.</p></div>
-      <div class="rule"><span class="rule__n">08</span><p>Подробный свод правил находится перед входами в&nbsp;оба игровых парка.</p></div>
-      <div class="rule rule--warn"><span class="rule__n">!</span><p>Будьте внимательны: администрация не&nbsp;несёт ответственности за&nbsp;несчастные случаи, возникшие в&nbsp;результате нарушения правил.</p></div>
+      <div class="rule" data-cms="f174"><span class="rule__n">01</span><p>Вход с&nbsp;едой и&nbsp;напитками воспрещён.</p></div>
+      <div class="rule" data-cms="f175"><span class="rule__n">02</span><p>Во избежание отравлений запрещается приносить с&nbsp;собой торты. Авторские торты можно заказать у&nbsp;нас.</p></div>
+      <div class="rule" data-cms="f176"><span class="rule__n">03</span><p>Билеты в&nbsp;Большой и&nbsp;Малый парки обмену и&nbsp;возврату не&nbsp;подлежат, как и&nbsp;возврат средств с&nbsp;игральных карточек.</p></div>
+      <div class="rule" data-cms="f177"><span class="rule__n">04</span><p>В&nbsp;игровые парки допускаются физически здоровые дети.</p></div>
+      <div class="rule" data-cms="f178"><span class="rule__n">05</span><p>В&nbsp;Большой парк допускаются дети от&nbsp;5 до&nbsp;12 лет и&nbsp;ростом до&nbsp;130&nbsp;см.</p></div>
+      <div class="rule" data-cms="f179"><span class="rule__n">06</span><p>В&nbsp;Малый парк допускаются дети до&nbsp;5&nbsp;лет, родителям разрешается нахождение в&nbsp;парке вместе с&nbsp;ребёнком.</p></div>
+      <div class="rule" data-cms="f180"><span class="rule__n">07</span><p>Если ребёнок испачкал игровую зону, родители несут материальную ответственность 5&nbsp;000&nbsp;₽ за&nbsp;уборку клининговой компанией.</p></div>
+      <div class="rule" data-cms="f181"><span class="rule__n">08</span><p>Подробный свод правил находится перед входами в&nbsp;оба игровых парка.</p></div>
+      <div class="rule rule--warn" data-cms="f182"><span class="rule__n">!</span><p>Будьте внимательны: администрация не&nbsp;несёт ответственности за&nbsp;несчастные случаи, возникшие в&nbsp;результате нарушения правил.</p></div>
     </div>
 
     <div class="rules__foot r">
@@ -3016,7 +3029,7 @@ section { position: relative; }
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap">№11 / Контакты</span></div>
+        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f144">№11 / Контакты</span></div>
         <h2 class="sect__title" data-cms="f13">Найти нас<br><em>в&nbsp;Махачкале</em></h2>
       </div>
       <p class="sect__sub" data-cms="f23">ТРЦ «Этажи», 4&nbsp;этаж. Удобный заезд с&nbsp;проспекта Гамидова. Парковка на&nbsp;200&nbsp;мест.</p>
@@ -3025,19 +3038,19 @@ section { position: relative; }
     <div class="contacts r">
       <div class="contacts__info">
         <h3 class="contacts__title" data-cms="f122">Свяжитесь</h3>
-        <div class="contacts__row">
+        <div class="contacts__row" data-cms="f183">
           <div class="lbl">Адрес</div>
           <div class="val">пр. Гамидова, 61<br>ТРЦ «Этажи», 4&nbsp;этаж</div>
         </div>
-        <div class="contacts__row">
+        <div class="contacts__row" data-cms="f184">
           <div class="lbl">Телефон · WhatsApp</div>
           <a href="tel:+79882938008" class="val val--big">+7 988 293 80 08</a>
         </div>
-        <div class="contacts__row">
+        <div class="contacts__row" data-cms="f185">
           <div class="lbl">Почта</div>
           <a href="mailto:meow_mkh@mail.ru" class="val">meow_mkh@mail.ru</a>
         </div>
-        <div class="contacts__row">
+        <div class="contacts__row" data-cms="f186">
           <div class="lbl">Часы работы</div>
           <div class="val">Ежедневно · 10:00 — 22:00</div>
         </div>
@@ -3066,12 +3079,12 @@ section { position: relative; }
       <div>
         <div class="foot__brand">
           <img class="foot__cat" src="photos/cat-mascot.png" alt="" data-cms="i37">
-          <span class="foot__name">MEOW</span>
+          <span class="foot__name" data-cms="f188">MEOW</span>
         </div>
         <p class="foot__tag" data-cms="f123">Развлекательный центр для&nbsp;всей семьи в&nbsp;Махачкале. Игры, праздники и&nbsp;ресторан «Иль&nbsp;Патио» — место, куда хочется возвращаться.</p>
       </div>
       <div class="foot__col">
-        <h5>Навигация</h5>
+        <h5 data-cms="f189">Навигация</h5>
         <ul>
           <li><a href="#zones">Игровые зоны</a></li>
           <li><a href="#party">Праздники</a></li>
@@ -3081,7 +3094,7 @@ section { position: relative; }
         </ul>
       </div>
       <div class="foot__col">
-        <h5>Связаться</h5>
+        <h5 data-cms="f190">Связаться</h5>
         <ul>
           <li><a href="tel:+79882938008">+7 988 293 80 08</a></li>
           <li><a href="mailto:meow_mkh@mail.ru">meow_mkh@mail.ru</a></li>
@@ -3120,8 +3133,8 @@ section { position: relative; }
         <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <button type="submit">Отправить заявку</button>
       </form>
-      <a href="tel:+79882938008" class="promo__tel">или позвоните: +7&nbsp;988&nbsp;293&nbsp;80&nbsp;08</a>
-      <div class="promo__small">Нажимая кнопку, вы&nbsp;соглашаетесь с&nbsp;обработкой персональных данных</div>
+      <a href="tel:+79882938008" class="promo__tel" data-cms="f192">или позвоните: +7&nbsp;988&nbsp;293&nbsp;80&nbsp;08</a>
+      <div class="promo__small" data-cms="f191">Нажимая кнопку, вы&nbsp;соглашаетесь с&nbsp;обработкой персональных данных</div>
     </div>
   </div>
 </div>

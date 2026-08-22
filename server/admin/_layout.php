@@ -113,7 +113,11 @@ if ($tab === 'content'):
     <input type="hidden" name="sec" value="<?= h((string)$cur) ?>">
     <div class="card">
       <h2><?= h($names[$cur] ?? $cur) ?></h2>
-      <div class="note">Перенос строки — просто Enter. Чтобы выделить слово цветом, поставьте вокруг него звёздочки: *слово*.</div>
+      <div class="note">Перенос строки — просто Enter.
+        <b>*слово*</b> — жирный шрифт,
+        <b>~слово~</b> — выделение цветом,
+        <b>[текст](номер или ссылка)</b> — ссылка.
+        Всё остальное пишется как обычный текст.</div>
       <div class="grid">
       <?php foreach ($groups[$cur] as $f): $v = value_of($f, $ov); $edited = isset($ov[$f['key']]); ?>
         <div class="field <?= $edited?'dirty':'' ?>">

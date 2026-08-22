@@ -1,5 +1,13 @@
 [
  {
+  "key": "f130",
+  "label": "Подпись раздела",
+  "kind": "line",
+  "cls": "cap",
+  "orig": "Махачкала · ТРЦ «Этажи», 4&nbsp;этаж",
+  "section": "hero"
+ },
+ {
   "key": "i3",
   "label": "Фото",
   "kind": "image",
@@ -12,7 +20,7 @@
   "label": "Текст под заголовком",
   "kind": "text",
   "cls": "hero__sub",
-  "orig": "\n        <b style=\"color:var(--ink);\">MEOW</b> — развлекательный центр для&nbsp;всей семьи. Игровые зоны под&nbsp;каждый возраст, ресторан «Иль&nbsp;Патио», праздники и&nbsp;мастер-классы. ТРЦ&nbsp;«Этажи», 4&nbsp;этаж.\n      ",
+  "orig": "\n        <b>MEOW</b> — развлекательный центр для&nbsp;всей семьи. Игровые зоны под&nbsp;каждый возраст, ресторан «Иль&nbsp;Патио», праздники и&nbsp;мастер-классы. ТРЦ&nbsp;«Этажи», 4&nbsp;этаж.\n      ",
   "section": "hero"
  },
  {
@@ -40,11 +48,43 @@
   "section": "hero"
  },
  {
+  "key": "f145",
+  "label": "Номер слайда",
+  "kind": "line",
+  "cls": "hero__caption-num",
+  "orig": "01 / 05 · ИГРЫ",
+  "section": "hero"
+ },
+ {
+  "key": "f150",
+  "label": "Подпись на слайде",
+  "kind": "rich",
+  "cls": "hero__caption-text",
+  "orig": "Три зоны<br>под <em>каждый</em> возраст",
+  "section": "hero"
+ },
+ {
   "key": "i5",
   "label": "Сухой бассейн",
   "kind": "image",
   "cls": "img",
   "orig": "photos/meow/m05.jpg",
+  "section": "hero"
+ },
+ {
+  "key": "f146",
+  "label": "Номер слайда",
+  "kind": "line",
+  "cls": "hero__caption-num",
+  "orig": "02 / 05 · ЛАБИРИНТ",
+  "section": "hero"
+ },
+ {
+  "key": "f151",
+  "label": "Подпись на слайде",
+  "kind": "rich",
+  "cls": "hero__caption-text",
+  "orig": "Горки, тоннели<br>и&nbsp;<em>сухой бассейн</em>",
   "section": "hero"
  },
  {
@@ -56,6 +96,22 @@
   "section": "hero"
  },
  {
+  "key": "f147",
+  "label": "Номер слайда",
+  "kind": "line",
+  "cls": "hero__caption-num",
+  "orig": "03 / 05 · ПРАЗДНИКИ",
+  "section": "hero"
+ },
+ {
+  "key": "f152",
+  "label": "Подпись на слайде",
+  "kind": "rich",
+  "cls": "hero__caption-text",
+  "orig": "Под ключ<br>за&nbsp;<em>15 минут</em>",
+  "section": "hero"
+ },
+ {
   "key": "i7",
   "label": "Эмоции",
   "kind": "image",
@@ -64,11 +120,43 @@
   "section": "hero"
  },
  {
+  "key": "f148",
+  "label": "Номер слайда",
+  "kind": "line",
+  "cls": "hero__caption-num",
+  "orig": "04 / 05 · ЭМОЦИИ",
+  "section": "hero"
+ },
+ {
+  "key": "f153",
+  "label": "Подпись на слайде",
+  "kind": "rich",
+  "cls": "hero__caption-text",
+  "orig": "Чувства,<br>в&nbsp;которые <em>возвращаются</em>",
+  "section": "hero"
+ },
+ {
   "key": "i8",
   "label": "Иль Патио",
   "kind": "image",
   "cls": "img",
   "orig": "photos/meow/m24.jpg",
+  "section": "hero"
+ },
+ {
+  "key": "f149",
+  "label": "Номер слайда",
+  "kind": "line",
+  "cls": "hero__caption-num",
+  "orig": "05 / 05 · РЕСТОРАН",
+  "section": "hero"
+ },
+ {
+  "key": "f154",
+  "label": "Подпись на слайде",
+  "kind": "rich",
+  "cls": "hero__caption-text",
+  "orig": "«Иль&nbsp;Патио»<br>на&nbsp;<em>территории</em>",
   "section": "hero"
  },
  {
@@ -144,6 +232,14 @@
   "section": "about"
  },
  {
+  "key": "f131",
+  "label": "Подпись раздела",
+  "kind": "line",
+  "cls": "cap",
+  "orig": "№01 / Расписание",
+  "section": "schedule"
+ },
+ {
   "key": "f4",
   "label": "Заголовок раздела",
   "kind": "rich",
@@ -158,6 +254,14 @@
   "cls": "sect__sub",
   "orig": "Аниматоры и&nbsp;мастер-классы идут постоянно, раз в&nbsp;месяц собираем большое событие. Участие бесплатное — нужна только запись.",
   "section": "schedule"
+ },
+ {
+  "key": "f132",
+  "label": "Подпись раздела",
+  "kind": "line",
+  "cls": "cap",
+  "orig": "№02 / Зоны",
+  "section": "zones"
  },
  {
   "key": "f5",
@@ -181,6 +285,22 @@
   "kind": "image",
   "cls": "img",
   "orig": "photos/meow/m02.jpg",
+  "section": "zones"
+ },
+ {
+  "key": "f155",
+  "label": "Возраст зоны",
+  "kind": "line",
+  "cls": "zone__age",
+  "orig": "0–5 ЛЕТ",
+  "section": "zones"
+ },
+ {
+  "key": "f158",
+  "label": "Номер зоны",
+  "kind": "line",
+  "cls": "zone__index",
+  "orig": "01 / 03",
   "section": "zones"
  },
  {
@@ -216,6 +336,22 @@
   "section": "zones"
  },
  {
+  "key": "f156",
+  "label": "Возраст зоны",
+  "kind": "line",
+  "cls": "zone__age",
+  "orig": "5–12 ЛЕТ",
+  "section": "zones"
+ },
+ {
+  "key": "f159",
+  "label": "Номер зоны",
+  "kind": "line",
+  "cls": "zone__index",
+  "orig": "02 / 03",
+  "section": "zones"
+ },
+ {
   "key": "f25",
   "label": "Название зоны",
   "kind": "line",
@@ -248,6 +384,22 @@
   "section": "zones"
  },
  {
+  "key": "f157",
+  "label": "Возраст зоны",
+  "kind": "line",
+  "cls": "zone__age",
+  "orig": "1–99 ЛЕТ",
+  "section": "zones"
+ },
+ {
+  "key": "f160",
+  "label": "Номер зоны",
+  "kind": "line",
+  "cls": "zone__index",
+  "orig": "03 / 03",
+  "section": "zones"
+ },
+ {
   "key": "f26",
   "label": "Название зоны",
   "kind": "line",
@@ -272,6 +424,14 @@
   "section": "zones"
  },
  {
+  "key": "f133",
+  "label": "Подпись раздела",
+  "kind": "line",
+  "cls": "cap",
+  "orig": "№03 / Ресторан",
+  "section": "patio"
+ },
+ {
   "key": "f6",
   "label": "Заголовок раздела",
   "kind": "rich",
@@ -288,11 +448,43 @@
   "section": "patio"
  },
  {
+  "key": "f164",
+  "label": "Плашка на фото",
+  "kind": "line",
+  "cls": "patio__visual-tag",
+  "orig": "★ Часть сети «Иль Патио» с&nbsp;1993",
+  "section": "patio"
+ },
+ {
+  "key": "f163",
+  "label": "Заголовок плашки на фото",
+  "kind": "line",
+  "cls": "h4",
+  "orig": "На территории центра",
+  "section": "patio"
+ },
+ {
+  "key": "f161",
+  "label": "Плашка ресторана",
+  "kind": "line",
+  "cls": "patio__label",
+  "orig": "Ресторан на&nbsp;территории",
+  "section": "patio"
+ },
+ {
   "key": "i13",
   "label": "iL Патио 1993 — итальянский ресторан",
   "kind": "image",
   "cls": "img",
   "orig": "photos/IP_logo.png",
+  "section": "patio"
+ },
+ {
+  "key": "f162",
+  "label": "Текст о ресторане",
+  "kind": "text",
+  "cls": "patio__copy",
+  "orig": "\n          Итальянский ресторан внутри центра. Печь, паста, авторские торты на&nbsp;заказ. Пока ребёнок играет — вы&nbsp;спокойно ужинаете.\n        ",
   "section": "patio"
  },
  {
@@ -317,6 +509,30 @@
   "kind": "line",
   "cls": "patio__chip",
   "orig": "Авторские торты",
+  "section": "patio"
+ },
+ {
+  "key": "f172",
+  "label": "Подпись к тортам",
+  "kind": "line",
+  "cls": "cakes__caption",
+  "orig": "\n          <span class=\"line\" style=\"background:rgba(255,255,255,0.6)\"></span>\n          <span class=\"cap cap--white\" data-cms=\"f134\">Авторские торты от&nbsp;шеф-кондитера</span>\n        ",
+  "section": "patio"
+ },
+ {
+  "key": "f134",
+  "label": "Подпись раздела",
+  "kind": "line",
+  "cls": "cap",
+  "orig": "Авторские торты от&nbsp;шеф-кондитера",
+  "section": "patio"
+ },
+ {
+  "key": "f173",
+  "label": "Заголовок тортов",
+  "kind": "rich",
+  "cls": "cakes__title",
+  "orig": "Торт под&nbsp;<em>событие</em>&nbsp;— на&nbsp;заказ",
   "section": "patio"
  },
  {
@@ -366,6 +582,14 @@
   "cls": "img",
   "orig": "photos/cakes/cake06.jpg",
   "section": "patio"
+ },
+ {
+  "key": "f135",
+  "label": "Подпись раздела",
+  "kind": "line",
+  "cls": "cap",
+  "orig": "№04 / Атмосфера",
+  "section": "gallery"
  },
  {
   "key": "f7",
@@ -512,6 +736,14 @@
   "section": "gallery"
  },
  {
+  "key": "f136",
+  "label": "Подпись раздела",
+  "kind": "line",
+  "cls": "cap",
+  "orig": "№05 / Праздники",
+  "section": "party"
+ },
+ {
   "key": "f8",
   "label": "Заголовок раздела",
   "kind": "rich",
@@ -534,6 +766,22 @@
   "cls": "img",
   "orig": "photos/meow/m18.jpg",
   "section": "party"
+ },
+ {
+  "key": "f165",
+  "label": "Плашка на фото",
+  "kind": "line",
+  "cls": "party__visual-tag",
+  "orig": "Под ключ",
+  "section": "party"
+ },
+ {
+  "key": "f137",
+  "label": "Подпись раздела",
+  "kind": "line",
+  "cls": "cap",
+  "orig": "№06 / Мастер-классы",
+  "section": "progs"
  },
  {
   "key": "f9",
@@ -744,6 +992,14 @@
   "section": "progs"
  },
  {
+  "key": "f138",
+  "label": "Подпись раздела",
+  "kind": "line",
+  "cls": "cap",
+  "orig": "№07 / Цены",
+  "section": "prices"
+ },
+ {
   "key": "f10",
   "label": "Заголовок раздела",
   "kind": "rich",
@@ -832,6 +1088,14 @@
   "section": "prices"
  },
  {
+  "key": "f166",
+  "label": "Пояснение к ценам",
+  "kind": "line",
+  "cls": "park__legend",
+  "orig": "Вторая цена — для&nbsp;семей с&nbsp;3+&nbsp;детьми",
+  "section": "prices"
+ },
+ {
   "key": "f66",
   "label": "Название парка",
   "kind": "line",
@@ -904,11 +1168,35 @@
   "section": "prices"
  },
  {
+  "key": "f167",
+  "label": "Пояснение к ценам",
+  "kind": "line",
+  "cls": "park__legend",
+  "orig": "Вторая цена — для&nbsp;семей с&nbsp;3+&nbsp;детьми",
+  "section": "prices"
+ },
+ {
+  "key": "f139",
+  "label": "Подпись раздела",
+  "kind": "line",
+  "cls": "cap",
+  "orig": "Абонементы",
+  "section": "prices"
+ },
+ {
   "key": "f83",
   "label": "Заголовок абонементов",
   "kind": "rich",
   "cls": "abo__title",
   "orig": "На&nbsp;посещение <em>игровых парков</em>",
+  "section": "prices"
+ },
+ {
+  "key": "f169",
+  "label": "Число посещений",
+  "kind": "rich",
+  "cls": "abo__visits",
+  "orig": "<b>8</b><span>посещений</span>",
   "section": "prices"
  },
  {
@@ -936,6 +1224,22 @@
   "section": "prices"
  },
  {
+  "key": "f168",
+  "label": "Плашка абонемента",
+  "kind": "line",
+  "cls": "abo__tag",
+  "orig": "★ Хит",
+  "section": "prices"
+ },
+ {
+  "key": "f170",
+  "label": "Число посещений",
+  "kind": "rich",
+  "cls": "abo__visits",
+  "orig": "<b>20</b><span>посещений</span>",
+  "section": "prices"
+ },
+ {
   "key": "f88",
   "label": "Срок абонемента",
   "kind": "line",
@@ -957,6 +1261,14 @@
   "kind": "line",
   "cls": "abo__perv",
   "orig": "500&nbsp;₽ за&nbsp;посещение",
+  "section": "prices"
+ },
+ {
+  "key": "f171",
+  "label": "Число посещений",
+  "kind": "rich",
+  "cls": "abo__visits",
+  "orig": "<b>40</b><span>посещений</span>",
   "section": "prices"
  },
  {
@@ -990,6 +1302,14 @@
   "cls": "abo__note",
   "orig": "* Не более 5 посещений за&nbsp;один раз. Абонемент привязан к&nbsp;одному ребёнку.",
   "section": "prices"
+ },
+ {
+  "key": "f140",
+  "label": "Подпись раздела",
+  "kind": "line",
+  "cls": "cap",
+  "orig": "№08 / Отзывы",
+  "section": "reviews"
  },
  {
   "key": "f11",
@@ -1104,6 +1424,14 @@
   "section": "reviews"
  },
  {
+  "key": "f141",
+  "label": "Подпись раздела",
+  "kind": "line",
+  "cls": "cap",
+  "orig": "№09 / FAQ",
+  "section": "cta"
+ },
+ {
   "key": "f106",
   "label": "Вопрос",
   "kind": "line",
@@ -1164,7 +1492,7 @@
   "label": "Ответ",
   "kind": "rich",
   "cls": "faq__answer",
-  "orig": "Оставьте заявку в&nbsp;форме справа или позвоните <a href=\"tel:+79882938008\" style=\"color:var(--pink);font-weight:700;\">+7&nbsp;988&nbsp;293&nbsp;80&nbsp;08</a>&nbsp;— менеджер свяжется за&nbsp;15&nbsp;минут. Можем добавить аниматора, мастер-класс или фотографа.",
+  "orig": "Оставьте заявку в&nbsp;форме справа или позвоните <a href=\"tel:+79882938008\">+7&nbsp;988&nbsp;293&nbsp;80&nbsp;08</a>&nbsp;— менеджер свяжется за&nbsp;15&nbsp;минут. Можем добавить аниматора, мастер-класс или фотографа.",
   "section": "cta"
  },
  {
@@ -1216,6 +1544,14 @@
   "section": "cta"
  },
  {
+  "key": "f142",
+  "label": "Подпись раздела",
+  "kind": "line",
+  "cls": "cap",
+  "orig": "Звонок за&nbsp;15&nbsp;минут",
+  "section": "cta"
+ },
+ {
   "key": "f120",
   "label": "Заголовок формы",
   "kind": "rich",
@@ -1232,6 +1568,22 @@
   "section": "cta"
  },
  {
+  "key": "f193",
+  "label": "Мелкий текст под формой",
+  "kind": "text",
+  "cls": "cta__small",
+  "orig": "Нажимая кнопку, вы соглашаетесь с&nbsp;обработкой персональных данных",
+  "section": "cta"
+ },
+ {
+  "key": "f143",
+  "label": "Подпись раздела",
+  "kind": "line",
+  "cls": "cap",
+  "orig": "№10 / Правила",
+  "section": "rules"
+ },
+ {
   "key": "f12",
   "label": "Заголовок раздела",
   "kind": "rich",
@@ -1246,6 +1598,86 @@
   "cls": "sect__sub",
   "orig": "Ознакомьтесь, пожалуйста, перед визитом. Правила созданы для&nbsp;комфорта и&nbsp;безопасности всех гостей.",
   "section": "rules"
+ },
+ {
+  "key": "f174",
+  "label": "Правило",
+  "kind": "rich",
+  "cls": "rule",
+  "orig": "<span class=\"rule__n\">01</span><p>Вход с&nbsp;едой и&nbsp;напитками воспрещён.</p>",
+  "section": "rules"
+ },
+ {
+  "key": "f175",
+  "label": "Правило",
+  "kind": "rich",
+  "cls": "rule",
+  "orig": "<span class=\"rule__n\">02</span><p>Во избежание отравлений запрещается приносить с&nbsp;собой торты. Авторские торты можно заказать у&nbsp;нас.</p>",
+  "section": "rules"
+ },
+ {
+  "key": "f176",
+  "label": "Правило",
+  "kind": "rich",
+  "cls": "rule",
+  "orig": "<span class=\"rule__n\">03</span><p>Билеты в&nbsp;Большой и&nbsp;Малый парки обмену и&nbsp;возврату не&nbsp;подлежат, как и&nbsp;возврат средств с&nbsp;игральных карточек.</p>",
+  "section": "rules"
+ },
+ {
+  "key": "f177",
+  "label": "Правило",
+  "kind": "rich",
+  "cls": "rule",
+  "orig": "<span class=\"rule__n\">04</span><p>В&nbsp;игровые парки допускаются физически здоровые дети.</p>",
+  "section": "rules"
+ },
+ {
+  "key": "f178",
+  "label": "Правило",
+  "kind": "rich",
+  "cls": "rule",
+  "orig": "<span class=\"rule__n\">05</span><p>В&nbsp;Большой парк допускаются дети от&nbsp;5 до&nbsp;12 лет и&nbsp;ростом до&nbsp;130&nbsp;см.</p>",
+  "section": "rules"
+ },
+ {
+  "key": "f179",
+  "label": "Правило",
+  "kind": "rich",
+  "cls": "rule",
+  "orig": "<span class=\"rule__n\">06</span><p>В&nbsp;Малый парк допускаются дети до&nbsp;5&nbsp;лет, родителям разрешается нахождение в&nbsp;парке вместе с&nbsp;ребёнком.</p>",
+  "section": "rules"
+ },
+ {
+  "key": "f180",
+  "label": "Правило",
+  "kind": "rich",
+  "cls": "rule",
+  "orig": "<span class=\"rule__n\">07</span><p>Если ребёнок испачкал игровую зону, родители несут материальную ответственность 5&nbsp;000&nbsp;₽ за&nbsp;уборку клининговой компанией.</p>",
+  "section": "rules"
+ },
+ {
+  "key": "f181",
+  "label": "Правило",
+  "kind": "rich",
+  "cls": "rule",
+  "orig": "<span class=\"rule__n\">08</span><p>Подробный свод правил находится перед входами в&nbsp;оба игровых парка.</p>",
+  "section": "rules"
+ },
+ {
+  "key": "f182",
+  "label": "Правило",
+  "kind": "rich",
+  "cls": "rule",
+  "orig": "<span class=\"rule__n\">!</span><p>Будьте внимательны: администрация не&nbsp;несёт ответственности за&nbsp;несчастные случаи, возникшие в&nbsp;результате нарушения правил.</p>",
+  "section": "rules"
+ },
+ {
+  "key": "f144",
+  "label": "Подпись раздела",
+  "kind": "line",
+  "cls": "cap",
+  "orig": "№11 / Контакты",
+  "section": "contacts"
  },
  {
   "key": "f13",
@@ -1272,6 +1704,38 @@
   "section": "contacts"
  },
  {
+  "key": "f183",
+  "label": "Строка контактов",
+  "kind": "rich",
+  "cls": "contacts__row",
+  "orig": "\n          <div class=\"lbl\">Адрес</div>\n          <div class=\"val\">пр. Гамидова, 61<br>ТРЦ «Этажи», 4&nbsp;этаж</div>\n        ",
+  "section": "contacts"
+ },
+ {
+  "key": "f184",
+  "label": "Строка контактов",
+  "kind": "rich",
+  "cls": "contacts__row",
+  "orig": "\n          <div class=\"lbl\">Телефон · WhatsApp</div>\n          <a href=\"tel:+79882938008\" class=\"val val--big\">+7 988 293 80 08</a>\n        ",
+  "section": "contacts"
+ },
+ {
+  "key": "f185",
+  "label": "Строка контактов",
+  "kind": "rich",
+  "cls": "contacts__row",
+  "orig": "\n          <div class=\"lbl\">Почта</div>\n          <a href=\"mailto:meow_mkh@mail.ru\" class=\"val\">meow_mkh@mail.ru</a>\n        ",
+  "section": "contacts"
+ },
+ {
+  "key": "f186",
+  "label": "Строка контактов",
+  "kind": "rich",
+  "cls": "contacts__row",
+  "orig": "\n          <div class=\"lbl\">Часы работы</div>\n          <div class=\"val\">Ежедневно · 10:00 — 22:00</div>\n        ",
+  "section": "contacts"
+ },
+ {
   "key": "i37",
   "label": "Фото",
   "kind": "image",
@@ -1280,11 +1744,35 @@
   "section": "contacts"
  },
  {
+  "key": "f188",
+  "label": "Название в подвале",
+  "kind": "line",
+  "cls": "foot__name",
+  "orig": "MEOW",
+  "section": "contacts"
+ },
+ {
   "key": "f123",
   "label": "Текст в подвале",
   "kind": "text",
   "cls": "foot__tag",
   "orig": "Развлекательный центр для&nbsp;всей семьи в&nbsp;Махачкале. Игры, праздники и&nbsp;ресторан «Иль&nbsp;Патио» — место, куда хочется возвращаться.",
+  "section": "contacts"
+ },
+ {
+  "key": "f189",
+  "label": "Заголовок в подвале",
+  "kind": "line",
+  "cls": "h5",
+  "orig": "Навигация",
+  "section": "contacts"
+ },
+ {
+  "key": "f190",
+  "label": "Заголовок в подвале",
+  "kind": "line",
+  "cls": "h5",
+  "orig": "Связаться",
   "section": "contacts"
  },
  {
@@ -1320,11 +1808,35 @@
   "section": "promo"
  },
  {
+  "key": "f192",
+  "label": "Телефон в поп-апе",
+  "kind": "line",
+  "cls": "promo__tel",
+  "orig": "или позвоните: +7&nbsp;988&nbsp;293&nbsp;80&nbsp;08",
+  "section": "promo"
+ },
+ {
+  "key": "f191",
+  "label": "Мелкий текст поп-апа",
+  "kind": "text",
+  "cls": "promo__small",
+  "orig": "Нажимая кнопку, вы&nbsp;соглашаетесь с&nbsp;обработкой персональных данных",
+  "section": "promo"
+ },
+ {
   "key": "i1",
   "label": "MEOW",
   "kind": "image",
   "cls": "img",
   "orig": "photos/cat-mascot.png",
+  "section": ""
+ },
+ {
+  "key": "f187",
+  "label": "Название в шапке",
+  "kind": "line",
+  "cls": "nav__brand-name",
+  "orig": "MEOW",
   "section": ""
  },
  {
