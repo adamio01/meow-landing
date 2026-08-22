@@ -38,6 +38,13 @@ function db(): PDO {
             $pdo->exec('ALTER TABLE events ADD COLUMN subtitle TEXT NOT NULL DEFAULT ""');
         }
         $pdo->exec('CREATE TABLE IF NOT EXISTS settings (k TEXT PRIMARY KEY, v TEXT NOT NULL)');
+        $pdo->exec('CREATE TABLE IF NOT EXISTS content (k TEXT PRIMARY KEY, v TEXT NOT NULL)');
+        $pdo->exec('CREATE TABLE IF NOT EXISTS revisions (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            created_at TEXT NOT NULL,
+            note TEXT NOT NULL DEFAULT "",
+            data TEXT NOT NULL
+        )');
         $pdo->exec('CREATE TABLE IF NOT EXISTS leads (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL DEFAULT "",

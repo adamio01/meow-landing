@@ -1,0 +1,1338 @@
+[
+ {
+  "key": "i3",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/cat-mascot.png",
+  "section": "hero"
+ },
+ {
+  "key": "f1",
+  "label": "Текст под заголовком",
+  "kind": "text",
+  "cls": "hero__sub",
+  "orig": "\n        <b style=\"color:var(--ink);\">MEOW</b> — развлекательный центр для&nbsp;всей семьи. Игровые зоны под&nbsp;каждый возраст, ресторан «Иль&nbsp;Патио», праздники и&nbsp;мастер-классы. ТРЦ&nbsp;«Этажи», 4&nbsp;этаж.\n      ",
+  "section": "hero"
+ },
+ {
+  "key": "f2",
+  "label": "Плашка",
+  "kind": "line",
+  "cls": "hero__chip",
+  "orig": "<b>7/7</b> с 10 до 22",
+  "section": "hero"
+ },
+ {
+  "key": "f3",
+  "label": "Плашка",
+  "kind": "line",
+  "cls": "hero__chip",
+  "orig": "<b>★ 4.9</b> · 600+ отзывов",
+  "section": "hero"
+ },
+ {
+  "key": "i4",
+  "label": "Игровые зоны",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m29.jpg",
+  "section": "hero"
+ },
+ {
+  "key": "i5",
+  "label": "Сухой бассейн",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m05.jpg",
+  "section": "hero"
+ },
+ {
+  "key": "i6",
+  "label": "Праздники",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m08.jpg",
+  "section": "hero"
+ },
+ {
+  "key": "i7",
+  "label": "Эмоции",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m15.jpg",
+  "section": "hero"
+ },
+ {
+  "key": "i8",
+  "label": "Иль Патио",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m24.jpg",
+  "section": "hero"
+ },
+ {
+  "key": "f14",
+  "label": "Описание раздела",
+  "kind": "text",
+  "cls": "sect__sub",
+  "orig": "MEOW — не&nbsp;«игровая комната». Это полноценный центр семейного досуга в&nbsp;центре Махачкалы с&nbsp;площадью 1&nbsp;800&nbsp;м², рестораном-партнёром и&nbsp;командой из&nbsp;30+&nbsp;человек.",
+  "section": "about"
+ },
+ {
+  "key": "f33",
+  "label": "Заголовок пункта",
+  "kind": "line",
+  "cls": "about__name",
+  "orig": "Под возраст",
+  "section": "about"
+ },
+ {
+  "key": "f37",
+  "label": "Текст пункта",
+  "kind": "text",
+  "cls": "about__desc",
+  "orig": "3 отдельных парка: малый 0–5, большой 5–12 и&nbsp;зона игровых аппаратов.",
+  "section": "about"
+ },
+ {
+  "key": "f34",
+  "label": "Заголовок пункта",
+  "kind": "line",
+  "cls": "about__name",
+  "orig": "Иль Патио",
+  "section": "about"
+ },
+ {
+  "key": "f38",
+  "label": "Текст пункта",
+  "kind": "text",
+  "cls": "about__desc",
+  "orig": "Полноценный итальянский ресторан на&nbsp;территории.",
+  "section": "about"
+ },
+ {
+  "key": "f35",
+  "label": "Заголовок пункта",
+  "kind": "line",
+  "cls": "about__name",
+  "orig": "Праздники",
+  "section": "about"
+ },
+ {
+  "key": "f39",
+  "label": "Текст пункта",
+  "kind": "text",
+  "cls": "about__desc",
+  "orig": "Аниматоры по&nbsp;пятницам и&nbsp;субботам, мастер-классы по&nbsp;воскресеньям.",
+  "section": "about"
+ },
+ {
+  "key": "f36",
+  "label": "Заголовок пункта",
+  "kind": "line",
+  "cls": "about__name",
+  "orig": "Безопасно",
+  "section": "about"
+ },
+ {
+  "key": "f40",
+  "label": "Текст пункта",
+  "kind": "text",
+  "cls": "about__desc",
+  "orig": "Видеонаблюдение, мягкие покрытия, безопасные браслеты, медик.",
+  "section": "about"
+ },
+ {
+  "key": "f4",
+  "label": "Заголовок раздела",
+  "kind": "rich",
+  "cls": "sect__title",
+  "orig": "Что у&nbsp;нас<br>на&nbsp;<em>этой</em> неделе",
+  "section": "schedule"
+ },
+ {
+  "key": "f15",
+  "label": "Описание раздела",
+  "kind": "text",
+  "cls": "sect__sub",
+  "orig": "Аниматоры и&nbsp;мастер-классы идут постоянно, раз в&nbsp;месяц собираем большое событие. Участие бесплатное — нужна только запись.",
+  "section": "schedule"
+ },
+ {
+  "key": "f5",
+  "label": "Заголовок раздела",
+  "kind": "rich",
+  "cls": "sect__title",
+  "orig": "3&nbsp;мира<br>для <em>всех</em> возрастов",
+  "section": "zones"
+ },
+ {
+  "key": "f16",
+  "label": "Описание раздела",
+  "kind": "text",
+  "cls": "sect__sub",
+  "orig": "Три отдельных парка под&nbsp;разный возраст и&nbsp;рост. Безопасное мягкое покрытие, видеонаблюдение и&nbsp;аниматоры всегда рядом.",
+  "section": "zones"
+ },
+ {
+  "key": "i9",
+  "label": "Малый парк",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m02.jpg",
+  "section": "zones"
+ },
+ {
+  "key": "f24",
+  "label": "Название зоны",
+  "kind": "line",
+  "cls": "zone__title",
+  "orig": "Малый парк",
+  "section": "zones"
+ },
+ {
+  "key": "f27",
+  "label": "Описание зоны",
+  "kind": "text",
+  "cls": "zone__sub",
+  "orig": "Отдельный мир для&nbsp;самых маленьких: невысокие модули, мягкие покрытия и&nbsp;всё под&nbsp;рост малыша.",
+  "section": "zones"
+ },
+ {
+  "key": "f30",
+  "label": "Подпись списка",
+  "kind": "line",
+  "cls": "zone__tags-title",
+  "orig": "Что внутри",
+  "section": "zones"
+ },
+ {
+  "key": "i10",
+  "label": "Большой парк",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m22.jpg",
+  "section": "zones"
+ },
+ {
+  "key": "f25",
+  "label": "Название зоны",
+  "kind": "line",
+  "cls": "zone__title",
+  "orig": "Большой парк",
+  "section": "zones"
+ },
+ {
+  "key": "f28",
+  "label": "Описание зоны",
+  "kind": "text",
+  "cls": "zone__sub",
+  "orig": "Четыре уровня, спиральные горки и&nbsp;поролоновая яма. Внутри — ниндзя-парк с&nbsp;подвесными мостами.",
+  "section": "zones"
+ },
+ {
+  "key": "f31",
+  "label": "Подпись списка",
+  "kind": "line",
+  "cls": "zone__tags-title",
+  "orig": "Что внутри",
+  "section": "zones"
+ },
+ {
+  "key": "i11",
+  "label": "Зона игровых аппаратов",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m25.jpg",
+  "section": "zones"
+ },
+ {
+  "key": "f26",
+  "label": "Название зоны",
+  "kind": "line",
+  "cls": "zone__title",
+  "orig": "Зона игровых аппаратов",
+  "section": "zones"
+ },
+ {
+  "key": "f29",
+  "label": "Описание зоны",
+  "kind": "text",
+  "cls": "zone__sub",
+  "orig": "Аттракционы и&nbsp;автоматы, за&nbsp;которыми одинаково залипают и&nbsp;дети, и&nbsp;родители.",
+  "section": "zones"
+ },
+ {
+  "key": "f32",
+  "label": "Подпись списка",
+  "kind": "line",
+  "cls": "zone__tags-title",
+  "orig": "Что внутри",
+  "section": "zones"
+ },
+ {
+  "key": "f6",
+  "label": "Заголовок раздела",
+  "kind": "rich",
+  "cls": "sect__title",
+  "orig": "Едим всей<br><em>семьёй</em>",
+  "section": "patio"
+ },
+ {
+  "key": "i12",
+  "label": "Ресторан Иль Патио",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m01.jpg",
+  "section": "patio"
+ },
+ {
+  "key": "i13",
+  "label": "iL Патио 1993 — итальянский ресторан",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/IP_logo.png",
+  "section": "patio"
+ },
+ {
+  "key": "f127",
+  "label": "Плашка ресторана",
+  "kind": "line",
+  "cls": "patio__chip",
+  "orig": "Халяль",
+  "section": "patio"
+ },
+ {
+  "key": "f128",
+  "label": "Плашка ресторана",
+  "kind": "line",
+  "cls": "patio__chip",
+  "orig": "Детское меню",
+  "section": "patio"
+ },
+ {
+  "key": "f129",
+  "label": "Плашка ресторана",
+  "kind": "line",
+  "cls": "patio__chip",
+  "orig": "Авторские торты",
+  "section": "patio"
+ },
+ {
+  "key": "i14",
+  "label": "Авторский торт",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/cakes/cake01.jpg",
+  "section": "patio"
+ },
+ {
+  "key": "i15",
+  "label": "Авторский торт",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/cakes/cake02.jpg",
+  "section": "patio"
+ },
+ {
+  "key": "i16",
+  "label": "Авторский торт",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/cakes/cake03.jpg",
+  "section": "patio"
+ },
+ {
+  "key": "i17",
+  "label": "Авторский торт",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/cakes/cake04.jpg",
+  "section": "patio"
+ },
+ {
+  "key": "i18",
+  "label": "Авторский торт",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/cakes/cake05.jpg",
+  "section": "patio"
+ },
+ {
+  "key": "i19",
+  "label": "Авторский торт",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/cakes/cake06.jpg",
+  "section": "patio"
+ },
+ {
+  "key": "f7",
+  "label": "Заголовок раздела",
+  "kind": "rich",
+  "cls": "sect__title",
+  "orig": "Как у&nbsp;нас<br><em>весело</em>",
+  "section": "gallery"
+ },
+ {
+  "key": "f17",
+  "label": "Описание раздела",
+  "kind": "text",
+  "cls": "sect__sub",
+  "orig": "В&nbsp;Instagram @meow_mkh — новые фото каждый день, расписание мастер-классов и&nbsp;истории про&nbsp;маленьких гостей.",
+  "section": "gallery"
+ },
+ {
+  "key": "i20",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m03.jpg",
+  "section": "gallery"
+ },
+ {
+  "key": "i21",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m10.jpg",
+  "section": "gallery"
+ },
+ {
+  "key": "i22",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m14.jpg",
+  "section": "gallery"
+ },
+ {
+  "key": "i23",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m16.jpg",
+  "section": "gallery"
+ },
+ {
+  "key": "i24",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m19.jpg",
+  "section": "gallery"
+ },
+ {
+  "key": "i25",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m04.jpg",
+  "section": "gallery"
+ },
+ {
+  "key": "i26",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m06.jpg",
+  "section": "gallery"
+ },
+ {
+  "key": "i27",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m09.jpg",
+  "section": "gallery"
+ },
+ {
+  "key": "i28",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m11.jpg",
+  "section": "gallery"
+ },
+ {
+  "key": "i29",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m13.jpg",
+  "section": "gallery"
+ },
+ {
+  "key": "i30",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m17.jpg",
+  "section": "gallery"
+ },
+ {
+  "key": "i31",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m26.jpg",
+  "section": "gallery"
+ },
+ {
+  "key": "i32",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m27.jpg",
+  "section": "gallery"
+ },
+ {
+  "key": "i33",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m28.jpg",
+  "section": "gallery"
+ },
+ {
+  "key": "i34",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m21.jpg",
+  "section": "gallery"
+ },
+ {
+  "key": "i35",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m23.jpg",
+  "section": "gallery"
+ },
+ {
+  "key": "f8",
+  "label": "Заголовок раздела",
+  "kind": "rich",
+  "cls": "sect__title",
+  "orig": "Большой день<br><em>в&nbsp;одном</em>&nbsp;звонке",
+  "section": "party"
+ },
+ {
+  "key": "f18",
+  "label": "Описание раздела",
+  "kind": "text",
+  "cls": "sect__sub",
+  "orig": "День рождения, выпускной, корпоратив. Берём организацию на&nbsp;себя — вам остаётся только наслаждаться.",
+  "section": "party"
+ },
+ {
+  "key": "i36",
+  "label": "Праздник",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m18.jpg",
+  "section": "party"
+ },
+ {
+  "key": "f9",
+  "label": "Заголовок раздела",
+  "kind": "rich",
+  "cls": "sect__title",
+  "orig": "Каждый день<br>— <em>новое</em>",
+  "section": "progs"
+ },
+ {
+  "key": "f19",
+  "label": "Описание раздела",
+  "kind": "text",
+  "cls": "sect__sub",
+  "orig": "Расписание обновляется еженедельно. Можно записаться отдельно или включить в&nbsp;программу праздника.",
+  "section": "progs"
+ },
+ {
+  "key": "f41",
+  "label": "Название мастер-класса",
+  "kind": "line",
+  "cls": "prog__name",
+  "orig": "Тематические дни",
+  "section": "progs"
+ },
+ {
+  "key": "f49",
+  "label": "Описание мастер-класса",
+  "kind": "text",
+  "cls": "prog__desc",
+  "orig": "Каждые выходные — новая тема: пираты, космос, единороги, супергерои. Костюмы, реквизит, фотозона.",
+  "section": "progs"
+ },
+ {
+  "key": "f57",
+  "label": "Возраст",
+  "kind": "line",
+  "cls": "prog__age",
+  "orig": "Все возрасты",
+  "section": "progs"
+ },
+ {
+  "key": "f42",
+  "label": "Название мастер-класса",
+  "kind": "line",
+  "cls": "prog__name",
+  "orig": "Рисование на&nbsp;холсте",
+  "section": "progs"
+ },
+ {
+  "key": "f50",
+  "label": "Описание мастер-класса",
+  "kind": "text",
+  "cls": "prog__desc",
+  "orig": "Акрил, мини-холст 20×30.",
+  "section": "progs"
+ },
+ {
+  "key": "f58",
+  "label": "Возраст",
+  "kind": "line",
+  "cls": "prog__age",
+  "orig": "4+",
+  "section": "progs"
+ },
+ {
+  "key": "f43",
+  "label": "Название мастер-класса",
+  "kind": "line",
+  "cls": "prog__name",
+  "orig": "Слайм-LAB",
+  "section": "progs"
+ },
+ {
+  "key": "f51",
+  "label": "Описание мастер-класса",
+  "kind": "text",
+  "cls": "prog__desc",
+  "orig": "Свой слайм с&nbsp;блёстками.",
+  "section": "progs"
+ },
+ {
+  "key": "f59",
+  "label": "Возраст",
+  "kind": "line",
+  "cls": "prog__age",
+  "orig": "5+",
+  "section": "progs"
+ },
+ {
+  "key": "f44",
+  "label": "Название мастер-класса",
+  "kind": "line",
+  "cls": "prog__name",
+  "orig": "Кулинария",
+  "section": "progs"
+ },
+ {
+  "key": "f52",
+  "label": "Описание мастер-класса",
+  "kind": "text",
+  "cls": "prog__desc",
+  "orig": "Печенье, кексы, мороженое.",
+  "section": "progs"
+ },
+ {
+  "key": "f60",
+  "label": "Возраст",
+  "kind": "line",
+  "cls": "prog__age",
+  "orig": "5+",
+  "section": "progs"
+ },
+ {
+  "key": "f45",
+  "label": "Название мастер-класса",
+  "kind": "line",
+  "cls": "prog__name",
+  "orig": "Пицца-мейкер",
+  "section": "progs"
+ },
+ {
+  "key": "f53",
+  "label": "Описание мастер-класса",
+  "kind": "text",
+  "cls": "prog__desc",
+  "orig": "Раскатают тесто, выберут начинку.",
+  "section": "progs"
+ },
+ {
+  "key": "f61",
+  "label": "Возраст",
+  "kind": "line",
+  "cls": "prog__age",
+  "orig": "4+",
+  "section": "progs"
+ },
+ {
+  "key": "f46",
+  "label": "Название мастер-класса",
+  "kind": "line",
+  "cls": "prog__name",
+  "orig": "Квест с&nbsp;героем",
+  "section": "progs"
+ },
+ {
+  "key": "f54",
+  "label": "Описание мастер-класса",
+  "kind": "text",
+  "cls": "prog__desc",
+  "orig": "Сюжетный квест по&nbsp;центру.",
+  "section": "progs"
+ },
+ {
+  "key": "f62",
+  "label": "Возраст",
+  "kind": "line",
+  "cls": "prog__age",
+  "orig": "6+",
+  "section": "progs"
+ },
+ {
+  "key": "f47",
+  "label": "Название мастер-класса",
+  "kind": "line",
+  "cls": "prog__name",
+  "orig": "Научное шоу",
+  "section": "progs"
+ },
+ {
+  "key": "f55",
+  "label": "Описание мастер-класса",
+  "kind": "text",
+  "cls": "prog__desc",
+  "orig": "Сухой лёд, пузыри, бенгальские.",
+  "section": "progs"
+ },
+ {
+  "key": "f63",
+  "label": "Возраст",
+  "kind": "line",
+  "cls": "prog__age",
+  "orig": "4+",
+  "section": "progs"
+ },
+ {
+  "key": "f48",
+  "label": "Название мастер-класса",
+  "kind": "line",
+  "cls": "prog__name",
+  "orig": "Караоке-баттл",
+  "section": "progs"
+ },
+ {
+  "key": "f56",
+  "label": "Описание мастер-класса",
+  "kind": "text",
+  "cls": "prog__desc",
+  "orig": "Микрофоны, экран, призы.",
+  "section": "progs"
+ },
+ {
+  "key": "f64",
+  "label": "Возраст",
+  "kind": "line",
+  "cls": "prog__age",
+  "orig": "6+",
+  "section": "progs"
+ },
+ {
+  "key": "f10",
+  "label": "Заголовок раздела",
+  "kind": "rich",
+  "cls": "sect__title",
+  "orig": "Прайс на&nbsp;<em>посещение</em>",
+  "section": "prices"
+ },
+ {
+  "key": "f20",
+  "label": "Описание раздела",
+  "kind": "text",
+  "cls": "sect__sub",
+  "orig": "Два парка под&nbsp;разный возраст. Для&nbsp;семей с&nbsp;3+&nbsp;детьми — специальная цена за&nbsp;каждого ребёнка.",
+  "section": "prices"
+ },
+ {
+  "key": "f65",
+  "label": "Название парка",
+  "kind": "line",
+  "cls": "park__name",
+  "orig": "Малый парк",
+  "section": "prices"
+ },
+ {
+  "key": "f67",
+  "label": "День",
+  "kind": "line",
+  "cls": "park__day",
+  "orig": "Пн — Чт",
+  "section": "prices"
+ },
+ {
+  "key": "f75",
+  "label": "Цена",
+  "kind": "rich",
+  "cls": "park__price",
+  "orig": "500<span class=\"cur\">₽</span> <em>/&nbsp;400<span class=\"cur\">₽</span></em>",
+  "section": "prices"
+ },
+ {
+  "key": "f68",
+  "label": "День",
+  "kind": "line",
+  "cls": "park__day",
+  "orig": "Пятница",
+  "section": "prices"
+ },
+ {
+  "key": "f76",
+  "label": "Цена",
+  "kind": "rich",
+  "cls": "park__price",
+  "orig": "500<span class=\"cur\">₽</span> <em>/&nbsp;400<span class=\"cur\">₽</span></em>",
+  "section": "prices"
+ },
+ {
+  "key": "f69",
+  "label": "День",
+  "kind": "line",
+  "cls": "park__day",
+  "orig": "Выходные · праздники",
+  "section": "prices"
+ },
+ {
+  "key": "f77",
+  "label": "Цена",
+  "kind": "rich",
+  "cls": "park__price",
+  "orig": "600<span class=\"cur\">₽</span> <em>/&nbsp;500<span class=\"cur\">₽</span></em>",
+  "section": "prices"
+ },
+ {
+  "key": "f70",
+  "label": "День",
+  "kind": "line",
+  "cls": "park__day",
+  "orig": "Для банкета · любой день",
+  "section": "prices"
+ },
+ {
+  "key": "f78",
+  "label": "Цена",
+  "kind": "rich",
+  "cls": "park__price",
+  "orig": "400<span class=\"cur\">₽</span>",
+  "section": "prices"
+ },
+ {
+  "key": "f66",
+  "label": "Название парка",
+  "kind": "line",
+  "cls": "park__name",
+  "orig": "Большой парк",
+  "section": "prices"
+ },
+ {
+  "key": "f71",
+  "label": "День",
+  "kind": "line",
+  "cls": "park__day",
+  "orig": "Пн — Чт",
+  "section": "prices"
+ },
+ {
+  "key": "f79",
+  "label": "Цена",
+  "kind": "rich",
+  "cls": "park__price",
+  "orig": "800<span class=\"cur\">₽</span> <em>/&nbsp;650<span class=\"cur\">₽</span></em>",
+  "section": "prices"
+ },
+ {
+  "key": "f72",
+  "label": "День",
+  "kind": "line",
+  "cls": "park__day",
+  "orig": "Пятница",
+  "section": "prices"
+ },
+ {
+  "key": "f80",
+  "label": "Цена",
+  "kind": "rich",
+  "cls": "park__price",
+  "orig": "1&nbsp;000<span class=\"cur\">₽</span> <em>/&nbsp;800<span class=\"cur\">₽</span></em>",
+  "section": "prices"
+ },
+ {
+  "key": "f73",
+  "label": "День",
+  "kind": "line",
+  "cls": "park__day",
+  "orig": "Выходные · праздники",
+  "section": "prices"
+ },
+ {
+  "key": "f81",
+  "label": "Цена",
+  "kind": "rich",
+  "cls": "park__price",
+  "orig": "1&nbsp;200<span class=\"cur\">₽</span> <em>/&nbsp;950<span class=\"cur\">₽</span></em>",
+  "section": "prices"
+ },
+ {
+  "key": "f74",
+  "label": "День",
+  "kind": "line",
+  "cls": "park__day",
+  "orig": "Для банкета · любой день",
+  "section": "prices"
+ },
+ {
+  "key": "f82",
+  "label": "Цена",
+  "kind": "rich",
+  "cls": "park__price",
+  "orig": "700<span class=\"cur\">₽</span>",
+  "section": "prices"
+ },
+ {
+  "key": "f83",
+  "label": "Заголовок абонементов",
+  "kind": "rich",
+  "cls": "abo__title",
+  "orig": "На&nbsp;посещение <em>игровых парков</em>",
+  "section": "prices"
+ },
+ {
+  "key": "f87",
+  "label": "Срок абонемента",
+  "kind": "line",
+  "cls": "abo__period",
+  "orig": "2 месяца",
+  "section": "prices"
+ },
+ {
+  "key": "f84",
+  "label": "Цена абонемента",
+  "kind": "rich",
+  "cls": "abo__price",
+  "orig": "4 800<span class=\"cur\">₽</span>",
+  "section": "prices"
+ },
+ {
+  "key": "f90",
+  "label": "Цена за посещение",
+  "kind": "line",
+  "cls": "abo__perv",
+  "orig": "600&nbsp;₽ за&nbsp;посещение",
+  "section": "prices"
+ },
+ {
+  "key": "f88",
+  "label": "Срок абонемента",
+  "kind": "line",
+  "cls": "abo__period",
+  "orig": "6 месяцев",
+  "section": "prices"
+ },
+ {
+  "key": "f85",
+  "label": "Цена абонемента",
+  "kind": "rich",
+  "cls": "abo__price",
+  "orig": "10 000<span class=\"cur\">₽</span>",
+  "section": "prices"
+ },
+ {
+  "key": "f91",
+  "label": "Цена за посещение",
+  "kind": "line",
+  "cls": "abo__perv",
+  "orig": "500&nbsp;₽ за&nbsp;посещение",
+  "section": "prices"
+ },
+ {
+  "key": "f89",
+  "label": "Срок абонемента",
+  "kind": "line",
+  "cls": "abo__period",
+  "orig": "12 месяцев",
+  "section": "prices"
+ },
+ {
+  "key": "f86",
+  "label": "Цена абонемента",
+  "kind": "rich",
+  "cls": "abo__price",
+  "orig": "16 000<span class=\"cur\">₽</span>",
+  "section": "prices"
+ },
+ {
+  "key": "f92",
+  "label": "Цена за посещение",
+  "kind": "line",
+  "cls": "abo__perv",
+  "orig": "400&nbsp;₽ за&nbsp;посещение",
+  "section": "prices"
+ },
+ {
+  "key": "f93",
+  "label": "Примечание",
+  "kind": "text",
+  "cls": "abo__note",
+  "orig": "* Не более 5 посещений за&nbsp;один раз. Абонемент привязан к&nbsp;одному ребёнку.",
+  "section": "prices"
+ },
+ {
+  "key": "f11",
+  "label": "Заголовок раздела",
+  "kind": "rich",
+  "cls": "sect__title",
+  "orig": "Нам доверяют<br><em>главное</em>",
+  "section": "reviews"
+ },
+ {
+  "key": "f21",
+  "label": "Описание раздела",
+  "kind": "text",
+  "cls": "sect__sub",
+  "orig": "★ 4.9 на&nbsp;Google&nbsp;Maps, Яндекс.Картах и&nbsp;2ГИС. Больше 600&nbsp;отзывов от&nbsp;родителей.",
+  "section": "reviews"
+ },
+ {
+  "key": "f94",
+  "label": "Текст отзыва",
+  "kind": "text",
+  "cls": "review__text",
+  "orig": "«Отмечали 5-летие сына — пакет „Звёздный\". Аниматоры огонь, дети не&nbsp;вылезали из&nbsp;игровой, а&nbsp;мы спокойно поели в&nbsp;„Иль Патио\". Цена адекватная.»",
+  "section": "reviews"
+ },
+ {
+  "key": "f100",
+  "label": "Имя автора отзыва",
+  "kind": "line",
+  "cls": "review__name",
+  "orig": "Марьям К.",
+  "section": "reviews"
+ },
+ {
+  "key": "f95",
+  "label": "Текст отзыва",
+  "kind": "text",
+  "cls": "review__text",
+  "orig": "«Ходим раз в&nbsp;неделю с&nbsp;двумя детьми (3 и&nbsp;8 лет). Каждому — своя зона. Огромный плюс: ресторан с&nbsp;нормальной едой, не&nbsp;фастфудом.»",
+  "section": "reviews"
+ },
+ {
+  "key": "f101",
+  "label": "Имя автора отзыва",
+  "kind": "line",
+  "cls": "review__name",
+  "orig": "Айгуль Т.",
+  "section": "reviews"
+ },
+ {
+  "key": "f96",
+  "label": "Текст отзыва",
+  "kind": "text",
+  "cls": "review__text",
+  "orig": "«Дочке очень понравился слайм-LAB — сделали втроём, забрали с&nbsp;собой. Уютная атмосфера, дружелюбный персонал. Рекомендую.»",
+  "section": "reviews"
+ },
+ {
+  "key": "f102",
+  "label": "Имя автора отзыва",
+  "kind": "line",
+  "cls": "review__name",
+  "orig": "Рустам А.",
+  "section": "reviews"
+ },
+ {
+  "key": "f97",
+  "label": "Текст отзыва",
+  "kind": "text",
+  "cls": "review__text",
+  "orig": "«Полгода ходим. Дети безопасны, всё под&nbsp;камерами, аниматоры внимательные. Любой каприз превращают в&nbsp;игру.»",
+  "section": "reviews"
+ },
+ {
+  "key": "f103",
+  "label": "Имя автора отзыва",
+  "kind": "line",
+  "cls": "review__name",
+  "orig": "Зарина М.",
+  "section": "reviews"
+ },
+ {
+  "key": "f98",
+  "label": "Текст отзыва",
+  "kind": "text",
+  "cls": "review__text",
+  "orig": "«Брали „Премиум\" на&nbsp;7-летие — грандиозно. 2&nbsp;аниматора, фотограф, шоу мыльных пузырей, торт. Дети в&nbsp;восторге, мы&nbsp;спокойны.»",
+  "section": "reviews"
+ },
+ {
+  "key": "f104",
+  "label": "Имя автора отзыва",
+  "kind": "line",
+  "cls": "review__name",
+  "orig": "Аминат А.",
+  "section": "reviews"
+ },
+ {
+  "key": "f99",
+  "label": "Текст отзыва",
+  "kind": "text",
+  "cls": "review__text",
+  "orig": "«Сын в&nbsp;восторге от&nbsp;батутов и&nbsp;VR. Удобно — я&nbsp;работаю с&nbsp;ноутбуком в&nbsp;кафе, пока он&nbsp;играет. Wi-Fi нормальный, кофе LavAzza отличный.»",
+  "section": "reviews"
+ },
+ {
+  "key": "f105",
+  "label": "Имя автора отзыва",
+  "kind": "line",
+  "cls": "review__name",
+  "orig": "Иса Г.",
+  "section": "reviews"
+ },
+ {
+  "key": "f106",
+  "label": "Вопрос",
+  "kind": "line",
+  "cls": "summary",
+  "orig": "Сколько стоит билет?",
+  "section": "cta"
+ },
+ {
+  "key": "f113",
+  "label": "Ответ",
+  "kind": "rich",
+  "cls": "faq__answer",
+  "orig": "У&nbsp;нас два парка. <b>Малый парк</b> (до 5&nbsp;лет): от&nbsp;400&nbsp;₽ в&nbsp;будни до&nbsp;600&nbsp;₽ в&nbsp;выходные. <b>Большой парк</b> (5–12&nbsp;лет): от&nbsp;650&nbsp;₽ до&nbsp;1&nbsp;200&nbsp;₽. Для&nbsp;семей с&nbsp;3+&nbsp;детьми — особая цена за&nbsp;каждого. Точный прайс — в&nbsp;разделе «Цены».",
+  "section": "cta"
+ },
+ {
+  "key": "f107",
+  "label": "Вопрос",
+  "kind": "line",
+  "cls": "summary",
+  "orig": "Какие есть абонементы?",
+  "section": "cta"
+ },
+ {
+  "key": "f114",
+  "label": "Ответ",
+  "kind": "rich",
+  "cls": "faq__answer",
+  "orig": "Три варианта: <b>8&nbsp;посещений</b> за&nbsp;4&nbsp;800&nbsp;₽ (на&nbsp;2&nbsp;месяца), <b>20&nbsp;посещений</b> за&nbsp;10&nbsp;000&nbsp;₽ (на&nbsp;6&nbsp;месяцев), <b>40&nbsp;посещений</b> за&nbsp;16&nbsp;000&nbsp;₽ (на&nbsp;12&nbsp;месяцев). Оформляется в&nbsp;центре при&nbsp;первом визите. Не&nbsp;более 5&nbsp;посещений за&nbsp;раз, абонемент привязан к&nbsp;одному ребёнку.",
+  "section": "cta"
+ },
+ {
+  "key": "f108",
+  "label": "Вопрос",
+  "kind": "line",
+  "cls": "summary",
+  "orig": "С какого возраста можно прийти?",
+  "section": "cta"
+ },
+ {
+  "key": "f115",
+  "label": "Ответ",
+  "kind": "rich",
+  "cls": "faq__answer",
+  "orig": "С&nbsp;любого. <b>Малый парк</b> — для&nbsp;детей до&nbsp;5&nbsp;лет: мягкая сенсорная зона, развивающие модули, тёплый пол. <b>Большой парк</b> — для&nbsp;5–12&nbsp;лет: батуты, аэрохоккей, лабиринт, VR-зона и&nbsp;спорт.",
+  "section": "cta"
+ },
+ {
+  "key": "f109",
+  "label": "Вопрос",
+  "kind": "line",
+  "cls": "summary",
+  "orig": "Как заказать день рождения?",
+  "section": "cta"
+ },
+ {
+  "key": "f116",
+  "label": "Ответ",
+  "kind": "rich",
+  "cls": "faq__answer",
+  "orig": "Оставьте заявку в&nbsp;форме справа или позвоните <a href=\"tel:+79882938008\" style=\"color:var(--pink);font-weight:700;\">+7&nbsp;988&nbsp;293&nbsp;80&nbsp;08</a>&nbsp;— менеджер свяжется за&nbsp;15&nbsp;минут. Можем добавить аниматора, мастер-класс или фотографа.",
+  "section": "cta"
+ },
+ {
+  "key": "f110",
+  "label": "Вопрос",
+  "kind": "line",
+  "cls": "summary",
+  "orig": "Что есть для взрослых?",
+  "section": "cta"
+ },
+ {
+  "key": "f117",
+  "label": "Ответ",
+  "kind": "rich",
+  "cls": "faq__answer",
+  "orig": "На&nbsp;территории работает итальянский ресторан <b>«Иль&nbsp;Патио»</b> — паста ручной работы, кофе LavAzza. Можно наблюдать за&nbsp;игровой зоной. Wi-Fi бесплатный.",
+  "section": "cta"
+ },
+ {
+  "key": "f111",
+  "label": "Вопрос",
+  "kind": "line",
+  "cls": "summary",
+  "orig": "Где вы находитесь и&nbsp;как добраться?",
+  "section": "cta"
+ },
+ {
+  "key": "f118",
+  "label": "Ответ",
+  "kind": "rich",
+  "cls": "faq__answer",
+  "orig": "Махачкала, проспект Гамидова, 61. ТРЦ&nbsp;«Этажи», 4&nbsp;этаж. Удобный заезд с&nbsp;Гамидова, парковка на&nbsp;200&nbsp;мест. Работаем ежедневно с&nbsp;10:00 до&nbsp;22:00.",
+  "section": "cta"
+ },
+ {
+  "key": "f112",
+  "label": "Вопрос",
+  "kind": "line",
+  "cls": "summary",
+  "orig": "Нужна ли сменная обувь?",
+  "section": "cta"
+ },
+ {
+  "key": "f119",
+  "label": "Ответ",
+  "kind": "rich",
+  "cls": "faq__answer",
+  "orig": "В&nbsp;игровых зонах дети играют в&nbsp;носочках — так чище и&nbsp;безопаснее на&nbsp;мягких покрытиях. В&nbsp;ресторане «Иль&nbsp;Патио» — в&nbsp;своей обуви.",
+  "section": "cta"
+ },
+ {
+  "key": "f120",
+  "label": "Заголовок формы",
+  "kind": "rich",
+  "cls": "cta__title",
+  "orig": "Запишитесь —<br>перезвоним",
+  "section": "cta"
+ },
+ {
+  "key": "f121",
+  "label": "Текст формы",
+  "kind": "text",
+  "cls": "cta__sub",
+  "orig": "Подбор тарифа, бронь праздника, любые вопросы. Оставьте контакт — администратор свяжется в&nbsp;течение 15&nbsp;минут.",
+  "section": "cta"
+ },
+ {
+  "key": "f12",
+  "label": "Заголовок раздела",
+  "kind": "rich",
+  "cls": "sect__title",
+  "orig": "Правила <em>посещения</em><br>центра",
+  "section": "rules"
+ },
+ {
+  "key": "f22",
+  "label": "Описание раздела",
+  "kind": "text",
+  "cls": "sect__sub",
+  "orig": "Ознакомьтесь, пожалуйста, перед визитом. Правила созданы для&nbsp;комфорта и&nbsp;безопасности всех гостей.",
+  "section": "rules"
+ },
+ {
+  "key": "f13",
+  "label": "Заголовок раздела",
+  "kind": "rich",
+  "cls": "sect__title",
+  "orig": "Найти нас<br><em>в&nbsp;Махачкале</em>",
+  "section": "contacts"
+ },
+ {
+  "key": "f23",
+  "label": "Описание раздела",
+  "kind": "text",
+  "cls": "sect__sub",
+  "orig": "ТРЦ «Этажи», 4&nbsp;этаж. Удобный заезд с&nbsp;проспекта Гамидова. Парковка на&nbsp;200&nbsp;мест.",
+  "section": "contacts"
+ },
+ {
+  "key": "f122",
+  "label": "Заголовок контактов",
+  "kind": "rich",
+  "cls": "contacts__title",
+  "orig": "Свяжитесь",
+  "section": "contacts"
+ },
+ {
+  "key": "i37",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/cat-mascot.png",
+  "section": "contacts"
+ },
+ {
+  "key": "f123",
+  "label": "Текст в подвале",
+  "kind": "text",
+  "cls": "foot__tag",
+  "orig": "Развлекательный центр для&nbsp;всей семьи в&nbsp;Махачкале. Игры, праздники и&nbsp;ресторан «Иль&nbsp;Патио» — место, куда хочется возвращаться.",
+  "section": "contacts"
+ },
+ {
+  "key": "i38",
+  "label": "Мастер-класс в MEOW",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/meow/m12.jpg",
+  "section": "promo"
+ },
+ {
+  "key": "f124",
+  "label": "Плашка поп-апа",
+  "kind": "line",
+  "cls": "promo__eyebrow",
+  "orig": "Запишитесь за&nbsp;минуту",
+  "section": "promo"
+ },
+ {
+  "key": "f125",
+  "label": "Заголовок поп-апа",
+  "kind": "rich",
+  "cls": "promo__title",
+  "orig": "Перезвоним<br><em>за&nbsp;15&nbsp;минут</em>",
+  "section": "promo"
+ },
+ {
+  "key": "f126",
+  "label": "Текст поп-апа",
+  "kind": "text",
+  "cls": "promo__desc",
+  "orig": "Оставьте имя и&nbsp;номер — администратор подберёт время, расскажет про&nbsp;абонементы и&nbsp;забронирует праздник.",
+  "section": "promo"
+ },
+ {
+  "key": "i1",
+  "label": "MEOW",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/cat-mascot.png",
+  "section": ""
+ },
+ {
+  "key": "i2",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/cat-mascot.png",
+  "section": ""
+ }
+]

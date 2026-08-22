@@ -1,11 +1,14 @@
 <?php
-/* Админка МЯУ: расписание, настройки, журнал заявок. */
+/* Админка МЯУ: расписание, тексты, фото, заявки. */
 declare(strict_types=1);
-require '/var/www/u3618984/data/www/meow-mkh.ru/api/_boot.php';
+require '/var/www/u3618984/data/www/meow-mkh.ru/api/render.php';
+
+const SITE_DIR   = '/var/www/u3618984/data/www/meow-mkh.ru';
+const UPLOAD_DIR = SITE_DIR . '/photos/uploads';
+const SECTIONS   = '/var/www/u3618984/data/config/cms-sections.json';
 
 ini_set('session.cookie_httponly', '1');
 ini_set('session.cookie_samesite', 'Lax');
-/* Apache отдаёт HTTPS="off" на обычном соединении — !empty() тут не годится. */
 $https = (isset($_SERVER['HTTPS']) && strtolower((string)$_SERVER['HTTPS']) !== 'off' && $_SERVER['HTTPS'] !== '')
       || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https')
       || ((int)($_SERVER['SERVER_PORT'] ?? 0) === 443);
@@ -14,9 +17,9 @@ session_name('meowadm');
 session_start();
 
 function h(?string $s): string { return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8'); }
-function back(string $msg = '', string $tab = 'events'): never {
+function back(string $msg = '', string $tab = 'content', string $extra = ''): never {
     $_SESSION['flash'] = $msg;
-    header('Location: ?tab=' . urlencode($tab));
+    header('Location: ?tab=' . urlencode($tab) . $extra);
     exit;
 }
 function csrf(): string {
@@ -25,94 +28,141 @@ function csrf(): string {
 }
 function check_csrf(): void {
     if (!hash_equals($_SESSION['csrf'] ?? '', (string)($_POST['csrf'] ?? ''))) {
-        http_response_code(400); exit('Сессия устарела, обновите страницу');
+        http_response_code(400); exit('Страница устарела. Обновите её и попробуйте снова.');
     }
 }
+function sections(): array {
+    static $s = null;
+    if ($s === null) $s = json_decode((string)file_get_contents(SECTIONS), true) ?: [];
+    return $s;
+}
+/** Снимок текущего состояния текстов — чтобы можно было вернуть назад. */
+function snapshot(string $note): void {
+    $cur = [];
+    foreach (db()->query('SELECT k, v FROM content') as $r) $cur[$r['k']] = $r['v'];
+    db()->prepare('INSERT INTO revisions (created_at, note, data) VALUES (?, ?, ?)')
+        ->execute([date('d.m.Y H:i'), $note, json_encode($cur, JSON_UNESCAPED_UNICODE)]);
+    db()->exec('DELETE FROM revisions WHERE id NOT IN (SELECT id FROM revisions ORDER BY id DESC LIMIT 20)');
+}
+/** Текущее значение поля: правка либо то, что в шаблоне. */
+function value_of(array $f, array $ov): string {
+    if (isset($ov[$f['key']]) && $ov[$f['key']] !== '') return $ov[$f['key']];
+    return $f['kind'] === 'image' ? $f['orig'] : cms_to_text($f['orig']);
+}
 
-/* ---------- вход / выход ---------- */
+/* ---------- вход ---------- */
 if (isset($_GET['logout'])) { session_destroy(); header('Location: ?'); exit; }
-
 $err = '';
 if (($_POST['do'] ?? '') === 'login') {
-    $u = (string)($_POST['user'] ?? '');
-    $p = (string)($_POST['pass'] ?? '');
-    /* Пауза против перебора. */
     usleep(300000);
-    if (hash_equals(cfg()['admin_user'], $u) && password_verify($p, cfg()['admin_hash'])) {
+    if (hash_equals(cfg()['admin_user'], (string)($_POST['user'] ?? ''))
+        && password_verify((string)($_POST['pass'] ?? ''), cfg()['admin_hash'])) {
         session_regenerate_id(true);
         $_SESSION['auth'] = true;
-    } else {
-        $err = 'Неверный логин или пароль';
-    }
+    } else { $err = 'Неверный логин или пароль'; }
 }
-
-if (empty($_SESSION['auth'])) {
-    ?><!doctype html><html lang="ru"><head><meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="robots" content="noindex,nofollow">
-    <title>Вход — админка МЯУ</title><style>
-    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;
-    background:#12121a;color:#fff;font:16px/1.5 -apple-system,Segoe UI,Roboto,sans-serif}
-    form{background:#1c1c28;padding:32px;border-radius:16px;width:min(360px,92vw)}
-    h1{margin:0 0 24px;font-size:20px}
-    label{display:block;font-size:13px;opacity:.7;margin:14px 0 6px}
-    input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid #33334a;
-    background:#12121a;color:#fff;font-size:16px}
-    button{width:100%;margin-top:22px;padding:13px;border:0;border-radius:10px;
-    background:#ffd400;color:#12121a;font-weight:700;font-size:15px;cursor:pointer}
-    .err{margin-top:16px;color:#ff6b8a;font-size:14px}</style></head><body>
-    <form method="post"><h1>Админка МЯУ</h1>
-    <input type="hidden" name="do" value="login">
-    <label>Логин</label><input name="user" autocomplete="username" autofocus>
-    <label>Пароль</label><input name="pass" type="password" autocomplete="current-password">
-    <button>Войти</button>
-    <?php if ($err) echo '<div class="err">' . h($err) . '</div>'; ?>
-    </form></body></html><?php
-    exit;
-}
+if (empty($_SESSION['auth'])) { $GLOBALS['login_err'] = $err; require __DIR__ . '/_login.php'; exit; }
 
 /* ---------- действия ---------- */
 $act = $_POST['do'] ?? '';
 if ($act !== '' && $act !== 'login') {
     check_csrf();
+
+    if ($act === 'save_content') {
+        $fields = [];
+        foreach (cms_fields() as $f) $fields[$f['key']] = $f;
+        $posted  = (array)($_POST['f'] ?? []);
+        $changed = 0;
+        $pending = [];
+        foreach ($posted as $k => $v) {
+            if (!isset($fields[$k])) continue;
+            $v    = trim((string)$v);
+            $orig = cms_to_text($fields[$k]['orig']);
+            $cur  = db()->prepare('SELECT v FROM content WHERE k = ?');
+            $cur->execute([$k]);
+            $now  = (string)($cur->fetchColumn() ?: $orig);
+            if ($v === $now) continue;
+            $pending[$k] = ($v === '' || $v === $orig) ? null : $v;
+            $changed++;
+        }
+        if ($changed) {
+            snapshot('правка текстов');
+            $del = db()->prepare('DELETE FROM content WHERE k = ?');
+            $set = db()->prepare('INSERT INTO content (k, v) VALUES (?, ?)
+                                  ON CONFLICT(k) DO UPDATE SET v = excluded.v');
+            foreach ($pending as $k => $v) { $v === null ? $del->execute([$k]) : $set->execute([$k, $v]); }
+            $r = cms_render();
+            back($r['ok'] ? "Сохранено. Изменено полей: {$changed}. Сайт обновлён."
+                          : 'Ошибка сборки страницы: ' . ($r['error'] ?? '?'),
+                 'content', '&s=' . urlencode((string)($_POST['sec'] ?? '')));
+        }
+        back('Ничего не изменилось', 'content', '&s=' . urlencode((string)($_POST['sec'] ?? '')));
+    }
+
+    if ($act === 'undo') {
+        $rev = db()->query('SELECT * FROM revisions ORDER BY id DESC LIMIT 1')->fetch();
+        if (!$rev) back('Возвращать нечего — правок ещё не было', 'content');
+        $data = json_decode($rev['data'], true) ?: [];
+        db()->exec('DELETE FROM content');
+        $ins = db()->prepare('INSERT INTO content (k, v) VALUES (?, ?)');
+        foreach ($data as $k => $v) $ins->execute([$k, $v]);
+        db()->prepare('DELETE FROM revisions WHERE id = ?')->execute([$rev['id']]);
+        cms_render();
+        back('Вернул как было в ' . $rev['created_at'], 'content');
+    }
+
+    if ($act === 'reset_all') {
+        snapshot('сброс всех правок');
+        db()->exec('DELETE FROM content');
+        cms_render();
+        back('Все тексты и фото вернулись к исходным', 'content');
+    }
+
+    if ($act === 'upload') {
+        $key = (string)($_POST['key'] ?? '');
+        $file = $_FILES['photo'] ?? null;
+        if (!$file || $file['error'] !== UPLOAD_ERR_OK) back('Файл не загрузился', 'photos');
+        if ($file['size'] > 8 * 1024 * 1024) back('Файл больше 8 МБ — уменьшите его', 'photos');
+        $info = @getimagesize($file['tmp_name']);
+        $ext  = ['image/jpeg' => 'jpg', 'image/png' => 'png', 'image/webp' => 'webp'][$info['mime'] ?? ''] ?? null;
+        if (!$ext) back('Подходят только JPG, PNG и WEBP', 'photos');
+        if (!is_dir(UPLOAD_DIR)) mkdir(UPLOAD_DIR, 0755, true);
+        $name = $key . '-' . substr(bin2hex(random_bytes(4)), 0, 6) . '.' . $ext;
+        if (!move_uploaded_file($file['tmp_name'], UPLOAD_DIR . '/' . $name)) back('Не смог сохранить файл', 'photos');
+        snapshot('замена фото');
+        db()->prepare('INSERT INTO content (k, v) VALUES (?, ?)
+                       ON CONFLICT(k) DO UPDATE SET v = excluded.v')
+            ->execute([$key, 'photos/uploads/' . $name]);
+        cms_render();
+        back('Фото заменено, сайт обновлён', 'photos');
+    }
+
+    /* ---- расписание ---- */
     if ($act === 'save') {
-        $id    = (int)($_POST['id'] ?? 0);
         $title = trim((string)$_POST['title']);
-        if ($title === '') back('Название не может быть пустым');
-        $args = [
-            $title,
-            trim((string)($_POST['subtitle'] ?? '')),
-            in_array($_POST['kind'] ?? '', ['weekly', 'special'], true) ? $_POST['kind'] : 'weekly',
-            trim((string)$_POST['when_text']),
-            trim((string)$_POST['age']),
-            trim((string)$_POST['note']),
-            (int)($_POST['sort'] ?? 0),
-            isset($_POST['active']) ? 1 : 0,
-        ];
+        if ($title === '') back('Название не может быть пустым', 'events');
+        $args = [$title, trim((string)($_POST['subtitle'] ?? '')),
+                 in_array($_POST['kind'] ?? '', ['weekly','special'], true) ? $_POST['kind'] : 'weekly',
+                 trim((string)$_POST['when_text']), trim((string)$_POST['age']),
+                 trim((string)$_POST['note']), (int)($_POST['sort'] ?? 0),
+                 isset($_POST['active']) ? 1 : 0];
+        $id = (int)($_POST['id'] ?? 0);
         if ($id > 0) {
             $args[] = $id;
-            db()->prepare('UPDATE events SET title=?,subtitle=?,kind=?,when_text=?,age=?,note=?,sort=?,active=?
-                           WHERE id=?')->execute($args);
-            back('Событие обновлено');
+            db()->prepare('UPDATE events SET title=?,subtitle=?,kind=?,when_text=?,age=?,note=?,sort=?,active=? WHERE id=?')->execute($args);
+            back('Событие обновлено', 'events');
         }
-        db()->prepare('INSERT INTO events (title,subtitle,kind,when_text,age,note,sort,active)
-                       VALUES (?,?,?,?,?,?,?,?)')->execute($args);
-        back('Событие добавлено');
+        db()->prepare('INSERT INTO events (title,subtitle,kind,when_text,age,note,sort,active) VALUES (?,?,?,?,?,?,?,?)')->execute($args);
+        back('Событие добавлено', 'events');
     }
-    if ($act === 'toggle') {
-        db()->prepare('UPDATE events SET active = 1 - active WHERE id = ?')->execute([(int)$_POST['id']]);
-        back('Показ переключён');
-    }
-    if ($act === 'delete') {
-        db()->prepare('DELETE FROM events WHERE id = ?')->execute([(int)$_POST['id']]);
-        back('Событие удалено');
-    }
+    if ($act === 'toggle') { db()->prepare('UPDATE events SET active = 1 - active WHERE id = ?')->execute([(int)$_POST['id']]); back('Готово', 'events'); }
+    if ($act === 'delete') { db()->prepare('DELETE FROM events WHERE id = ?')->execute([(int)$_POST['id']]); back('Событие удалено', 'events'); }
     if ($act === 'move') {
-        $id  = (int)$_POST['id'];
-        $dir = $_POST['dir'] === 'up' ? -1 : 1;
-        $cur = db()->query('SELECT id, sort FROM events ORDER BY sort, id')->fetchAll();
+        $id = (int)$_POST['id']; $dir = $_POST['dir'] === 'up' ? -1 : 1;
+        $cur = db()->query('SELECT id FROM events ORDER BY sort, id')->fetchAll();
+        $pos = null;
         foreach ($cur as $i => $r) if ((int)$r['id'] === $id) $pos = $i;
-        if (isset($pos)) {
+        if ($pos !== null) {
             $new = $pos + $dir;
             if ($new >= 0 && $new < count($cur)) {
                 [$cur[$pos], $cur[$new]] = [$cur[$new], $cur[$pos]];
@@ -120,196 +170,13 @@ if ($act !== '' && $act !== 'login') {
                 foreach ($cur as $i => $r) $up->execute([$i, $r['id']]);
             }
         }
-        back('Порядок изменён');
-    }
-    if ($act === 'settings') {
-        set_setting('chat_id',  trim((string)$_POST['chat_id']));
-        set_setting('whatsapp', preg_replace('/\D+/', '', (string)$_POST['whatsapp']));
-        back('Настройки сохранены', 'settings');
-    }
-    if ($act === 'testtg') {
-        $r = tg_send('✅ Проверка связи из админки МЯУ. Заявки будут приходить сюда.');
-        back(!empty($r['ok']) ? 'Тестовое сообщение отправлено' :
-            'Не отправилось: ' . ($r['description'] ?? $r['error'] ?? 'неизвестная ошибка'), 'settings');
+        back('Порядок изменён', 'events');
     }
 }
 
-$tab    = $_GET['tab'] ?? 'events';
-$flash  = $_SESSION['flash'] ?? '';
-unset($_SESSION['flash']);
-$events = db()->query('SELECT * FROM events ORDER BY sort, id')->fetchAll();
-$edit   = null;
-if (isset($_GET['edit'])) {
-    $s = db()->prepare('SELECT * FROM events WHERE id = ?');
-    $s->execute([(int)$_GET['edit']]);
-    $edit = $s->fetch() ?: null;
-}
-?><!doctype html><html lang="ru"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>Админка МЯУ</title><style>
-*{box-sizing:border-box}
-body{margin:0;background:#12121a;color:#e9e9f2;font:15px/1.55 -apple-system,Segoe UI,Roboto,sans-serif}
-.wrap{max-width:920px;margin:0 auto;padding:24px 16px 64px}
-header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px}
-h1{font-size:20px;margin:0}
-a{color:inherit}
-.tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
-.tabs a{padding:8px 16px;border-radius:999px;background:#1c1c28;text-decoration:none;font-size:14px}
-.tabs a.on{background:#ffd400;color:#12121a;font-weight:700}
-.card{background:#1c1c28;border-radius:14px;padding:18px;margin-bottom:14px}
-.flash{background:#1d3a2a;border:1px solid #2f6a49;padding:12px 16px;border-radius:10px;margin-bottom:18px}
-table{width:100%;border-collapse:collapse}
-td,th{padding:11px 8px;text-align:left;border-bottom:1px solid #2a2a3c;vertical-align:top;font-size:14px}
-th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;opacity:.55;font-weight:600}
-.off{opacity:.4}
-.tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700}
-.tag.w{background:#28407a;color:#bcd0ff}
-.tag.s{background:#7a2848;color:#ffc0d4}
-label{display:block;font-size:12px;opacity:.65;margin:12px 0 5px}
-input[type=text],input[type=number],select,textarea{width:100%;padding:10px 12px;border-radius:9px;
-border:1px solid #33334a;background:#12121a;color:#fff;font-size:15px;font-family:inherit}
-textarea{min-height:64px;resize:vertical}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-button{padding:10px 16px;border:0;border-radius:9px;background:#ffd400;color:#12121a;
-font-weight:700;font-size:14px;cursor:pointer}
-button.ghost{background:#2a2a3c;color:#e9e9f2}
-button.danger{background:#4a1d2a;color:#ff9db3}
-.acts{display:flex;gap:6px;flex-wrap:wrap}
-.acts form{display:inline}
-.acts button{padding:6px 11px;font-size:13px}
-.hint{font-size:13px;opacity:.6;margin-top:8px}
-@media(max-width:640px){.row{grid-template-columns:1fr}
- table,thead,tbody,th,td,tr{display:block}
- thead{display:none}
- tr{border-bottom:1px solid #2a2a3c;padding:10px 0}
- td{border:0;padding:4px 0}}
-</style></head><body><div class="wrap">
-<header><h1>🐱 Админка МЯУ</h1><a href="?logout=1">Выйти</a></header>
-<div class="tabs">
-  <a href="?tab=events"   class="<?= $tab === 'events'   ? 'on' : '' ?>">Расписание</a>
-  <a href="?tab=leads"    class="<?= $tab === 'leads'    ? 'on' : '' ?>">Заявки</a>
-  <a href="?tab=settings" class="<?= $tab === 'settings' ? 'on' : '' ?>">Настройки</a>
-</div>
-<?php if ($flash): ?><div class="flash"><?= h($flash) ?></div><?php endif; ?>
-
-<?php if ($tab === 'events'): ?>
-  <div class="card">
-    <b><?= $edit ? 'Изменить событие' : 'Новое событие' ?></b>
-    <form method="post">
-      <input type="hidden" name="csrf" value="<?= csrf() ?>">
-      <input type="hidden" name="do" value="save">
-      <input type="hidden" name="id" value="<?= (int)($edit['id'] ?? 0) ?>">
-      <label>Название события (тема)</label>
-      <input type="text" name="title" value="<?= h($edit['title'] ?? '') ?>"
-             placeholder="Лапка-табалапка" required>
-      <label>Что это (тип)</label>
-      <input type="text" name="subtitle" value="<?= h($edit['subtitle'] ?? '') ?>"
-             placeholder="Мастер-класс">
-      <div class="row">
-        <div><label>Когда</label>
-          <input type="text" name="when_text" placeholder="Каждую пятницу и субботу"
-                 value="<?= h($edit['when_text'] ?? '') ?>"></div>
-        <div><label>Возраст</label>
-          <input type="text" name="age" placeholder="3+" value="<?= h($edit['age'] ?? '') ?>"></div>
-      </div>
-      <div class="row">
-        <div><label>Тип</label>
-          <select name="kind">
-            <option value="weekly"  <?= ($edit['kind'] ?? '') === 'weekly'  ? 'selected' : '' ?>>Постоянное</option>
-            <option value="special" <?= ($edit['kind'] ?? '') === 'special' ? 'selected' : '' ?>>Большое событие месяца</option>
-          </select></div>
-        <div><label>Порядок</label>
-          <input type="number" name="sort" value="<?= (int)($edit['sort'] ?? count($events)) ?>"></div>
-      </div>
-      <label>Описание (необязательно)</label>
-      <textarea name="note"><?= h($edit['note'] ?? '') ?></textarea>
-      <label style="display:flex;gap:8px;align-items:center;margin-top:14px">
-        <input type="checkbox" name="active" style="width:auto"
-               <?= (!$edit || $edit['active']) ? 'checked' : '' ?>> Показывать на сайте
-      </label>
-      <div style="margin-top:16px" class="acts">
-        <button><?= $edit ? 'Сохранить' : 'Добавить' ?></button>
-        <?php if ($edit): ?><a href="?tab=events"><button type="button" class="ghost">Отмена</button></a><?php endif; ?>
-      </div>
-    </form>
-  </div>
-
-  <div class="card">
-    <table><thead><tr><th>Событие</th><th>Когда</th><th>Возраст</th><th></th></tr></thead><tbody>
-    <?php foreach ($events as $e): ?>
-      <tr class="<?= $e['active'] ? '' : 'off' ?>">
-        <td><b><?= h($e['title']) ?></b>
-          <span class="tag <?= $e['kind'] === 'special' ? 's' : 'w' ?>">
-            <?= $e['kind'] === 'special' ? 'событие месяца' : 'постоянное' ?></span>
-          <?php if ($e['subtitle']): ?><div class="hint"><?= h($e['subtitle']) ?></div><?php endif; ?>
-          <?php if (!$e['active']): ?> <span class="tag" style="background:#3a3a4c">скрыто</span><?php endif; ?>
-          <?php if ($e['note']): ?><div class="hint"><?= h($e['note']) ?></div><?php endif; ?></td>
-        <td><?= h($e['when_text']) ?></td>
-        <td><?= h($e['age']) ?></td>
-        <td><div class="acts">
-          <a href="?tab=events&edit=<?= (int)$e['id'] ?>"><button type="button" class="ghost">Изменить</button></a>
-          <form method="post"><input type="hidden" name="csrf" value="<?= csrf() ?>">
-            <input type="hidden" name="do" value="toggle"><input type="hidden" name="id" value="<?= (int)$e['id'] ?>">
-            <button class="ghost"><?= $e['active'] ? 'Скрыть' : 'Показать' ?></button></form>
-          <form method="post"><input type="hidden" name="csrf" value="<?= csrf() ?>">
-            <input type="hidden" name="do" value="move"><input type="hidden" name="dir" value="up">
-            <input type="hidden" name="id" value="<?= (int)$e['id'] ?>"><button class="ghost">↑</button></form>
-          <form method="post"><input type="hidden" name="csrf" value="<?= csrf() ?>">
-            <input type="hidden" name="do" value="move"><input type="hidden" name="dir" value="down">
-            <input type="hidden" name="id" value="<?= (int)$e['id'] ?>"><button class="ghost">↓</button></form>
-          <form method="post" onsubmit="return confirm('Удалить «<?= h($e['title']) ?>»?')">
-            <input type="hidden" name="csrf" value="<?= csrf() ?>">
-            <input type="hidden" name="do" value="delete"><input type="hidden" name="id" value="<?= (int)$e['id'] ?>">
-            <button class="danger">Удалить</button></form>
-        </div></td>
-      </tr>
-    <?php endforeach; ?>
-    <?php if (!$events): ?><tr><td colspan="4">Пока пусто — добавьте первое событие выше.</td></tr><?php endif; ?>
-    </tbody></table>
-  </div>
-
-<?php elseif ($tab === 'leads'):
-  $leads = db()->query('SELECT * FROM leads ORDER BY id DESC LIMIT 200')->fetchAll(); ?>
-  <div class="card">
-    <table><thead><tr><th>Когда</th><th>Имя</th><th>Телефон</th><th>Откуда</th><th>ТГ</th></tr></thead><tbody>
-    <?php foreach ($leads as $l): ?>
-      <tr><td><?= h($l['created_at']) ?></td><td><?= h($l['name']) ?></td>
-        <td><a href="tel:<?= h($l['phone']) ?>"><?= h($l['phone']) ?></a></td>
-        <td><?= h($l['source']) ?><?php if ($l['comment']): ?><div class="hint"><?= h($l['comment']) ?></div><?php endif; ?></td>
-        <td><?= $l['delivered'] ? '✅' : '—' ?></td></tr>
-    <?php endforeach; ?>
-    <?php if (!$leads): ?><tr><td colspan="5">Заявок пока нет.</td></tr><?php endif; ?>
-    </tbody></table>
-  </div>
-
-<?php else: ?>
-  <div class="card">
-    <b>Куда слать заявки</b>
-    <form method="post">
-      <input type="hidden" name="csrf" value="<?= csrf() ?>">
-      <input type="hidden" name="do" value="settings">
-      <label>Telegram chat_id</label>
-      <input type="text" name="chat_id" value="<?= h(setting('chat_id')) ?>" placeholder="например 123456789">
-      <div class="hint">Напишите боту @meowleadsbot команду /start, затем нажмите «Определить chat_id» ниже.</div>
-      <label>Номер WhatsApp для записи (только цифры)</label>
-      <input type="text" name="whatsapp" value="<?= h(setting('whatsapp', '79882938008')) ?>">
-      <div style="margin-top:16px"><button>Сохранить</button></div>
-    </form>
-  </div>
-  <div class="card">
-    <b>Проверка связи</b>
-    <div class="hint">Отправит тестовое сообщение в указанный чат.</div>
-    <form method="post" style="margin-top:12px">
-      <input type="hidden" name="csrf" value="<?= csrf() ?>">
-      <input type="hidden" name="do" value="testtg">
-      <button class="ghost">Отправить тест</button>
-    </form>
-  </div>
-  <div class="card">
-    <b>Определить chat_id</b>
-    <div class="hint">Сначала напишите боту /start в телеграме, потом откройте:
-      <a href="chatid.php" target="_blank">chatid.php</a></div>
-  </div>
-<?php endif; ?>
-</div></body></html>
+$tab   = $_GET['tab'] ?? 'content';
+$flash = $_SESSION['flash'] ?? ''; unset($_SESSION['flash']);
+$ov    = cms_overrides();
+$revCount = (int)db()->query('SELECT COUNT(*) FROM revisions')->fetchColumn();
+$changedCount = count($ov);
+require __DIR__ . '/_layout.php';
