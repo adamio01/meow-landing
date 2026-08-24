@@ -2,6 +2,7 @@
 
 # Big files (exceed GitHub's 100MB limit or just bloat)
 *.pdf
+!menu/*.pdf
 *.zip
 
 # OS / editor

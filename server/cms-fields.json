@@ -12,7 +12,7 @@
   "label": "Фото",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/cat-mascot.png",
+  "orig": "photos/w/cat-mascot.webp",
   "section": "hero"
  },
  {
@@ -44,7 +44,7 @@
   "label": "Игровые зоны",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m29.jpg",
+  "orig": "photos/w/m29.webp",
   "section": "hero"
  },
  {
@@ -68,7 +68,7 @@
   "label": "Сухой бассейн",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m05.jpg",
+  "orig": "photos/w/m05.webp",
   "section": "hero"
  },
  {
@@ -92,7 +92,7 @@
   "label": "Праздники",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m08.jpg",
+  "orig": "photos/w/m08.webp",
   "section": "hero"
  },
  {
@@ -116,7 +116,7 @@
   "label": "Эмоции",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m15.jpg",
+  "orig": "photos/w/m15.webp",
   "section": "hero"
  },
  {
@@ -140,7 +140,7 @@
   "label": "Иль Патио",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m24.jpg",
+  "orig": "photos/w/m24.webp",
   "section": "hero"
  },
  {
@@ -284,7 +284,7 @@
   "label": "Малый парк",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m02.jpg",
+  "orig": "photos/w/m02.webp",
   "section": "zones"
  },
  {
@@ -332,7 +332,7 @@
   "label": "Большой парк",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m22.jpg",
+  "orig": "photos/w/m22.webp",
   "section": "zones"
  },
  {
@@ -380,7 +380,7 @@
   "label": "Зона игровых аппаратов",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m25.jpg",
+  "orig": "photos/w/m25.webp",
   "section": "zones"
  },
  {
@@ -444,11 +444,11 @@
   "label": "Ресторан Иль Патио",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m01.jpg",
+  "orig": "photos/w/m01.webp",
   "section": "patio"
  },
  {
-  "key": "f164",
+  "key": "f166",
   "label": "Плашка на фото",
   "kind": "line",
   "cls": "patio__visual-tag",
@@ -476,7 +476,7 @@
   "label": "iL Патио 1993 — итальянский ресторан",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/IP_logo.png",
+  "orig": "photos/w/IP_logo.webp",
   "section": "patio"
  },
  {
@@ -512,78 +512,6 @@
   "section": "patio"
  },
  {
-  "key": "f172",
-  "label": "Подпись к тортам",
-  "kind": "line",
-  "cls": "cakes__caption",
-  "orig": "\n          <span class=\"line\" style=\"background:rgba(255,255,255,0.6)\"></span>\n          <span class=\"cap cap--white\" data-cms=\"f134\">Авторские торты от&nbsp;шеф-кондитера</span>\n        ",
-  "section": "patio"
- },
- {
-  "key": "f134",
-  "label": "Подпись раздела",
-  "kind": "line",
-  "cls": "cap",
-  "orig": "Авторские торты от&nbsp;шеф-кондитера",
-  "section": "patio"
- },
- {
-  "key": "f173",
-  "label": "Заголовок тортов",
-  "kind": "rich",
-  "cls": "cakes__title",
-  "orig": "Торт под&nbsp;<em>событие</em>&nbsp;— на&nbsp;заказ",
-  "section": "patio"
- },
- {
-  "key": "i14",
-  "label": "Авторский торт",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/cakes/cake01.jpg",
-  "section": "patio"
- },
- {
-  "key": "i15",
-  "label": "Авторский торт",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/cakes/cake02.jpg",
-  "section": "patio"
- },
- {
-  "key": "i16",
-  "label": "Авторский торт",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/cakes/cake03.jpg",
-  "section": "patio"
- },
- {
-  "key": "i17",
-  "label": "Авторский торт",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/cakes/cake04.jpg",
-  "section": "patio"
- },
- {
-  "key": "i18",
-  "label": "Авторский торт",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/cakes/cake05.jpg",
-  "section": "patio"
- },
- {
-  "key": "i19",
-  "label": "Авторский торт",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/cakes/cake06.jpg",
-  "section": "patio"
- },
- {
   "key": "f135",
   "label": "Подпись раздела",
   "kind": "line",
@@ -608,27 +536,11 @@
   "section": "gallery"
  },
  {
-  "key": "i20",
-  "label": "Фото",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/meow/m03.jpg",
-  "section": "gallery"
- },
- {
-  "key": "i21",
-  "label": "Фото",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/meow/m10.jpg",
-  "section": "gallery"
- },
- {
   "key": "i22",
   "label": "Фото",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m14.jpg",
+  "orig": "photos/w/m03.webp",
   "section": "gallery"
  },
  {
@@ -636,7 +548,7 @@
   "label": "Фото",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m16.jpg",
+  "orig": "photos/w/m10.webp",
   "section": "gallery"
  },
  {
@@ -644,7 +556,7 @@
   "label": "Фото",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m19.jpg",
+  "orig": "photos/w/m14.webp",
   "section": "gallery"
  },
  {
@@ -652,7 +564,7 @@
   "label": "Фото",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m04.jpg",
+  "orig": "photos/w/m16.webp",
   "section": "gallery"
  },
  {
@@ -660,7 +572,7 @@
   "label": "Фото",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m06.jpg",
+  "orig": "photos/w/m19.webp",
   "section": "gallery"
  },
  {
@@ -668,7 +580,7 @@
   "label": "Фото",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m09.jpg",
+  "orig": "photos/w/m04.webp",
   "section": "gallery"
  },
  {
@@ -676,7 +588,7 @@
   "label": "Фото",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m11.jpg",
+  "orig": "photos/w/m06.webp",
   "section": "gallery"
  },
  {
@@ -684,7 +596,7 @@
   "label": "Фото",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m13.jpg",
+  "orig": "photos/w/m09.webp",
   "section": "gallery"
  },
  {
@@ -692,7 +604,7 @@
   "label": "Фото",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m17.jpg",
+  "orig": "photos/w/m11.webp",
   "section": "gallery"
  },
  {
@@ -700,7 +612,7 @@
   "label": "Фото",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m26.jpg",
+  "orig": "photos/w/m13.webp",
   "section": "gallery"
  },
  {
@@ -708,7 +620,7 @@
   "label": "Фото",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m27.jpg",
+  "orig": "photos/w/m17.webp",
   "section": "gallery"
  },
  {
@@ -716,7 +628,7 @@
   "label": "Фото",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m28.jpg",
+  "orig": "photos/w/m26.webp",
   "section": "gallery"
  },
  {
@@ -724,7 +636,7 @@
   "label": "Фото",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m21.jpg",
+  "orig": "photos/w/m27.webp",
   "section": "gallery"
  },
  {
@@ -732,7 +644,23 @@
   "label": "Фото",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m23.jpg",
+  "orig": "photos/w/m28.webp",
+  "section": "gallery"
+ },
+ {
+  "key": "i36",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/w/m21.webp",
+  "section": "gallery"
+ },
+ {
+  "key": "i37",
+  "label": "Фото",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/w/m23.webp",
   "section": "gallery"
  },
  {
@@ -760,15 +688,15 @@
   "section": "party"
  },
  {
-  "key": "i36",
+  "key": "i38",
   "label": "Праздник",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m18.jpg",
+  "orig": "photos/w/m18.webp",
   "section": "party"
  },
  {
-  "key": "f165",
+  "key": "f167",
   "label": "Плашка на фото",
   "kind": "line",
   "cls": "party__visual-tag",
@@ -1088,7 +1016,7 @@
   "section": "prices"
  },
  {
-  "key": "f166",
+  "key": "f168",
   "label": "Пояснение к ценам",
   "kind": "line",
   "cls": "park__legend",
@@ -1168,7 +1096,7 @@
   "section": "prices"
  },
  {
-  "key": "f167",
+  "key": "f169",
   "label": "Пояснение к ценам",
   "kind": "line",
   "cls": "park__legend",
@@ -1192,7 +1120,7 @@
   "section": "prices"
  },
  {
-  "key": "f169",
+  "key": "f171",
   "label": "Число посещений",
   "kind": "rich",
   "cls": "abo__visits",
@@ -1224,7 +1152,7 @@
   "section": "prices"
  },
  {
-  "key": "f168",
+  "key": "f170",
   "label": "Плашка абонемента",
   "kind": "line",
   "cls": "abo__tag",
@@ -1232,7 +1160,7 @@
   "section": "prices"
  },
  {
-  "key": "f170",
+  "key": "f172",
   "label": "Число посещений",
   "kind": "rich",
   "cls": "abo__visits",
@@ -1264,7 +1192,7 @@
   "section": "prices"
  },
  {
-  "key": "f171",
+  "key": "f173",
   "label": "Число посещений",
   "kind": "rich",
   "cls": "abo__visits",
@@ -1568,7 +1496,7 @@
   "section": "cta"
  },
  {
-  "key": "f193",
+  "key": "f195",
   "label": "Мелкий текст под формой",
   "kind": "text",
   "cls": "cta__small",
@@ -1600,7 +1528,7 @@
   "section": "rules"
  },
  {
-  "key": "f174",
+  "key": "f176",
   "label": "Правило",
   "kind": "rich",
   "cls": "rule",
@@ -1608,7 +1536,7 @@
   "section": "rules"
  },
  {
-  "key": "f175",
+  "key": "f177",
   "label": "Правило",
   "kind": "rich",
   "cls": "rule",
@@ -1616,7 +1544,7 @@
   "section": "rules"
  },
  {
-  "key": "f176",
+  "key": "f178",
   "label": "Правило",
   "kind": "rich",
   "cls": "rule",
@@ -1624,7 +1552,7 @@
   "section": "rules"
  },
  {
-  "key": "f177",
+  "key": "f179",
   "label": "Правило",
   "kind": "rich",
   "cls": "rule",
@@ -1632,7 +1560,7 @@
   "section": "rules"
  },
  {
-  "key": "f178",
+  "key": "f180",
   "label": "Правило",
   "kind": "rich",
   "cls": "rule",
@@ -1640,7 +1568,7 @@
   "section": "rules"
  },
  {
-  "key": "f179",
+  "key": "f181",
   "label": "Правило",
   "kind": "rich",
   "cls": "rule",
@@ -1648,7 +1576,7 @@
   "section": "rules"
  },
  {
-  "key": "f180",
+  "key": "f182",
   "label": "Правило",
   "kind": "rich",
   "cls": "rule",
@@ -1656,7 +1584,7 @@
   "section": "rules"
  },
  {
-  "key": "f181",
+  "key": "f183",
   "label": "Правило",
   "kind": "rich",
   "cls": "rule",
@@ -1664,7 +1592,7 @@
   "section": "rules"
  },
  {
-  "key": "f182",
+  "key": "f184",
   "label": "Правило",
   "kind": "rich",
   "cls": "rule",
@@ -1704,7 +1632,7 @@
   "section": "contacts"
  },
  {
-  "key": "f183",
+  "key": "f185",
   "label": "Строка контактов",
   "kind": "rich",
   "cls": "contacts__row",
@@ -1712,7 +1640,7 @@
   "section": "contacts"
  },
  {
-  "key": "f184",
+  "key": "f186",
   "label": "Строка контактов",
   "kind": "rich",
   "cls": "contacts__row",
@@ -1720,7 +1648,7 @@
   "section": "contacts"
  },
  {
-  "key": "f185",
+  "key": "f187",
   "label": "Строка контактов",
   "kind": "rich",
   "cls": "contacts__row",
@@ -1728,7 +1656,7 @@
   "section": "contacts"
  },
  {
-  "key": "f186",
+  "key": "f188",
   "label": "Строка контактов",
   "kind": "rich",
   "cls": "contacts__row",
@@ -1736,15 +1664,15 @@
   "section": "contacts"
  },
  {
-  "key": "i37",
+  "key": "i39",
   "label": "Фото",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/cat-mascot.png",
+  "orig": "photos/w/cat-mascot.webp",
   "section": "contacts"
  },
  {
-  "key": "f188",
+  "key": "f190",
   "label": "Название в подвале",
   "kind": "line",
   "cls": "foot__name",
@@ -1760,7 +1688,7 @@
   "section": "contacts"
  },
  {
-  "key": "f189",
+  "key": "f191",
   "label": "Заголовок в подвале",
   "kind": "line",
   "cls": "h5",
@@ -1768,7 +1696,7 @@
   "section": "contacts"
  },
  {
-  "key": "f190",
+  "key": "f192",
   "label": "Заголовок в подвале",
   "kind": "line",
   "cls": "h5",
@@ -1776,11 +1704,11 @@
   "section": "contacts"
  },
  {
-  "key": "i38",
+  "key": "i40",
   "label": "Мастер-класс в MEOW",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/meow/m12.jpg",
+  "orig": "photos/w/m12.webp",
   "section": "promo"
  },
  {
@@ -1808,7 +1736,7 @@
   "section": "promo"
  },
  {
-  "key": "f192",
+  "key": "f194",
   "label": "Телефон в поп-апе",
   "kind": "line",
   "cls": "promo__tel",
@@ -1816,7 +1744,7 @@
   "section": "promo"
  },
  {
-  "key": "f191",
+  "key": "f193",
   "label": "Мелкий текст поп-апа",
   "kind": "text",
   "cls": "promo__small",
@@ -1828,11 +1756,11 @@
   "label": "MEOW",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/cat-mascot.png",
+  "orig": "photos/w/cat-mascot.webp",
   "section": ""
  },
  {
-  "key": "f187",
+  "key": "f189",
   "label": "Название в шапке",
   "kind": "line",
   "cls": "nav__brand-name",
@@ -1844,7 +1772,111 @@
   "label": "Фото",
   "kind": "image",
   "cls": "img",
-  "orig": "photos/cat-mascot.png",
+  "orig": "photos/w/cat-mascot.webp",
+  "section": ""
+ },
+ {
+  "key": "i14",
+  "label": "Обложка меню ресторана «Иль Патио»",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/w/menu-patio.webp",
+  "section": ""
+ },
+ {
+  "key": "f164",
+  "label": "Заголовок плашки на фото",
+  "kind": "line",
+  "cls": "h4",
+  "orig": "Иль Патио",
+  "section": ""
+ },
+ {
+  "key": "i15",
+  "label": "Обложка меню ресторана «Планета Суши»",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/w/menu-sushi.webp",
+  "section": ""
+ },
+ {
+  "key": "f165",
+  "label": "Заголовок плашки на фото",
+  "kind": "line",
+  "cls": "h4",
+  "orig": "Планета Суши",
+  "section": ""
+ },
+ {
+  "key": "f174",
+  "label": "Подпись к тортам",
+  "kind": "line",
+  "cls": "cakes__caption",
+  "orig": "\n          <span class=\"line\" style=\"background:rgba(255,255,255,0.6)\"></span>\n          <span class=\"cap cap--white\" data-cms=\"f134\">Авторские торты от&nbsp;шеф-кондитера</span>\n        ",
+  "section": ""
+ },
+ {
+  "key": "f134",
+  "label": "Подпись раздела",
+  "kind": "line",
+  "cls": "cap",
+  "orig": "Авторские торты от&nbsp;шеф-кондитера",
+  "section": ""
+ },
+ {
+  "key": "f175",
+  "label": "Заголовок тортов",
+  "kind": "rich",
+  "cls": "cakes__title",
+  "orig": "Торт под&nbsp;<em>событие</em>&nbsp;— на&nbsp;заказ",
+  "section": ""
+ },
+ {
+  "key": "i16",
+  "label": "Авторский торт",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/w/cake01.webp",
+  "section": ""
+ },
+ {
+  "key": "i17",
+  "label": "Авторский торт",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/w/cake02.webp",
+  "section": ""
+ },
+ {
+  "key": "i18",
+  "label": "Авторский торт",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/w/cake03.webp",
+  "section": ""
+ },
+ {
+  "key": "i19",
+  "label": "Авторский торт",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/w/cake04.webp",
+  "section": ""
+ },
+ {
+  "key": "i20",
+  "label": "Авторский торт",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/w/cake05.webp",
+  "section": ""
+ },
+ {
+  "key": "i21",
+  "label": "Авторский торт",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/w/cake06.webp",
   "section": ""
  }
 ]
