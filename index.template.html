@@ -2378,21 +2378,83 @@ section { position: relative; }
   font-size: 14px; color: var(--gray-3);
 }
 .rule--warn {
-  background: rgba(252,23,81,0.06);
-  border-bottom-color: rgba(252,23,81,0.25);
-  border-radius: 14px;
-  padding: 18px 20px;
-  margin-top: 10px;
+  grid-column: 1 / -1;
+  margin-top: 22px;
+  padding: 20px 24px;
+  background: var(--ink);
+  border: 0;
+  border-radius: 18px;
+  align-items: center;
+  gap: 16px;
 }
-.rule--warn .rule__n { color: var(--pink); }
+.rule--warn p { color: var(--paper) !important; font-size: 15px; }
+.rule--warn .rule__n {
+  display: inline-flex; align-items: center; justify-content: center;
+  flex: none; width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--pink); color: var(--white) !important;
+  font-size: 17px; line-height: 1;
+}
+@media (max-width: 720px) { .rule--warn { align-items: flex-start; } }
 @media (max-width: 720px) { .rules__grid { grid-template-columns: 1fr; gap: 0; } }
 
-/* Карточки расписания: цветная кромка вместо пустоты */
-.sched__card { padding-top: 24px; border-top-width: 5px; border-top-style: solid; }
-.sched__grid > .sched__card:nth-child(1) { border-top-color: var(--cyan); }
-.sched__grid > .sched__card:nth-child(2) { border-top-color: var(--orange); }
-.sched__grid > .sched__card:nth-child(3) { border-top-color: var(--pink); }
-.sched__grid > .sched__card:nth-child(4) { border-top-color: var(--yellow); }
+/* Расписание: одна панель со строками — читается как настоящий график */
+.sched__grid {
+  display: block;
+  background: var(--white);
+  border: 1.5px solid var(--line);
+  border-radius: 26px;
+  padding: 10px 26px;
+}
+.sched__row {
+  display: grid;
+  grid-template-columns: 152px 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.sched__row:last-child { border-bottom: none; }
+.sched__row .sched__kind { margin: 0; background: var(--paper); color: var(--gray-2); }
+.sched__row .sched__name { font-size: clamp(20px, 2vw, 26px); margin-bottom: 4px; color: var(--ink); }
+.sched__row .sched__sub { margin: 0; }
+.sched__row .sched__when { margin: 0; text-align: right; font-size: 15px; white-space: nowrap; }
+.sched__row .sched__note { margin-top: 6px; }
+.sched__row--special {
+  background: var(--ink);
+  border-radius: 18px;
+  padding: 22px 24px;
+  margin: 12px 0;
+  border-bottom: none;
+}
+.sched__row--special .sched__name { color: var(--white); }
+.sched__row--special .sched__sub { color: rgba(255,255,255,0.55); }
+.sched__row--special .sched__when { color: var(--yellow); }
+.sched__row--special .sched__note { color: rgba(255,255,255,0.7); }
+.sched__row--special .sched__kind { background: var(--yellow); color: var(--ink); }
+@media (max-width: 860px) {
+  .sched__grid { padding: 6px 18px; }
+  .sched__row { grid-template-columns: 1fr; gap: 8px; padding: 18px 0; }
+  .sched__row .sched__when { text-align: left; }
+  .sched__row--special { padding: 18px; margin: 10px 0; }
+}
+
+/* Последние карточки мастер-классов — мягкие фирменные тона вместо белых */
+.prog:not(.prog--ink):not(.prog--pink):not(.prog--cyan):not(.prog--yellow):nth-of-type(5) { background: #E9F6F7; }
+.prog:not(.prog--ink):not(.prog--pink):not(.prog--cyan):not(.prog--yellow):nth-of-type(6) { background: #F3ECFA; }
+.prog:not(.prog--ink):not(.prog--pink):not(.prog--cyan):not(.prog--yellow):nth-of-type(7) { background: #FFF1E8; }
+.prog:not(.prog--ink):not(.prog--pink):not(.prog--cyan):not(.prog--yellow):nth-of-type(8) { background: #FDEBF0; }
+.prog:not(.prog--ink):not(.prog--pink):not(.prog--cyan):not(.prog--yellow):nth-of-type(5) .prog__icon
+  { background: var(--cyan);   color: var(--white); }
+.prog:not(.prog--ink):not(.prog--pink):not(.prog--cyan):not(.prog--yellow):nth-of-type(6) .prog__icon
+  { background: var(--purple); color: var(--white); }
+.prog:not(.prog--ink):not(.prog--pink):not(.prog--cyan):not(.prog--yellow):nth-of-type(7) .prog__icon
+  { background: var(--orange); color: var(--white); }
+.prog:not(.prog--ink):not(.prog--pink):not(.prog--cyan):not(.prog--yellow):nth-of-type(8) .prog__icon
+  { background: var(--pink);   color: var(--white); }
+.prog:not(.prog--ink):not(.prog--pink):not(.prog--cyan):not(.prog--yellow):nth-of-type(n+5) .prog__icon svg
+  { stroke: currentColor; fill: none; }
+.progs__grid > .prog:nth-of-type(n+5) { border-color: transparent; }
 
 /* Видимый фокус для тех, кто ходит по сайту с клавиатуры */
 :focus-visible {
@@ -2414,34 +2476,7 @@ section { position: relative; }
   .r { opacity: 1 !important; transform: none !important; }
 }
 
-/* Липкая полоса действий на телефоне */
-.actionbar {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 150;
-  display: none; gap: 10px;
-  padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
-  background: rgba(244,239,230,0.94);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-top: 1.5px solid var(--line);
-}
-.actionbar a {
-  flex: 1;
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  padding: 14px 10px;
-  border-radius: 14px;
-  font-family: var(--ff-body); font-weight: 800;
-  font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase;
-}
-.actionbar__call { background: var(--ink); color: var(--white); }
-.actionbar__wa   { background: #25D366; color: #06331A; }
-.actionbar a svg { width: 17px; height: 17px; }
-@media (max-width: 720px) {
-  .actionbar { display: flex; }
-  body { padding-bottom: 78px; }
-  /* Прячем полосу, когда открыто меню или поп-ап (порядок в разметке не важен). */
-  body:has(.mob-menu.open) .actionbar,
-  body:has(.promo.open) .actionbar { display: none; }
-}
+
 
 
 
@@ -2455,6 +2490,17 @@ section { position: relative; }
   color: var(--gray-3);
 }
 .rule--warn .rule__n { color: var(--pink); }
+
+/* Маркер предупреждения — задаётся последним, чтобы пережить общий сброс .rule__n */
+.rule--warn .rule__n {
+  display: inline-flex !important;
+  align-items: center; justify-content: center;
+  flex: none; width: 30px !important; height: 30px !important;
+  border-radius: 50% !important;
+  background: var(--pink) !important;
+  color: var(--white) !important;
+  font-size: 17px; line-height: 1;
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": ["ChildCare", "AmusementPark", "LocalBusiness"], "name": "MEOW — детский развлекательный центр", "alternateName": "МЯУ", "description": "Детский развлекательный центр в Махачкале: игровые парки для разного возраста, ниндзя-парк, игровые автоматы, дни рождения под ключ, аниматоры и мастер-классы.", "url": "https://meow-mkh.ru/", "telephone": "+79882938008", "email": "meow_mkh@mail.ru", "image": "https://meow-mkh.ru/photos/og-cover.jpg", "priceRange": "400–1200 ₽", "currenciesAccepted": "RUB", "address": {"@type": "PostalAddress", "streetAddress": "проспект Гамидова, 61, ТРЦ «Этажи», 4 этаж", "addressLocality": "Махачкала", "addressRegion": "Республика Дагестан", "postalCode": "367000", "addressCountry": "RU"}, "geo": {"@type": "GeoCoordinates", "latitude": 42.976, "longitude": 47.502}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "10:00", "closes": "22:00"}], "areaServed": {"@type": "City", "name": "Махачкала"}, "sameAs": ["https://wa.me/79882938008"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит билет?", "acceptedAnswer": {"@type": "Answer", "text": "У нас два парка. Малый парк (до 5 лет): от 400 ₽ в будни до 600 ₽ в выходные. Большой парк (5–12 лет): от 650 ₽ до 1 200 ₽. Для семей с 3+ детьми — особая цена за каждого. Точный прайс — в разделе «Цены»."}}, {"@type": "Question", "name": "Какие есть абонементы?", "acceptedAnswer": {"@type": "Answer", "text": "Три варианта: 8 посещений за 4 800 ₽ (на 2 месяца), 20 посещений за 10 000 ₽ (на 6 месяцев), 40 посещений за 16 000 ₽ (на 12 месяцев). Оформляется в центре при первом визите. Не более 5 посещений за раз, абонемент привязан к одному ребёнку."}}, {"@type": "Question", "name": "С какого возраста можно прийти?", "acceptedAnswer": {"@type": "Answer", "text": "С любого. Малый парк — для детей до 5 лет: мягкая сенсорная зона, развивающие модули, тёплый пол. Большой парк — для 5–12 лет: батуты, аэрохоккей, лабиринт, VR-зона и спорт."}}, {"@type": "Question", "name": "Как заказать день рождения?", "acceptedAnswer": {"@type": "Answer", "text": "Оставьте заявку в форме справа или позвоните +7 988 293 80 08 — менеджер свяжется за 15 минут. Можем добавить аниматора, мастер-класс или фотографа."}}, {"@type": "Question", "name": "Что есть для взрослых?", "acceptedAnswer": {"@type": "Answer", "text": "На территории работает итальянский ресторан «Иль Патио» — паста ручной работы, кофе LavAzza. Можно наблюдать за игровой зоной. Wi-Fi бесплатный."}}, {"@type": "Question", "name": "Где вы находитесь и как добраться?", "acceptedAnswer": {"@type": "Answer", "text": "Махачкала, проспект Гамидова, 61. ТРЦ «Этажи», 4 этаж. Удобный заезд с Гамидова, парковка на 200 мест. Работаем ежедневно с 10:00 до 22:00."}}, {"@type": "Question", "name": "Нужна ли сменная обувь?", "acceptedAnswer": {"@type": "Answer", "text": "В игровых зонах дети играют в носочках — так чище и безопаснее на мягких покрытиях. В ресторане «Иль Патио» — в своей обуви."}}]}</script>
@@ -2684,28 +2730,36 @@ section { position: relative; }
     </div>
 
     <div class="sched__grid" id="schedGrid">
-      <article class="sched__card">
+      <article class="sched__row">
         <span class="sched__kind">Постоянное</span>
-        <h3 class="sched__name">Аниматоры</h3>
-        <div class="sched__sub">Тему уточняем</div>
+        <div class="sched__main">
+          <h3 class="sched__name">Аниматоры</h3>
+          <div class="sched__sub">Тему уточняем</div>
+        </div>
         <div class="sched__when">Каждую пятницу</div>
       </article>
-      <article class="sched__card">
+      <article class="sched__row">
         <span class="sched__kind">Постоянное</span>
-        <h3 class="sched__name">Аниматоры</h3>
-        <div class="sched__sub">Тему уточняем</div>
+        <div class="sched__main">
+          <h3 class="sched__name">Аниматоры</h3>
+          <div class="sched__sub">Тему уточняем</div>
+        </div>
         <div class="sched__when">Каждую субботу</div>
       </article>
-      <article class="sched__card">
+      <article class="sched__row">
         <span class="sched__kind">Постоянное</span>
-        <h3 class="sched__name">Лапка-табалапка</h3>
-        <div class="sched__sub">Мастер-класс</div>
+        <div class="sched__main">
+          <h3 class="sched__name">Лапка-табалапка</h3>
+          <div class="sched__sub">Мастер-класс</div>
+        </div>
         <div class="sched__when">В&nbsp;это воскресенье</div>
       </article>
-      <article class="sched__card sched__card--special">
+      <article class="sched__row sched__row--special">
         <span class="sched__kind">Большое событие месяца</span>
-        <h3 class="sched__name">Баттл флип челлендж</h3>
-        <div class="sched__sub">Чемпионат</div>
+        <div class="sched__main">
+          <h3 class="sched__name">Баттл флип челлендж</h3>
+          <div class="sched__sub">Чемпионат</div>
+        </div>
         <div class="sched__when">Дату уточняем</div>
       </article>
     </div>
@@ -2863,7 +2917,7 @@ section { position: relative; }
           <div class="menu-card__body">
             <span class="menu-card__kind">Итальянская кухня</span>
             <h4 class="menu-card__name" data-cms="f164">Иль Патио</h4>
-            <p class="menu-card__meta">Паста, пицца из&nbsp;печи, салаты, десерты · 16&nbsp;страниц · PDF 2.5 МБ</p>
+            <p class="menu-card__meta">Паста, пицца из&nbsp;печи, салаты, десерты</p>
             <span class="menu-card__btn">Открыть меню
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </span>
@@ -2877,7 +2931,7 @@ section { position: relative; }
           <div class="menu-card__body">
             <span class="menu-card__kind">Японская кухня</span>
             <h4 class="menu-card__name" data-cms="f165">Планета Суши</h4>
-            <p class="menu-card__meta">Роллы, суши, сеты, горячее · 4&nbsp;страницы · PDF 1.1 МБ</p>
+            <p class="menu-card__meta">Роллы, суши, сеты, горячее</p>
             <span class="menu-card__btn">Открыть меню
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </span>
@@ -3381,18 +3435,6 @@ section { position: relative; }
 </footer>
 
 
-<!-- ============== ЛИПКАЯ ПОЛОСА ДЕЙСТВИЙ (телефон) ============== -->
-<div class="actionbar">
-  <a class="actionbar__call" href="tel:+79882938008">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
-    Позвонить
-  </a>
-  <a class="actionbar__wa" href="https://wa.me/79882938008" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5l-.9-2.1c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.3 2.4 1 2.9.8 3.4.8.5 0 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
-    WhatsApp
-  </a>
-</div>
-
 <!-- ============== POP-UP АКЦИЯ ============== -->
 <div class="promo" id="promo" role="dialog" aria-modal="true" aria-label="Подарок за визит">
   <div class="promo__card">
@@ -3865,13 +3907,15 @@ document.querySelectorAll('[data-conf]').forEach(b => {
     .then(d => {
       if (!d.ok || !Array.isArray(d.events) || !d.events.length) return;
       grid.innerHTML = d.events.map(e => `
-        <article class="sched__card${e.kind === 'special' ? ' sched__card--special' : ''}">
+        <article class="sched__row${e.kind === 'special' ? ' sched__row--special' : ''}">
           <span class="sched__kind">${e.kind === 'special' ? 'Большое событие месяца' : 'Постоянное'}</span>
-          <h3 class="sched__name">${esc(e.title)}</h3>
-          ${e.sub  ? `<div class="sched__sub">${esc(e.sub)}</div>` : ''}
+          <div class="sched__main">
+            <h3 class="sched__name">${esc(e.title)}</h3>
+            ${e.sub  ? `<div class="sched__sub">${esc(e.sub)}</div>` : ''}
+            ${e.note ? `<p class="sched__note">${esc(e.note)}</p>` : ''}
+            ${e.age  ? `<div class="sched__age">${esc(e.age)}</div>` : ''}
+          </div>
           ${e.when ? `<div class="sched__when">${esc(e.when)}</div>` : ''}
-          ${e.note ? `<p class="sched__note">${esc(e.note)}</p>` : ''}
-          ${e.age  ? `<div class="sched__age">${esc(e.age)}</div>` : ''}
         </article>`).join('');
       if (d.whatsapp) {
         const wa = document.getElementById('schedWa');
