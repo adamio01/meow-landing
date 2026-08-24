@@ -2414,18 +2414,17 @@ section { position: relative; }
   border-bottom: 1px solid var(--line);
 }
 .sched__row:last-child { border-bottom: none; }
-/* Плашка стоит в строке с названием — колонка под неё не нужна */
-.sched__top {
-  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
-  margin-bottom: 4px;
-}
+/* Плашка слева, название и подпись — колонкой рядом с ней */
+.sched__main { display: flex; align-items: flex-start; gap: 14px; }
+.sched__text { min-width: 0; }
+.sched__row .sched__kind { margin-top: 3px; }
 .sched__row .sched__kind {
   margin: 0;
   white-space: nowrap;
   background: rgba(10,10,15,0.07);
   color: var(--gray-2);
 }
-.sched__row .sched__name { font-size: clamp(19px, 1.9vw, 24px); margin: 0; color: var(--ink); }
+.sched__row .sched__name { font-size: clamp(19px, 1.9vw, 24px); margin: 0 0 3px; color: var(--ink); }
 .sched__row .sched__sub { margin: 0; }
 .sched__row .sched__when { margin: 0; text-align: right; font-size: 15px; white-space: nowrap; }
 .sched__row .sched__note { margin-top: 6px; }
@@ -2441,11 +2440,11 @@ section { position: relative; }
 .sched__row--special .sched__when { color: var(--yellow); }
 .sched__row--special .sched__note { color: rgba(255,255,255,0.7); }
 .sched__row--special .sched__kind { background: var(--yellow); color: var(--ink); }
-.sched__row--special .sched__top { margin-bottom: 4px; }
 @media (max-width: 860px) {
   .sched__grid { padding: 6px 18px; }
   .sched__row { grid-template-columns: 1fr; gap: 8px; padding: 18px 0; }
   .sched__row .sched__when { text-align: left; }
+  .sched__main { gap: 12px; }
   .sched__row--special { padding: 18px; margin: 10px 0; }
 }
 
@@ -2771,41 +2770,41 @@ section { position: relative; }
     <div class="sched__grid" id="schedGrid">
       <article class="sched__row">
         <div class="sched__main">
-          <div class="sched__top">
-            <span class="sched__kind">Постоянное</span>
+          <span class="sched__kind">Постоянное</span>
+          <div class="sched__text">
             <h3 class="sched__name">Аниматоры</h3>
+            <div class="sched__sub">Тема: уточняем</div>
           </div>
-          <div class="sched__sub">Тему уточняем</div>
         </div>
         <div class="sched__when">Каждую пятницу</div>
       </article>
       <article class="sched__row">
         <div class="sched__main">
-          <div class="sched__top">
-            <span class="sched__kind">Постоянное</span>
+          <span class="sched__kind">Постоянное</span>
+          <div class="sched__text">
             <h3 class="sched__name">Аниматоры</h3>
+            <div class="sched__sub">Тема: уточняем</div>
           </div>
-          <div class="sched__sub">Тему уточняем</div>
         </div>
         <div class="sched__when">Каждую субботу</div>
       </article>
       <article class="sched__row">
         <div class="sched__main">
-          <div class="sched__top">
-            <span class="sched__kind">Постоянное</span>
+          <span class="sched__kind">Постоянное</span>
+          <div class="sched__text">
             <h3 class="sched__name">Лапка-табалапка</h3>
+            <div class="sched__sub">Мастер-класс</div>
           </div>
-          <div class="sched__sub">Мастер-класс</div>
         </div>
         <div class="sched__when">В&nbsp;это воскресенье</div>
       </article>
       <article class="sched__row sched__row--special">
         <div class="sched__main">
-          <div class="sched__top">
-            <span class="sched__kind">Большое событие месяца</span>
+          <span class="sched__kind">Большое событие месяца</span>
+          <div class="sched__text">
             <h3 class="sched__name">Баттл флип челлендж</h3>
+            <div class="sched__sub">Чемпионат</div>
           </div>
-          <div class="sched__sub">Чемпионат</div>
         </div>
         <div class="sched__when">Дату уточняем</div>
       </article>
@@ -3422,9 +3421,8 @@ section { position: relative; }
           <div class="val">Ежедневно · 10:00 — 22:00</div>
         </div>
         <div class="contacts__socials">
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://instagram.com/meow_mkh" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
           <a href="https://wa.me/79882938008" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3.9 2.5 1 2.7.1.2 1.8 2.7 4.3 3.8.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.5-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.2-1.4c1.4.8 3 1.2 4.7 1.2C17.5 21.8 22 17.3 22 11.8S17.5 2 12 2z"/></svg></a>
-          <a href="#" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.1c-.3-.3-.7-.4-1.2-.2L2.5 11c-.6.2-1 .7-.9 1.2 0 .6.4 1 1 1.2l4.2 1.3 1.7 5.4c.1.4.4.6.7.7.1 0 .2 0 .3 0 .3 0 .6-.1.8-.3l2.4-2.2 4.4 3.3c.2.2.5.3.8.3.1 0 .2 0 .3 0 .4-.1.7-.4.8-.9L22.1 5.4c.1-.5 0-1-.2-1.3zM9.6 14l-1.1 3.5-.9-3 8.3-7.2-6.3 6.7z"/></svg></a>
         </div>
       </div>
 
@@ -3465,9 +3463,8 @@ section { position: relative; }
         <ul>
           <li><a href="tel:+79882938008">+7 988 293 80 08</a></li>
           <li><a href="mailto:meow_mkh@mail.ru">meow_mkh@mail.ru</a></li>
-          <li><a href="#">Instagram</a></li>
+          <li><a href="https://instagram.com/meow_mkh" target="_blank" rel="noopener">Instagram</a></li>
           <li><a href="https://wa.me/79882938008">WhatsApp</a></li>
-          <li><a href="#">Telegram</a></li>
         </ul>
       </div>
     </div>
@@ -3956,13 +3953,13 @@ document.querySelectorAll('[data-conf]').forEach(b => {
       grid.innerHTML = d.events.map(e => `
         <article class="sched__row${e.kind === 'special' ? ' sched__row--special' : ''}">
           <div class="sched__main">
-            <div class="sched__top">
-              <span class="sched__kind">${e.kind === 'special' ? 'Большое событие месяца' : 'Постоянное'}</span>
+            <span class="sched__kind">${e.kind === 'special' ? 'Большое событие месяца' : 'Постоянное'}</span>
+            <div class="sched__text">
               <h3 class="sched__name">${esc(e.title)}</h3>
+              ${e.sub  ? `<div class="sched__sub">${esc(e.sub)}</div>` : ''}
+              ${e.note ? `<p class="sched__note">${esc(e.note)}</p>` : ''}
+              ${e.age  ? `<div class="sched__age">${esc(e.age)}</div>` : ''}
             </div>
-            ${e.sub  ? `<div class="sched__sub">${esc(e.sub)}</div>` : ''}
-            ${e.note ? `<p class="sched__note">${esc(e.note)}</p>` : ''}
-            ${e.age  ? `<div class="sched__age">${esc(e.age)}</div>` : ''}
           </div>
           ${e.when ? `<div class="sched__when">${esc(e.when)}</div>` : ''}
         </article>`).join('');
