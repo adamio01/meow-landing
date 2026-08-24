@@ -2408,15 +2408,25 @@ section { position: relative; }
 }
 .sched__row {
   display: grid;
-  grid-template-columns: 152px 1fr auto;
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: 24px;
-  padding: 22px 0;
+  padding: 20px 0;
   border-bottom: 1px solid var(--line);
 }
 .sched__row:last-child { border-bottom: none; }
-.sched__row .sched__kind { margin: 0; background: var(--paper); color: var(--gray-2); }
-.sched__row .sched__name { font-size: clamp(20px, 2vw, 26px); margin-bottom: 4px; color: var(--ink); }
+/* Плашка стоит в строке с названием — колонка под неё не нужна */
+.sched__top {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+.sched__row .sched__kind {
+  margin: 0;
+  white-space: nowrap;
+  background: rgba(10,10,15,0.07);
+  color: var(--gray-2);
+}
+.sched__row .sched__name { font-size: clamp(19px, 1.9vw, 24px); margin: 0; color: var(--ink); }
 .sched__row .sched__sub { margin: 0; }
 .sched__row .sched__when { margin: 0; text-align: right; font-size: 15px; white-space: nowrap; }
 .sched__row .sched__note { margin-top: 6px; }
@@ -2432,6 +2442,7 @@ section { position: relative; }
 .sched__row--special .sched__when { color: var(--yellow); }
 .sched__row--special .sched__note { color: rgba(255,255,255,0.7); }
 .sched__row--special .sched__kind { background: var(--yellow); color: var(--ink); }
+.sched__row--special .sched__top { margin-bottom: 4px; }
 @media (max-width: 860px) {
   .sched__grid { padding: 6px 18px; }
   .sched__row { grid-template-columns: 1fr; gap: 8px; padding: 18px 0; }
@@ -2501,6 +2512,35 @@ section { position: relative; }
   color: var(--white) !important;
   font-size: 17px; line-height: 1;
 }
+
+/* Мастер-классы: единый светлый набор вместо трёх градиентов и белых карточек */
+.progs__grid > .prog:not(.prog--ink) {
+  border: 1.5px solid transparent;
+  color: var(--ink);
+}
+.progs__grid > .prog:not(.prog--ink) .prog__name { color: var(--ink); }
+.progs__grid > .prog:not(.prog--ink) .prog__desc { color: var(--gray-2); }
+.progs__grid > .prog:not(.prog--ink) .prog__age {
+  color: var(--gray-2);
+  border-top-color: rgba(10,10,15,0.10);
+}
+.progs__grid > .prog:not(.prog--ink) .prog__icon { color: var(--white); }
+.progs__grid > .prog:not(.prog--ink) .prog__icon svg { stroke: currentColor; }
+
+.progs__grid > .prog:nth-of-type(2) { background: #FFE9EF; }
+.progs__grid > .prog:nth-of-type(2) .prog__icon { background: var(--pink); }
+.progs__grid > .prog:nth-of-type(3) { background: #E4F1FD; }
+.progs__grid > .prog:nth-of-type(3) .prog__icon { background: var(--blue); }
+.progs__grid > .prog:nth-of-type(4) { background: #FFF4DD; }
+.progs__grid > .prog:nth-of-type(4) .prog__icon { background: var(--orange); }
+.progs__grid > .prog:nth-of-type(5) { background: #E6F6F5; }
+.progs__grid > .prog:nth-of-type(5) .prog__icon { background: var(--cyan); }
+.progs__grid > .prog:nth-of-type(6) { background: #F2EBFB; }
+.progs__grid > .prog:nth-of-type(6) .prog__icon { background: var(--purple); }
+.progs__grid > .prog:nth-of-type(7) { background: #FFEEE3; }
+.progs__grid > .prog:nth-of-type(7) .prog__icon { background: var(--orange); }
+.progs__grid > .prog:nth-of-type(8) { background: #E9F6F8; }
+.progs__grid > .prog:nth-of-type(8) .prog__icon { background: var(--cyan); }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": ["ChildCare", "AmusementPark", "LocalBusiness"], "name": "MEOW — детский развлекательный центр", "alternateName": "МЯУ", "description": "Детский развлекательный центр в Махачкале: игровые парки для разного возраста, ниндзя-парк, игровые автоматы, дни рождения под ключ, аниматоры и мастер-классы.", "url": "https://meow-mkh.ru/", "telephone": "+79882938008", "email": "meow_mkh@mail.ru", "image": "https://meow-mkh.ru/photos/og-cover.jpg", "priceRange": "400–1200 ₽", "currenciesAccepted": "RUB", "address": {"@type": "PostalAddress", "streetAddress": "проспект Гамидова, 61, ТРЦ «Этажи», 4 этаж", "addressLocality": "Махачкала", "addressRegion": "Республика Дагестан", "postalCode": "367000", "addressCountry": "RU"}, "geo": {"@type": "GeoCoordinates", "latitude": 42.976, "longitude": 47.502}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "10:00", "closes": "22:00"}], "areaServed": {"@type": "City", "name": "Махачкала"}, "sameAs": ["https://wa.me/79882938008"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит билет?", "acceptedAnswer": {"@type": "Answer", "text": "У нас два парка. Малый парк (до 5 лет): от 400 ₽ в будни до 600 ₽ в выходные. Большой парк (5–12 лет): от 650 ₽ до 1 200 ₽. Для семей с 3+ детьми — особая цена за каждого. Точный прайс — в разделе «Цены»."}}, {"@type": "Question", "name": "Какие есть абонементы?", "acceptedAnswer": {"@type": "Answer", "text": "Три варианта: 8 посещений за 4 800 ₽ (на 2 месяца), 20 посещений за 10 000 ₽ (на 6 месяцев), 40 посещений за 16 000 ₽ (на 12 месяцев). Оформляется в центре при первом визите. Не более 5 посещений за раз, абонемент привязан к одному ребёнку."}}, {"@type": "Question", "name": "С какого возраста можно прийти?", "acceptedAnswer": {"@type": "Answer", "text": "С любого. Малый парк — для детей до 5 лет: мягкая сенсорная зона, развивающие модули, тёплый пол. Большой парк — для 5–12 лет: батуты, аэрохоккей, лабиринт, VR-зона и спорт."}}, {"@type": "Question", "name": "Как заказать день рождения?", "acceptedAnswer": {"@type": "Answer", "text": "Оставьте заявку в форме справа или позвоните +7 988 293 80 08 — менеджер свяжется за 15 минут. Можем добавить аниматора, мастер-класс или фотографа."}}, {"@type": "Question", "name": "Что есть для взрослых?", "acceptedAnswer": {"@type": "Answer", "text": "На территории работает итальянский ресторан «Иль Патио» — паста ручной работы, кофе LavAzza. Можно наблюдать за игровой зоной. Wi-Fi бесплатный."}}, {"@type": "Question", "name": "Где вы находитесь и как добраться?", "acceptedAnswer": {"@type": "Answer", "text": "Махачкала, проспект Гамидова, 61. ТРЦ «Этажи», 4 этаж. Удобный заезд с Гамидова, парковка на 200 мест. Работаем ежедневно с 10:00 до 22:00."}}, {"@type": "Question", "name": "Нужна ли сменная обувь?", "acceptedAnswer": {"@type": "Answer", "text": "В игровых зонах дети играют в носочках — так чище и безопаснее на мягких покрытиях. В ресторане «Иль Патио» — в своей обуви."}}]}</script>
@@ -2731,33 +2771,41 @@ section { position: relative; }
 
     <div class="sched__grid" id="schedGrid">
       <article class="sched__row">
-        <span class="sched__kind">Постоянное</span>
         <div class="sched__main">
-          <h3 class="sched__name">Аниматоры</h3>
+          <div class="sched__top">
+            <span class="sched__kind">Постоянное</span>
+            <h3 class="sched__name">Аниматоры</h3>
+          </div>
           <div class="sched__sub">Тему уточняем</div>
         </div>
         <div class="sched__when">Каждую пятницу</div>
       </article>
       <article class="sched__row">
-        <span class="sched__kind">Постоянное</span>
         <div class="sched__main">
-          <h3 class="sched__name">Аниматоры</h3>
+          <div class="sched__top">
+            <span class="sched__kind">Постоянное</span>
+            <h3 class="sched__name">Аниматоры</h3>
+          </div>
           <div class="sched__sub">Тему уточняем</div>
         </div>
         <div class="sched__when">Каждую субботу</div>
       </article>
       <article class="sched__row">
-        <span class="sched__kind">Постоянное</span>
         <div class="sched__main">
-          <h3 class="sched__name">Лапка-табалапка</h3>
+          <div class="sched__top">
+            <span class="sched__kind">Постоянное</span>
+            <h3 class="sched__name">Лапка-табалапка</h3>
+          </div>
           <div class="sched__sub">Мастер-класс</div>
         </div>
         <div class="sched__when">В&nbsp;это воскресенье</div>
       </article>
       <article class="sched__row sched__row--special">
-        <span class="sched__kind">Большое событие месяца</span>
         <div class="sched__main">
-          <h3 class="sched__name">Баттл флип челлендж</h3>
+          <div class="sched__top">
+            <span class="sched__kind">Большое событие месяца</span>
+            <h3 class="sched__name">Баттл флип челлендж</h3>
+          </div>
           <div class="sched__sub">Чемпионат</div>
         </div>
         <div class="sched__when">Дату уточняем</div>
@@ -3908,9 +3956,11 @@ document.querySelectorAll('[data-conf]').forEach(b => {
       if (!d.ok || !Array.isArray(d.events) || !d.events.length) return;
       grid.innerHTML = d.events.map(e => `
         <article class="sched__row${e.kind === 'special' ? ' sched__row--special' : ''}">
-          <span class="sched__kind">${e.kind === 'special' ? 'Большое событие месяца' : 'Постоянное'}</span>
           <div class="sched__main">
-            <h3 class="sched__name">${esc(e.title)}</h3>
+            <div class="sched__top">
+              <span class="sched__kind">${e.kind === 'special' ? 'Большое событие месяца' : 'Постоянное'}</span>
+              <h3 class="sched__name">${esc(e.title)}</h3>
+            </div>
             ${e.sub  ? `<div class="sched__sub">${esc(e.sub)}</div>` : ''}
             ${e.note ? `<p class="sched__note">${esc(e.note)}</p>` : ''}
             ${e.age  ? `<div class="sched__age">${esc(e.age)}</div>` : ''}
