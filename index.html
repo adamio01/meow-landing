@@ -938,7 +938,8 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   aspect-ratio: 16/9;
   border-radius: 28px; overflow: hidden;
 }
-.party__visual img { width: 100%; height: 100%; object-fit: cover; }
+.party__visual img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; }
+.party__title-line { display: block; white-space: nowrap; }
 .party__visual-tag {
   position: absolute; top: 22px; left: 22px;
   padding: 10px 18px;
@@ -993,7 +994,8 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
 }
 .progs__grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: minmax(220px, auto);
   gap: 18px;
   margin-top: 80px;
 }
@@ -1002,17 +1004,41 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   background: var(--white);
   border-radius: 22px;
   padding: 28px 26px;
-  transition: transform .25s, box-shadow .25s;
+  min-height: 220px;
+  isolation: isolate;
+  transition: transform .35s cubic-bezier(.2,.75,.25,1), box-shadow .35s ease, border-color .35s ease;
   display: flex; flex-direction: column; gap: 14px;
   overflow: hidden;
 }
-.prog:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -16px rgba(33,24,39,0.16); }
+.prog::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 150px;
+  aspect-ratio: 1;
+  right: -72px;
+  bottom: -86px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.48);
+  opacity: 0;
+  transform: scale(.55);
+  transition: opacity .35s ease, transform .5s cubic-bezier(.2,.75,.25,1);
+}
+.prog:hover {
+  z-index: 2;
+  transform: translateY(-7px) rotate(-.25deg);
+  box-shadow: 0 24px 48px -20px rgba(33,24,39,.28);
+}
+.prog:nth-child(even):hover { transform: translateY(-7px) rotate(.25deg); }
+.prog:hover::after { opacity: 1; transform: scale(1); }
 .prog__icon {
   width: 54px; height: 54px;
   border-radius: 50%;
   display: grid; place-items: center;
   color: var(--ink);
+  transition: transform .4s cubic-bezier(.2,.8,.25,1), box-shadow .35s ease;
 }
+.prog:hover .prog__icon { transform: translateY(-3px) rotate(8deg) scale(1.07); box-shadow: 0 12px 24px -13px rgba(33,24,39,.45); }
 .prog__icon svg { width: 28px; height: 28px; }
 .prog__name {
   font-family: var(--ff-display); font-weight: 700;
@@ -1065,6 +1091,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
 }
 .prog:nth-child(3) { grid-column: span 1; }
 .prog:nth-child(5) { grid-column: span 1; }
+.prog:nth-child(8) { grid-column: span 2; }
 
 /* =====================================================
    РАСПИСАНИЕ — события недели + событие месяца
@@ -2209,8 +2236,9 @@ box-shadow: 0 4px 14px rgba(33,24,39,0.20);
   .zones { grid-template-columns: 1fr 1fr; gap: 18px; }
   .sched__grid { grid-template-columns: 1fr 1fr; }
   .party__split { grid-template-columns: 1fr; gap: 24px; }
-  .progs__grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  .prog--lg { grid-column: span 3; grid-row: auto; }
+  .progs__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; grid-auto-rows: minmax(240px, auto); }
+  .prog--lg { grid-column: span 2; grid-row: auto; }
+  .prog:nth-child(8) { grid-column: span 2; }
   .patio__hero { grid-template-columns: 1fr; gap: 32px; }
   .patio__visual { min-height: 420px; }
   .patio__name { font-size: clamp(54px, 10vw, 96px); }
@@ -2277,6 +2305,8 @@ box-shadow: 0 4px 14px rgba(33,24,39,0.20);
 
   .party { /* nothing — uses .sect */ }
   .party__visual { aspect-ratio: 4/3; }
+  .party__visual img { object-position: 50% 15%; }
+  .party .sect__title { font-size: clamp(30px, 8vw, 46px); }
   .party__visual-circle { width: 100px; height: 100px; bottom: 16px; right: 16px; font-size: 13px; }
   .party__visual-circle b { font-size: 22px; }
   .party { padding: 56px 0; }
@@ -2286,13 +2316,13 @@ box-shadow: 0 4px 14px rgba(33,24,39,0.20);
   .party__list { margin: 0 0 22px; }
   .party__list li { padding: 13px 0; font-size: 16px; gap: 10px; }
 
-  .progs__grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .prog { padding: 22px 20px; gap: 10px; }
+  .progs__grid { grid-template-columns: 1fr; gap: 12px; grid-auto-rows: auto; }
+  .prog { min-height: 220px; padding: 22px 20px; gap: 10px; }
   .prog__name { font-size: 16px; }
   .prog__desc { font-size: 12px; }
   .prog__icon { width: 46px; height: 46px; }
   .prog__icon svg { width: 22px; height: 22px; }
-  .prog--lg { grid-column: span 2; padding: 26px 22px; }
+  .prog--lg, .prog:nth-child(8) { grid-column: span 1; padding: 26px 22px; }
   .prog--lg .prog__name { font-size: 22px; }
   .prog--lg .prog__desc { font-size: 13px; }
   .prog--lg .prog__icon { width: 56px; height: 56px; }
@@ -2574,6 +2604,18 @@ border-top-color: rgba(42,104,225,0.10);
   letter-spacing: -.045em;
 }
 .hero__title--place > span { white-space: nowrap; }
+.hero__title--place .hero__title-desktop { display: block; }
+.hero__title-desktop--middle {
+  margin-top: .04em;
+  font-size: .72em;
+  line-height: .9;
+}
+.hero__title-desktop--last {
+  margin-top: .08em;
+  font-size: .48em;
+  line-height: 1;
+}
+.hero__title--place .hero__title-mobile { display: none; }
 .hero__title--place .hero__title-fun {
   margin-top: .14em;
   font-size: .52em;
@@ -2884,6 +2926,49 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
 
 /* Новая композиция афиши */
 .sched { background: #F5F1E8; }
+.schedule-brand {
+  display: grid;
+  grid-template-columns: minmax(260px, .78fr) minmax(0, 1.22fr);
+  align-items: center;
+  gap: clamp(34px, 6vw, 92px);
+  min-height: 330px;
+  margin-bottom: 18px;
+  padding: clamp(38px, 5vw, 68px);
+  overflow: hidden;
+  border-radius: 30px;
+  background: #579BE8;
+  color: #fff;
+}
+.schedule-brand__mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+.schedule-brand__mark img {
+  display: block;
+  width: min(100%, 390px);
+  height: auto;
+}
+.schedule-brand__copy { max-width: 640px; }
+.schedule-brand__eyebrow {
+  display: block;
+  margin-bottom: 22px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .72;
+}
+.schedule-brand__copy p {
+  margin: 0;
+  font-family: var(--ff-display);
+  font-size: clamp(28px, 3.4vw, 50px);
+  font-weight: 700;
+  line-height: .98;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
 .schedule-board {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(420px, .92fr);
@@ -3053,11 +3138,16 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   .hero__content { order: 2; }
   .hero__visual { order: 1; max-width: none; width: 100%; aspect-ratio: 16 / 12; margin: 28px 0 0; }
   .hero__title--place { font-size: clamp(62px, 14vw, 104px); }
+  .hero__title--place .hero__title-desktop { display: none; }
+  .hero__title--place .hero__title-mobile { display: block; }
   .hero__sub { max-width: 650px; }
   .news__grid { grid-template-columns: 1fr 1fr; }
   .news-card--lead { grid-column: 1 / -1; }
   .news-card--lead .news-card__photo { aspect-ratio: 16 / 8; }
   .schedule-board { grid-template-columns: 1fr; }
+  .schedule-brand { grid-template-columns: 1fr; gap: 30px; min-height: 0; }
+  .schedule-brand__mark { justify-content: flex-start; }
+  .schedule-brand__mark img { width: min(78%, 330px); }
   .schedule-feature { min-height: 460px; }
 }
 
@@ -3071,6 +3161,10 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   .hero__ctas { align-items: stretch; }
   .hero__ctas .btn { width: 100%; }
   .hero__visual { aspect-ratio: 4 / 5; }
+  .schedule-brand { padding: 30px 24px 34px; border-radius: 24px; }
+  .schedule-brand__mark img { width: min(84%, 280px); }
+  .schedule-brand__eyebrow { margin-bottom: 14px; }
+  .schedule-brand__copy p { font-size: clamp(26px, 8vw, 36px); }
   .venue-switch { top: -17px; left: 16px; right: auto; justify-content: flex-start; }
   .venue-switch__btn { min-width: 70px; flex: 0 0 auto; height: 32px; padding: 0 11px; font-size: 8px; }
   .hero__slider { border-radius: 26px; }
@@ -3236,8 +3330,11 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
       </div>
 
       <h1 class="hero__title hero__title--place" aria-label="Время играть, есть и веселиться">
-        <span>Время <em class="w-pink">играть</em>,</span>
-        <span class="hero__title-fun">есть и <em class="w-blue">веселиться.</em></span>
+        <span class="hero__title-desktop">Время</span>
+        <span class="hero__title-desktop hero__title-desktop--middle"><em class="w-pink">играть</em>, есть</span>
+        <span class="hero__title-desktop hero__title-desktop--last">и <em class="w-blue">веселиться.</em></span>
+        <span class="hero__title-mobile">Время <em class="w-pink">играть</em>,</span>
+        <span class="hero__title-mobile hero__title-fun">есть и <em class="w-blue">веселиться.</em></span>
       </h1>
 
       <p class="hero__sub">
@@ -3349,6 +3446,16 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
         <h2 class="sect__title" data-cms="f4">Что у&nbsp;нас<br>на&nbsp;<em>этой</em> неделе</h2>
       </div>
       <p class="sect__sub" data-cms="f15">Аниматоры и&nbsp;мастер-классы идут постоянно, раз в&nbsp;месяц собираем большое событие. Участие бесплатное — нужна только запись.</p>
+    </div>
+
+    <div class="schedule-brand r">
+      <div class="schedule-brand__mark">
+        <img src="photos/w/place-smiles.webp" alt="Место ярких улыбок" width="926" height="878" loading="lazy" decoding="async">
+      </div>
+      <div class="schedule-brand__copy">
+        <span class="schedule-brand__eyebrow">MEOW — семейный парк</span>
+        <p>Пространство, где игры, праздники и&nbsp;новые впечатления собираются в&nbsp;одном месте.</p>
+      </div>
     </div>
 
     <div class="schedule-board">
@@ -3654,7 +3761,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
     <div class="sect__head r">
       <div class="sect__head-left">
         <div class="sect__caption"><span class="line" style="background:rgba(255,255,255,0.6)"></span><span class="cap cap--white" data-cms="f136">№05 / Праздники</span></div>
-        <h2 class="sect__title" data-cms="f8">Большой день<br><em>в&nbsp;одном</em>&nbsp;звонке</h2>
+        <h2 class="sect__title" data-cms="f8"><span class="party__title-line">Большой день</span><span class="party__title-line"><em>в&nbsp;одном</em>&nbsp;звонке</span></h2>
       </div>
       <p class="sect__sub" style="color:rgba(255,255,255,0.8);" data-cms="f18">День рождения, выпускной, корпоратив. Берём организацию на&nbsp;себя — вам остаётся только наслаждаться.</p>
     </div>
