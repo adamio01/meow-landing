@@ -49,28 +49,28 @@
 ===================================================== */
 :root {
   /* Бренд */
-  --ink:    #211827;
-  --paper:  #F5F1E8;       /* мягкий молочный фон */
+  --ink:    #0A0A0F;
+  --paper:  #F4EFE6;       /* теплый «бумажный» off-white */
   --white:  #FFFFFF;
-  --gray-1: #625A67;
-  --gray-2: #79717D;
-  --gray-3: #BCB5BE;
-  --line:   rgba(33,24,39,0.13);
+  --gray-1: #1B1B22;
+  --gray-2: #6F6878;
+  --gray-3: #B5AFA5;
+  --line:   rgba(10,10,15,0.10);
 
   --cyan:   #3FBEC8;
   --orange: #F46221;
   --pink:   #FC1751;
   --yellow: #F9C930;
-  --ocean:  #2A68E1;
+  --purple: #7F039E;
   --blue:   #2A68E1;
 
   /* Брендовые градиенты (с p10) */
   --g-warm:        linear-gradient(135deg, #FC1751 0%, #F46221 50%, #F9C930 100%);
-  --g-cool:        linear-gradient(135deg, #3FBEC8 0%, #2A68E1 100%);
+  --g-cool:        linear-gradient(135deg, #3FBEC8 0%, #2A68E1 60%, #7F039E 100%);
   --g-cyan-blue:   linear-gradient(90deg, #3FBEC8 0%, #2A68E1 100%);
   --g-pink-deep:   linear-gradient(90deg, #FC4D6E 0%, #C8113F 100%);
   --g-coral-yellow:linear-gradient(90deg, #EE7882 0%, #F9C930 100%);
-  --g-ocean:       linear-gradient(90deg, #2A68E1 0%, #3FBEC8 100%);
+  --g-blue-purple: linear-gradient(90deg, #2A68E1 0%, #7F039E 100%);
 
   --ff-display: 'Riffic','Mont',system-ui,sans-serif;
   --ff-body:    'Mont',system-ui,sans-serif;
@@ -425,7 +425,7 @@ h1, h2, h3, h4 {
   border-radius: 32px;
   overflow: hidden;
   background: var(--ink);
-box-shadow: 0 30px 60px -20px rgba(33,24,39,0.18);
+  box-shadow: 0 30px 60px -20px rgba(10,10,15,0.25);
   cursor: grab;
   touch-action: pan-y;
 }
@@ -469,7 +469,7 @@ box-shadow: 0 30px 60px -20px rgba(33,24,39,0.18);
   font-family: var(--ff-display); font-weight: 700;
   font-size: clamp(22px, 2.4vw, 32px);
   line-height: 1.05; letter-spacing: -0.015em;
-text-shadow: 0 4px 20px rgba(33,24,39,0.32);
+  text-shadow: 0 4px 20px rgba(10,10,15,0.45);
   max-width: 92%;
 }
 .hero__caption-text em {
@@ -483,7 +483,7 @@ text-shadow: 0 4px 20px rgba(33,24,39,0.32);
   content: "";
   position: absolute; left: 0; right: 0; bottom: 0;
   height: 60%;
-background: linear-gradient(180deg, transparent 0%, rgba(20,12,25,0.86) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(10,10,15,0.7) 100%);
   pointer-events: none;
 }
 .hero__slide:not(.active) .hero__caption { opacity: 0; transform: translateY(14px); transition: opacity .4s, transform .4s; }
@@ -517,7 +517,7 @@ background: linear-gradient(180deg, transparent 0%, rgba(20,12,25,0.86) 100%);
   font-size: 13px; padding: 8px;
   transform: rotate(-10deg);
   animation: wobble 4s ease-in-out infinite;
-box-shadow: 0 10px 24px -8px rgba(33,24,39,0.18);
+  box-shadow: 0 10px 24px -8px rgba(10,10,15,0.25);
 }
 .hero__sticker--badge b { display: block; font-size: 26px; margin-bottom: 2px; color: var(--pink); }
 .hero__sticker--star {
@@ -526,7 +526,7 @@ box-shadow: 0 10px 24px -8px rgba(33,24,39,0.18);
   background: var(--cyan);
   clip-path: polygon(50% 0%,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0% 50%,40% 40%);
   animation: spin 14s linear infinite;
-filter: drop-shadow(0 8px 16px rgba(33,24,39,0.16));
+  filter: drop-shadow(0 8px 16px rgba(10,10,15,0.2));
 }
 .hero__sticker--cat {
   top: 20px; right: 18px;
@@ -611,10 +611,10 @@ section { position: relative; }
 }
 
 /* =====================================================
-   ABOUT / 4 ПРИНЦИПА — на спокойном морском градиенте
+   ABOUT / 4 ПРИНЦИПА — на blue→purple градиенте
 ===================================================== */
 .about {
-background: linear-gradient(135deg, #2A68E1 0%, #3FBEC8 100%);
+  background: linear-gradient(135deg, #2A68E1 0%, #5C1FA6 60%, #7F039E 100%);
   color: var(--white);
   position: relative;
   overflow: hidden;
@@ -697,7 +697,7 @@ background: linear-gradient(135deg, #2A68E1 0%, #3FBEC8 100%);
 ===================================================== */
 .zones-wrap {
   padding: 90px 0;
-background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
+  background: linear-gradient(135deg, #DCF3F5 0%, #DCE7FA 50%, #EBDEF5 100%);
   position: relative;
   overflow: hidden;
 }
@@ -715,7 +715,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   bottom: -120px; right: -120px;
   width: 360px; height: 360px;
   border-radius: 50%;
-  background: var(--g-ocean);
+  background: var(--g-blue-purple);
   opacity: 0.10; filter: blur(50px);
   pointer-events: none;
 }
@@ -845,23 +845,11 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   border-radius: 24px;
   overflow: hidden;
   position: relative;
-  isolation: isolate;
-  background-color: var(--ink);
-  background-image: linear-gradient(rgba(20,12,25,.22), rgba(20,12,25,.22)), var(--atm-image);
-  background-position: center;
-  background-size: cover;
+  background: var(--gray-1);
   transition: transform .3s;
 }
 .atm__slide:hover { transform: translateY(-4px); }
-.atm__slide::after {
-  content: '';
-  position: absolute;
-  z-index: 0;
-  inset: 0;
-  backdrop-filter: blur(12px);
-  background: rgba(20,12,25,.08);
-}
-.atm__slide img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+.atm__slide img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
 .atm__slide--wide { width: 480px; }
 .atm__slide--tall { width: 280px; height: 440px; }
 
@@ -874,7 +862,6 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
 }
 .atm__hint svg { width: 18px; height: 18px; }
 .atm__hint span { flex: 1; height: 1px; background: rgba(244,239,230,0.15); }
-.atm__mobile-controls { display: none; }
 
 .atm__cta {
   margin-top: 50px;
@@ -1006,7 +993,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   display: flex; flex-direction: column; gap: 14px;
   overflow: hidden;
 }
-.prog:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -16px rgba(33,24,39,0.16); }
+.prog:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -16px rgba(10,10,15,0.18); }
 .prog__icon {
   width: 54px; height: 54px;
   border-radius: 50%;
@@ -1220,7 +1207,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
 }
 
 /* =====================================================
-   IL PATIO — спокойная фирменная секция с фото ресторана
+   IL PATIO — black section with restaurant photo
 ===================================================== */
 .patio {
   background: var(--ink);
@@ -1258,7 +1245,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   bottom: 22px; left: 22px; right: 22px;
   z-index: 2;
   padding: 18px 22px;
-background: rgba(20,12,25,0.76);
+  background: rgba(10,10,15,0.65);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-radius: 18px;
@@ -1409,7 +1396,7 @@ background: rgba(20,12,25,0.76);
    PRICES — cool gradient bg
 ===================================================== */
 .prices {
-background: linear-gradient(160deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
+  background: linear-gradient(160deg, #DCF3F5 0%, #DCE7FA 50%, #EBDEF5 100%);
   position: relative;
   overflow: hidden;
 }
@@ -1650,7 +1637,7 @@ background: linear-gradient(160deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   transition: transform .3s, box-shadow .3s;
 }
 @media (hover: hover) {
-  .review:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -16px rgba(33,24,39,0.14); }
+  .review:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -16px rgba(10,10,15,0.15); }
 }
 .review__stars { display: flex; gap: 3px; margin-bottom: 22px; }
 .review__stars svg { width: 18px; height: 18px; fill: var(--yellow); }
@@ -1664,7 +1651,7 @@ background: linear-gradient(160deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
 }
 .review:nth-child(2) .review__avatar { background: var(--cyan); color: var(--ink); }
 .review:nth-child(3) .review__avatar { background: var(--yellow); color: var(--ink); }
-.review:nth-child(4) .review__avatar { background: var(--ocean); }
+.review:nth-child(4) .review__avatar { background: var(--purple); }
 .review:nth-child(5) .review__avatar { background: var(--orange); }
 .review:nth-child(6) .review__avatar { background: var(--blue); }
 .review__name { font-family: var(--ff-display); font-weight: 700; font-size: 15px; }
@@ -1889,7 +1876,7 @@ background: linear-gradient(160deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   display: flex; flex-direction: column; gap: 14px;
   transition: transform .25s, box-shadow .25s, border-color .25s;
 }
-.rule:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -14px rgba(33,24,39,0.14); }
+.rule:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -14px rgba(10,10,15,0.15); }
 .rule__n {
   display: inline-flex; align-items: center; justify-content: center;
   width: 40px; height: 40px;
@@ -1999,7 +1986,7 @@ background: linear-gradient(160deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
 .promo {
   position: fixed; inset: 0;
   z-index: 300;
-background: rgba(20,12,25,0.82);
+  background: rgba(10,10,15,0.75);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   display: flex; align-items: center; justify-content: center;
@@ -2018,7 +2005,7 @@ background: rgba(20,12,25,0.82);
   display: grid;
   grid-template-columns: 1fr 1.05fr;
   grid-template-rows: minmax(0, 1fr);
-box-shadow: 0 40px 80px -20px rgba(33,24,39,0.28);
+  box-shadow: 0 40px 80px -20px rgba(10,10,15,0.5);
   transform: scale(0.95);
   transition: transform .4s cubic-bezier(.2,.8,.2,1);
 }
@@ -2061,7 +2048,7 @@ box-shadow: 0 40px 80px -20px rgba(33,24,39,0.28);
   width: 40px; height: 40px; border-radius: 50%;
   background: var(--ink); color: var(--paper);
   display: grid; place-items: center;
-box-shadow: 0 4px 14px rgba(33,24,39,0.20);
+  box-shadow: 0 4px 14px rgba(10,10,15,0.3);
   transition: background .2s, transform .2s;
 }
 .promo__close:hover { background: var(--pink); transform: rotate(90deg); }
@@ -2434,7 +2421,7 @@ box-shadow: 0 4px 14px rgba(33,24,39,0.20);
 .sched__row .sched__kind {
   margin: 0;
   white-space: nowrap;
-background: rgba(42,104,225,0.07);
+  background: rgba(10,10,15,0.07);
   color: var(--gray-2);
 }
 .sched__row .sched__name { font-size: clamp(19px, 1.9vw, 24px); margin: 0 0 3px; color: var(--ink); }
@@ -2463,13 +2450,13 @@ background: rgba(42,104,225,0.07);
 
 /* Последние карточки мастер-классов — мягкие фирменные тона вместо белых */
 .prog:not(.prog--ink):not(.prog--pink):not(.prog--cyan):not(.prog--yellow):nth-of-type(5) { background: #E9F6F7; }
-.prog:not(.prog--ink):not(.prog--pink):not(.prog--cyan):not(.prog--yellow):nth-of-type(6) { background: #EAF2FC; }
+.prog:not(.prog--ink):not(.prog--pink):not(.prog--cyan):not(.prog--yellow):nth-of-type(6) { background: #F3ECFA; }
 .prog:not(.prog--ink):not(.prog--pink):not(.prog--cyan):not(.prog--yellow):nth-of-type(7) { background: #FFF1E8; }
 .prog:not(.prog--ink):not(.prog--pink):not(.prog--cyan):not(.prog--yellow):nth-of-type(8) { background: #FDEBF0; }
 .prog:not(.prog--ink):not(.prog--pink):not(.prog--cyan):not(.prog--yellow):nth-of-type(5) .prog__icon
   { background: var(--cyan);   color: var(--white); }
 .prog:not(.prog--ink):not(.prog--pink):not(.prog--cyan):not(.prog--yellow):nth-of-type(6) .prog__icon
-  { background: var(--ocean); color: var(--white); }
+  { background: var(--purple); color: var(--white); }
 .prog:not(.prog--ink):not(.prog--pink):not(.prog--cyan):not(.prog--yellow):nth-of-type(7) .prog__icon
   { background: var(--orange); color: var(--white); }
 .prog:not(.prog--ink):not(.prog--pink):not(.prog--cyan):not(.prog--yellow):nth-of-type(8) .prog__icon
@@ -2533,7 +2520,7 @@ background: rgba(42,104,225,0.07);
 .progs__grid > .prog:not(.prog--ink) .prog__desc { color: var(--gray-2); }
 .progs__grid > .prog:not(.prog--ink) .prog__age {
   color: var(--gray-2);
-border-top-color: rgba(42,104,225,0.10);
+  border-top-color: rgba(10,10,15,0.10);
 }
 .progs__grid > .prog:not(.prog--ink) .prog__icon { color: var(--white); }
 .progs__grid > .prog:not(.prog--ink) .prog__icon svg { stroke: currentColor; }
@@ -2546,606 +2533,12 @@ border-top-color: rgba(42,104,225,0.10);
 .progs__grid > .prog:nth-of-type(4) .prog__icon { background: var(--orange); }
 .progs__grid > .prog:nth-of-type(5) { background: #E6F6F5; }
 .progs__grid > .prog:nth-of-type(5) .prog__icon { background: var(--cyan); }
-.progs__grid > .prog:nth-of-type(6) { background: #EAF2FC; }
-.progs__grid > .prog:nth-of-type(6) .prog__icon { background: var(--ocean); }
+.progs__grid > .prog:nth-of-type(6) { background: #F2EBFB; }
+.progs__grid > .prog:nth-of-type(6) .prog__icon { background: var(--purple); }
 .progs__grid > .prog:nth-of-type(7) { background: #FFEEE3; }
 .progs__grid > .prog:nth-of-type(7) .prog__icon { background: var(--orange); }
 .progs__grid > .prog:nth-of-type(8) { background: #E9F6F8; }
 .progs__grid > .prog:nth-of-type(8) .prog__icon { background: var(--cyan); }
-
-/* =====================================================
-   ГЛАВНАЯ 2026 — объединённый экран, направления, новости
-===================================================== */
-[hidden] { display: none !important; }
-
-.hero {
-  min-height: min(960px, 100svh);
-  padding: 108px 0 54px;
-}
-.hero__grid {
-  grid-template-columns: minmax(360px, .82fr) minmax(520px, 1.18fr);
-  align-items: center;
-  gap: clamp(36px, 5vw, 76px);
-}
-.hero__content { padding: 0; }
-.hero__title--place {
-  font-size: clamp(64px, 6.5vw, 102px);
-  line-height: .84;
-  letter-spacing: -.045em;
-}
-.hero__title--place > span { white-space: nowrap; }
-.hero__title--place .hero__title-fun {
-  margin-top: .14em;
-  font-size: .52em;
-  line-height: 1;
-  letter-spacing: -.025em;
-  white-space: nowrap;
-}
-.hero__title--place em { background: none; color: inherit; font-style: normal; }
-.hero__title--place em.w-pink { color: var(--pink); }
-.hero__title--place em.w-blue { color: var(--blue); }
-.hero__sub { max-width: 540px; margin: 34px 0 30px; }
-.hero__visual {
-  align-self: center;
-  aspect-ratio: 5 / 6;
-  max-height: min(76svh, 770px);
-  margin: 30px 0 0;
-}
-.venue-switch {
-  position: absolute;
-  z-index: 8;
-  top: -19px;
-  left: 24px;
-  display: flex;
-  padding: 3px;
-  border-radius: 999px;
-  background: var(--white);
-  box-shadow: 0 8px 20px rgba(33,24,39,.08);
-}
-.venue-switch__btn {
-  min-width: 78px;
-  height: 34px;
-  padding: 0 13px;
-  border-radius: 999px;
-  font-family: var(--ff-body);
-  font-weight: 700;
-  font-size: 9px;
-  letter-spacing: .05em;
-  transition: background .3s, color .3s, transform .3s;
-}
-.venue-switch__btn.active { background: var(--ink); color: var(--white); }
-.venue-switch__btn:active { transform: scale(.97); }
-.hero__slider { border-radius: 34px; }
-.hero__slide { visibility: hidden; }
-.hero__slide.active { visibility: visible; }
-.hero__venue-copy {
-  position: absolute;
-  z-index: 5;
-  left: 28px;
-  right: 100px;
-  bottom: 62px;
-  color: var(--white);
-text-shadow: 0 4px 22px rgba(20,12,25,.48);
-}
-.hero__venue-copy span {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--yellow);
-}
-.hero__venue-copy strong {
-  display: block;
-  font-family: var(--ff-display);
-  font-size: clamp(34px, 4vw, 58px);
-  line-height: .9;
-  text-transform: uppercase;
-}
-.hero__slide-btn {
-  position: absolute;
-  z-index: 6;
-  right: 24px;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: rgba(255,255,255,.74);
-  color: rgba(33,24,39,.7);
-  box-shadow: 0 5px 14px rgba(33,24,39,.10);
-  transition: transform .25s, background .25s;
-}
-.hero__slide-btn:hover { transform: scale(1.04); background: rgba(255,255,255,.92); }
-.hero__slide-btn svg { width: 14px; height: 14px; }
-.hero__slide-btn--prev { bottom: 84px; }
-.hero__slide-btn--next { bottom: 28px; }
-.hero__dots { justify-content: flex-start; left: 28px; right: 110px; bottom: 28px; }
-.hero__slide::after { height: 66%; }
-
-.directions {
-background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
-  overflow: hidden;
-}
-.directions__grid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  grid-auto-flow: dense;
-  gap: 18px;
-}
-.direction-card {
-  position: relative;
-  grid-column: span 1;
-  min-height: 360px;
-  border-radius: 28px;
-  overflow: hidden;
-  background: var(--ink);
-  color: var(--white);
-  isolation: isolate;
-  box-shadow: 0 18px 34px -24px rgba(33,24,39,.30);
-  transition: transform .35s, box-shadow .35s;
-}
-.direction-card--wide { grid-column: span 2; }
-.direction-card:nth-child(10) { grid-column: span 1; }
-.direction-card:nth-child(11) { grid-column: span 2; }
-.direction-card:hover { transform: translateY(-6px); box-shadow: 0 30px 54px -28px rgba(33,24,39,.34); }
-.direction-card > img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .8s cubic-bezier(.2,.8,.2,1);
-  z-index: -2;
-}
-.direction-card:hover > img { transform: scale(1.055); }
-.direction-card__shade {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(180deg, rgba(20,12,25,.04) 20%, rgba(20,12,25,.92) 100%);
-}
-.direction-card__age {
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  max-width: calc(100% - 36px);
-  padding: 9px 14px;
-  border-radius: 999px;
-  background: var(--yellow);
-  color: var(--ink);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-.direction-card__content {
-  position: absolute;
-  left: 22px;
-  right: 22px;
-  bottom: 22px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.direction-card__content strong {
-  font-family: var(--ff-display);
-  font-size: clamp(22px, 2vw, 32px);
-  line-height: .96;
-  text-transform: uppercase;
-}
-.direction-card__content > span { margin-top: 10px; font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.76); }
-.direction-card__content b {
-  margin-top: 17px;
-  padding: 9px 13px;
-  border-radius: 999px;
-  background: var(--white);
-  color: var(--ink);
-  font-size: 11px;
-  letter-spacing: .03em;
-}
-.direction-card__content b em { color: var(--pink); font-style: normal; }
-.direction-card--restaurant .direction-card__age { background: #fff; }
-.direction-card--subscription { background: var(--g-cool); }
-.direction-card__pattern {
-  position: absolute;
-  inset: auto -15px 54px auto;
-  font-family: var(--ff-display);
-  font-size: clamp(74px, 10vw, 150px);
-  line-height: .7;
-  color: rgba(255,255,255,.11);
-  transform: rotate(-8deg);
-  white-space: nowrap;
-}
-.direction-card.is-active { transform: translateY(-6px); box-shadow: 0 0 0 4px var(--pink), 0 30px 54px -28px rgba(33,24,39,.38); }
-.direction-dialog {
-  position: fixed;
-  inset: auto 0 0;
-  width: min(760px, 100%);
-  max-width: none;
-  max-inline-size: none;
-  max-height: min(860px, 90dvh);
-  margin: 0 auto;
-  padding: 0;
-  box-sizing: border-box;
-  border: 0;
-  border-radius: 32px 32px 0 0;
-  background: #FFFFFF;
-  color: var(--ink);
-  box-shadow: 0 -24px 80px rgba(33,24,39,.24);
-  overflow-y: auto;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(104%);
-  transition: transform .38s cubic-bezier(.2,.8,.2,1), opacity .24s ease;
-}
-.direction-dialog.is-open { opacity: 1; pointer-events: auto; transform: translateY(0); }
-.direction-dialog::backdrop { background: rgba(33,24,39,.44); backdrop-filter: blur(7px); }
-.direction-dialog__media {
-  position: relative;
-  isolation: isolate;
-  width: calc(100% - 28px);
-  height: clamp(220px, 32dvh, 300px);
-  margin: 14px 14px 0;
-  overflow: hidden;
-  border-radius: 24px;
-  background-color: var(--ink);
-  background-image: var(--sheet-image);
-  background-position: center;
-  background-size: cover;
-}
-.direction-dialog__media::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  inset: -24px;
-  background-image: var(--sheet-image);
-  background-position: center;
-  background-size: cover;
-  filter: blur(18px);
-  opacity: .72;
-  transform: scale(1.08);
-}
-.direction-dialog__media::after {
-  content: '';
-  position: absolute;
-  z-index: 0;
-  inset: 0;
-  background: rgba(20,12,25,.12);
-}
-.direction-dialog__media img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain; }
-.direction-dialog__body { padding: 28px clamp(24px, 5vw, 48px) 34px; }
-.direction-dialog__close {
-  position: absolute;
-  z-index: 3;
-  top: 18px;
-  right: 18px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(33,24,39,.82);
-  color: var(--white);
-  font-size: 30px;
-  line-height: 1;
-  backdrop-filter: blur(8px);
-}
-.direction-dialog__eyebrow { color: var(--pink); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-.direction-dialog__title { color: var(--ink); margin: 14px 48px 18px 0; font-size: clamp(34px, 5vw, 52px); line-height: .92; }
-.direction-dialog__text { color: var(--gray-2); font-size: 16px; line-height: 1.6; }
-.direction-dialog__facts { display: grid; gap: 1px; margin: 28px 0; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--line); }
-.direction-dialog__fact { display: grid; grid-template-columns: .8fr 1.2fr; gap: 18px; padding: 14px 17px; background: rgba(255,255,255,.78); font-size: 13px; }
-.direction-dialog__fact span { color: var(--gray-2); }
-.direction-dialog__fact b { color: var(--ink); }
-.direction-dialog__action { width: 100%; }
-
-.news { background: var(--ink); color: var(--white); }
-.news .sect__title { color: var(--white); }
-.news .sect__title em::after { background: var(--pink); }
-.news .sect__sub { color: rgba(255,255,255,.66); }
-.news__grid { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 18px; }
-.news-card {
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,.10);
-  border-radius: 28px;
-  background: rgba(255,255,255,.055);
-  box-shadow: 0 18px 42px rgba(12,7,16,.14);
-}
-.news-card__photo { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
-.news-card--lead .news-card__photo { aspect-ratio: 16 / 11; }
-.news-card__photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s; }
-.news-card:hover .news-card__photo img { transform: scale(1.045); }
-.news-card__date {
-  position: absolute;
-  left: 16px;
-  bottom: 16px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: var(--yellow);
-  color: var(--ink);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-}
-.news-card__body { padding: 25px 24px 27px; }
-.news-card__body > span { font-size: 10px; color: var(--cyan); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-.news-card__body h3 { margin: 12px 0; color: var(--white); font-size: clamp(23px, 2.3vw, 34px); line-height: .98; }
-.news-card__body p { color: rgba(255,255,255,.62); font-size: 13px; line-height: 1.5; }
-.news-card__body a { display: inline-flex; gap: 12px; margin-top: 20px; color: var(--white); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; }
-.news-card__body a b { color: var(--yellow); }
-
-.reviews-section { padding: 78px 0; }
-.reviews-section .sect__head { margin-bottom: 38px; }
-.review { flex: 0 0 calc((100% - 24px) / 2); padding: 28px; min-height: 270px; display: flex; flex-direction: column; }
-.review__text { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden; }
-.review__author { margin-top: auto; }
-.slider-ctrl { margin-top: 26px; padding-top: 22px; }
-
-/* Новая композиция афиши */
-.sched { background: #F5F1E8; }
-.schedule-board {
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(420px, .92fr);
-  gap: 18px;
-  align-items: stretch;
-}
-.schedule-feature {
-  position: relative;
-  min-height: 520px;
-  padding: 38px 40px 42px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 30px;
-  background: #FFFFFF;
-  color: var(--ink);
-}
-.schedule-feature::before {
-  content: '';
-  position: absolute;
-  width: 300px;
-  aspect-ratio: 1;
-  right: -96px;
-  top: -96px;
-  border-radius: 50%;
-  background: #DFF4F1;
-}
-.schedule-feature::after {
-  content: '';
-  position: absolute;
-  width: 160px;
-  aspect-ratio: 1;
-  right: 64px;
-  bottom: -92px;
-  border-radius: 50%;
-  background: #FFE37B;
-}
-.schedule-feature__top {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 24px;
-}
-.schedule-feature__eyebrow {
-  max-width: 150px;
-  font-size: 11px;
-  line-height: 1.25;
-  font-weight: 800;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-.schedule-feature__number {
-  color: #2A68E1;
-  font-size: 13px;
-  font-weight: 900;
-}
-.schedule-feature__content {
-  position: absolute;
-  z-index: 1;
-  left: 40px;
-  right: 40px;
-  bottom: 42px;
-}
-.schedule-feature__content p {
-  margin-bottom: 14px;
-  color: #2A68E1;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-.schedule-feature__content h3 {
-  max-width: 520px;
-  margin: 0 0 28px;
-  font-size: clamp(42px, 4.4vw, 66px);
-  line-height: .9;
-  letter-spacing: -.045em;
-  overflow-wrap: anywhere;
-  text-wrap: balance;
-}
-.schedule-feature__content strong {
-  display: inline-flex;
-  align-items: center;
-  min-height: 42px;
-  padding: 0 18px;
-  border-radius: 999px;
-  background: var(--ink);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-}
-.schedule-list {
-  display: flex;
-  flex-direction: column;
-  padding: 8px 30px;
-  border: 1px solid var(--line);
-  border-radius: 30px;
-  background: #FFFFFF;
-}
-.schedule-item {
-  flex: 1;
-  display: grid;
-  grid-template-columns: 42px minmax(0, 1fr) auto;
-  gap: 18px;
-  align-items: center;
-  padding: 30px 0;
-  border-bottom: 1px solid var(--line);
-}
-.schedule-item:last-child { border-bottom: 0; }
-.schedule-item__number {
-  align-self: start;
-  padding-top: 4px;
-  color: #2A68E1;
-  font-size: 11px;
-  font-weight: 900;
-}
-.schedule-item__content > span {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--gray-1);
-  font-size: 9px;
-  font-weight: 900;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-.schedule-item__content h3 {
-  margin: 0 0 7px;
-  color: var(--ink);
-  font-size: clamp(25px, 2.2vw, 34px);
-  line-height: .95;
-  letter-spacing: -.03em;
-}
-.schedule-item__content p {
-  color: var(--gray-1);
-  font-size: 12px;
-}
-.schedule-item > strong {
-  max-width: 115px;
-  color: var(--ink);
-  font-size: 11px;
-  line-height: 1.25;
-  text-align: right;
-  text-transform: uppercase;
-}
-.sched__foot {
-  margin-top: 18px;
-  border: 1px solid var(--line);
-  background: rgba(255,253,252,.74);
-}
-#booking { scroll-margin-top: 88px; }
-
-@media (max-width: 1180px) {
-  .hero { min-height: auto; }
-  .hero__grid { grid-template-columns: minmax(320px, .8fr) minmax(440px, 1.2fr); }
-  .hero__title--place { font-size: clamp(58px, 7vw, 84px); }
-  .directions__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .direction-card, .direction-card--wide, .direction-card:nth-child(10), .direction-card:nth-child(11) { grid-column: span 1; min-height: 390px; }
-  .direction-card--wide { grid-column: span 2; min-height: 430px; }
-}
-
-@media (max-width: 860px) {
-  .hero { padding: 112px 0 72px; }
-  .hero__grid { grid-template-columns: 1fr; gap: 64px; }
-  .hero__content { order: 2; }
-  .hero__visual { order: 1; max-width: none; width: 100%; aspect-ratio: 16 / 12; margin: 28px 0 0; }
-  .hero__title--place { font-size: clamp(62px, 14vw, 104px); }
-  .hero__sub { max-width: 650px; }
-  .news__grid { grid-template-columns: 1fr 1fr; }
-  .news-card--lead { grid-column: 1 / -1; }
-  .news-card--lead .news-card__photo { aspect-ratio: 16 / 8; }
-  .schedule-board { grid-template-columns: 1fr; }
-  .schedule-feature { min-height: 460px; }
-}
-
-@media (max-width: 620px) {
-  .hero { padding: 96px 0 58px; }
-  .hero__grid { gap: 58px; }
-  .hero__title--place { font-size: clamp(43px, 12.2vw, 66px); line-height: .84; }
-  .hero__title--place .hero__title-fun { font-size: .5em; }
-  .hero__top { margin-bottom: 22px; }
-  .hero__sub { margin: 25px 0 24px; font-size: 15px; }
-  .hero__ctas { align-items: stretch; }
-  .hero__ctas .btn { width: 100%; }
-  .hero__visual { aspect-ratio: 4 / 5; }
-  .venue-switch { top: -17px; left: 16px; right: auto; justify-content: flex-start; }
-  .venue-switch__btn { min-width: 70px; flex: 0 0 auto; height: 32px; padding: 0 11px; font-size: 8px; }
-  .hero__slider { border-radius: 26px; }
-  .hero__venue-copy { left: 20px; right: 64px; bottom: 60px; }
-  .hero__venue-copy strong { font-size: 34px; }
-  .hero__slide-btn { right: 16px; width: 34px; height: 34px; }
-  .hero__slide-btn--prev { bottom: 68px; }
-  .hero__slide-btn--next { bottom: 26px; }
-  .hero__dots { left: 20px; right: 80px; bottom: 26px; }
-  .atm__slider-wrap { width: 100vw; margin-top: 34px; margin-left: calc(50% - 50vw); overflow: hidden; }
-  .atm__slider { gap: 0; padding: 8px 0 12px; scroll-snap-type: x mandatory; scroll-padding-left: 0; }
-  .atm__slide, .atm__slide--wide, .atm__slide--tall {
-    width: 100vw;
-    height: auto;
-    aspect-ratio: 4 / 5;
-    border-radius: 0;
-    background: var(--ink);
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
-  .atm__slide::after { display: none; }
-  .atm__slide img { object-fit: cover; object-position: center 35%; }
-  .atm__mobile-controls {
-    position: absolute;
-    z-index: 5;
-    right: 16px;
-    bottom: 28px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .atm__mobile-count {
-    min-width: 58px;
-    color: rgba(255,255,255,.72);
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: .08em;
-    text-align: center;
-  }
-  .atm__mobile-count b { color: #fff; font-size: 13px; }
-  .atm__mobile-btn {
-    width: 38px;
-    height: 38px;
-    border: 1px solid rgba(255,255,255,.34);
-    border-radius: 50%;
-    background: rgba(33,24,39,.68);
-    color: #fff;
-    font-size: 18px;
-    backdrop-filter: blur(8px);
-  }
-  .atm__hint { padding: 0 16px; }
-  .atm__slide:hover { transform: none; }
-  .directions__grid { grid-template-columns: 1fr; gap: 14px; }
-  .direction-card, .direction-card--wide, .direction-card:nth-child(10), .direction-card:nth-child(11) { grid-column: 1; min-height: 350px; border-radius: 24px; }
-  .direction-card__age { top: 15px; left: 15px; max-width: calc(100% - 30px); padding: 8px 12px; font-size: 9px; letter-spacing: .06em; }
-  .direction-card__content { left: 18px; right: 18px; bottom: 18px; }
-  .direction-card__content strong { font-size: 27px; overflow-wrap: anywhere; }
-  .direction-card__content > span { margin-top: 9px; font-size: 13px; line-height: 1.4; }
-  .direction-card__content b { margin-top: 14px; padding: 8px 12px; font-size: 10px; line-height: 1.2; }
-  .direction-dialog { width: 100dvw; min-width: 100dvw; max-width: 100dvw; max-inline-size: none; max-height: 90dvh; margin-inline: 0; border-radius: 26px 26px 0 0; }
-  .direction-dialog__media { width: calc(100% - 24px); height: min(31dvh, 240px); margin: 12px 12px 0; border-radius: 20px; }
-  .direction-dialog__body { padding: 22px 20px 26px; }
-  .direction-dialog__close { top: 12px; right: 12px; width: 38px; height: 38px; font-size: 25px; }
-  .direction-dialog__fact { grid-template-columns: 1fr; gap: 4px; }
-  .news__grid { grid-template-columns: 1fr; gap: 14px; }
-  .news-card--lead { grid-column: auto; }
-  .news-card--lead .news-card__photo, .news-card__photo { aspect-ratio: 4 / 3; }
-  .review { flex-basis: calc(100% - 14px); padding: 24px 22px; min-height: 280px; }
-  .schedule-feature { min-height: 410px; padding: 28px 24px 30px; border-radius: 24px; }
-  .schedule-feature__content { left: 24px; right: 24px; bottom: 30px; }
-  .schedule-feature__content h3 { margin-bottom: 22px; font-size: clamp(38px, 11.5vw, 48px); }
-  .schedule-list { padding: 0 22px; border-radius: 24px; }
-  .schedule-item { grid-template-columns: 32px minmax(0, 1fr); gap: 10px 14px; padding: 25px 0; }
-  .schedule-item > strong { grid-column: 2; max-width: none; text-align: left; }
-}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": ["ChildCare", "AmusementPark", "LocalBusiness"], "name": "MEOW — детский развлекательный центр", "alternateName": "МЯУ", "description": "Детский развлекательный центр в Махачкале: игровые парки для разного возраста, ниндзя-парк, игровые автоматы, дни рождения под ключ, аниматоры и мастер-классы.", "url": "https://meow-mkh.ru/", "telephone": "+79882938008", "email": "meow_mkh@mail.ru", "image": "https://meow-mkh.ru/photos/og-cover.jpg", "priceRange": "400–1200 ₽", "currenciesAccepted": "RUB", "address": {"@type": "PostalAddress", "streetAddress": "проспект Гамидова, 61, ТРЦ «Этажи», 4 этаж", "addressLocality": "Махачкала", "addressRegion": "Республика Дагестан", "postalCode": "367000", "addressCountry": "RU"}, "geo": {"@type": "GeoCoordinates", "latitude": 42.976, "longitude": 47.502}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "10:00", "closes": "22:00"}], "areaServed": {"@type": "City", "name": "Махачкала"}, "sameAs": ["https://wa.me/79882938008"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит билет?", "acceptedAnswer": {"@type": "Answer", "text": "У нас два парка. Малый парк (до 5 лет): от 400 ₽ в будни до 600 ₽ в выходные. Большой парк (5–12 лет): от 650 ₽ до 1 200 ₽. Для семей с 3+ детьми — особая цена за каждого. Точный прайс — в разделе «Цены»."}}, {"@type": "Question", "name": "Какие есть абонементы?", "acceptedAnswer": {"@type": "Answer", "text": "Три варианта: 8 посещений за 4 800 ₽ (на 2 месяца), 20 посещений за 10 000 ₽ (на 6 месяцев), 40 посещений за 16 000 ₽ (на 12 месяцев). Оформляется в центре при первом визите. Не более 5 посещений за раз, абонемент привязан к одному ребёнку."}}, {"@type": "Question", "name": "С какого возраста можно прийти?", "acceptedAnswer": {"@type": "Answer", "text": "С любого. Малый парк — для детей до 5 лет: мягкая сенсорная зона, развивающие модули, тёплый пол. Большой парк — для 5–12 лет: батуты, аэрохоккей, лабиринт, VR-зона и спорт."}}, {"@type": "Question", "name": "Как заказать день рождения?", "acceptedAnswer": {"@type": "Answer", "text": "Оставьте заявку в форме справа или позвоните +7 988 293 80 08 — менеджер свяжется за 15 минут. Можем добавить аниматора, мастер-класс или фотографа."}}, {"@type": "Question", "name": "Что есть для взрослых?", "acceptedAnswer": {"@type": "Answer", "text": "На территории работает итальянский ресторан «Иль Патио» — паста ручной работы, кофе LavAzza. Можно наблюдать за игровой зоной. Wi-Fi бесплатный."}}, {"@type": "Question", "name": "Где вы находитесь и как добраться?", "acceptedAnswer": {"@type": "Answer", "text": "Махачкала, проспект Гамидова, 61. ТРЦ «Этажи», 4 этаж. Удобный заезд с Гамидова, парковка на 200 мест. Работаем ежедневно с 10:00 до 22:00."}}, {"@type": "Question", "name": "Нужна ли сменная обувь?", "acceptedAnswer": {"@type": "Answer", "text": "В игровых зонах дети играют в носочках — так чище и безопаснее на мягких покрытиях. В ресторане «Иль Патио» — в своей обуви."}}]}</script>
@@ -3172,23 +2565,24 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
 <nav class="nav" id="nav">
   <div class="wrap nav__inner">
     <a href="#" class="nav__brand">
-      <img class="nav__cat" src="photos/w/cat-mascot.webp" alt="MEOW" width="360" height="157" data-cms="i1">
-      <span class="nav__brand-name" data-cms="f189">MEOW</span>
+      <img class="nav__cat" src="photos/w/cat-mascot.webp" alt="MEOW" width="360" height="157">
+      <span class="nav__brand-name">MEOW</span>
     </a>
     <div class="nav__menu">
-      <a href="#directions">Направления</a>
-      <a href="#schedule">Афиша</a>
+      <a href="#schedule">Расписание</a>
+      <a href="#zones">Зоны</a>
+      <a href="#party">Праздники</a>
+      <a href="#progs">Мастер-классы</a>
+      <a href="#patio">Патио</a>
       <a href="#prices">Цены</a>
-      <a href="#news">Новости</a>
-      <a href="#reviews">Отзывы</a>
-      <a href="#cta">Вопросы</a>
+      <a href="#rules">Правила</a>
       <a href="#contacts">Контакты</a>
     </div>
     <div class="nav__cta">
       <a href="tel:+79882938008" class="nav__phone">
         <span class="dot"></span>+7 988 293 80 08
       </a>
-      <a href="#booking" class="btn btn--ink" style="height:44px;padding:0 22px;font-size:12px;" data-conf>
+      <a href="#cta" class="btn btn--ink" style="height:44px;padding:0 22px;font-size:12px;" data-conf>
         Записаться
         <span class="btn__arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
       </a>
@@ -3203,7 +2597,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
 <div class="mob-menu" id="mobMenu">
   <div class="mob-menu__head">
     <div class="mob-menu__brand">
-      <img src="photos/w/cat-mascot.webp" alt="" width="360" height="157" data-cms="i2">
+      <img src="photos/w/cat-mascot.webp" alt="" width="360" height="157">
       <span>MEOW</span>
     </div>
     <button class="mob-menu__close" id="mobClose" aria-label="закрыть">
@@ -3211,12 +2605,12 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
     </button>
   </div>
   <ul class="mob-menu__links">
-    <li><a href="#directions" data-mob-link>Направления и цены</a></li>
-    <li><a href="#schedule" data-mob-link>Афиша</a></li>
-    <li><a href="#prices" data-mob-link>Тарифы и абонементы</a></li>
-    <li><a href="#news" data-mob-link>Новости</a></li>
-    <li><a href="#reviews" data-mob-link>Отзывы</a></li>
-    <li><a href="#cta" data-mob-link>Вопросы</a></li>
+    <li><a href="#schedule" data-mob-link>Расписание</a></li>
+    <li><a href="#zones" data-mob-link>Зоны</a></li>
+    <li><a href="#party" data-mob-link>Праздники</a></li>
+    <li><a href="#progs" data-mob-link>Мастер-классы</a></li>
+    <li><a href="#patio" data-mob-link>Иль Патио</a></li>
+    <li><a href="#prices" data-mob-link>Цены</a></li>
     <li><a href="#rules" data-mob-link>Правила</a></li>
     <li><a href="#contacts" data-mob-link>Контакты</a></li>
   </ul>
@@ -3235,9 +2629,12 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
         <span class="cap">Махачкала · ТРЦ «Этажи», 4&nbsp;этаж</span>
       </div>
 
-      <h1 class="hero__title hero__title--place" aria-label="Время играть, есть и веселиться">
-        <span>Время <em class="w-pink">играть</em>,</span>
-        <span class="hero__title-fun">есть и <em class="w-blue">веселиться.</em></span>
+      <h1 class="hero__title">
+        <span>Время <span class="w-pink">играть,</span></span>
+        <span class="hero__title-row-cat">
+          время <em>смеяться!</em>
+          <img class="hero__title-cat" src="photos/w/cat-mascot.webp" alt="" width="360" height="157">
+        </span>
       </h1>
 
       <p class="hero__sub">
@@ -3245,11 +2642,11 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
       </p>
 
       <div class="hero__ctas">
-        <a href="#directions" class="btn btn--ink">
-          Смотреть направления
+        <a href="#prices" class="btn btn--ink" data-conf>
+          Оформить абонемент
           <span class="btn__arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </a>
-        <a href="#booking" class="btn btn--line">Заказать праздник</a>
+        <a href="#party" class="btn btn--line">Заказать праздник</a>
       </div>
 
       <div class="hero__chips">
@@ -3259,23 +2656,42 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
     </div>
 
     <div class="hero__visual">
-      <div class="venue-switch" role="tablist" aria-label="Выберите пространство">
-        <button class="venue-switch__btn active" type="button" role="tab" aria-selected="true" data-venue="meow">MEOW</button>
-        <button class="venue-switch__btn" type="button" role="tab" aria-selected="false" data-venue="patio">IL PATIO</button>
-      </div>
-      <div class="hero__slider" id="heroSlider" data-active-venue="meow">
-        <div class="hero__slide active" data-venue="meow" data-kicker="Игры для любого возраста" data-title="Три зоны — один яркий день"><img src="photos/w/m29.webp" alt="Игровая зона MEOW" width="1600" height="1067"></div>
-        <div class="hero__slide" data-venue="meow" data-kicker="Комфорт и безопасность" data-title="Всё под присмотром команды"><img src="photos/w/m22.webp" alt="Большой парк MEOW" width="1140" height="760"></div>
-        <div class="hero__slide" data-venue="meow" data-kicker="Праздник под ключ" data-title="Вам остаётся веселиться"><img src="photos/w/m08.webp" alt="Праздник в MEOW" width="1600" height="1067"></div>
-        <div class="hero__slide" data-venue="patio" data-kicker="Ресторан внутри центра" data-title="Вы рядом, пока дети играют"><img src="photos/w/m01.webp" alt="Ресторан IL PATIO" width="1580" height="2370"></div>
-        <div class="hero__slide" data-venue="patio" data-kicker="Для всей семьи" data-title="Итальянское меню и детские блюда"><img src="photos/w/m24.webp" alt="Семейное событие в IL PATIO" width="1140" height="1710"></div>
-        <div class="hero__slide" data-venue="patio" data-kicker="От шеф-кондитера" data-title="Авторский торт к вашему событию"><img src="photos/w/cake03.webp" alt="Авторский десерт IL PATIO" width="660" height="880"></div>
-        <div class="hero__venue-copy" aria-live="polite">
-          <span id="venueKicker">Игры для любого возраста</span>
-          <strong id="venueTitle">Три зоны — один яркий день</strong>
+      <div class="hero__slider" id="heroSlider">
+        <div class="hero__slide active">
+          <img src="photos/w/m29.webp" alt="Игровые зоны" width="1600" height="1067">
+          <div class="hero__caption">
+            <span class="hero__caption-num">01 / 05 · ИГРЫ</span>
+            <span class="hero__caption-text">Три зоны<br>под <em>каждый</em> возраст</span>
+          </div>
         </div>
-        <button class="hero__slide-btn hero__slide-btn--prev" id="heroPrev" type="button" aria-label="Предыдущее фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5m7 7-7-7 7-7"/></svg></button>
-        <button class="hero__slide-btn hero__slide-btn--next" id="heroNext" type="button" aria-label="Следующее фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></button>
+        <div class="hero__slide">
+          <img src="photos/w/m05.webp" alt="Сухой бассейн" width="1600" height="1067">
+          <div class="hero__caption">
+            <span class="hero__caption-num">02 / 05 · ЛАБИРИНТ</span>
+            <span class="hero__caption-text">Горки, тоннели<br>и&nbsp;<em>сухой бассейн</em></span>
+          </div>
+        </div>
+        <div class="hero__slide">
+          <img src="photos/w/m08.webp" alt="Праздники" width="1600" height="1067">
+          <div class="hero__caption">
+            <span class="hero__caption-num">03 / 05 · ПРАЗДНИКИ</span>
+            <span class="hero__caption-text">Под ключ<br>за&nbsp;<em>15 минут</em></span>
+          </div>
+        </div>
+        <div class="hero__slide">
+          <img src="photos/w/m15.webp" alt="Эмоции" width="1140" height="1710">
+          <div class="hero__caption">
+            <span class="hero__caption-num">04 / 05 · ЭМОЦИИ</span>
+            <span class="hero__caption-text">Чувства,<br>в&nbsp;которые <em>возвращаются</em></span>
+          </div>
+        </div>
+        <div class="hero__slide">
+          <img src="photos/w/m24.webp" alt="Иль Патио" width="1140" height="1710">
+          <div class="hero__caption">
+            <span class="hero__caption-num">05 / 05 · РЕСТОРАН</span>
+            <span class="hero__caption-text">«Иль&nbsp;Патио»<br>на&nbsp;<em>территории</em></span>
+          </div>
+        </div>
         <div class="hero__dots" id="heroDots"></div>
       </div>
       <div class="hero__sticker hero__sticker--star"></div>
@@ -3306,93 +2722,92 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
 </div>
 
 <!-- ============== ABOUT / 4 ПРИНЦИПА ============== -->
-<template id="legacy-about">
+<section class="sect about" id="about">
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
         <svg class="about__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2279.00 285.00" fill="currentColor" fill-rule="evenodd" role="img" aria-label="Место ярких улыбок"><path d="M 1704.00,3.86 1704.32,3.00 1704.18,2.50 1703.00,1.98 1596.50,0.80 1592.50,0.81 1591.50,1.30 1588.00,7.32 1585.00,13.22 1581.97,20.00 1579.25,27.00 1577.02,34.00 1575.20,41.00 1573.98,47.00 1572.98,54.00 1572.38,61.50 1572.27,68.50 1573.12,80.50 1574.00,86.18 1576.17,95.50 1578.41,102.50 1581.23,109.50 1584.17,115.50 1586.98,120.50 1590.91,126.50 1594.00,130.65 1602.00,139.70 1606.00,143.52 1612.00,148.56 1622.00,155.52 1629.00,159.54 1635.02,162.50 1642.11,165.50 1648.00,167.62 1654.50,169.60 1662.07,171.50 1673.00,173.57 1680.00,174.48 1688.50,175.03 1696.50,175.12 1706.50,174.51 1713.27,173.50 1721.50,171.60 1727.50,169.67 1735.00,166.51 1740.50,163.53 1746.50,159.52 1751.50,155.40 1756.50,149.36 1759.50,145.08 1762.31,139.50 1763.28,135.50 1764.00,134.82 1764.85,135.00 1773.95,140.00 1775.66,141.00 1776.01,141.50 1775.18,146.50 1772.54,154.50 1769.50,160.69 1765.50,166.98 1761.57,171.50 1756.93,175.50 1750.50,179.76 1743.14,183.50 1735.41,186.50 1728.50,188.60 1719.67,190.50 1714.50,191.22 1707.50,191.76 1700.00,191.79 1685.00,190.71 1662.50,187.97 1655.50,187.38 1648.50,187.02 1642.00,187.07 1632.29,188.00 1623.00,189.99 1614.44,193.00 1609.10,196.00 1606.00,198.47 1603.00,201.51 1600.30,205.00 1598.00,208.79 1596.00,213.00 1594.15,218.00 1591.95,227.00 1590.93,234.00 1590.54,239.50 1590.33,248.00 1590.55,254.50 1591.37,264.50 1592.59,273.00 1593.00,274.08 1594.00,274.73 1599.00,275.56 1609.00,276.67 1632.00,277.72 1655.50,277.75 1673.50,276.72 1689.50,274.79 1696.50,273.62 1705.50,271.70 1713.50,269.63 1720.39,267.50 1728.50,264.58 1735.50,261.66 1742.12,258.50 1749.49,254.50 1757.50,249.56 1761.92,246.50 1768.50,241.52 1774.45,236.50 1779.79,231.50 1784.50,226.59 1793.50,215.64 1801.50,203.76 1808.33,191.50 1812.50,182.73 1815.50,175.67 1820.45,162.50 1824.30,150.50 1827.44,139.50 1831.12,124.50 1835.63,103.50 1837.28,94.50 1839.62,77.50 1842.92,50.00 1845.98,30.00 1848.00,20.29 1850.00,13.10 1851.72,8.50 1854.32,6.00 1854.49,4.00 1854.00,3.39 1853.00,3.18 1769.00,3.19 1767.00,3.40 1765.16,4.00 1763.47,5.00 1761.07,7.00 1757.79,11.00 1756.00,14.19 1753.87,20.00 1751.80,27.00 1748.05,44.00 1742.62,75.50 1739.50,91.36 1735.54,106.50 1731.62,117.50 1728.37,124.50 1725.53,129.50 1722.50,133.93 1718.64,138.50 1713.98,142.50 1710.52,144.50 1707.50,145.58 1704.00,145.99 1700.50,145.60 1698.00,144.67 1696.00,143.52 1693.58,141.50 1691.75,139.50 1689.67,136.50 1685.75,128.50 1682.24,118.50 1679.82,108.50 1678.02,96.50 1677.34,84.50 1677.72,71.00 1678.84,61.00 1680.93,50.00 1683.91,39.50 1687.21,31.00 1690.68,24.00 1700.50,9.81Z M 366.00,11.18 366.20,9.00 365.70,8.50 365.00,8.33 290.00,8.37 289.00,8.76 282.33,27.50 276.35,42.50 266.50,64.48 255.50,86.51 254.40,88.00 252.10,89.50 248.50,90.57 244.50,90.95 241.73,90.50 241.18,90.00 240.85,89.00 235.98,9.50 235.50,8.59 234.50,8.33 153.50,8.33 152.00,8.81 151.73,9.50 151.53,19.00 150.77,30.50 149.58,42.50 147.52,55.50 145.76,63.50 143.61,71.50 139.50,83.26 134.20,94.50 128.12,104.50 124.41,109.50 120.50,114.13 114.50,120.23 107.00,126.50 98.50,132.20 90.50,136.39 80.50,140.39 70.04,143.50 36.00,150.79 25.40,154.00 18.03,157.00 12.54,160.00 9.00,163.31 6.38,167.00 4.42,171.00 2.72,176.00 1.43,182.00 0.78,187.00 0.14,195.50 0.15,201.00 1.16,214.50 2.93,225.50 4.39,231.50 6.31,237.50 8.27,242.50 10.39,247.00 12.88,251.50 16.18,256.50 22.00,263.50 26.00,267.34 29.86,270.50 35.78,274.50 43.68,278.50 52.30,281.50 60.00,283.24 69.00,284.57 81.50,284.58 95.50,282.57 104.05,280.50 110.50,278.48 120.53,274.50 124.78,272.50 132.13,268.50 141.50,262.50 149.29,256.50 157.50,249.00 163.49,242.50 169.20,235.50 175.00,227.45 179.50,220.45 184.50,211.58 188.43,203.50 194.50,188.20 198.29,175.50 200.42,166.50 202.50,155.27 204.51,139.50 205.46,126.50 206.05,112.50 206.18,95.50 205.94,74.50 206.73,54.50 207.00,53.79 208.00,53.29 220.50,53.32 221.50,53.91 221.65,54.50 221.73,65.50 223.03,98.00 223.24,112.50 222.96,120.50 222.19,129.50 217.71,157.00 216.46,168.00 216.31,174.00 216.70,177.50 217.68,179.50 218.88,180.50 221.00,181.00 223.00,180.96 226.00,180.51 229.50,179.39 234.77,176.50 238.55,173.50 241.50,170.62 245.50,165.89 248.71,161.50 256.50,148.81 264.50,134.07 278.79,106.00 282.77,99.00 285.00,97.84 288.50,97.14 291.00,97.01 292.50,97.29 293.50,97.92 293.86,99.50 292.39,106.50 290.07,114.50 286.38,125.50 280.48,141.50 276.43,151.50 272.50,160.13 268.50,168.28 262.50,179.43 251.26,198.00 237.50,218.28 225.50,234.62 214.50,249.00 201.00,265.13 194.78,273.00 191.00,278.64 190.56,280.00 190.85,280.50 192.00,280.74 354.50,280.73 355.50,280.53 355.55,279.50 354.50,277.46 346.90,265.50 343.88,259.50 341.94,253.00 341.17,248.50 340.72,243.50 340.64,237.00 341.10,230.00 341.89,224.50 343.00,219.49 345.88,210.00 349.79,201.00 353.86,194.00 359.00,187.32 364.50,181.94 367.00,179.98 371.03,177.50 371.61,176.50 371.40,175.50 364.99,161.50 360.88,151.50 357.00,140.95 354.97,134.50 352.95,127.00 351.00,117.50 349.73,107.50 349.41,101.00 349.72,88.50 351.07,78.00 353.89,66.00 360.50,48.04 362.33,42.50 363.50,37.82 364.62,30.50Z M 1111.00,14.59 1111.13,13.50 1110.00,12.99 1089.00,13.50 1039.00,14.02 1038.48,15.00 1038.89,20.50 1043.00,64.78 1044.30,75.50 1044.32,76.00 1044.00,76.36 1043.00,75.58 1041.50,73.00 1034.50,63.42 1027.54,55.00 1017.85,45.00 1007.44,36.00 996.00,27.97 985.37,22.00 974.00,16.99 961.99,13.00 953.50,10.98 947.50,9.91 939.50,8.92 922.00,8.75 917.00,9.31 913.57,10.00 906.58,12.00 897.26,16.00 892.00,18.91 887.38,22.00 883.52,25.00 879.00,29.10 875.00,33.43 871.00,38.56 868.00,43.22 864.92,49.00 862.98,53.50 860.94,59.50 859.10,67.00 857.97,74.00 857.46,82.00 857.45,88.50 857.88,96.50 858.86,103.50 860.00,108.99 861.87,115.50 864.00,121.17 866.94,127.50 870.00,132.87 873.00,137.42 876.87,142.50 882.00,148.28 886.25,152.50 892.00,157.55 897.06,161.50 902.78,165.50 914.50,172.54 924.28,177.50 931.00,180.53 946.39,186.50 959.00,190.55 968.00,192.94 968.55,193.50 967.86,194.50 961.90,198.50 951.25,204.50 946.50,206.59 941.00,208.56 937.50,209.54 931.50,210.58 923.50,210.66 918.00,209.66 912.50,207.50 905.12,203.00 900.81,201.00 897.50,199.90 891.50,198.77 884.00,198.66 880.70,199.00 876.50,199.95 871.00,201.99 865.63,205.00 862.89,207.00 859.62,210.00 856.96,213.00 854.00,217.31 852.00,221.15 849.97,226.00 848.85,229.50 847.84,234.00 847.42,239.00 847.52,242.50 847.90,246.00 849.00,250.18 850.81,254.50 852.85,258.00 855.00,260.93 858.19,264.50 861.50,267.52 865.50,270.61 870.00,273.54 875.50,276.50 880.00,278.50 886.00,280.58 895.00,282.56 905.00,283.28 915.50,282.60 926.50,280.57 930.50,279.55 939.50,276.62 951.42,271.50 962.49,265.50 974.50,257.59 983.74,250.50 994.08,241.50 1005.50,230.18 1017.54,216.50 1026.30,205.00 1027.50,204.47 1038.00,206.62 1038.77,207.00 1038.97,207.50 1038.50,210.85 1037.50,215.09 1034.50,224.71 1028.50,239.84 1021.00,256.36 1020.00,260.33 1019.86,265.00 1020.98,270.00 1023.00,273.98 1024.94,276.50 1027.02,278.50 1029.91,280.50 1032.00,281.50 1035.50,282.60 1038.50,282.92 1115.50,283.67 1125.50,283.74 1126.36,283.50 1126.63,283.00 1126.52,282.50 1122.89,269.50 1116.97,244.50 1113.00,225.17 1110.00,208.86 1107.00,189.84 1104.00,166.84 1101.95,145.50 1100.99,131.50 1100.32,111.50 1100.27,97.50 1100.84,79.00 1101.97,64.00 1104.00,47.27 1106.00,35.62 1108.00,26.15Z M 938.50,76.03 944.50,75.61 950.21,76.00 954.82,77.00 962.95,80.00 968.75,83.00 975.00,86.96 981.67,92.00 988.58,98.00 996.65,106.00 1003.50,113.60 1010.50,122.06 1017.50,131.27 1025.50,142.71 1032.50,153.59 1043.73,173.00 1043.71,174.00 1043.00,174.28 1032.16,172.50 1017.00,168.55 999.00,162.56 984.00,156.53 969.18,149.50 956.71,142.50 950.52,138.50 945.00,134.53 937.78,128.50 931.00,121.50 927.92,117.50 924.83,112.50 923.00,108.62 921.91,105.50 921.00,101.50 920.69,96.50 921.00,92.10 921.76,89.00 922.96,86.50 925.00,83.73 927.76,81.00 930.50,78.99 934.51,77.00Z M 1393.50,183.12 1393.36,181.00 1393.00,180.60 1392.00,180.37 1368.00,181.13 1367.00,181.48 1334.50,222.66 1333.50,223.58 1333.00,223.39 1332.86,222.50 1333.98,183.00 1333.65,181.50 1332.50,181.13 1307.50,180.68 1306.84,181.00 1306.52,182.50 1307.00,272.00 1307.50,273.25 1308.50,273.55 1330.50,273.50 1331.50,273.26 1332.50,272.39 1364.00,232.24 1365.00,231.49 1365.46,232.00 1365.48,232.50 1364.17,272.00 1364.50,273.00 1365.50,273.44 1391.00,274.15 1392.00,273.93 1392.42,273.50Z M 1903.00,191.38 1903.13,182.50 1902.71,181.50 1902.00,181.24 1836.50,182.87 1835.50,183.37 1835.25,185.00 1835.21,222.50 1834.58,234.50 1833.66,240.50 1832.56,244.00 1831.50,246.13 1829.50,248.40 1827.50,249.50 1825.00,249.85 1822.50,249.62 1819.07,248.50 1816.50,247.07 1816.00,247.28 1815.99,250.50 1817.31,271.00 1818.00,272.21 1820.13,273.50 1822.81,274.50 1826.00,275.04 1831.50,275.38 1837.50,274.81 1842.00,273.63 1844.50,272.51 1847.50,270.59 1850.50,267.77 1853.50,263.72 1855.50,259.87 1857.50,254.24 1858.63,249.50 1859.64,243.50 1860.54,234.50 1861.03,208.00 1862.00,207.33 1876.00,207.04 1876.80,207.50 1877.03,208.50 1877.12,273.50 1877.50,273.84 1878.50,273.98 1901.00,273.42 1901.88,273.00 1902.22,272.00Z M 1485.00,195.98 1485.08,195.50 1484.50,194.70 1463.00,180.63 1462.00,181.01 1444.50,203.63 1443.50,204.39 1442.50,203.80 1425.50,181.57 1425.00,181.47 1424.00,181.91 1405.00,194.32 1404.57,195.00 1404.85,196.00 1426.22,225.50 1426.63,226.50 1426.14,227.50 1401.45,259.50 1401.28,260.50 1422.60,275.50 1423.50,275.84 1424.50,275.33 1443.50,250.63 1444.00,250.56 1444.70,251.00 1462.00,275.12 1463.00,275.87 1464.00,275.67 1486.00,263.29 1486.67,262.50 1486.50,261.78 1461.11,228.00 1461.39,227.00Z M 1937.50,195.88 1937.79,183.00 1937.50,181.89 1936.50,181.64 1913.50,181.60 1913.00,181.73 1912.50,182.50 1910.57,265.00 1911.00,265.99 1912.79,267.50 1916.56,269.50 1922.00,271.51 1930.00,273.60 1936.00,274.57 1941.00,274.84 1947.50,274.62 1953.50,273.65 1960.39,271.50 1966.39,268.50 1971.63,264.50 1974.50,261.45 1976.50,258.79 1979.50,253.10 1980.50,250.12 1981.28,246.50 1981.76,240.00 1981.29,234.00 1980.50,230.50 1979.50,227.55 1976.50,221.56 1972.50,216.11 1968.50,212.13 1964.35,209.00 1961.02,207.00 1956.61,205.00 1953.50,203.98 1949.50,203.16 1945.50,202.81 1942.00,202.86 1939.50,203.18 1938.50,203.62 1937.61,203.50 1937.23,202.50Z M 1295.00,196.68 1295.01,196.00 1294.50,195.37 1278.50,180.33 1277.50,179.79 1277.00,180.01 1246.50,210.51 1246.00,210.50 1245.71,209.50 1245.66,183.00 1245.47,182.00 1244.50,181.52 1221.00,181.52 1220.16,182.00 1219.93,183.00 1220.45,272.00 1221.00,272.99 1245.00,273.75 1245.56,273.50 1245.85,272.50 1245.83,247.00 1246.49,246.00 1250.00,242.44 1251.00,241.87 1251.50,242.18 1277.50,277.50 1278.50,277.24 1298.38,262.50 1298.50,262.00 1298.26,261.50 1270.00,223.92 1269.68,223.00 1270.00,222.22Z M 2274.50,197.73 2274.98,197.00 2274.67,196.00 2258.50,180.83 2257.50,180.42 2256.54,181.00 2227.50,210.01 2226.50,210.58 2226.00,210.24 2225.89,209.50 2225.82,183.50 2225.50,182.34 2224.50,181.97 2202.00,181.96 2201.00,182.09 2200.56,182.50 2200.36,183.50 2200.75,272.00 2201.00,272.63 2202.50,273.08 2224.50,273.69 2225.55,273.50 2226.09,272.50 2225.93,247.50 2226.76,246.00 2230.00,242.76 2231.00,242.17 2231.50,242.31 2232.10,243.00 2255.87,275.50 2257.50,277.30 2258.50,277.12 2278.49,262.50 2278.50,261.85 2277.62,261.00 2249.69,223.50 2250.03,222.50Z M 1171.50,204.06 1174.00,203.78 1177.00,203.94 1179.50,204.52 1181.50,205.34 1183.50,206.64 1185.50,208.59 1186.50,210.02 1187.50,212.51 1187.76,215.00 1187.50,217.46 1186.74,219.50 1185.50,221.50 1183.60,223.50 1182.00,224.71 1178.00,226.52 1174.50,227.02 1171.50,226.88 1168.00,225.84 1167.17,225.00 1166.74,206.50 1167.00,205.92 1168.00,205.23Z M 2087.50,204.12 2084.53,181.00 2084.00,179.92 2083.00,179.74 2066.00,180.11 2020.00,181.63 2019.65,182.00 2019.47,183.00 2019.00,221.75 2018.53,272.50 2018.94,273.50 2029.00,274.68 2042.00,275.21 2053.50,274.71 2060.50,273.68 2068.50,271.55 2073.38,269.50 2078.32,266.50 2081.80,263.50 2084.50,260.27 2086.66,256.50 2088.40,251.50 2089.19,246.00 2089.19,241.00 2088.50,235.74 2086.64,230.00 2084.46,226.00 2081.50,222.22 2077.95,219.00 2073.04,216.00 2067.75,214.00 2062.50,212.99 2056.00,212.87 2052.00,213.37 2049.06,214.00 2046.50,214.89 2045.50,214.90 2045.02,214.00 2045.17,207.50 2045.61,206.50 2046.50,206.17 2086.00,205.10 2087.00,204.90Z M 2141.50,205.00 2145.50,204.85 2149.50,205.27 2152.50,206.02 2154.95,207.00 2158.50,209.03 2161.93,212.00 2164.50,215.23 2166.50,219.04 2167.76,224.00 2167.96,228.00 2167.42,232.50 2165.60,237.50 2163.50,240.84 2160.11,244.50 2155.75,247.50 2150.85,249.50 2147.50,250.14 2143.00,250.31 2138.00,249.50 2133.50,247.61 2130.50,245.61 2127.00,242.23 2124.72,239.00 2122.85,235.00 2121.79,230.50 2121.67,226.00 2122.26,222.00 2123.84,217.50 2125.97,214.00 2129.00,210.69 2132.67,208.00 2137.00,206.01Z M 633.50,209.45 633.83,209.00 633.90,208.00 632.24,186.50 631.50,185.58 558.00,187.10 556.89,187.50 556.57,188.50 558.05,209.50 558.51,211.00 560.00,211.34 582.00,210.72 582.83,211.00 583.17,211.50 583.46,278.00 583.58,279.00 584.00,279.57 585.00,279.77 606.00,278.86 606.91,278.50 607.22,278.00 607.02,211.50 607.37,210.50 609.00,210.08Z M 451.00,209.55 451.28,208.50 449.78,186.50 449.50,185.68 449.00,185.34 387.00,187.06 386.00,187.42 385.71,188.50 388.03,261.50 388.59,277.50 389.00,278.77 389.50,279.00 451.00,278.97 452.34,278.50 452.60,277.50 452.60,255.00 452.45,254.00 452.00,253.57 450.50,253.41 415.00,254.13 414.00,253.54 413.84,253.00 413.51,245.00 413.68,244.00 414.00,243.66 444.50,242.12 445.50,241.84 445.98,240.50 445.07,221.50 444.82,220.50 444.50,220.14 443.50,219.92 413.00,220.95 412.28,220.50 412.00,219.60 411.66,212.00 412.00,210.85 413.00,210.58 449.50,209.91Z M 687.00,210.52 691.00,210.46 695.00,210.98 700.00,212.74 703.50,214.81 706.50,217.45 709.50,221.30 711.50,225.51 712.50,230.00 712.50,235.48 711.51,240.00 709.50,244.31 707.50,247.16 704.19,250.50 699.54,253.50 695.50,255.05 691.50,255.79 687.00,255.82 683.00,255.12 678.84,253.50 674.42,250.50 671.00,246.87 669.00,243.81 667.00,238.75 666.39,234.50 666.43,231.00 667.19,226.50 669.00,222.07 671.91,218.00 675.20,215.00 678.50,212.93 681.00,211.82 683.74,211.00Z M 503.50,211.01 507.00,210.74 510.50,210.97 514.50,211.93 516.97,213.00 520.00,214.98 522.50,217.18 524.85,220.00 526.62,223.00 527.50,223.62 548.50,217.45 548.93,217.00 548.97,216.00 547.63,212.00 545.50,207.30 542.50,202.50 539.63,199.00 536.56,196.00 532.50,192.83 529.50,190.97 522.50,187.85 519.50,186.91 514.00,185.83 508.50,185.52 503.00,185.62 499.50,185.96 495.00,186.91 491.66,188.00 487.00,189.97 483.25,192.00 479.00,194.84 473.00,200.18 467.89,206.50 463.93,213.50 462.00,218.43 461.00,222.01 459.84,230.00 459.98,238.00 460.76,243.50 461.86,248.00 463.00,251.46 464.96,256.00 466.84,259.50 470.00,264.08 473.00,267.54 476.16,270.50 479.00,272.73 483.37,275.50 487.00,277.27 491.00,278.73 495.00,279.77 501.00,280.65 506.50,280.81 510.50,280.57 517.10,279.50 523.50,277.57 529.50,274.76 535.50,270.73 540.50,265.94 544.50,260.64 547.63,254.50 549.06,250.00 548.58,249.00 548.00,248.72 527.50,242.44 526.64,243.00 525.25,245.50 523.50,247.80 520.67,250.50 516.50,253.13 512.50,254.68 507.50,255.52 502.00,255.24 499.10,254.50 497.00,253.62 493.00,251.01 491.00,249.10 488.97,246.50 486.86,242.50 485.86,239.50 485.23,236.00 485.05,233.00 485.24,230.00 485.90,226.50 486.77,224.00 488.36,221.00 490.00,218.70 492.64,216.00 495.41,214.00 497.50,212.87 500.00,211.85Z M 1212.50,218.89 1212.61,212.00 1211.71,206.00 1210.51,202.00 1208.64,198.00 1205.50,193.43 1202.28,190.00 1198.50,187.00 1193.18,184.00 1187.50,181.85 1181.50,180.46 1175.50,179.79 1168.50,179.88 1160.00,181.17 1153.00,183.01 1147.00,185.20 1142.18,188.00 1141.24,189.00 1140.98,190.50 1142.85,272.00 1143.08,273.00 1143.50,273.35 1145.00,273.50 1167.00,273.55 1168.00,273.27 1168.48,272.00 1167.85,253.00 1168.00,251.78 1168.50,251.39 1172.50,252.05 1175.50,252.18 1182.50,251.40 1185.50,250.63 1190.50,248.65 1194.00,246.71 1197.23,244.50 1200.50,241.75 1203.50,238.65 1207.59,233.00 1210.52,227.00 1211.64,223.50Z M 1940.00,228.08 1942.00,227.80 1945.00,227.88 1949.22,229.00 1952.50,231.05 1954.48,233.00 1955.56,234.50 1956.51,236.50 1956.89,238.50 1956.96,240.50 1956.58,243.00 1955.62,245.00 1954.50,246.53 1952.27,248.50 1950.50,249.57 1946.50,250.75 1942.00,250.85 1940.00,250.51 1937.50,249.61 1936.10,248.50 1936.56,230.00 1937.24,229.00Z M 2193.00,230.04 2193.09,226.00 2192.69,221.00 2191.72,216.00 2190.52,212.00 2188.50,207.28 2186.50,203.63 2184.50,200.57 2181.50,196.74 2177.91,193.00 2174.50,190.10 2170.04,187.00 2166.52,185.00 2159.16,182.00 2155.40,181.00 2149.50,180.11 2145.00,179.96 2140.50,180.16 2135.00,181.00 2131.00,182.05 2125.81,184.00 2121.81,186.00 2118.52,188.00 2114.40,191.00 2111.00,194.01 2107.00,198.42 2104.00,202.57 2101.93,206.00 2098.84,213.00 2097.70,217.00 2096.70,223.00 2096.55,227.50 2096.78,232.50 2097.90,238.50 2098.81,241.50 2100.84,246.50 2102.98,250.50 2105.96,255.00 2108.79,258.50 2112.00,261.83 2116.35,265.50 2120.75,268.50 2124.50,270.57 2132.00,273.55 2136.50,274.61 2143.00,275.32 2147.00,275.32 2153.50,274.62 2161.00,272.55 2165.50,270.61 2169.31,268.50 2173.50,265.67 2176.50,263.24 2180.50,259.30 2183.50,255.66 2186.29,251.50 2188.50,247.50 2190.50,242.68 2191.50,239.49 2192.50,234.83Z M 2052.00,233.00 2055.00,233.04 2058.00,233.80 2060.21,235.00 2061.50,236.12 2062.57,237.50 2063.63,240.00 2063.85,243.00 2063.50,245.65 2062.50,247.81 2061.16,249.50 2058.50,251.60 2056.50,252.62 2053.50,253.56 2051.50,253.82 2048.50,253.92 2045.50,253.61 2044.56,253.00 2044.20,252.00 2044.60,236.50 2045.50,235.29 2047.95,234.00Z M 737.50,236.98 737.68,233.00 737.50,228.48 736.50,222.18 735.50,218.65 732.50,211.60 730.50,208.16 727.50,203.91 724.50,200.50 720.81,197.00 716.89,194.00 713.50,191.82 709.50,189.73 705.00,187.92 701.50,186.85 695.50,185.79 689.00,185.58 684.00,185.82 678.00,186.92 675.00,187.82 670.00,189.79 666.00,191.85 662.57,194.00 658.58,197.00 654.30,201.00 651.00,204.86 648.00,209.23 646.00,212.79 643.00,220.36 641.91,225.00 641.33,230.50 641.33,235.00 641.91,240.50 643.00,245.22 644.00,248.24 646.00,252.86 648.00,256.48 651.00,260.90 654.00,264.53 657.00,267.59 661.73,271.50 666.27,274.50 670.00,276.48 674.00,278.16 678.34,279.50 686.50,280.83 690.50,280.93 695.50,280.57 700.50,279.66 704.47,278.50 709.39,276.50 713.18,274.50 716.33,272.50 720.24,269.50 723.50,266.50 727.50,261.93 730.50,257.65 732.50,254.13 735.50,246.94 736.50,243.35Z M 2009.50,255.88 2009.94,182.50 2009.71,182.00 2009.00,181.70 1987.50,182.78 1986.97,183.00 1986.62,184.00 1984.67,272.00 1984.83,273.00 1986.00,273.57 2008.00,274.63 2009.00,274.37 2009.39,273.50Z"/></svg>
       </div>
-      <p class="sect__sub" data-cms="f14">MEOW — не&nbsp;«игровая комната». Это полноценный центр семейного досуга в&nbsp;центре Махачкалы с&nbsp;площадью 1&nbsp;800&nbsp;м², рестораном-партнёром и&nbsp;командой из&nbsp;30+&nbsp;человек.</p>
+      <p class="sect__sub">MEOW — не&nbsp;«игровая комната». Это полноценный центр семейного досуга в&nbsp;центре Махачкалы с&nbsp;площадью 1&nbsp;800&nbsp;м², рестораном-партнёром и&nbsp;командой из&nbsp;30+&nbsp;человек.</p>
     </div>
 
     <div class="about__grid">
       <div class="about__cell r" data-d="1">
         <div class="about__num">01</div>
-        <div class="about__name" data-cms="f33">Под возраст</div>
-        <p class="about__desc" data-cms="f37">3 отдельных парка: малый 0–5, большой 5–12 и&nbsp;зона игровых аппаратов.</p>
+        <div class="about__name">Под возраст</div>
+        <p class="about__desc">3 отдельных парка: малый 0–5, большой 5–12 и&nbsp;зона игровых аппаратов.</p>
       </div>
       <div class="about__cell r" data-d="2">
         <div class="about__num">02</div>
-        <div class="about__name" data-cms="f34">Иль Патио</div>
-        <p class="about__desc" data-cms="f38">Полноценный итальянский ресторан на&nbsp;территории.</p>
+        <div class="about__name">Иль Патио</div>
+        <p class="about__desc">Полноценный итальянский ресторан на&nbsp;территории.</p>
       </div>
       <div class="about__cell r" data-d="3">
         <div class="about__num">03</div>
-        <div class="about__name" data-cms="f35">Праздники</div>
-        <p class="about__desc" data-cms="f39">Аниматоры по&nbsp;пятницам и&nbsp;субботам, мастер-классы по&nbsp;воскресеньям.</p>
+        <div class="about__name">Праздники</div>
+        <p class="about__desc">Аниматоры по&nbsp;пятницам и&nbsp;субботам, мастер-классы по&nbsp;воскресеньям.</p>
       </div>
       <div class="about__cell r" data-d="4">
         <div class="about__num">04</div>
-        <div class="about__name" data-cms="f36">Безопасно</div>
-        <p class="about__desc" data-cms="f40">Видеонаблюдение, мягкие покрытия, безопасные браслеты, медик.</p>
+        <div class="about__name">Безопасно</div>
+        <p class="about__desc">Видеонаблюдение, мягкие покрытия, безопасные браслеты, медик.</p>
       </div>
     </div>
   </div>
-</template>
+</section>
 
 <!-- ============== РАСПИСАНИЕ ============== -->
 <section class="sect sched" id="schedule">
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f131">№02 / Расписание</span></div>
-        <h2 class="sect__title" data-cms="f4">Что у&nbsp;нас<br>на&nbsp;<em>этой</em> неделе</h2>
+        <div class="sect__caption"><span class="line"></span><span class="cap">№01 / Расписание</span></div>
+        <h2 class="sect__title">Что у&nbsp;нас<br>на&nbsp;<em>этой</em> неделе</h2>
       </div>
-      <p class="sect__sub" data-cms="f15">Аниматоры и&nbsp;мастер-классы идут постоянно, раз в&nbsp;месяц собираем большое событие. Участие бесплатное — нужна только запись.</p>
+      <p class="sect__sub">Аниматоры и&nbsp;мастер-классы идут постоянно, раз в&nbsp;месяц собираем большое событие. Участие бесплатное — нужна только запись.</p>
     </div>
 
-    <div class="schedule-board">
-      <article class="schedule-feature r">
-        <div class="schedule-feature__top">
-          <span class="schedule-feature__eyebrow">Большое событие месяца</span>
-          <span class="schedule-feature__number">04</span>
+    <div class="sched__grid" id="schedGrid">
+      <article class="sched__row">
+        <div class="sched__main">
+          <span class="sched__kind">Постоянное</span>
+          <div class="sched__text">
+            <h3 class="sched__name">Аниматоры</h3>
+            <div class="sched__sub">Тема: уточняем</div>
+          </div>
         </div>
-        <div class="schedule-feature__content">
-          <p>Чемпионат</p>
-          <h3>Баттл<br>флип челлендж</h3>
-          <strong>Дату уточняем</strong>
-        </div>
+        <div class="sched__when">Каждую пятницу</div>
       </article>
-
-      <div class="schedule-list r" data-d="1">
-        <article class="schedule-item">
-          <span class="schedule-item__number">01</span>
-          <div class="schedule-item__content">
-            <span>Постоянное</span>
-            <h3>Аниматоры</h3>
-            <p>Тема: уточняем</p>
+      <article class="sched__row">
+        <div class="sched__main">
+          <span class="sched__kind">Постоянное</span>
+          <div class="sched__text">
+            <h3 class="sched__name">Аниматоры</h3>
+            <div class="sched__sub">Тема: уточняем</div>
           </div>
-          <strong>Каждую пятницу</strong>
-        </article>
-        <article class="schedule-item">
-          <span class="schedule-item__number">02</span>
-          <div class="schedule-item__content">
-            <span>Постоянное</span>
-            <h3>Аниматоры</h3>
-            <p>Тема: уточняем</p>
+        </div>
+        <div class="sched__when">Каждую субботу</div>
+      </article>
+      <article class="sched__row">
+        <div class="sched__main">
+          <span class="sched__kind">Постоянное</span>
+          <div class="sched__text">
+            <h3 class="sched__name">Лапка-табалапка</h3>
+            <div class="sched__sub">Мастер-класс</div>
           </div>
-          <strong>Каждую субботу</strong>
-        </article>
-        <article class="schedule-item">
-          <span class="schedule-item__number">03</span>
-          <div class="schedule-item__content">
-            <span>Постоянное</span>
-            <h3>Лапка-табалапка</h3>
-            <p>Мастер-класс</p>
+        </div>
+        <div class="sched__when">В&nbsp;это воскресенье</div>
+      </article>
+      <article class="sched__row sched__row--special">
+        <div class="sched__main">
+          <span class="sched__kind">Большое событие месяца</span>
+          <div class="sched__text">
+            <h3 class="sched__name">Баттл флип челлендж</h3>
+            <div class="sched__sub">Чемпионат</div>
           </div>
-          <strong>В&nbsp;это воскресенье</strong>
-        </article>
-      </div>
+        </div>
+        <div class="sched__when">Дату уточняем</div>
+      </article>
     </div>
 
     <div class="sched__foot r">
@@ -3407,29 +2822,29 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
 </section>
 
 <!-- ============== ЗОНЫ ============== -->
-<template id="legacy-zones">
+<section class="sect zones-wrap" id="zones">
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f132">№02 / Зоны</span></div>
-        <h2 class="sect__title" data-cms="f5">3&nbsp;мира<br>для <em>всех</em> возрастов</h2>
+        <div class="sect__caption"><span class="line"></span><span class="cap">№02 / Зоны</span></div>
+        <h2 class="sect__title">3&nbsp;мира<br>для <em>всех</em> возрастов</h2>
       </div>
-      <p class="sect__sub" data-cms="f16">Три отдельных парка под&nbsp;разный возраст и&nbsp;рост. Безопасное мягкое покрытие, видеонаблюдение и&nbsp;аниматоры всегда рядом.</p>
+      <p class="sect__sub">Три отдельных парка под&nbsp;разный возраст и&nbsp;рост. Безопасное мягкое покрытие, видеонаблюдение и&nbsp;аниматоры всегда рядом.</p>
     </div>
 
     <div class="zones">
       <article class="zone zone--1 r" data-d="1">
         <div class="zone__photo">
-          <img src="photos/w/m02.webp" alt="Малый парк" width="1020" height="1530" loading="lazy" decoding="async" data-cms="i9">
+          <img src="photos/w/m02.webp" alt="Малый парк" width="1020" height="1530" loading="lazy" decoding="async">
           <div class="zone__top">
-            <span class="zone__age" data-cms="f155">0–5 ЛЕТ</span>
-            <span class="zone__index" data-cms="f158">01 / 03</span>
+            <span class="zone__age">0–5 ЛЕТ</span>
+            <span class="zone__index">01 / 03</span>
           </div>
         </div>
         <div class="zone__body">
-          <h3 class="zone__title" data-cms="f24">Малый парк</h3>
-          <p class="zone__sub" data-cms="f27">Отдельный мир для&nbsp;самых маленьких: невысокие модули, мягкие покрытия и&nbsp;всё под&nbsp;рост малыша.</p>
-          <div class="zone__tags-title" data-cms="f30">Что внутри</div>
+          <h3 class="zone__title">Малый парк</h3>
+          <p class="zone__sub">Отдельный мир для&nbsp;самых маленьких: невысокие модули, мягкие покрытия и&nbsp;всё под&nbsp;рост малыша.</p>
+          <div class="zone__tags-title">Что внутри</div>
           <div class="zone__tags">
             <span>2-уровневый лабиринт</span>
             <span>Тоннели и&nbsp;горки</span>
@@ -3444,16 +2859,16 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
 
       <article class="zone zone--2 r" data-d="2">
         <div class="zone__photo">
-          <img src="photos/w/m22.webp" alt="Большой парк" width="1140" height="760" loading="lazy" decoding="async" data-cms="i10">
+          <img src="photos/w/m22.webp" alt="Большой парк" width="1140" height="760" loading="lazy" decoding="async">
           <div class="zone__top">
-            <span class="zone__age" data-cms="f156">5–12 ЛЕТ</span>
-            <span class="zone__index" data-cms="f159">02 / 03</span>
+            <span class="zone__age">5–12 ЛЕТ</span>
+            <span class="zone__index">02 / 03</span>
           </div>
         </div>
         <div class="zone__body">
-          <h3 class="zone__title" data-cms="f25">Большой парк</h3>
-          <p class="zone__sub" data-cms="f28">Четыре уровня, спиральные горки и&nbsp;поролоновая яма. Внутри — ниндзя-парк с&nbsp;подвесными мостами.</p>
-          <div class="zone__tags-title" data-cms="f31">Что внутри</div>
+          <h3 class="zone__title">Большой парк</h3>
+          <p class="zone__sub">Четыре уровня, спиральные горки и&nbsp;поролоновая яма. Внутри — ниндзя-парк с&nbsp;подвесными мостами.</p>
+          <div class="zone__tags-title">Что внутри</div>
           <div class="zone__tags">
             <span>4-уровневый лабиринт</span>
             <span>Спиральные горки</span>
@@ -3468,16 +2883,16 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
 
       <article class="zone zone--3 r" data-d="3">
         <div class="zone__photo">
-          <img src="photos/w/m25.webp" alt="Зона игровых аппаратов" width="1020" height="1530" loading="lazy" decoding="async" data-cms="i11">
+          <img src="photos/w/m25.webp" alt="Зона игровых аппаратов" width="1020" height="1530" loading="lazy" decoding="async">
           <div class="zone__top">
-            <span class="zone__age" data-cms="f157">1–99 ЛЕТ</span>
-            <span class="zone__index" data-cms="f160">03 / 03</span>
+            <span class="zone__age">1–99 ЛЕТ</span>
+            <span class="zone__index">03 / 03</span>
           </div>
         </div>
         <div class="zone__body">
-          <h3 class="zone__title" data-cms="f26">Зона игровых аппаратов</h3>
-          <p class="zone__sub" data-cms="f29">Аттракционы и&nbsp;автоматы, за&nbsp;которыми одинаково залипают и&nbsp;дети, и&nbsp;родители.</p>
-          <div class="zone__tags-title" data-cms="f32">Что внутри</div>
+          <h3 class="zone__title">Зона игровых аппаратов</h3>
+          <p class="zone__sub">Аттракционы и&nbsp;автоматы, за&nbsp;которыми одинаково залипают и&nbsp;дети, и&nbsp;родители.</p>
+          <div class="zone__tags-title">Что внутри</div>
           <div class="zone__tags">
             <span>Качалки для&nbsp;малышей 2+</span>
             <span>Аттракцион «Тайфун»</span>
@@ -3490,44 +2905,44 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
       </article>
     </div>
   </div>
-</template>
+</section>
 
 <!-- ============== IL PATIO ============== -->
 <section class="sect patio" id="patio">
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line" style="background:rgba(255,255,255,0.6)"></span><span class="cap cap--white" data-cms="f133">№03 / Ресторан</span></div>
-        <h2 class="sect__title" data-cms="f6">Едим всей<br><em>семьёй</em></h2>
+        <div class="sect__caption"><span class="line" style="background:rgba(255,255,255,0.6)"></span><span class="cap cap--white">№03 / Ресторан</span></div>
+        <h2 class="sect__title">Едим всей<br><em>семьёй</em></h2>
       </div>
     </div>
 
     <div class="patio__hero r">
       <div class="patio__visual">
-        <img src="photos/w/m01.webp" alt="Ресторан Иль Патио" width="1580" height="2370" loading="lazy" decoding="async" data-cms="i12">
-        <span class="patio__visual-tag" data-cms="f166">★ Часть сети «Иль Патио» с&nbsp;1993</span>
+        <img src="photos/w/m01.webp" alt="Ресторан Иль Патио" width="1580" height="2370" loading="lazy" decoding="async">
+        <span class="patio__visual-tag">★ Часть сети «Иль Патио» с&nbsp;1993</span>
         <div class="patio__visual-overlay">
-          <h4 data-cms="f163">На территории центра</h4>
+          <h4>На территории центра</h4>
           <p>Махачкала, ТРЦ «Этажи», 4 этаж · работает до&nbsp;22:00</p>
         </div>
       </div>
       <div class="patio__content">
-        <div class="patio__label" data-cms="f161">Ресторан на&nbsp;территории</div>
-        <img class="patio__logo" src="photos/w/IP_logo.webp" alt="iL Патио 1993 — итальянский ресторан" width="489" height="138" loading="lazy" decoding="async" data-cms="i13">
-        <p class="patio__copy" data-cms="f162">
+        <div class="patio__label">Ресторан на&nbsp;территории</div>
+        <img class="patio__logo" src="photos/w/IP_logo.webp" alt="iL Патио 1993 — итальянский ресторан" width="489" height="138" loading="lazy" decoding="async">
+        <p class="patio__copy">
           Итальянский ресторан внутри центра. Печь, паста, авторские торты на&nbsp;заказ. Пока ребёнок играет — вы&nbsp;спокойно ужинаете.
         </p>
         <div class="patio__chips">
-          <span class="patio__chip" data-cms="f127">Халяль</span>
-          <span class="patio__chip" data-cms="f128">Детское меню</span>
-          <span class="patio__chip" data-cms="f129">Авторские торты</span>
+          <span class="patio__chip">Халяль</span>
+          <span class="patio__chip">Детское меню</span>
+          <span class="patio__chip">Авторские торты</span>
         </div>
         <div class="hero__ctas">
           <a href="#menus" class="btn btn--white">
             Посмотреть меню
             <span class="btn__arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
           </a>
-          <a href="#booking" class="btn btn--line-white" data-conf>Забронировать</a>
+          <a href="#cta" class="btn btn--line-white" data-conf>Забронировать</a>
         </div>
       </div>
     </div>
@@ -3543,11 +2958,11 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
         <a class="menu-card" href="menu/il-patio.pdf" target="_blank" rel="noopener">
           <div class="menu-card__cover">
             <img src="photos/w/menu-patio.webp" alt="Обложка меню ресторана «Иль Патио»"
-                 width="585" height="760" loading="lazy" decoding="async" data-cms="i14">
+                 width="585" height="760" loading="lazy" decoding="async">
           </div>
           <div class="menu-card__body">
             <span class="menu-card__kind">Итальянская кухня</span>
-            <h4 class="menu-card__name" data-cms="f164">Иль Патио</h4>
+            <h4 class="menu-card__name">Иль Патио</h4>
             <p class="menu-card__meta">Паста, пицца из&nbsp;печи, салаты, десерты</p>
             <span class="menu-card__btn">Открыть меню
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -3557,11 +2972,11 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
         <a class="menu-card" href="menu/planeta-sushi.pdf" target="_blank" rel="noopener">
           <div class="menu-card__cover">
             <img src="photos/w/menu-sushi.webp" alt="Обложка меню ресторана «Планета Суши»"
-                 width="536" height="760" loading="lazy" decoding="async" data-cms="i15">
+                 width="536" height="760" loading="lazy" decoding="async">
           </div>
           <div class="menu-card__body">
             <span class="menu-card__kind">Японская кухня</span>
-            <h4 class="menu-card__name" data-cms="f165">Планета Суши</h4>
+            <h4 class="menu-card__name">Планета Суши</h4>
             <p class="menu-card__meta">Роллы, суши, сеты, горячее</p>
             <span class="menu-card__btn">Открыть меню
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -3574,19 +2989,19 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
     <!-- Авторские торты — мини-блок с галереей -->
     <div class="cakes r">
       <div class="cakes__head">
-        <div class="cakes__caption" data-cms="f174">
+        <div class="cakes__caption">
           <span class="line" style="background:rgba(255,255,255,0.6)"></span>
-          <span class="cap cap--white" data-cms="f134">Авторские торты от&nbsp;шеф-кондитера</span>
+          <span class="cap cap--white">Авторские торты от&nbsp;шеф-кондитера</span>
         </div>
-        <h3 class="cakes__title" data-cms="f175">Торт под&nbsp;<em>событие</em>&nbsp;— на&nbsp;заказ</h3>
+        <h3 class="cakes__title">Торт под&nbsp;<em>событие</em>&nbsp;— на&nbsp;заказ</h3>
       </div>
       <div class="cakes__slider" id="cakesSlider">
-        <div class="cakes__cell"><img src="photos/w/cake01.webp" alt="Авторский торт" width="660" height="991" loading="lazy" decoding="async" data-cms="i16"></div>
-        <div class="cakes__cell"><img src="photos/w/cake02.webp" alt="Авторский торт" width="660" height="880" loading="lazy" decoding="async" data-cms="i17"></div>
-        <div class="cakes__cell"><img src="photos/w/cake03.webp" alt="Авторский торт" width="660" height="880" loading="lazy" decoding="async" data-cms="i18"></div>
-        <div class="cakes__cell"><img src="photos/w/cake04.webp" alt="Авторский торт" width="660" height="880" loading="lazy" decoding="async" data-cms="i19"></div>
-        <div class="cakes__cell"><img src="photos/w/cake05.webp" alt="Авторский торт" width="660" height="880" loading="lazy" decoding="async" data-cms="i20"></div>
-        <div class="cakes__cell"><img src="photos/w/cake06.webp" alt="Авторский торт" width="660" height="880" loading="lazy" decoding="async" data-cms="i21"></div>
+        <div class="cakes__cell"><img src="photos/w/cake01.webp" alt="Авторский торт" width="660" height="991" loading="lazy" decoding="async"></div>
+        <div class="cakes__cell"><img src="photos/w/cake02.webp" alt="Авторский торт" width="660" height="880" loading="lazy" decoding="async"></div>
+        <div class="cakes__cell"><img src="photos/w/cake03.webp" alt="Авторский торт" width="660" height="880" loading="lazy" decoding="async"></div>
+        <div class="cakes__cell"><img src="photos/w/cake04.webp" alt="Авторский торт" width="660" height="880" loading="lazy" decoding="async"></div>
+        <div class="cakes__cell"><img src="photos/w/cake05.webp" alt="Авторский торт" width="660" height="880" loading="lazy" decoding="async"></div>
+        <div class="cakes__cell"><img src="photos/w/cake06.webp" alt="Авторский торт" width="660" height="880" loading="lazy" decoding="async"></div>
       </div>
     </div>
   </div>
@@ -3597,37 +3012,32 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap cap--white" data-cms="f135">№04 / Атмосфера</span></div>
-        <h2 class="sect__title" data-cms="f7">Как у&nbsp;нас<br><em>весело</em></h2>
+        <div class="sect__caption"><span class="line"></span><span class="cap cap--white">№04 / Атмосфера</span></div>
+        <h2 class="sect__title">Как у&nbsp;нас<br><em>весело</em></h2>
       </div>
-      <p class="sect__sub" data-cms="f17">В&nbsp;Instagram @meow_mkh — новые фото каждый день, расписание мастер-классов и&nbsp;истории про&nbsp;маленьких гостей.</p>
+      <p class="sect__sub">В&nbsp;Instagram @meow_mkh — новые фото каждый день, расписание мастер-классов и&nbsp;истории про&nbsp;маленьких гостей.</p>
     </div>
   </div>
 
   <div class="wrap">
     <div class="atm__slider-wrap r">
       <div class="atm__slider" id="atmSlider">
-        <div class="atm__slide atm__slide--tall"><img src="photos/w/m03.webp" alt="" width="540" height="810" loading="lazy" decoding="async" data-cms="i22"></div>
-        <div class="atm__slide"><img src="photos/w/m10.webp" alt="" width="1080" height="720" loading="lazy" decoding="async" data-cms="i23"></div>
-        <div class="atm__slide atm__slide--wide"><img src="photos/w/m14.webp" alt="" width="880" height="1320" loading="lazy" decoding="async" data-cms="i24"></div>
-        <div class="atm__slide atm__slide--tall"><img src="photos/w/m16.webp" alt="" width="1200" height="800" loading="lazy" decoding="async" data-cms="i25"></div>
-        <div class="atm__slide"><img src="photos/w/m19.webp" alt="" width="1080" height="720" loading="lazy" decoding="async" data-cms="i26"></div>
-        <div class="atm__slide atm__slide--wide"><img src="photos/w/m04.webp" alt="" width="880" height="1320" loading="lazy" decoding="async" data-cms="i27"></div>
-        <div class="atm__slide atm__slide--tall"><img src="photos/w/m06.webp" alt="" width="540" height="810" loading="lazy" decoding="async" data-cms="i28"></div>
-        <div class="atm__slide"><img src="photos/w/m09.webp" alt="" width="580" height="870" loading="lazy" decoding="async" data-cms="i29"></div>
-        <div class="atm__slide atm__slide--wide"><img src="photos/w/m11.webp" alt="" width="880" height="1320" loading="lazy" decoding="async" data-cms="i30"></div>
-        <div class="atm__slide"><img src="photos/w/m13.webp" alt="" width="580" height="870" loading="lazy" decoding="async" data-cms="i31"></div>
-        <div class="atm__slide atm__slide--tall"><img src="photos/w/m17.webp" alt="" width="540" height="810" loading="lazy" decoding="async" data-cms="i32"></div>
-        <div class="atm__slide"><img src="photos/w/m26.webp" alt="" width="580" height="870" loading="lazy" decoding="async" data-cms="i33"></div>
-        <div class="atm__slide atm__slide--wide"><img src="photos/w/m27.webp" alt="" width="880" height="1320" loading="lazy" decoding="async" data-cms="i34"></div>
-        <div class="atm__slide"><img src="photos/w/m28.webp" alt="" width="580" height="870" loading="lazy" decoding="async" data-cms="i35"></div>
-        <div class="atm__slide atm__slide--tall"><img src="photos/w/m21.webp" alt="" width="540" height="810" loading="lazy" decoding="async" data-cms="i36"></div>
-        <div class="atm__slide"><img src="photos/w/m23.webp" alt="" width="1080" height="720" loading="lazy" decoding="async" data-cms="i37"></div>
-      </div>
-      <div class="atm__mobile-controls" aria-label="Управление галереей">
-        <button class="atm__mobile-btn" id="atmPrev" type="button" aria-label="Предыдущая фотография">←</button>
-        <span class="atm__mobile-count"><b id="atmCurrent">01</b> / <span id="atmTotal">16</span></span>
-        <button class="atm__mobile-btn" id="atmNext" type="button" aria-label="Следующая фотография">→</button>
+        <div class="atm__slide atm__slide--tall"><img src="photos/w/m03.webp" alt="" width="540" height="810" loading="lazy" decoding="async"></div>
+        <div class="atm__slide"><img src="photos/w/m10.webp" alt="" width="1080" height="720" loading="lazy" decoding="async"></div>
+        <div class="atm__slide atm__slide--wide"><img src="photos/w/m14.webp" alt="" width="880" height="1320" loading="lazy" decoding="async"></div>
+        <div class="atm__slide atm__slide--tall"><img src="photos/w/m16.webp" alt="" width="1200" height="800" loading="lazy" decoding="async"></div>
+        <div class="atm__slide"><img src="photos/w/m19.webp" alt="" width="1080" height="720" loading="lazy" decoding="async"></div>
+        <div class="atm__slide atm__slide--wide"><img src="photos/w/m04.webp" alt="" width="880" height="1320" loading="lazy" decoding="async"></div>
+        <div class="atm__slide atm__slide--tall"><img src="photos/w/m06.webp" alt="" width="540" height="810" loading="lazy" decoding="async"></div>
+        <div class="atm__slide"><img src="photos/w/m09.webp" alt="" width="580" height="870" loading="lazy" decoding="async"></div>
+        <div class="atm__slide atm__slide--wide"><img src="photos/w/m11.webp" alt="" width="880" height="1320" loading="lazy" decoding="async"></div>
+        <div class="atm__slide"><img src="photos/w/m13.webp" alt="" width="580" height="870" loading="lazy" decoding="async"></div>
+        <div class="atm__slide atm__slide--tall"><img src="photos/w/m17.webp" alt="" width="540" height="810" loading="lazy" decoding="async"></div>
+        <div class="atm__slide"><img src="photos/w/m26.webp" alt="" width="580" height="870" loading="lazy" decoding="async"></div>
+        <div class="atm__slide atm__slide--wide"><img src="photos/w/m27.webp" alt="" width="880" height="1320" loading="lazy" decoding="async"></div>
+        <div class="atm__slide"><img src="photos/w/m28.webp" alt="" width="580" height="870" loading="lazy" decoding="async"></div>
+        <div class="atm__slide atm__slide--tall"><img src="photos/w/m21.webp" alt="" width="540" height="810" loading="lazy" decoding="async"></div>
+        <div class="atm__slide"><img src="photos/w/m23.webp" alt="" width="1080" height="720" loading="lazy" decoding="async"></div>
       </div>
       <div class="atm__hint">
         <span></span>
@@ -3653,16 +3063,16 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line" style="background:rgba(255,255,255,0.6)"></span><span class="cap cap--white" data-cms="f136">№05 / Праздники</span></div>
-        <h2 class="sect__title" data-cms="f8">Большой день<br><em>в&nbsp;одном</em>&nbsp;звонке</h2>
+        <div class="sect__caption"><span class="line" style="background:rgba(255,255,255,0.6)"></span><span class="cap cap--white">№05 / Праздники</span></div>
+        <h2 class="sect__title">Большой день<br><em>в&nbsp;одном</em>&nbsp;звонке</h2>
       </div>
-      <p class="sect__sub" style="color:rgba(255,255,255,0.8);" data-cms="f18">День рождения, выпускной, корпоратив. Берём организацию на&nbsp;себя — вам остаётся только наслаждаться.</p>
+      <p class="sect__sub" style="color:rgba(255,255,255,0.8);">День рождения, выпускной, корпоратив. Берём организацию на&nbsp;себя — вам остаётся только наслаждаться.</p>
     </div>
 
     <div class="party__split r">
       <div class="party__visual">
-        <img src="photos/w/m18.webp" alt="Праздник" width="1480" height="2220" loading="lazy" decoding="async" data-cms="i38">
-        <span class="party__visual-tag" data-cms="f167">Под ключ</span>
+        <img src="photos/w/m18.webp" alt="Праздник" width="1480" height="2220" loading="lazy" decoding="async">
+        <span class="party__visual-tag">Под ключ</span>
         <span class="party__visual-circle"><span><b>15</b>минут<br>и&nbsp;ответ</span></span>
       </div>
 
@@ -3672,7 +3082,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
           <li><span class="num-s">02</span>По&nbsp;воскресеньям — мастер-классы</li>
         </ul>
         <div class="hero__ctas">
-          <a href="#booking" class="btn btn--white" data-conf>
+          <a href="#cta" class="btn btn--white" data-conf>
             Узнать стоимость
             <span class="btn__arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
           </a>
@@ -3688,67 +3098,67 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f137">№06 / Мастер-классы</span></div>
-        <h2 class="sect__title" data-cms="f9">Каждый день<br>— <em>новое</em></h2>
+        <div class="sect__caption"><span class="line"></span><span class="cap">№06 / Мастер-классы</span></div>
+        <h2 class="sect__title">Каждый день<br>— <em>новое</em></h2>
       </div>
-      <p class="sect__sub" data-cms="f19">Расписание обновляется еженедельно. Можно записаться отдельно или включить в&nbsp;программу праздника.</p>
+      <p class="sect__sub">Расписание обновляется еженедельно. Можно записаться отдельно или включить в&nbsp;программу праздника.</p>
     </div>
 
     <div class="progs__grid">
       <div class="prog prog--lg prog--ink r">
         <div class="prog__icon"><svg><use href="#ic-star"/></svg></div>
-        <div class="prog__name" data-cms="f41">Тематические дни</div>
-        <div class="prog__desc" data-cms="f49">Каждые выходные — новая тема: пираты, космос, единороги, супергерои. Костюмы, реквизит, фотозона.</div>
-        <div class="prog__age" data-cms="f57">Все возрасты</div>
+        <div class="prog__name">Тематические дни</div>
+        <div class="prog__desc">Каждые выходные — новая тема: пираты, космос, единороги, супергерои. Костюмы, реквизит, фотозона.</div>
+        <div class="prog__age">Все возрасты</div>
       </div>
 
       <div class="prog prog--pink r" data-d="1">
         <div class="prog__icon"><svg fill="none" stroke="currentColor"><use href="#ic-brush"/></svg></div>
-        <div class="prog__name" data-cms="f42">Рисование на&nbsp;холсте</div>
-        <div class="prog__desc" data-cms="f50">Акрил, мини-холст 20×30.</div>
-        <div class="prog__age" data-cms="f58">4+</div>
+        <div class="prog__name">Рисование на&nbsp;холсте</div>
+        <div class="prog__desc">Акрил, мини-холст 20×30.</div>
+        <div class="prog__age">4+</div>
       </div>
 
       <div class="prog prog--cyan r" data-d="2">
         <div class="prog__icon"><svg fill="none" stroke="currentColor"><use href="#ic-flask"/></svg></div>
-        <div class="prog__name" data-cms="f43">Слайм-LAB</div>
-        <div class="prog__desc" data-cms="f51">Свой слайм с&nbsp;блёстками.</div>
-        <div class="prog__age" data-cms="f59">5+</div>
+        <div class="prog__name">Слайм-LAB</div>
+        <div class="prog__desc">Свой слайм с&nbsp;блёстками.</div>
+        <div class="prog__age">5+</div>
       </div>
 
       <div class="prog prog--yellow r" data-d="3">
         <div class="prog__icon"><svg fill="none" stroke="currentColor"><use href="#ic-chef"/></svg></div>
-        <div class="prog__name" data-cms="f44">Кулинария</div>
-        <div class="prog__desc" data-cms="f52">Печенье, кексы, мороженое.</div>
-        <div class="prog__age" data-cms="f60">5+</div>
+        <div class="prog__name">Кулинария</div>
+        <div class="prog__desc">Печенье, кексы, мороженое.</div>
+        <div class="prog__age">5+</div>
       </div>
 
       <div class="prog r" data-d="1">
         <div class="prog__icon"><svg fill="none" stroke="currentColor"><use href="#ic-pizza"/></svg></div>
-        <div class="prog__name" data-cms="f45">Пицца-мейкер</div>
-        <div class="prog__desc" data-cms="f53">Раскатают тесто, выберут начинку.</div>
-        <div class="prog__age" data-cms="f61">4+</div>
+        <div class="prog__name">Пицца-мейкер</div>
+        <div class="prog__desc">Раскатают тесто, выберут начинку.</div>
+        <div class="prog__age">4+</div>
       </div>
 
       <div class="prog r" data-d="2">
         <div class="prog__icon"><svg fill="none" stroke="currentColor"><use href="#ic-mask"/></svg></div>
-        <div class="prog__name" data-cms="f46">Квест с&nbsp;героем</div>
-        <div class="prog__desc" data-cms="f54">Сюжетный квест по&nbsp;центру.</div>
-        <div class="prog__age" data-cms="f62">6+</div>
+        <div class="prog__name">Квест с&nbsp;героем</div>
+        <div class="prog__desc">Сюжетный квест по&nbsp;центру.</div>
+        <div class="prog__age">6+</div>
       </div>
 
       <div class="prog r" data-d="3">
         <div class="prog__icon"><svg fill="none" stroke="currentColor"><use href="#ic-sci"/></svg></div>
-        <div class="prog__name" data-cms="f47">Научное шоу</div>
-        <div class="prog__desc" data-cms="f55">Сухой лёд, пузыри, бенгальские.</div>
-        <div class="prog__age" data-cms="f63">4+</div>
+        <div class="prog__name">Научное шоу</div>
+        <div class="prog__desc">Сухой лёд, пузыри, бенгальские.</div>
+        <div class="prog__age">4+</div>
       </div>
 
       <div class="prog r" data-d="4">
         <div class="prog__icon"><svg fill="none" stroke="currentColor"><use href="#ic-music"/></svg></div>
-        <div class="prog__name" data-cms="f48">Караоке-баттл</div>
-        <div class="prog__desc" data-cms="f56">Микрофоны, экран, призы.</div>
-        <div class="prog__age" data-cms="f64">6+</div>
+        <div class="prog__name">Караоке-баттл</div>
+        <div class="prog__desc">Микрофоны, экран, призы.</div>
+        <div class="prog__age">6+</div>
       </div>
     </div>
   </div>
@@ -3759,10 +3169,10 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f138">№07 / Цены</span></div>
-        <h2 class="sect__title" data-cms="f10">Прайс на&nbsp;<em>посещение</em></h2>
+        <div class="sect__caption"><span class="line"></span><span class="cap">№07 / Цены</span></div>
+        <h2 class="sect__title">Прайс на&nbsp;<em>посещение</em></h2>
       </div>
-      <p class="sect__sub" data-cms="f20">Два парка под&nbsp;разный возраст. Для&nbsp;семей с&nbsp;3+&nbsp;детьми — специальная цена за&nbsp;каждого ребёнка.</p>
+      <p class="sect__sub">Два парка под&nbsp;разный возраст. Для&nbsp;семей с&nbsp;3+&nbsp;детьми — специальная цена за&nbsp;каждого ребёнка.</p>
     </div>
 
     <!-- Прайс по паркам -->
@@ -3770,213 +3180,92 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
       <div class="park park--small r" data-d="1">
         <div class="park__head">
           <span class="park__age">До 5 лет</span>
-          <h3 class="park__name" data-cms="f65">Малый парк</h3>
+          <h3 class="park__name">Малый парк</h3>
         </div>
         <ul class="park__list">
           <li>
-            <span class="park__day" data-cms="f67">Пн — Чт</span>
-            <span class="park__price" data-cms="f75">500<span class="cur">₽</span> <em>/&nbsp;400<span class="cur">₽</span></em></span>
+            <span class="park__day">Пн — Чт</span>
+            <span class="park__price">500<span class="cur">₽</span> <em>/&nbsp;400<span class="cur">₽</span></em></span>
           </li>
           <li>
-            <span class="park__day" data-cms="f68">Пятница</span>
-            <span class="park__price" data-cms="f76">500<span class="cur">₽</span> <em>/&nbsp;400<span class="cur">₽</span></em></span>
+            <span class="park__day">Пятница</span>
+            <span class="park__price">500<span class="cur">₽</span> <em>/&nbsp;400<span class="cur">₽</span></em></span>
           </li>
           <li>
-            <span class="park__day" data-cms="f69">Выходные · праздники</span>
-            <span class="park__price" data-cms="f77">600<span class="cur">₽</span> <em>/&nbsp;500<span class="cur">₽</span></em></span>
+            <span class="park__day">Выходные · праздники</span>
+            <span class="park__price">600<span class="cur">₽</span> <em>/&nbsp;500<span class="cur">₽</span></em></span>
           </li>
           <li class="park__banquet">
-            <span class="park__day" data-cms="f70">Для банкета · любой день</span>
-            <span class="park__price" data-cms="f78">400<span class="cur">₽</span></span>
+            <span class="park__day">Для банкета · любой день</span>
+            <span class="park__price">400<span class="cur">₽</span></span>
           </li>
         </ul>
-        <div class="park__legend" data-cms="f168">Вторая цена — для&nbsp;семей с&nbsp;3+&nbsp;детьми</div>
+        <div class="park__legend">Вторая цена — для&nbsp;семей с&nbsp;3+&nbsp;детьми</div>
       </div>
 
       <div class="park park--big r" data-d="2">
         <div class="park__head">
           <span class="park__age">5–12 лет</span>
-          <h3 class="park__name" data-cms="f66">Большой парк</h3>
+          <h3 class="park__name">Большой парк</h3>
         </div>
         <ul class="park__list">
           <li>
-            <span class="park__day" data-cms="f71">Пн — Чт</span>
-            <span class="park__price" data-cms="f79">800<span class="cur">₽</span> <em>/&nbsp;650<span class="cur">₽</span></em></span>
+            <span class="park__day">Пн — Чт</span>
+            <span class="park__price">800<span class="cur">₽</span> <em>/&nbsp;650<span class="cur">₽</span></em></span>
           </li>
           <li>
-            <span class="park__day" data-cms="f72">Пятница</span>
-            <span class="park__price" data-cms="f80">1&nbsp;000<span class="cur">₽</span> <em>/&nbsp;800<span class="cur">₽</span></em></span>
+            <span class="park__day">Пятница</span>
+            <span class="park__price">1&nbsp;000<span class="cur">₽</span> <em>/&nbsp;800<span class="cur">₽</span></em></span>
           </li>
           <li>
-            <span class="park__day" data-cms="f73">Выходные · праздники</span>
-            <span class="park__price" data-cms="f81">1&nbsp;200<span class="cur">₽</span> <em>/&nbsp;950<span class="cur">₽</span></em></span>
+            <span class="park__day">Выходные · праздники</span>
+            <span class="park__price">1&nbsp;200<span class="cur">₽</span> <em>/&nbsp;950<span class="cur">₽</span></em></span>
           </li>
           <li class="park__banquet">
-            <span class="park__day" data-cms="f74">Для банкета · любой день</span>
-            <span class="park__price" data-cms="f82">700<span class="cur">₽</span></span>
+            <span class="park__day">Для банкета · любой день</span>
+            <span class="park__price">700<span class="cur">₽</span></span>
           </li>
         </ul>
-        <div class="park__legend" data-cms="f169">Вторая цена — для&nbsp;семей с&nbsp;3+&nbsp;детьми</div>
+        <div class="park__legend">Вторая цена — для&nbsp;семей с&nbsp;3+&nbsp;детьми</div>
       </div>
     </div>
 
     <!-- Абонементы -->
     <div class="abo">
       <div class="abo__head r">
-        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f139">Абонементы</span></div>
-        <h3 class="abo__title" data-cms="f83">На&nbsp;посещение <em>игровых парков</em></h3>
+        <div class="sect__caption"><span class="line"></span><span class="cap">Абонементы</span></div>
+        <h3 class="abo__title">На&nbsp;посещение <em>игровых парков</em></h3>
       </div>
 
       <div class="abo__grid">
         <div class="abo__card r" data-d="1">
-          <div class="abo__visits" data-cms="f171"><b>8</b><span>посещений</span></div>
-          <div class="abo__period" data-cms="f87">2 месяца</div>
-          <div class="abo__price" data-cms="f84">4 800<span class="cur">₽</span></div>
-          <div class="abo__perv" data-cms="f90">600&nbsp;₽ за&nbsp;посещение</div>
+          <div class="abo__visits"><b>8</b><span>посещений</span></div>
+          <div class="abo__period">2 месяца</div>
+          <div class="abo__price">4 800<span class="cur">₽</span></div>
+          <div class="abo__perv">600&nbsp;₽ за&nbsp;посещение</div>
         </div>
         <div class="abo__card abo__card--feat r" data-d="2">
-          <span class="abo__tag" data-cms="f170">★ Хит</span>
-          <div class="abo__visits" data-cms="f172"><b>20</b><span>посещений</span></div>
-          <div class="abo__period" data-cms="f88">6 месяцев</div>
-          <div class="abo__price" data-cms="f85">10 000<span class="cur">₽</span></div>
-          <div class="abo__perv" data-cms="f91">500&nbsp;₽ за&nbsp;посещение</div>
+          <span class="abo__tag">★ Хит</span>
+          <div class="abo__visits"><b>20</b><span>посещений</span></div>
+          <div class="abo__period">6 месяцев</div>
+          <div class="abo__price">10 000<span class="cur">₽</span></div>
+          <div class="abo__perv">500&nbsp;₽ за&nbsp;посещение</div>
         </div>
         <div class="abo__card r" data-d="3">
-          <div class="abo__visits" data-cms="f173"><b>40</b><span>посещений</span></div>
-          <div class="abo__period" data-cms="f89">12 месяцев</div>
-          <div class="abo__price" data-cms="f86">16 000<span class="cur">₽</span></div>
-          <div class="abo__perv" data-cms="f92">400&nbsp;₽ за&nbsp;посещение</div>
+          <div class="abo__visits"><b>40</b><span>посещений</span></div>
+          <div class="abo__period">12 месяцев</div>
+          <div class="abo__price">16 000<span class="cur">₽</span></div>
+          <div class="abo__perv">400&nbsp;₽ за&nbsp;посещение</div>
         </div>
       </div>
 
       <div class="abo__footer">
-        <p class="abo__note" data-cms="f93">* Не более 5 посещений за&nbsp;один раз. Абонемент привязан к&nbsp;одному ребёнку.</p>
-        <a href="#booking" class="btn btn--ink" data-conf>
+        <p class="abo__note">* Не более 5 посещений за&nbsp;один раз. Абонемент привязан к&nbsp;одному ребёнку.</p>
+        <a href="#cta" class="btn btn--ink" data-conf>
           Оформить абонемент
           <span class="btn__arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== НАПРАВЛЕНИЯ + ПРАЙС ============== -->
-<section class="sect directions" id="directions">
-  <div class="wrap">
-    <div class="sect__head r">
-      <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap">№01 / Направления и цены</span></div>
-        <h2 class="sect__title">Выбирайте свой<br><em>яркий день</em></h2>
-      </div>
-      <p class="sect__sub">Парки, игры, ресторан и&nbsp;праздники — всё в&nbsp;одном месте. Вторая цена в&nbsp;парках действует для семей с&nbsp;тремя и&nbsp;более детьми.</p>
-    </div>
-
-    <div class="directions__grid">
-      <a class="direction-card direction-card--wide r" href="#booking" data-d="1">
-        <img src="photos/w/m14.webp" alt="Большой парк MEOW" width="880" height="1320" loading="lazy" decoding="async">
-        <span class="direction-card__shade"></span>
-        <span class="direction-card__age">5–12 лет</span>
-        <span class="direction-card__content"><strong>Большой парк</strong><span>4 уровня, горки, батуты и ниндзя-парк</span><b>от 800 ₽ <em>/ 650 ₽</em></b></span>
-      </a>
-
-      <a class="direction-card r" href="#booking" data-d="2">
-        <img src="photos/w/m22.webp" alt="Малый парк MEOW" width="1140" height="760" loading="lazy" decoding="async">
-        <span class="direction-card__shade"></span>
-        <span class="direction-card__age">до 5 лет</span>
-        <span class="direction-card__content"><strong>Малый парк</strong><span>Мягкие модули, тоннели и сухие бассейны</span><b>от 500 ₽ <em>/ 400 ₽</em></b></span>
-      </a>
-
-      <a class="direction-card r" href="#booking" data-d="3">
-        <img src="photos/w/m02.webp" alt="Игровые автоматы" width="1020" height="1530" loading="lazy" decoding="async">
-        <span class="direction-card__shade"></span>
-        <span class="direction-card__age">1–99 лет</span>
-        <span class="direction-card__content"><strong>Игровые автоматы</strong><span>Аэрохоккей, гонки и призовые аппараты</span><b>Оплата игровой картой</b></span>
-      </a>
-
-      <a class="direction-card r" href="#booking" data-d="1">
-        <img src="photos/w/m10.webp" alt="Ниндзя-парк" width="1080" height="720" loading="lazy" decoding="async">
-        <span class="direction-card__shade"></span>
-        <span class="direction-card__age">5–12 лет</span>
-        <span class="direction-card__content"><strong>Ниндзя-парк</strong><span>Подвесные мосты и полоса препятствий</span><b>Входит в билет Большого парка</b></span>
-      </a>
-
-      <a class="direction-card direction-card--wide r" href="#booking" data-d="2">
-        <img src="photos/w/m29.webp" alt="Лазертаг в MEOW" width="1600" height="1067" loading="lazy" decoding="async">
-        <span class="direction-card__shade"></span>
-        <span class="direction-card__age">командная игра</span>
-        <span class="direction-card__content"><strong>Лазертаг</strong><span>Динамичная игра для компании и праздника</span><b>Стоимость по запросу</b></span>
-      </a>
-
-      <a class="direction-card direction-card--restaurant r" href="menu/il-patio.pdf" target="_blank" rel="noopener" data-d="3">
-        <img src="photos/w/m01.webp" alt="Ресторан IL PATIO" width="1580" height="2370" loading="lazy" decoding="async">
-        <span class="direction-card__shade"></span>
-        <span class="direction-card__age">итальянская кухня</span>
-        <span class="direction-card__content"><strong>Ресторан IL PATIO</strong><span>Паста, пицца из печи, салаты и десерты</span><b>Открыть меню ↗</b></span>
-      </a>
-
-      <a class="direction-card r" href="menu/planeta-sushi.pdf" target="_blank" rel="noopener" data-d="2">
-        <img src="photos/w/menu-sushi.webp" alt="Меню Планета Суши" width="536" height="760" loading="lazy" decoding="async">
-        <span class="direction-card__shade"></span>
-        <span class="direction-card__age">японская кухня</span>
-        <span class="direction-card__content"><strong>Планета Суши</strong><span>Роллы, суши, сеты и горячие блюда</span><b>Открыть меню ↗</b></span>
-      </a>
-
-      <a class="direction-card direction-card--wide r" href="#booking" data-d="3">
-        <img src="photos/w/m18.webp" alt="Детский день рождения в MEOW" width="1480" height="2220" loading="lazy" decoding="async">
-        <span class="direction-card__shade"></span>
-        <span class="direction-card__age">праздник под ключ</span>
-        <span class="direction-card__content"><strong>Детские праздники</strong><span>День рождения, выпускной или семейное событие</span><b>Рассчитать программу</b></span>
-      </a>
-
-      <a class="direction-card r" href="#booking" data-d="1">
-        <img src="photos/w/m26.webp" alt="Мастер-класс в MEOW" width="580" height="870" loading="lazy" decoding="async">
-        <span class="direction-card__shade"></span>
-        <span class="direction-card__age">каждое воскресенье</span>
-        <span class="direction-card__content"><strong>Мастер-классы</strong><span>Творчество, кулинария, слаймы и научные шоу</span><b>Записаться</b></span>
-      </a>
-
-    </div>
-
-    <dialog class="direction-dialog" id="directionDialog" aria-labelledby="directionDialogTitle">
-      <button class="direction-dialog__close" type="button" aria-label="Закрыть подробную информацию">×</button>
-      <div class="direction-dialog__media">
-        <img id="directionDialogImage" src="photos/w/m14.webp" alt="" width="880" height="1320">
-      </div>
-      <div class="direction-dialog__body">
-        <div class="direction-dialog__eyebrow" id="directionDialogEyebrow">Направление MEOW</div>
-        <h3 class="direction-dialog__title" id="directionDialogTitle"></h3>
-        <p class="direction-dialog__text" id="directionDialogText"></p>
-        <div class="direction-dialog__facts" id="directionDialogFacts"></div>
-        <a class="btn btn--ink direction-dialog__action" id="directionDialogAction" href="#booking">Подробнее</a>
-      </div>
-    </dialog>
-  </div>
-</section>
-
-<!-- ============== НОВОСТИ ============== -->
-<section class="sect news" id="news">
-  <div class="wrap">
-    <div class="sect__head r">
-      <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap cap--white">№08 / Новости и события</span></div>
-        <h2 class="sect__title">Сейчас<br><em>в MEOW</em></h2>
-      </div>
-      <p class="sect__sub">Актуальная жизнь центра: встречи с героями, новые программы и идеи для вашего следующего семейного дня.</p>
-    </div>
-
-    <div class="news__grid">
-      <article class="news-card news-card--lead r" data-d="1">
-        <div class="news-card__photo"><img src="photos/w/m08.webp" alt="Аниматоры в MEOW" width="1600" height="1067" loading="lazy" decoding="async"><span class="news-card__date">Пятница и суббота</span></div>
-        <div class="news-card__body"><span>События</span><h3>Любимые герои уже ждут</h3><p>Каждую пятницу и субботу в центре проходят программы с аниматорами.</p><a href="#booking">Узнать программу <b>↗</b></a></div>
-      </article>
-      <article class="news-card r" data-d="2">
-        <div class="news-card__photo"><img src="photos/w/m26.webp" alt="Мастер-класс в MEOW" width="580" height="870" loading="lazy" decoding="async"><span class="news-card__date">По воскресеньям</span></div>
-        <div class="news-card__body"><span>Мастер-классы</span><h3>Создаём своими руками</h3><p>Новая тема каждую неделю. Готовую работу ребёнок забирает с собой.</p><a href="#booking">Записаться <b>↗</b></a></div>
-      </article>
-      <article class="news-card r" data-d="3">
-        <div class="news-card__photo"><img src="photos/w/m18.webp" alt="День рождения в MEOW" width="1480" height="2220" loading="lazy" decoding="async"><span class="news-card__date">По записи</span></div>
-        <div class="news-card__body"><span>Праздники</span><h3>День рождения без хлопот</h3><p>Соберём программу, ресторан, торт и развлечения в одном месте.</p><a href="#booking">Обсудить праздник <b>↗</b></a></div>
-      </article>
     </div>
   </div>
 </section>
@@ -3986,43 +3275,43 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f140">№09 / Отзывы</span></div>
-        <h2 class="sect__title" data-cms="f11">Говорят<br><em>родители</em></h2>
+        <div class="sect__caption"><span class="line"></span><span class="cap">№08 / Отзывы</span></div>
+        <h2 class="sect__title">Нам доверяют<br><em>главное</em></h2>
       </div>
-      <p class="sect__sub" data-cms="f21">★ 4.9 на&nbsp;Google&nbsp;Maps, Яндекс.Картах и&nbsp;2ГИС. Больше 600&nbsp;отзывов от&nbsp;родителей.</p>
+      <p class="sect__sub">★ 4.9 на&nbsp;Google&nbsp;Maps, Яндекс.Картах и&nbsp;2ГИС. Больше 600&nbsp;отзывов от&nbsp;родителей.</p>
     </div>
 
     <div class="reviews-wrap r" id="reviewsW">
       <div class="reviews-track" id="reviewsT">
         <article class="review">
           <div class="review__stars"><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg></div>
-          <p class="review__text" data-cms="f94">«Отмечали 5-летие сына — пакет „Звёздный". Аниматоры огонь, дети не&nbsp;вылезали из&nbsp;игровой, а&nbsp;мы спокойно поели в&nbsp;„Иль Патио". Цена адекватная.»</p>
-          <div class="review__author"><div class="review__avatar">МК</div><div><div class="review__name" data-cms="f100">Марьям К.</div><div class="review__meta">Google Maps</div></div></div>
+          <p class="review__text">«Отмечали 5-летие сына — пакет „Звёздный". Аниматоры огонь, дети не&nbsp;вылезали из&nbsp;игровой, а&nbsp;мы спокойно поели в&nbsp;„Иль Патио". Цена адекватная.»</p>
+          <div class="review__author"><div class="review__avatar">МК</div><div><div class="review__name">Марьям К.</div><div class="review__meta">Google Maps</div></div></div>
         </article>
         <article class="review">
           <div class="review__stars"><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg></div>
-          <p class="review__text" data-cms="f95">«Ходим раз в&nbsp;неделю с&nbsp;двумя детьми (3 и&nbsp;8 лет). Каждому — своя зона. Огромный плюс: ресторан с&nbsp;нормальной едой, не&nbsp;фастфудом.»</p>
-          <div class="review__author"><div class="review__avatar">АТ</div><div><div class="review__name" data-cms="f101">Айгуль Т.</div><div class="review__meta">Яндекс.Карты</div></div></div>
+          <p class="review__text">«Ходим раз в&nbsp;неделю с&nbsp;двумя детьми (3 и&nbsp;8 лет). Каждому — своя зона. Огромный плюс: ресторан с&nbsp;нормальной едой, не&nbsp;фастфудом.»</p>
+          <div class="review__author"><div class="review__avatar">АТ</div><div><div class="review__name">Айгуль Т.</div><div class="review__meta">Яндекс.Карты</div></div></div>
         </article>
         <article class="review">
           <div class="review__stars"><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg></div>
-          <p class="review__text" data-cms="f96">«Дочке очень понравился слайм-LAB — сделали втроём, забрали с&nbsp;собой. Уютная атмосфера, дружелюбный персонал. Рекомендую.»</p>
-          <div class="review__author"><div class="review__avatar">РА</div><div><div class="review__name" data-cms="f102">Рустам А.</div><div class="review__meta">2ГИС</div></div></div>
+          <p class="review__text">«Дочке очень понравился слайм-LAB — сделали втроём, забрали с&nbsp;собой. Уютная атмосфера, дружелюбный персонал. Рекомендую.»</p>
+          <div class="review__author"><div class="review__avatar">РА</div><div><div class="review__name">Рустам А.</div><div class="review__meta">2ГИС</div></div></div>
         </article>
         <article class="review">
           <div class="review__stars"><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg></div>
-          <p class="review__text" data-cms="f97">«Полгода ходим. Дети безопасны, всё под&nbsp;камерами, аниматоры внимательные. Любой каприз превращают в&nbsp;игру.»</p>
-          <div class="review__author"><div class="review__avatar">ЗМ</div><div><div class="review__name" data-cms="f103">Зарина М.</div><div class="review__meta">Instagram</div></div></div>
+          <p class="review__text">«Полгода ходим. Дети безопасны, всё под&nbsp;камерами, аниматоры внимательные. Любой каприз превращают в&nbsp;игру.»</p>
+          <div class="review__author"><div class="review__avatar">ЗМ</div><div><div class="review__name">Зарина М.</div><div class="review__meta">Instagram</div></div></div>
         </article>
         <article class="review">
           <div class="review__stars"><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg></div>
-          <p class="review__text" data-cms="f98">«Брали „Премиум" на&nbsp;7-летие — грандиозно. 2&nbsp;аниматора, фотограф, шоу мыльных пузырей, торт. Дети в&nbsp;восторге, мы&nbsp;спокойны.»</p>
-          <div class="review__author"><div class="review__avatar">АА</div><div><div class="review__name" data-cms="f104">Аминат А.</div><div class="review__meta">Google Maps</div></div></div>
+          <p class="review__text">«Брали „Премиум" на&nbsp;7-летие — грандиозно. 2&nbsp;аниматора, фотограф, шоу мыльных пузырей, торт. Дети в&nbsp;восторге, мы&nbsp;спокойны.»</p>
+          <div class="review__author"><div class="review__avatar">АА</div><div><div class="review__name">Аминат А.</div><div class="review__meta">Google Maps</div></div></div>
         </article>
         <article class="review">
           <div class="review__stars"><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg></div>
-          <p class="review__text" data-cms="f99">«Сын в&nbsp;восторге от&nbsp;батутов и&nbsp;VR. Удобно — я&nbsp;работаю с&nbsp;ноутбуком в&nbsp;кафе, пока он&nbsp;играет. Wi-Fi нормальный, кофе LavAzza отличный.»</p>
-          <div class="review__author"><div class="review__avatar">ИГ</div><div><div class="review__name" data-cms="f105">Иса Г.</div><div class="review__meta">2ГИС</div></div></div>
+          <p class="review__text">«Сын в&nbsp;восторге от&nbsp;батутов и&nbsp;VR. Удобно — я&nbsp;работаю с&nbsp;ноутбуком в&nbsp;кафе, пока он&nbsp;играет. Wi-Fi нормальный, кофе LavAzza отличный.»</p>
+          <div class="review__author"><div class="review__avatar">ИГ</div><div><div class="review__name">Иса Г.</div><div class="review__meta">2ГИС</div></div></div>
         </article>
       </div>
 
@@ -4042,23 +3331,23 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
 <section class="sect" id="cta">
   <div class="wrap contact">
     <div class="faq r">
-      <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f141">№10 / FAQ</span></div>
+      <div class="sect__caption"><span class="line"></span><span class="cap">№09 / FAQ</span></div>
       <h3 class="faq__title">Часто спрашивают</h3>
       <ul class="faq__list">
-        <li><details class="faq__item" open><summary data-cms="f106">Сколько стоит билет?</summary><div class="faq__answer" data-cms="f113">У&nbsp;нас два парка. <b>Малый парк</b> (до 5&nbsp;лет): от&nbsp;400&nbsp;₽ в&nbsp;будни до&nbsp;600&nbsp;₽ в&nbsp;выходные. <b>Большой парк</b> (5–12&nbsp;лет): от&nbsp;650&nbsp;₽ до&nbsp;1&nbsp;200&nbsp;₽. Для&nbsp;семей с&nbsp;3+&nbsp;детьми — особая цена за&nbsp;каждого. Точный прайс — в&nbsp;разделе «Цены».</div></details></li>
-        <li><details class="faq__item"><summary data-cms="f107">Какие есть абонементы?</summary><div class="faq__answer" data-cms="f114">Три варианта: <b>8&nbsp;посещений</b> за&nbsp;4&nbsp;800&nbsp;₽ (на&nbsp;2&nbsp;месяца), <b>20&nbsp;посещений</b> за&nbsp;10&nbsp;000&nbsp;₽ (на&nbsp;6&nbsp;месяцев), <b>40&nbsp;посещений</b> за&nbsp;16&nbsp;000&nbsp;₽ (на&nbsp;12&nbsp;месяцев). Оформляется в&nbsp;центре при&nbsp;первом визите. Не&nbsp;более 5&nbsp;посещений за&nbsp;раз, абонемент привязан к&nbsp;одному ребёнку.</div></details></li>
-        <li><details class="faq__item"><summary data-cms="f108">С какого возраста можно прийти?</summary><div class="faq__answer" data-cms="f115">С&nbsp;любого. <b>Малый парк</b> — для&nbsp;детей до&nbsp;5&nbsp;лет: мягкая сенсорная зона, развивающие модули, тёплый пол. <b>Большой парк</b> — для&nbsp;5–12&nbsp;лет: батуты, аэрохоккей, лабиринт, VR-зона и&nbsp;спорт.</div></details></li>
-        <li><details class="faq__item"><summary data-cms="f109">Как заказать день рождения?</summary><div class="faq__answer" data-cms="f116">Оставьте заявку в&nbsp;форме справа или позвоните <a href="tel:+79882938008">+7&nbsp;988&nbsp;293&nbsp;80&nbsp;08</a>&nbsp;— менеджер свяжется за&nbsp;15&nbsp;минут. Можем добавить аниматора, мастер-класс или фотографа.</div></details></li>
-        <li><details class="faq__item"><summary data-cms="f110">Что есть для взрослых?</summary><div class="faq__answer" data-cms="f117">На&nbsp;территории работает итальянский ресторан <b>«Иль&nbsp;Патио»</b> — паста ручной работы, кофе LavAzza. Можно наблюдать за&nbsp;игровой зоной. Wi-Fi бесплатный.</div></details></li>
-        <li><details class="faq__item"><summary data-cms="f111">Где вы находитесь и&nbsp;как добраться?</summary><div class="faq__answer" data-cms="f118">Махачкала, проспект Гамидова, 61. ТРЦ&nbsp;«Этажи», 4&nbsp;этаж. Удобный заезд с&nbsp;Гамидова, парковка на&nbsp;200&nbsp;мест. Работаем ежедневно с&nbsp;10:00 до&nbsp;22:00.</div></details></li>
-        <li><details class="faq__item"><summary data-cms="f112">Нужна ли сменная обувь?</summary><div class="faq__answer" data-cms="f119">В&nbsp;игровых зонах дети играют в&nbsp;носочках — так чище и&nbsp;безопаснее на&nbsp;мягких покрытиях. В&nbsp;ресторане «Иль&nbsp;Патио» — в&nbsp;своей обуви.</div></details></li>
+        <li><details class="faq__item" open><summary>Сколько стоит билет?</summary><div class="faq__answer">У&nbsp;нас два парка. <b>Малый парк</b> (до 5&nbsp;лет): от&nbsp;400&nbsp;₽ в&nbsp;будни до&nbsp;600&nbsp;₽ в&nbsp;выходные. <b>Большой парк</b> (5–12&nbsp;лет): от&nbsp;650&nbsp;₽ до&nbsp;1&nbsp;200&nbsp;₽. Для&nbsp;семей с&nbsp;3+&nbsp;детьми — особая цена за&nbsp;каждого. Точный прайс — в&nbsp;разделе «Цены».</div></details></li>
+        <li><details class="faq__item"><summary>Какие есть абонементы?</summary><div class="faq__answer">Три варианта: <b>8&nbsp;посещений</b> за&nbsp;4&nbsp;800&nbsp;₽ (на&nbsp;2&nbsp;месяца), <b>20&nbsp;посещений</b> за&nbsp;10&nbsp;000&nbsp;₽ (на&nbsp;6&nbsp;месяцев), <b>40&nbsp;посещений</b> за&nbsp;16&nbsp;000&nbsp;₽ (на&nbsp;12&nbsp;месяцев). Оформляется в&nbsp;центре при&nbsp;первом визите. Не&nbsp;более 5&nbsp;посещений за&nbsp;раз, абонемент привязан к&nbsp;одному ребёнку.</div></details></li>
+        <li><details class="faq__item"><summary>С какого возраста можно прийти?</summary><div class="faq__answer">С&nbsp;любого. <b>Малый парк</b> — для&nbsp;детей до&nbsp;5&nbsp;лет: мягкая сенсорная зона, развивающие модули, тёплый пол. <b>Большой парк</b> — для&nbsp;5–12&nbsp;лет: батуты, аэрохоккей, лабиринт, VR-зона и&nbsp;спорт.</div></details></li>
+        <li><details class="faq__item"><summary>Как заказать день рождения?</summary><div class="faq__answer">Оставьте заявку в&nbsp;форме справа или позвоните <a href="tel:+79882938008">+7&nbsp;988&nbsp;293&nbsp;80&nbsp;08</a>&nbsp;— менеджер свяжется за&nbsp;15&nbsp;минут. Можем добавить аниматора, мастер-класс или фотографа.</div></details></li>
+        <li><details class="faq__item"><summary>Что есть для взрослых?</summary><div class="faq__answer">На&nbsp;территории работает итальянский ресторан <b>«Иль&nbsp;Патио»</b> — паста ручной работы, кофе LavAzza. Можно наблюдать за&nbsp;игровой зоной. Wi-Fi бесплатный.</div></details></li>
+        <li><details class="faq__item"><summary>Где вы находитесь и&nbsp;как добраться?</summary><div class="faq__answer">Махачкала, проспект Гамидова, 61. ТРЦ&nbsp;«Этажи», 4&nbsp;этаж. Удобный заезд с&nbsp;Гамидова, парковка на&nbsp;200&nbsp;мест. Работаем ежедневно с&nbsp;10:00 до&nbsp;22:00.</div></details></li>
+        <li><details class="faq__item"><summary>Нужна ли сменная обувь?</summary><div class="faq__answer">В&nbsp;игровых зонах дети играют в&nbsp;носочках — так чище и&nbsp;безопаснее на&nbsp;мягких покрытиях. В&nbsp;ресторане «Иль&nbsp;Патио» — в&nbsp;своей обуви.</div></details></li>
       </ul>
     </div>
 
-    <div class="cta r" id="booking">
-      <div class="sect__caption"><span class="line" style="background:rgba(255,255,255,0.6)"></span><span class="cap cap--white" data-cms="f142">Звонок за&nbsp;15&nbsp;минут</span></div>
-      <h3 class="cta__title" data-cms="f120">Запишитесь —<br>перезвоним</h3>
-      <p class="cta__sub" data-cms="f121">Подбор тарифа, бронь праздника, любые вопросы. Оставьте контакт — администратор свяжется в&nbsp;течение 15&nbsp;минут.</p>
+    <div class="cta r">
+      <div class="sect__caption"><span class="line" style="background:rgba(255,255,255,0.6)"></span><span class="cap cap--white">Звонок за&nbsp;15&nbsp;минут</span></div>
+      <h3 class="cta__title">Запишитесь —<br>перезвоним</h3>
+      <p class="cta__sub">Подбор тарифа, бронь праздника, любые вопросы. Оставьте контакт — администратор свяжется в&nbsp;течение 15&nbsp;минут.</p>
       <form class="cta__form" id="ctaForm">
         <input type="text" name="name" placeholder="Ваше имя" required />
         <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required />
@@ -4067,7 +3356,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </button>
       </form>
-      <div class="cta__small" data-cms="f195">Нажимая кнопку, вы соглашаетесь с&nbsp;обработкой персональных данных</div>
+      <div class="cta__small">Нажимая кнопку, вы соглашаетесь с&nbsp;обработкой персональных данных</div>
     </div>
   </div>
 </section>
@@ -4077,22 +3366,22 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f143">№11 / Правила</span></div>
-        <h2 class="sect__title" data-cms="f12">Правила <em>посещения</em><br>центра</h2>
+        <div class="sect__caption"><span class="line"></span><span class="cap">№10 / Правила</span></div>
+        <h2 class="sect__title">Правила <em>посещения</em><br>центра</h2>
       </div>
-      <p class="sect__sub" data-cms="f22">Ознакомьтесь, пожалуйста, перед визитом. Правила созданы для&nbsp;комфорта и&nbsp;безопасности всех гостей.</p>
+      <p class="sect__sub">Ознакомьтесь, пожалуйста, перед визитом. Правила созданы для&nbsp;комфорта и&nbsp;безопасности всех гостей.</p>
     </div>
 
     <div class="rules__grid r">
-      <div class="rule" data-cms="f176"><span class="rule__n">01</span><p>Вход с&nbsp;едой и&nbsp;напитками воспрещён.</p></div>
-      <div class="rule" data-cms="f177"><span class="rule__n">02</span><p>Во избежание отравлений запрещается приносить с&nbsp;собой торты. Авторские торты можно заказать у&nbsp;нас.</p></div>
-      <div class="rule" data-cms="f178"><span class="rule__n">03</span><p>Билеты в&nbsp;Большой и&nbsp;Малый парки обмену и&nbsp;возврату не&nbsp;подлежат, как и&nbsp;возврат средств с&nbsp;игральных карточек.</p></div>
-      <div class="rule" data-cms="f179"><span class="rule__n">04</span><p>В&nbsp;игровые парки допускаются физически здоровые дети.</p></div>
-      <div class="rule" data-cms="f180"><span class="rule__n">05</span><p>В&nbsp;Большой парк допускаются дети от&nbsp;5 до&nbsp;12 лет и&nbsp;ростом до&nbsp;130&nbsp;см.</p></div>
-      <div class="rule" data-cms="f181"><span class="rule__n">06</span><p>В&nbsp;Малый парк допускаются дети до&nbsp;5&nbsp;лет, родителям разрешается нахождение в&nbsp;парке вместе с&nbsp;ребёнком.</p></div>
-      <div class="rule" data-cms="f182"><span class="rule__n">07</span><p>Если ребёнок испачкал игровую зону, родители несут материальную ответственность 5&nbsp;000&nbsp;₽ за&nbsp;уборку клининговой компанией.</p></div>
-      <div class="rule" data-cms="f183"><span class="rule__n">08</span><p>Подробный свод правил находится перед входами в&nbsp;оба игровых парка.</p></div>
-      <div class="rule rule--warn" data-cms="f184"><span class="rule__n">!</span><p>Будьте внимательны: администрация не&nbsp;несёт ответственности за&nbsp;несчастные случаи, возникшие в&nbsp;результате нарушения правил.</p></div>
+      <div class="rule"><span class="rule__n">01</span><p>Вход с&nbsp;едой и&nbsp;напитками воспрещён.</p></div>
+      <div class="rule"><span class="rule__n">02</span><p>Во избежание отравлений запрещается приносить с&nbsp;собой торты. Авторские торты можно заказать у&nbsp;нас.</p></div>
+      <div class="rule"><span class="rule__n">03</span><p>Билеты в&nbsp;Большой и&nbsp;Малый парки обмену и&nbsp;возврату не&nbsp;подлежат, как и&nbsp;возврат средств с&nbsp;игральных карточек.</p></div>
+      <div class="rule"><span class="rule__n">04</span><p>В&nbsp;игровые парки допускаются физически здоровые дети.</p></div>
+      <div class="rule"><span class="rule__n">05</span><p>В&nbsp;Большой парк допускаются дети от&nbsp;5 до&nbsp;12 лет и&nbsp;ростом до&nbsp;130&nbsp;см.</p></div>
+      <div class="rule"><span class="rule__n">06</span><p>В&nbsp;Малый парк допускаются дети до&nbsp;5&nbsp;лет, родителям разрешается нахождение в&nbsp;парке вместе с&nbsp;ребёнком.</p></div>
+      <div class="rule"><span class="rule__n">07</span><p>Если ребёнок испачкал игровую зону, родители несут материальную ответственность 5&nbsp;000&nbsp;₽ за&nbsp;уборку клининговой компанией.</p></div>
+      <div class="rule"><span class="rule__n">08</span><p>Подробный свод правил находится перед входами в&nbsp;оба игровых парка.</p></div>
+      <div class="rule rule--warn"><span class="rule__n">!</span><p>Будьте внимательны: администрация не&nbsp;несёт ответственности за&nbsp;несчастные случаи, возникшие в&nbsp;результате нарушения правил.</p></div>
     </div>
 
     <div class="rules__foot r">
@@ -4106,27 +3395,28 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f144">№12 / Контакты</span></div>
-        <h2 class="sect__title" data-cms="f13">Найти нас<br><em>в&nbsp;Махачкале</em></h2>
+        <div class="sect__caption"><span class="line"></span><span class="cap">№11 / Контакты</span></div>
+        <h2 class="sect__title">Найти нас<br><em>в&nbsp;Махачкале</em></h2>
       </div>
-      <p class="sect__sub" data-cms="f23">ТРЦ «Этажи», 4&nbsp;этаж. Удобный заезд с&nbsp;проспекта Гамидова. Парковка на&nbsp;200&nbsp;мест.</p>
+      <p class="sect__sub">ТРЦ «Этажи», 4&nbsp;этаж. Удобный заезд с&nbsp;проспекта Гамидова. Парковка на&nbsp;200&nbsp;мест.</p>
     </div>
 
     <div class="contacts r">
       <div class="contacts__info">
-        <div class="contacts__row" data-cms="f185">
+        <h3 class="contacts__title">Свяжитесь</h3>
+        <div class="contacts__row">
           <div class="lbl">Адрес</div>
           <div class="val">пр. Гамидова, 61<br>ТРЦ «Этажи», 4&nbsp;этаж</div>
         </div>
-        <div class="contacts__row" data-cms="f186">
+        <div class="contacts__row">
           <div class="lbl">Телефон · WhatsApp</div>
           <a href="tel:+79882938008" class="val val--big">+7 988 293 80 08</a>
         </div>
-        <div class="contacts__row" data-cms="f187">
+        <div class="contacts__row">
           <div class="lbl">Почта</div>
           <a href="mailto:meow_mkh@mail.ru" class="val">meow_mkh@mail.ru</a>
         </div>
-        <div class="contacts__row" data-cms="f188">
+        <div class="contacts__row">
           <div class="lbl">Часы работы</div>
           <div class="val">Ежедневно · 10:00 — 22:00</div>
         </div>
@@ -4153,13 +3443,13 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
     <div class="foot__top">
       <div>
         <div class="foot__brand">
-          <img class="foot__cat" src="photos/w/cat-mascot.webp" alt="" width="360" height="157" loading="lazy" decoding="async" data-cms="i39">
-          <span class="foot__name" data-cms="f190">MEOW</span>
+          <img class="foot__cat" src="photos/w/cat-mascot.webp" alt="" width="360" height="157" loading="lazy" decoding="async">
+          <span class="foot__name">MEOW</span>
         </div>
-        <p class="foot__tag" data-cms="f123">Развлекательный центр для&nbsp;всей семьи в&nbsp;Махачкале. Игры, праздники и&nbsp;ресторан «Иль&nbsp;Патио» — место, куда хочется возвращаться.</p>
+        <p class="foot__tag">Развлекательный центр для&nbsp;всей семьи в&nbsp;Махачкале. Игры, праздники и&nbsp;ресторан «Иль&nbsp;Патио» — место, куда хочется возвращаться.</p>
       </div>
       <div class="foot__col">
-        <h5 data-cms="f191">Навигация</h5>
+        <h5>Навигация</h5>
         <ul>
           <li><a href="#zones">Игровые зоны</a></li>
           <li><a href="#party">Праздники</a></li>
@@ -4169,7 +3459,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
         </ul>
       </div>
       <div class="foot__col">
-        <h5 data-cms="f192">Связаться</h5>
+        <h5>Связаться</h5>
         <ul>
           <li><a href="tel:+79882938008">+7 988 293 80 08</a></li>
           <li><a href="mailto:meow_mkh@mail.ru">meow_mkh@mail.ru</a></li>
@@ -4190,40 +3480,31 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
 
 
 <!-- ============== POP-UP АКЦИЯ ============== -->
-<div class="promo" id="promo" role="dialog" aria-modal="true" aria-label="Подарок за визит" hidden>
+<div class="promo" id="promo" role="dialog" aria-modal="true" aria-label="Подарок за визит">
   <div class="promo__card">
     <div class="promo__visual">
-      <img src="photos/w/m12.webp" alt="Мастер-класс в MEOW" width="1500" height="1000" loading="lazy" decoding="async" data-cms="i40">
+      <img src="photos/w/m12.webp" alt="Мастер-класс в MEOW" width="1500" height="1000" loading="lazy" decoding="async">
     </div>
     <button class="promo__close" data-promo-close aria-label="закрыть">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
     </button>
     <div class="promo__body">
-      <span class="promo__eyebrow" data-cms="f124">Запишитесь за&nbsp;минуту</span>
-      <h3 class="promo__title" data-cms="f125">Перезвоним<br><em>за&nbsp;15&nbsp;минут</em></h3>
-      <p class="promo__desc" data-cms="f126">Оставьте имя и&nbsp;номер — администратор подберёт время, расскажет про&nbsp;абонементы и&nbsp;забронирует праздник.</p>
+      <span class="promo__eyebrow">Запишитесь за&nbsp;минуту</span>
+      <h3 class="promo__title">Перезвоним<br><em>за&nbsp;15&nbsp;минут</em></h3>
+      <p class="promo__desc">Оставьте имя и&nbsp;номер — администратор подберёт время, расскажет про&nbsp;абонементы и&nbsp;забронирует праздник.</p>
       <form class="promo__form" id="promoForm">
         <input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required />
         <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required />
         <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <button type="submit">Отправить заявку</button>
       </form>
-      <a href="tel:+79882938008" class="promo__tel" data-cms="f194">или позвоните: +7&nbsp;988&nbsp;293&nbsp;80&nbsp;08</a>
-      <div class="promo__small" data-cms="f193">Нажимая кнопку, вы&nbsp;соглашаетесь с&nbsp;обработкой персональных данных</div>
+      <a href="tel:+79882938008" class="promo__tel">или позвоните: +7&nbsp;988&nbsp;293&nbsp;80&nbsp;08</a>
+      <div class="promo__small">Нажимая кнопку, вы&nbsp;соглашаетесь с&nbsp;обработкой персональных данных</div>
     </div>
   </div>
 </div>
 
 <script>
-/* === Порядок секций: новый прайс идёт сразу после первого экрана === */
-(() => {
-  const directions = document.getElementById('directions');
-  const sections = ['schedule', 'patio', 'gallery', 'party', 'progs', 'prices']
-    .map(id => document.getElementById(id))
-    .filter(Boolean);
-  if (directions && sections.length) directions.after(...sections);
-})();
-
 /* === Reveal === */
 const revs = document.querySelectorAll('.r');
 const io = new IntersectionObserver((ents) => {
@@ -4258,7 +3539,7 @@ window.addEventListener('scroll', () => {
 /* === Pop-up акция — один раз за загрузку страницы === */
 (function initPromo() {
   const promo = document.getElementById('promo');
-  if (!promo || promo.hidden) return;
+  if (!promo) return;
   let shown = false;        /* открывали ли уже за эту загрузку */
   let closed = false;       /* закрыл ли пользователь */
   try { if (sessionStorage.getItem('meowLeadSent')) closed = true; } catch (e) {}
@@ -4287,7 +3568,7 @@ window.addEventListener('scroll', () => {
 })();
 
 /* === Конфетти === */
-const confColors = ['#FC1751','#F9C930','#3FBEC8','#F46221','#54A68B','#2A68E1'];
+const confColors = ['#FC1751','#F9C930','#3FBEC8','#F46221','#7F039E','#2A68E1'];
 function fire(x, y) {
   for (let i = 0; i < 20; i++) {
     const c = document.createElement('div');
@@ -4328,7 +3609,7 @@ document.querySelectorAll('[data-conf]').forEach(b => {
   let dragging = false, pointerId = null, axis = null;
   let startX = 0, startY = 0, startShift = 0, lastDx = 0, suppressClick = false;
 
-  function perView() { return window.innerWidth <= 620 ? 1 : 2; }
+  function perView() { return window.innerWidth <= 1100 ? 1 : 3; }
 
   /* сдвиги считаем по реальному положению карточек,
      а не по ширине контейнера — иначе слайды уплывают на ширину gap */
@@ -4469,209 +3750,51 @@ document.querySelectorAll('[data-conf]').forEach(b => {
   start();
 })();
 
-/* === Первый экран: MEOW / IL PATIO + отдельные фотослайды === */
+/* === Hero slider with drag/swipe === */
 (function initHero() {
   const slider = document.getElementById('heroSlider');
   if (!slider) return;
-  const allSlides = Array.from(slider.querySelectorAll('.hero__slide'));
-  const tabs = Array.from(document.querySelectorAll('.venue-switch__btn'));
+  const slides = slider.querySelectorAll('.hero__slide');
   const dotsEl = document.getElementById('heroDots');
-  const prevBtn = document.getElementById('heroPrev');
-  const nextBtn = document.getElementById('heroNext');
-  const titleEl = document.getElementById('venueTitle');
-  const kickerEl = document.getElementById('venueKicker');
-  const venueCopy = {
-    meow: { title: 'MEOW', kicker: 'Развлекательный центр' },
-    patio: { title: 'IL PATIO', kicker: 'Итальянский ресторан и патио' }
-  };
-  let venue = 'meow';
-  let index = 0;
-  let timer;
+  const N = slides.length;
+  let idx = 0;
 
-  const currentSlides = () => allSlides.filter(slide => slide.dataset.venue === venue);
-
-  function buildDots() {
-    dotsEl.innerHTML = '';
-    currentSlides().forEach((_, dotIndex) => {
-      const dot = document.createElement('button');
-      dot.type = 'button';
-      dot.className = 'hero__dot' + (dotIndex === index ? ' active' : '');
-      dot.setAttribute('aria-label', 'Фото ' + (dotIndex + 1));
-      dot.addEventListener('click', () => { index = dotIndex; show(); restart(); });
-      dotsEl.appendChild(dot);
-    });
-  }
+  slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'hero__dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => { idx = i; show(); reset(); });
+    dotsEl.appendChild(d);
+  });
+  const dots = dotsEl.querySelectorAll('.hero__dot');
 
   function show() {
-    const visible = currentSlides();
-    allSlides.forEach(slide => slide.classList.remove('active'));
-    if (visible[index]) {
-      visible[index].classList.add('active');
-      titleEl.textContent = visible[index].dataset.title || venueCopy[venue].title;
-      kickerEl.textContent = visible[index].dataset.kicker || venueCopy[venue].kicker;
-    }
-    Array.from(dotsEl.children).forEach((dot, dotIndex) => dot.classList.toggle('active', dotIndex === index));
+    slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
   }
+  function next() { idx = (idx + 1) % N; show(); }
+  function prev() { idx = (idx - 1 + N) % N; show(); }
 
-  function move(direction) {
-    const count = currentSlides().length;
-    index = (index + direction + count) % count;
-    show();
-  }
+  let timer;
+  function start() { timer = setInterval(next, 4800); }
+  function reset() { clearInterval(timer); start(); }
+  start();
 
-  function selectVenue(nextVenue) {
-    venue = nextVenue;
-    index = 0;
-    slider.dataset.activeVenue = venue;
-    tabs.forEach(tab => {
-      const selected = tab.dataset.venue === venue;
-      tab.classList.toggle('active', selected);
-      tab.setAttribute('aria-selected', String(selected));
-    });
-    titleEl.textContent = venueCopy[venue].title;
-    kickerEl.textContent = venueCopy[venue].kicker;
-    buildDots();
-    show();
-    restart();
-  }
-
-  function start() { timer = setInterval(() => move(1), 4800); }
-  function restart() { clearInterval(timer); start(); }
-
-  tabs.forEach(tab => tab.addEventListener('click', () => selectVenue(tab.dataset.venue)));
-  prevBtn.addEventListener('click', () => { move(-1); restart(); });
-  nextBtn.addEventListener('click', () => { move(1); restart(); });
-
-  let downX = 0;
-  let dragging = false;
-  slider.addEventListener('pointerdown', (event) => {
-    if (event.target.closest('button')) return;
-    dragging = true;
-    downX = event.clientX;
-    try { slider.setPointerCapture(event.pointerId); } catch (error) {}
+  /* drag/swipe */
+  let downX = 0, dragging = false;
+  slider.addEventListener('pointerdown', (e) => {
+    dragging = true; downX = e.clientX;
+    slider.setPointerCapture(e.pointerId);
   });
-  slider.addEventListener('pointerup', (event) => {
+  slider.addEventListener('pointerup', (e) => {
     if (!dragging) return;
     dragging = false;
-    const dx = event.clientX - downX;
-    if (Math.abs(dx) > 42) { move(dx > 0 ? -1 : 1); restart(); }
+    const dx = e.clientX - downX;
+    if (Math.abs(dx) > 40) {
+      if (dx > 0) prev(); else next();
+      reset();
+    }
   });
   slider.addEventListener('pointercancel', () => { dragging = false; });
-
-  buildDots();
-  show();
-  start();
-})();
-
-/* === Подробности направления по клику на карточку === */
-(function initDirectionDialog() {
-  const dialog = document.getElementById('directionDialog');
-  if (!dialog) return;
-  const title = document.getElementById('directionDialogTitle');
-  const text = document.getElementById('directionDialogText');
-  const facts = document.getElementById('directionDialogFacts');
-  const action = document.getElementById('directionDialogAction');
-  const image = document.getElementById('directionDialogImage');
-  const media = dialog.querySelector('.direction-dialog__media');
-  const close = dialog.querySelector('.direction-dialog__close');
-  let activeCard = null;
-  let closeTimer = null;
-
-  const details = {
-    'Большой парк': {
-      text: 'Четырёхуровневый игровой лабиринт со спиральными горками, поролоновой ямой, тарзанкой, сухими бассейнами и ниндзя-парком.',
-      facts: [['Возраст', '5–12 лет, рост до 130 см'], ['Пн — Чт', '800 ₽ / 650 ₽'], ['Пятница', '1 000 ₽ / 800 ₽'], ['Выходные', '1 200 ₽ / 950 ₽']]
-    },
-    'Малый парк': {
-      text: 'Безопасное пространство для малышей: невысокие модули, мягкое покрытие, тоннели, горки, батуты и сухие бассейны.',
-      facts: [['Возраст', 'до 5 лет'], ['Пн — Пт', '500 ₽ / 400 ₽'], ['Выходные', '600 ₽ / 500 ₽'], ['Для банкета', '400 ₽']]
-    },
-    'Игровые автоматы': {
-      text: 'Зона для детей и взрослых с аэрохоккеем, настольным футболом, гоночными симуляторами, качалками и призовыми аппаратами.',
-      facts: [['Возраст', '1–99 лет'], ['Оплата', 'игровой картой'], ['Формат', 'отдельные игровые сессии']]
-    },
-    'Ниндзя-парк': {
-      text: 'Полоса препятствий внутри Большого парка: подвесные мосты, баланс, ловкость и безопасные мягкие покрытия.',
-      facts: [['Возраст', '5–12 лет'], ['Стоимость', 'входит в билет Большого парка'], ['Команда', 'аниматоры рядом']]
-    },
-    'Лазертаг': {
-      text: 'Активная командная игра для компании друзей, дня рождения или выпускного. Сценарий и длительность подбираются под событие.',
-      facts: [['Формат', 'командная игра'], ['Запись', 'предварительная'], ['Стоимость', 'уточните у администратора']]
-    },
-    'Ресторан IL PATIO': {
-      text: 'Итальянский ресторан прямо на территории центра. Пицца из печи, паста, салаты, десерты и спокойный семейный ужин рядом с игровой зоной.',
-      facts: [['Кухня', 'итальянская'], ['Особенности', 'халяль, детское меню'], ['Часы работы', 'ежедневно до 22:00']]
-    },
-    'Детское меню': {
-      text: 'Понятные детям блюда, удобные порции и яркая подача — чтобы семейный обед понравился и маленьким гостям.',
-      facts: [['Где', 'ресторан IL PATIO'], ['Формат', 'отдельное детское меню'], ['Меню', 'открывается в PDF']]
-    },
-    'Планета Суши': {
-      text: 'Японская кухня в том же зале: роллы, суши, сеты и горячие блюда для семейного обеда или праздничного стола.',
-      facts: [['Кухня', 'японская'], ['Формат', 'меню в PDF'], ['Заказ', 'в ресторане']]
-    },
-    'Детские праздники': {
-      text: 'День рождения, выпускной или семейное событие под ключ. Поможем собрать программу, развлечения, стол, торт и дополнительные услуги.',
-      facts: [['Формат', 'под ключ'], ['Дополнительно', 'аниматор, мастер-класс, фотограф'], ['Ответ менеджера', 'до 15 минут']]
-    },
-    'Мастер-классы': {
-      text: 'Рисование, слайм-LAB, кулинария, пицца-мейкер, квесты и научные шоу. Темы обновляются, готовую работу ребёнок забирает с собой.',
-      facts: [['Расписание', 'по воскресеньям и по записи'], ['Возраст', 'зависит от программы'], ['Для праздника', 'можно добавить в пакет']]
-    },
-    'Абонементы': {
-      text: 'Выгодный формат для регулярных визитов. Абонемент привязан к одному ребёнку, за один раз можно использовать до пяти посещений.',
-      facts: [['8 посещений', '4 800 ₽ · 2 месяца'], ['20 посещений', '10 000 ₽ · 6 месяцев'], ['40 посещений', '16 000 ₽ · 12 месяцев']]
-    }
-  };
-
-  function shut() {
-    if (!dialog.open) return;
-    dialog.classList.remove('is-open');
-    window.clearTimeout(closeTimer);
-    closeTimer = window.setTimeout(() => {
-      if (dialog.open) dialog.close();
-    }, 380);
-  }
-
-  document.querySelectorAll('.direction-card').forEach(card => {
-    card.addEventListener('click', event => {
-      event.preventDefault();
-      const name = card.querySelector('.direction-card__content strong')?.textContent.trim();
-      const info = details[name];
-      if (!info) return;
-      if (activeCard) activeCard.classList.remove('is-active');
-      activeCard = card;
-      card.classList.add('is-active');
-      title.textContent = name;
-      text.textContent = info.text;
-      const cardImage = card.querySelector('img');
-      if (cardImage && image) {
-        image.src = cardImage.currentSrc || cardImage.src;
-        image.alt = cardImage.alt || name;
-        if (media) media.style.setProperty('--sheet-image', 'url("' + image.src + '")');
-      }
-      facts.innerHTML = info.facts.map(([label, value]) => '<div class="direction-dialog__fact"><span>' + label + '</span><b>' + value + '</b></div>').join('');
-      const href = card.getAttribute('href') || '#booking';
-      action.href = href;
-      action.textContent = href.endsWith('.pdf') ? 'Открыть меню' : 'Записаться / узнать больше';
-      if (href.endsWith('.pdf')) { action.target = '_blank'; action.rel = 'noopener'; }
-      else { action.removeAttribute('target'); action.removeAttribute('rel'); }
-      dialog.showModal();
-      window.requestAnimationFrame(() => {
-        window.requestAnimationFrame(() => dialog.classList.add('is-open'));
-      });
-    });
-  });
-
-  close.addEventListener('click', shut);
-  dialog.addEventListener('click', event => { if (event.target === dialog) shut(); });
-  dialog.addEventListener('close', () => {
-    window.clearTimeout(closeTimer);
-    dialog.classList.remove('is-open');
-    if (activeCard) activeCard.classList.remove('is-active');
-    activeCard = null;
-  });
-  action.addEventListener('click', shut);
 })();
 
 /* === Атмосфера: плавный авто-скролл + плавный drag с инерцией === */
@@ -4679,77 +3802,8 @@ document.querySelectorAll('[data-conf]').forEach(b => {
   const sl = document.getElementById('atmSlider');
   if (!sl) return;
 
-  /* На мобильном оставляем нативный слайдер: один кадр + край следующего. */
+  /* Клонируем содержимое для бесконечной ленты */
   const original = Array.from(sl.children);
-  original.forEach(c => {
-    const img = c.querySelector('img');
-    if (img) c.style.setProperty('--atm-image', 'url("' + img.src + '")');
-  });
-  if (window.matchMedia('(max-width: 620px)').matches) {
-    sl.classList.add('atm__slider--mobile');
-    const prev = document.getElementById('atmPrev');
-    const next = document.getElementById('atmNext');
-    const current = document.getElementById('atmCurrent');
-    const total = document.getElementById('atmTotal');
-    let index = 0;
-    let down = false;
-    let startX = 0;
-    let startScroll = 0;
-    let auto = null;
-
-    if (total) total.textContent = String(original.length).padStart(2, '0');
-    function width() { return sl.clientWidth; }
-    function paint() {
-      if (current) current.textContent = String(index + 1).padStart(2, '0');
-    }
-    function go(nextIndex, smooth = true) {
-      index = (nextIndex + original.length) % original.length;
-      sl.scrollTo({ left: index * width(), behavior: smooth ? 'smooth' : 'auto' });
-      paint();
-    }
-    function start() {
-      window.clearInterval(auto);
-      auto = window.setInterval(() => go(index + 1), 5200);
-    }
-    function restart() { start(); }
-
-    prev?.addEventListener('click', () => { go(index - 1); restart(); });
-    next?.addEventListener('click', () => { go(index + 1); restart(); });
-    sl.addEventListener('pointerdown', event => {
-      down = true;
-      startX = event.clientX;
-      startScroll = sl.scrollLeft;
-      window.clearInterval(auto);
-      try { sl.setPointerCapture(event.pointerId); } catch (error) {}
-    });
-    sl.addEventListener('pointermove', event => {
-      if (!down) return;
-      sl.scrollLeft = startScroll - (event.clientX - startX);
-    });
-    function release(event) {
-      if (!down) return;
-      down = false;
-      try { sl.releasePointerCapture(event.pointerId); } catch (error) {}
-      index = Math.max(0, Math.min(original.length - 1, Math.round(sl.scrollLeft / width())));
-      go(index);
-      restart();
-    }
-    sl.addEventListener('pointerup', release);
-    sl.addEventListener('pointercancel', release);
-    let scrollTimer = null;
-    sl.addEventListener('scroll', () => {
-      window.clearTimeout(scrollTimer);
-      scrollTimer = window.setTimeout(() => {
-        index = Math.max(0, Math.min(original.length - 1, Math.round(sl.scrollLeft / width())));
-        paint();
-      }, 90);
-    }, { passive: true });
-    paint();
-    start();
-    return;
-  }
-
-  /* На больших экранах клонируем содержимое для бесконечной ленты. */
   original.forEach(c => sl.appendChild(c.cloneNode(true)));
 
   let pos = 0;
