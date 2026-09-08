@@ -3325,28 +3325,6 @@ body.is-locked { overflow: hidden; }
   .menus__cta .btn { width: 100%; justify-content: center; }
 }
 
-/* ===== Яркие фоны вместо тёмно-фиолетового ===== */
-.patio {
-  background: linear-gradient(150deg, #2A68E1 0%, #3FBEC8 100%);
-  color: var(--white);
-}
-.atm {
-  background: linear-gradient(150deg, #FC1751 0%, #F46221 55%, #F9C930 100%);
-  color: var(--white);
-}
-.patio .sect__title, .atm .sect__title,
-.patio h3, .atm h3, .patio h4, .atm h4 { color: var(--white); }
-.patio .sect__sub, .atm .sect__sub { color: rgba(255,255,255,.85); }
-.patio .cap, .atm .cap, .patio .cap--white, .atm .cap--white { color: rgba(255,255,255,.8); }
-/* Карточки меню на ярком фоне — плотнее, чтобы текст читался */
-.menu-card { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.34); }
-.menu-card:hover { background: rgba(255,255,255,.22); }
-.menu-card__name, .menus__title { color: var(--white); }
-.menus__sub, .menu-card__meta { color: rgba(255,255,255,.8); }
-.menu-card__btn { color: var(--white); }
-.menu-card__kind { background: var(--white); color: var(--ink); }
-/* Праздники — тёплый фирменный градиент */
-.party { background: linear-gradient(140deg, #7A2BD6 0%, #FC1751 60%, #F46221 100%); }
 
 /* Кнопка записи у события расписания */
 .schedule-item__wa {
@@ -3360,6 +3338,48 @@ body.is-locked { overflow: hidden; }
 }
 .schedule-item__wa:hover { transform: translateY(-2px); }
 @media (max-width: 860px) { .schedule-item__wa { width: 100%; justify-content: center; } }
+
+/* ===== Фоны: спокойно. Один синий блок, один розовый, остальное светлое ===== */
+.patio {
+  background: linear-gradient(160deg, #1E3A8A 0%, #2A68E1 100%);
+  color: var(--white);
+}
+.patio .sect__title, .patio h3, .patio h4 { color: var(--white); }
+.patio .sect__sub { color: rgba(255,255,255,.85); }
+.patio .cap, .patio .cap--white { color: rgba(255,255,255,.8); }
+.menu-card { background: rgba(255,255,255,.13); border-color: rgba(255,255,255,.32); }
+.menu-card:hover { background: rgba(255,255,255,.2); }
+.menu-card__name, .menus__title { color: var(--white); }
+.menus__sub, .menu-card__meta { color: rgba(255,255,255,.8); }
+.menu-card__btn { color: var(--white); }
+.menu-card__kind { background: var(--white); color: var(--ink); }
+
+/* Фото из центра — светлый блок, тёмный текст */
+.atm { background: var(--paper); color: var(--ink); }
+.atm .sect__title, .atm h3 { color: var(--ink); }
+.atm .sect__sub { color: var(--gray-2); }
+.atm .cap, .atm .cap--white { color: var(--gray-2); }
+.atm .atm__hint { color: var(--gray-2); }
+
+/* Праздники — единственный насыщенный акцент */
+.party { background: var(--g-pink-deep); color: var(--white); }
+
+/* Заголовок первого экрана — две строки, предсказуемый размер */
+.hero__title {
+  font-size: clamp(34px, 3.7vw, 64px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin-bottom: 22px;
+}
+.hero__title em {
+  font-style: normal;
+  background: var(--g-warm);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+@media (max-width: 720px) {
+  .hero__title { font-size: clamp(32px, 9vw, 44px); max-width: none; }
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": ["ChildCare", "AmusementPark", "LocalBusiness"], "name": "MEOW — детский развлекательный центр", "alternateName": "МЯУ", "description": "Детский развлекательный центр в Махачкале: игровые парки для разного возраста, ниндзя-парк, игровые автоматы, дни рождения под ключ, аниматоры и мастер-классы.", "url": "https://meow-mkh.ru/", "telephone": "+79882938008", "email": "meow_mkh@mail.ru", "image": "https://meow-mkh.ru/photos/og-cover.jpg", "priceRange": "400–1200 ₽", "currenciesAccepted": "RUB", "address": {"@type": "PostalAddress", "streetAddress": "проспект Гамидова, 61, ТРЦ «Этажи», 4 этаж", "addressLocality": "Махачкала", "addressRegion": "Республика Дагестан", "postalCode": "367000", "addressCountry": "RU"}, "geo": {"@type": "GeoCoordinates", "latitude": 42.976, "longitude": 47.502}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "10:00", "closes": "22:00"}], "areaServed": {"@type": "City", "name": "Махачкала"}, "sameAs": ["https://wa.me/79882938008"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит билет?", "acceptedAnswer": {"@type": "Answer", "text": "У нас два парка. Малый парк (до 5 лет): от 400 ₽ в будни до 600 ₽ в выходные. Большой парк (5–12 лет): от 650 ₽ до 1 200 ₽. Для семей с 3+ детьми — особая цена за каждого. Точный прайс — в разделе «Цены»."}}, {"@type": "Question", "name": "Какие есть абонементы?", "acceptedAnswer": {"@type": "Answer", "text": "Три варианта: 8 посещений за 4 800 ₽ (на 2 месяца), 20 посещений за 10 000 ₽ (на 6 месяцев), 40 посещений за 16 000 ₽ (на 12 месяцев). Оформляется в центре при первом визите. Не более 5 посещений за раз, абонемент привязан к одному ребёнку."}}, {"@type": "Question", "name": "С какого возраста можно прийти?", "acceptedAnswer": {"@type": "Answer", "text": "С любого. Малый парк — для детей до 5 лет: мягкая сенсорная зона, развивающие модули, тёплый пол. Большой парк — для 5–12 лет: батуты, аэрохоккей, лабиринт, VR-зона и спорт."}}, {"@type": "Question", "name": "Как заказать день рождения?", "acceptedAnswer": {"@type": "Answer", "text": "Оставьте заявку в форме справа или позвоните +7 988 293 80 08 — менеджер свяжется за 15 минут. Можем добавить аниматора, мастер-класс или фотографа."}}, {"@type": "Question", "name": "Что есть для взрослых?", "acceptedAnswer": {"@type": "Answer", "text": "На территории работает итальянский ресторан «Иль Патио» — паста ручной работы, кофе LavAzza. Можно наблюдать за игровой зоной. Wi-Fi бесплатный."}}, {"@type": "Question", "name": "Где вы находитесь и как добраться?", "acceptedAnswer": {"@type": "Answer", "text": "Махачкала, проспект Гамидова, 61. ТРЦ «Этажи», 4 этаж. Удобный заезд с Гамидова, парковка на 200 мест. Работаем ежедневно с 10:00 до 22:00."}}, {"@type": "Question", "name": "Нужна ли сменная обувь?", "acceptedAnswer": {"@type": "Answer", "text": "В игровых зонах дети играют в носочках — так чище и безопаснее на мягких покрытиях. В ресторане «Иль Патио» — в своей обуви."}}]}</script>
@@ -3453,10 +3473,12 @@ body.is-locked { overflow: hidden; }
       <img class="hero__mark" src="photos/w/place-smiles-ink.webp"
            alt="Место ярких улыбок" width="926" height="878" fetchpriority="high">
 
+      <h1 class="hero__title">Играем, едим,<br><em>празднуем</em></h1>
+
       
 
       <p class="hero__sub">
-        <b>MEOW</b> — развлекательный центр для&nbsp;всей семьи. Игровые зоны под&nbsp;каждый возраст, ресторан «Иль&nbsp;Патио», праздники и&nbsp;мастер-классы.
+        Развлекательный центр для&nbsp;всей семьи. Игровые зоны под&nbsp;каждый возраст, ресторан «Иль&nbsp;Патио», праздники и&nbsp;мастер-классы.
       </p>
 
       <div class="hero__ctas">
