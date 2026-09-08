@@ -1,171 +1,11 @@
 [
  {
-  "key": "f130",
-  "label": "Подпись раздела",
-  "kind": "line",
-  "cls": "cap",
-  "orig": "Махачкала · ТРЦ «Этажи», 4&nbsp;этаж",
-  "section": "hero"
- },
- {
-  "key": "i3",
-  "label": "Фото",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/w/cat-mascot.webp",
-  "section": "hero"
- },
- {
-  "key": "f1",
-  "label": "Текст под заголовком",
-  "kind": "text",
-  "cls": "hero__sub",
-  "orig": "\n        <b>MEOW</b> — развлекательный центр для&nbsp;всей семьи. Игровые зоны под&nbsp;каждый возраст, ресторан «Иль&nbsp;Патио», праздники и&nbsp;мастер-классы. ТРЦ&nbsp;«Этажи», 4&nbsp;этаж.\n      ",
-  "section": "hero"
- },
- {
-  "key": "f2",
-  "label": "Плашка",
-  "kind": "line",
-  "cls": "hero__chip",
-  "orig": "<b>7/7</b> с 10 до 22",
-  "section": "hero"
- },
- {
-  "key": "f3",
-  "label": "Плашка",
-  "kind": "line",
-  "cls": "hero__chip",
-  "orig": "<b>★ 4.9</b> · 600+ отзывов",
-  "section": "hero"
- },
- {
-  "key": "i4",
-  "label": "Игровые зоны",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/w/m29.webp",
-  "section": "hero"
- },
- {
-  "key": "f145",
-  "label": "Номер слайда",
-  "kind": "line",
-  "cls": "hero__caption-num",
-  "orig": "01 / 05 · ИГРЫ",
-  "section": "hero"
- },
- {
-  "key": "f150",
-  "label": "Подпись на слайде",
-  "kind": "rich",
-  "cls": "hero__caption-text",
-  "orig": "Три зоны<br>под <em>каждый</em> возраст",
-  "section": "hero"
- },
- {
-  "key": "i5",
-  "label": "Сухой бассейн",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/w/m05.webp",
-  "section": "hero"
- },
- {
-  "key": "f146",
-  "label": "Номер слайда",
-  "kind": "line",
-  "cls": "hero__caption-num",
-  "orig": "02 / 05 · ЛАБИРИНТ",
-  "section": "hero"
- },
- {
-  "key": "f151",
-  "label": "Подпись на слайде",
-  "kind": "rich",
-  "cls": "hero__caption-text",
-  "orig": "Горки, тоннели<br>и&nbsp;<em>сухой бассейн</em>",
-  "section": "hero"
- },
- {
-  "key": "i6",
-  "label": "Праздники",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/w/m08.webp",
-  "section": "hero"
- },
- {
-  "key": "f147",
-  "label": "Номер слайда",
-  "kind": "line",
-  "cls": "hero__caption-num",
-  "orig": "03 / 05 · ПРАЗДНИКИ",
-  "section": "hero"
- },
- {
-  "key": "f152",
-  "label": "Подпись на слайде",
-  "kind": "rich",
-  "cls": "hero__caption-text",
-  "orig": "Под ключ<br>за&nbsp;<em>15 минут</em>",
-  "section": "hero"
- },
- {
-  "key": "i7",
-  "label": "Эмоции",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/w/m15.webp",
-  "section": "hero"
- },
- {
-  "key": "f148",
-  "label": "Номер слайда",
-  "kind": "line",
-  "cls": "hero__caption-num",
-  "orig": "04 / 05 · ЭМОЦИИ",
-  "section": "hero"
- },
- {
-  "key": "f153",
-  "label": "Подпись на слайде",
-  "kind": "rich",
-  "cls": "hero__caption-text",
-  "orig": "Чувства,<br>в&nbsp;которые <em>возвращаются</em>",
-  "section": "hero"
- },
- {
-  "key": "i8",
-  "label": "Иль Патио",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/w/m24.webp",
-  "section": "hero"
- },
- {
-  "key": "f149",
-  "label": "Номер слайда",
-  "kind": "line",
-  "cls": "hero__caption-num",
-  "orig": "05 / 05 · РЕСТОРАН",
-  "section": "hero"
- },
- {
-  "key": "f154",
-  "label": "Подпись на слайде",
-  "kind": "rich",
-  "cls": "hero__caption-text",
-  "orig": "«Иль&nbsp;Патио»<br>на&nbsp;<em>территории</em>",
-  "section": "hero"
- },
- {
   "key": "f14",
   "label": "Описание раздела",
   "kind": "text",
   "cls": "sect__sub",
   "orig": "MEOW — не&nbsp;«игровая комната». Это полноценный центр семейного досуга в&nbsp;центре Махачкалы с&nbsp;площадью 1&nbsp;800&nbsp;м², рестораном-партнёром и&nbsp;командой из&nbsp;30+&nbsp;человек.",
-  "section": "about"
+  "section": "hero"
  },
  {
   "key": "f33",
@@ -173,7 +13,7 @@
   "kind": "line",
   "cls": "about__name",
   "orig": "Под возраст",
-  "section": "about"
+  "section": "hero"
  },
  {
   "key": "f37",
@@ -181,7 +21,7 @@
   "kind": "text",
   "cls": "about__desc",
   "orig": "3 отдельных парка: малый 0–5, большой 5–12 и&nbsp;зона игровых аппаратов.",
-  "section": "about"
+  "section": "hero"
  },
  {
   "key": "f34",
@@ -189,7 +29,7 @@
   "kind": "line",
   "cls": "about__name",
   "orig": "Иль Патио",
-  "section": "about"
+  "section": "hero"
  },
  {
   "key": "f38",
@@ -197,7 +37,7 @@
   "kind": "text",
   "cls": "about__desc",
   "orig": "Полноценный итальянский ресторан на&nbsp;территории.",
-  "section": "about"
+  "section": "hero"
  },
  {
   "key": "f35",
@@ -205,7 +45,7 @@
   "kind": "line",
   "cls": "about__name",
   "orig": "Праздники",
-  "section": "about"
+  "section": "hero"
  },
  {
   "key": "f39",
@@ -213,7 +53,7 @@
   "kind": "text",
   "cls": "about__desc",
   "orig": "Аниматоры по&nbsp;пятницам и&nbsp;субботам, мастер-классы по&nbsp;воскресеньям.",
-  "section": "about"
+  "section": "hero"
  },
  {
   "key": "f36",
@@ -221,7 +61,7 @@
   "kind": "line",
   "cls": "about__name",
   "orig": "Безопасно",
-  "section": "about"
+  "section": "hero"
  },
  {
   "key": "f40",
@@ -229,14 +69,14 @@
   "kind": "text",
   "cls": "about__desc",
   "orig": "Видеонаблюдение, мягкие покрытия, безопасные браслеты, медик.",
-  "section": "about"
+  "section": "hero"
  },
  {
   "key": "f131",
   "label": "Подпись раздела",
   "kind": "line",
   "cls": "cap",
-  "orig": "№01 / Расписание",
+  "orig": "№02 / Расписание",
   "section": "schedule"
  },
  {
@@ -261,7 +101,7 @@
   "kind": "line",
   "cls": "cap",
   "orig": "№02 / Зоны",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "f5",
@@ -269,7 +109,7 @@
   "kind": "rich",
   "cls": "sect__title",
   "orig": "3&nbsp;мира<br>для <em>всех</em> возрастов",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "f16",
@@ -277,7 +117,7 @@
   "kind": "text",
   "cls": "sect__sub",
   "orig": "Три отдельных парка под&nbsp;разный возраст и&nbsp;рост. Безопасное мягкое покрытие, видеонаблюдение и&nbsp;аниматоры всегда рядом.",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "i9",
@@ -285,7 +125,7 @@
   "kind": "image",
   "cls": "img",
   "orig": "photos/w/m02.webp",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "f155",
@@ -293,7 +133,7 @@
   "kind": "line",
   "cls": "zone__age",
   "orig": "0–5 ЛЕТ",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "f158",
@@ -301,7 +141,7 @@
   "kind": "line",
   "cls": "zone__index",
   "orig": "01 / 03",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "f24",
@@ -309,7 +149,7 @@
   "kind": "line",
   "cls": "zone__title",
   "orig": "Малый парк",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "f27",
@@ -317,7 +157,7 @@
   "kind": "text",
   "cls": "zone__sub",
   "orig": "Отдельный мир для&nbsp;самых маленьких: невысокие модули, мягкие покрытия и&nbsp;всё под&nbsp;рост малыша.",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "f30",
@@ -325,7 +165,7 @@
   "kind": "line",
   "cls": "zone__tags-title",
   "orig": "Что внутри",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "i10",
@@ -333,7 +173,7 @@
   "kind": "image",
   "cls": "img",
   "orig": "photos/w/m22.webp",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "f156",
@@ -341,7 +181,7 @@
   "kind": "line",
   "cls": "zone__age",
   "orig": "5–12 ЛЕТ",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "f159",
@@ -349,7 +189,7 @@
   "kind": "line",
   "cls": "zone__index",
   "orig": "02 / 03",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "f25",
@@ -357,7 +197,7 @@
   "kind": "line",
   "cls": "zone__title",
   "orig": "Большой парк",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "f28",
@@ -365,7 +205,7 @@
   "kind": "text",
   "cls": "zone__sub",
   "orig": "Четыре уровня, спиральные горки и&nbsp;поролоновая яма. Внутри — ниндзя-парк с&nbsp;подвесными мостами.",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "f31",
@@ -373,7 +213,7 @@
   "kind": "line",
   "cls": "zone__tags-title",
   "orig": "Что внутри",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "i11",
@@ -381,7 +221,7 @@
   "kind": "image",
   "cls": "img",
   "orig": "photos/w/m25.webp",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "f157",
@@ -389,7 +229,7 @@
   "kind": "line",
   "cls": "zone__age",
   "orig": "1–99 ЛЕТ",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "f160",
@@ -397,7 +237,7 @@
   "kind": "line",
   "cls": "zone__index",
   "orig": "03 / 03",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "f26",
@@ -405,7 +245,7 @@
   "kind": "line",
   "cls": "zone__title",
   "orig": "Зона игровых аппаратов",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "f29",
@@ -413,7 +253,7 @@
   "kind": "text",
   "cls": "zone__sub",
   "orig": "Аттракционы и&nbsp;автоматы, за&nbsp;которыми одинаково залипают и&nbsp;дети, и&nbsp;родители.",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "f32",
@@ -421,7 +261,7 @@
   "kind": "line",
   "cls": "zone__tags-title",
   "orig": "Что внутри",
-  "section": "zones"
+  "section": "schedule"
  },
  {
   "key": "f133",
@@ -457,7 +297,7 @@
  },
  {
   "key": "f163",
-  "label": "Заголовок плашки на фото",
+  "label": "Заголовок плашки",
   "kind": "line",
   "cls": "h4",
   "orig": "На территории центра",
@@ -509,6 +349,110 @@
   "kind": "line",
   "cls": "patio__chip",
   "orig": "Авторские торты",
+  "section": "patio"
+ },
+ {
+  "key": "i14",
+  "label": "Обложка меню ресторана «Иль Патио»",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/w/menu-patio.webp",
+  "section": "patio"
+ },
+ {
+  "key": "f164",
+  "label": "Название меню",
+  "kind": "line",
+  "cls": "menu-card__name",
+  "orig": "Иль Патио",
+  "section": "patio"
+ },
+ {
+  "key": "i15",
+  "label": "Обложка меню ресторана «Планета Суши»",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/w/menu-sushi.webp",
+  "section": "patio"
+ },
+ {
+  "key": "f165",
+  "label": "Название меню",
+  "kind": "line",
+  "cls": "menu-card__name",
+  "orig": "Планета Суши",
+  "section": "patio"
+ },
+ {
+  "key": "f174",
+  "label": "Подпись к тортам",
+  "kind": "line",
+  "cls": "cakes__caption",
+  "orig": "\n          <span class=\"line\" style=\"background:rgba(255,255,255,0.6)\"></span>\n          <span class=\"cap cap--white\" data-cms=\"f134\">Авторские торты от&nbsp;шеф-кондитера</span>\n        ",
+  "section": "patio"
+ },
+ {
+  "key": "f134",
+  "label": "Подпись раздела",
+  "kind": "line",
+  "cls": "cap",
+  "orig": "Авторские торты от&nbsp;шеф-кондитера",
+  "section": "patio"
+ },
+ {
+  "key": "f175",
+  "label": "Заголовок тортов",
+  "kind": "rich",
+  "cls": "cakes__title",
+  "orig": "Торт под&nbsp;<em>событие</em>&nbsp;— на&nbsp;заказ",
+  "section": "patio"
+ },
+ {
+  "key": "i16",
+  "label": "Авторский торт",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/w/cake01.webp",
+  "section": "patio"
+ },
+ {
+  "key": "i17",
+  "label": "Авторский торт",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/w/cake02.webp",
+  "section": "patio"
+ },
+ {
+  "key": "i18",
+  "label": "Авторский торт",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/w/cake03.webp",
+  "section": "patio"
+ },
+ {
+  "key": "i19",
+  "label": "Авторский торт",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/w/cake04.webp",
+  "section": "patio"
+ },
+ {
+  "key": "i20",
+  "label": "Авторский торт",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/w/cake05.webp",
+  "section": "patio"
+ },
+ {
+  "key": "i21",
+  "label": "Авторский торт",
+  "kind": "image",
+  "cls": "img",
+  "orig": "photos/w/cake06.webp",
   "section": "patio"
  },
  {
@@ -676,7 +620,7 @@
   "label": "Заголовок раздела",
   "kind": "rich",
   "cls": "sect__title",
-  "orig": "Большой день<br><em>в&nbsp;одном</em>&nbsp;звонке",
+  "orig": "<span class=\"party__title-line\">Большой день</span><span class=\"party__title-line\"><em>в&nbsp;одном</em>&nbsp;звонке</span>",
   "section": "party"
  },
  {
@@ -1236,7 +1180,7 @@
   "label": "Подпись раздела",
   "kind": "line",
   "cls": "cap",
-  "orig": "№08 / Отзывы",
+  "orig": "№09 / Отзывы",
   "section": "reviews"
  },
  {
@@ -1244,7 +1188,7 @@
   "label": "Заголовок раздела",
   "kind": "rich",
   "cls": "sect__title",
-  "orig": "Нам доверяют<br><em>главное</em>",
+  "orig": "Говорят<br><em>родители</em>",
   "section": "reviews"
  },
  {
@@ -1356,7 +1300,7 @@
   "label": "Подпись раздела",
   "kind": "line",
   "cls": "cap",
-  "orig": "№09 / FAQ",
+  "orig": "№10 / FAQ",
   "section": "cta"
  },
  {
@@ -1450,7 +1394,7 @@
  {
   "key": "f118",
   "label": "Ответ",
-  "kind": "rich",
+  "kind": "text",
   "cls": "faq__answer",
   "orig": "Махачкала, проспект Гамидова, 61. ТРЦ&nbsp;«Этажи», 4&nbsp;этаж. Удобный заезд с&nbsp;Гамидова, парковка на&nbsp;200&nbsp;мест. Работаем ежедневно с&nbsp;10:00 до&nbsp;22:00.",
   "section": "cta"
@@ -1466,7 +1410,7 @@
  {
   "key": "f119",
   "label": "Ответ",
-  "kind": "rich",
+  "kind": "text",
   "cls": "faq__answer",
   "orig": "В&nbsp;игровых зонах дети играют в&nbsp;носочках — так чище и&nbsp;безопаснее на&nbsp;мягких покрытиях. В&nbsp;ресторане «Иль&nbsp;Патио» — в&nbsp;своей обуви.",
   "section": "cta"
@@ -1508,7 +1452,7 @@
   "label": "Подпись раздела",
   "kind": "line",
   "cls": "cap",
-  "orig": "№10 / Правила",
+  "orig": "№11 / Правила",
   "section": "rules"
  },
  {
@@ -1604,7 +1548,7 @@
   "label": "Подпись раздела",
   "kind": "line",
   "cls": "cap",
-  "orig": "№11 / Контакты",
+  "orig": "№12 / Контакты",
   "section": "contacts"
  },
  {
@@ -1621,14 +1565,6 @@
   "kind": "text",
   "cls": "sect__sub",
   "orig": "ТРЦ «Этажи», 4&nbsp;этаж. Удобный заезд с&nbsp;проспекта Гамидова. Парковка на&nbsp;200&nbsp;мест.",
-  "section": "contacts"
- },
- {
-  "key": "f122",
-  "label": "Заголовок контактов",
-  "kind": "rich",
-  "cls": "contacts__title",
-  "orig": "Свяжитесь",
   "section": "contacts"
  },
  {
@@ -1773,110 +1709,6 @@
   "kind": "image",
   "cls": "img",
   "orig": "photos/w/cat-mascot.webp",
-  "section": ""
- },
- {
-  "key": "i14",
-  "label": "Обложка меню ресторана «Иль Патио»",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/w/menu-patio.webp",
-  "section": ""
- },
- {
-  "key": "f164",
-  "label": "Заголовок плашки на фото",
-  "kind": "line",
-  "cls": "h4",
-  "orig": "Иль Патио",
-  "section": ""
- },
- {
-  "key": "i15",
-  "label": "Обложка меню ресторана «Планета Суши»",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/w/menu-sushi.webp",
-  "section": ""
- },
- {
-  "key": "f165",
-  "label": "Заголовок плашки на фото",
-  "kind": "line",
-  "cls": "h4",
-  "orig": "Планета Суши",
-  "section": ""
- },
- {
-  "key": "f174",
-  "label": "Подпись к тортам",
-  "kind": "line",
-  "cls": "cakes__caption",
-  "orig": "\n          <span class=\"line\" style=\"background:rgba(255,255,255,0.6)\"></span>\n          <span class=\"cap cap--white\" data-cms=\"f134\">Авторские торты от&nbsp;шеф-кондитера</span>\n        ",
-  "section": ""
- },
- {
-  "key": "f134",
-  "label": "Подпись раздела",
-  "kind": "line",
-  "cls": "cap",
-  "orig": "Авторские торты от&nbsp;шеф-кондитера",
-  "section": ""
- },
- {
-  "key": "f175",
-  "label": "Заголовок тортов",
-  "kind": "rich",
-  "cls": "cakes__title",
-  "orig": "Торт под&nbsp;<em>событие</em>&nbsp;— на&nbsp;заказ",
-  "section": ""
- },
- {
-  "key": "i16",
-  "label": "Авторский торт",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/w/cake01.webp",
-  "section": ""
- },
- {
-  "key": "i17",
-  "label": "Авторский торт",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/w/cake02.webp",
-  "section": ""
- },
- {
-  "key": "i18",
-  "label": "Авторский торт",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/w/cake03.webp",
-  "section": ""
- },
- {
-  "key": "i19",
-  "label": "Авторский торт",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/w/cake04.webp",
-  "section": ""
- },
- {
-  "key": "i20",
-  "label": "Авторский торт",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/w/cake05.webp",
-  "section": ""
- },
- {
-  "key": "i21",
-  "label": "Авторский торт",
-  "kind": "image",
-  "cls": "img",
-  "orig": "photos/w/cake06.webp",
   "section": ""
  }
 ]

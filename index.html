@@ -3240,6 +3240,55 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   .schedule-item { grid-template-columns: 32px minmax(0, 1fr); gap: 10px 14px; padding: 25px 0; }
   .schedule-item > strong { grid-column: 2; max-width: none; text-align: left; }
 }
+
+/* ===== Правки сентября: шапка, первый экран ===== */
+.nav__partner {
+  display: inline-flex; align-items: center;
+  margin-left: 14px; padding-left: 14px;
+  border-left: 1.5px solid var(--line);
+}
+.nav__partner img { height: 22px; width: auto; display: block; }
+.hero__top .paw { width: 20px; height: 20px; color: var(--pink); flex: none; }
+.hero__mark {
+  display: block;
+  width: clamp(120px, 13vw, 180px);
+  height: auto;
+  margin: 0 0 18px;
+}
+@media (max-width: 900px) {
+  .nav__partner { margin-left: 10px; padding-left: 10px; }
+  .nav__partner img { height: 18px; }
+  .hero__mark { width: clamp(96px, 26vw, 140px); margin-bottom: 14px; }
+}
+@media (max-width: 520px) { .nav__partner { display: none; } }
+
+
+/* Стрелки слайдера — по бокам по центру, без подложки */
+.hero__slide-btn {
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  width: 44px; height: 44px;
+  background: transparent;
+  box-shadow: none;
+  color: #fff;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,.55));
+}
+.hero__slide-btn:hover { background: transparent; transform: translateY(-50%) scale(1.12); }
+.hero__slide-btn svg { width: 28px; height: 28px; }
+.hero__slide-btn--prev { left: 10px; right: auto; }
+.hero__slide-btn--next { right: 10px; left: auto; }
+@media (max-width: 720px) {
+  .hero__slide-btn--prev { left: 4px; }
+  .hero__slide-btn--next { right: 4px; }
+}
+
+/* Бургер-меню: светлый логотип и нормальная раскладка шапки */
+.mob-menu__brand { flex: 0 1 auto; min-width: 0; gap: 10px; }
+.mob-menu__brand img { height: clamp(24px, 3.2vh, 30px); width: auto; flex: none; }
+.mob-menu__brand span { white-space: nowrap; }
+.mob-menu__head { gap: 14px; }
+.mob-menu__close { flex: none; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": ["ChildCare", "AmusementPark", "LocalBusiness"], "name": "MEOW — детский развлекательный центр", "alternateName": "МЯУ", "description": "Детский развлекательный центр в Махачкале: игровые парки для разного возраста, ниндзя-парк, игровые автоматы, дни рождения под ключ, аниматоры и мастер-классы.", "url": "https://meow-mkh.ru/", "telephone": "+79882938008", "email": "meow_mkh@mail.ru", "image": "https://meow-mkh.ru/photos/og-cover.jpg", "priceRange": "400–1200 ₽", "currenciesAccepted": "RUB", "address": {"@type": "PostalAddress", "streetAddress": "проспект Гамидова, 61, ТРЦ «Этажи», 4 этаж", "addressLocality": "Махачкала", "addressRegion": "Республика Дагестан", "postalCode": "367000", "addressCountry": "RU"}, "geo": {"@type": "GeoCoordinates", "latitude": 42.976, "longitude": 47.502}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "10:00", "closes": "22:00"}], "areaServed": {"@type": "City", "name": "Махачкала"}, "sameAs": ["https://wa.me/79882938008"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит билет?", "acceptedAnswer": {"@type": "Answer", "text": "У нас два парка. Малый парк (до 5 лет): от 400 ₽ в будни до 600 ₽ в выходные. Большой парк (5–12 лет): от 650 ₽ до 1 200 ₽. Для семей с 3+ детьми — особая цена за каждого. Точный прайс — в разделе «Цены»."}}, {"@type": "Question", "name": "Какие есть абонементы?", "acceptedAnswer": {"@type": "Answer", "text": "Три варианта: 8 посещений за 4 800 ₽ (на 2 месяца), 20 посещений за 10 000 ₽ (на 6 месяцев), 40 посещений за 16 000 ₽ (на 12 месяцев). Оформляется в центре при первом визите. Не более 5 посещений за раз, абонемент привязан к одному ребёнку."}}, {"@type": "Question", "name": "С какого возраста можно прийти?", "acceptedAnswer": {"@type": "Answer", "text": "С любого. Малый парк — для детей до 5 лет: мягкая сенсорная зона, развивающие модули, тёплый пол. Большой парк — для 5–12 лет: батуты, аэрохоккей, лабиринт, VR-зона и спорт."}}, {"@type": "Question", "name": "Как заказать день рождения?", "acceptedAnswer": {"@type": "Answer", "text": "Оставьте заявку в форме справа или позвоните +7 988 293 80 08 — менеджер свяжется за 15 минут. Можем добавить аниматора, мастер-класс или фотографа."}}, {"@type": "Question", "name": "Что есть для взрослых?", "acceptedAnswer": {"@type": "Answer", "text": "На территории работает итальянский ресторан «Иль Патио» — паста ручной работы, кофе LavAzza. Можно наблюдать за игровой зоной. Wi-Fi бесплатный."}}, {"@type": "Question", "name": "Где вы находитесь и как добраться?", "acceptedAnswer": {"@type": "Answer", "text": "Махачкала, проспект Гамидова, 61. ТРЦ «Этажи», 4 этаж. Удобный заезд с Гамидова, парковка на 200 мест. Работаем ежедневно с 10:00 до 22:00."}}, {"@type": "Question", "name": "Нужна ли сменная обувь?", "acceptedAnswer": {"@type": "Answer", "text": "В игровых зонах дети играют в носочках — так чище и безопаснее на мягких покрытиях. В ресторане «Иль Патио» — в своей обуви."}}]}</script>
@@ -3267,13 +3316,14 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   <div class="wrap nav__inner">
     <a href="#" class="nav__brand">
       <img class="nav__cat" src="photos/w/cat-mascot.webp" alt="MEOW" width="360" height="157" data-cms="i1">
-      <span class="nav__brand-name" data-cms="f189">MEOW</span>
     </a>
+    <span class="nav__partner">
+      <img src="photos/w/IP_logo.webp" alt="iL Патио — итальянский ресторан" width="489" height="138">
+    </span>
     <div class="nav__menu">
       <a href="#directions">Направления</a>
-      <a href="#schedule">Афиша</a>
       <a href="#prices">Цены</a>
-      <a href="#news">Новости</a>
+      <a href="#schedule">Афиша</a>
       <a href="#reviews">Отзывы</a>
       <a href="#cta">Вопросы</a>
       <a href="#contacts">Контакты</a>
@@ -3297,7 +3347,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
 <div class="mob-menu" id="mobMenu">
   <div class="mob-menu__head">
     <div class="mob-menu__brand">
-      <img src="photos/w/cat-mascot.webp" alt="" width="360" height="157" data-cms="i2">
+      <img src="photos/w/cat-mascot-light.webp" alt="" width="360" height="157" data-cms="i2">
       <span>MEOW</span>
     </div>
     <button class="mob-menu__close" id="mobClose" aria-label="закрыть">
@@ -3307,9 +3357,8 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   <ul class="mob-menu__links">
     <li><a href="#directions" data-mob-link>Направления и цены</a></li>
     <li><a href="#schedule" data-mob-link>Афиша</a></li>
-    <li><a href="#prices" data-mob-link>Тарифы и абонементы</a></li>
-    <li><a href="#news" data-mob-link>Новости</a></li>
-    <li><a href="#reviews" data-mob-link>Отзывы</a></li>
+    <li><a href="#prices" data-mob-link>Цены</a></li>
+        <li><a href="#reviews" data-mob-link>Отзывы</a></li>
     <li><a href="#cta" data-mob-link>Вопросы</a></li>
     <li><a href="#rules" data-mob-link>Правила</a></li>
     <li><a href="#contacts" data-mob-link>Контакты</a></li>
@@ -3325,9 +3374,12 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   <div class="wrap hero__grid">
     <div class="hero__content">
       <div class="hero__top">
-        <span class="dot"></span>
-        <span class="cap">Махачкала · ТРЦ «Этажи», 4&nbsp;этаж</span>
+        <svg class="paw" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="7" cy="8" rx="2.1" ry="2.7"/><ellipse cx="12" cy="6.4" rx="2.1" ry="2.9"/><ellipse cx="17" cy="8" rx="2.1" ry="2.7"/><path d="M12 11.4c2.9 0 5.4 2.2 5.4 4.6 0 1.9-1.6 3-3.6 3-.8 0-1.3-.3-1.8-.3s-1 .3-1.8.3c-2 0-3.6-1.1-3.6-3 0-2.4 2.5-4.6 5.4-4.6z"/></svg>
+        <span class="cap">Махачкала</span>
       </div>
+
+      <img class="hero__mark" src="photos/w/place-smiles-ink.webp"
+           alt="Место ярких улыбок" width="926" height="878" fetchpriority="high">
 
       <h1 class="hero__title hero__title--place" aria-label="Время играть, есть и веселиться">
         <span class="hero__title-desktop">Время</span>
@@ -3338,21 +3390,16 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
       </h1>
 
       <p class="hero__sub">
-        <b>MEOW</b> — развлекательный центр для&nbsp;всей семьи. Игровые зоны под&nbsp;каждый возраст, ресторан «Иль&nbsp;Патио», праздники и&nbsp;мастер-классы. ТРЦ&nbsp;«Этажи», 4&nbsp;этаж.
+        <b>MEOW</b> — развлекательный центр для&nbsp;всей семьи. Игровые зоны под&nbsp;каждый возраст, ресторан «Иль&nbsp;Патио», праздники и&nbsp;мастер-классы.
       </p>
 
       <div class="hero__ctas">
-        <a href="#directions" class="btn btn--ink">
-          Смотреть направления
+        <a href="https://wa.me/79882938008?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%B0%D0%B7%D0%B4%D0%BD%D0%B8%D0%BA" class="btn btn--ink" target="_blank" rel="noopener">
+          Заказать праздник
           <span class="btn__arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </a>
-        <a href="#booking" class="btn btn--line">Заказать праздник</a>
       </div>
 
-      <div class="hero__chips">
-        <span class="hero__chip"><b>7/7</b> с 10 до 22</span>
-        <span class="hero__chip"><b>★ 4.9</b> · 600+ отзывов</span>
-      </div>
     </div>
 
     <div class="hero__visual">
@@ -3380,27 +3427,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   </div>
 </header>
 
-<!-- ============== РИБОН ============== -->
-<div class="ribbon">
-  <div class="ribbon__track">
-    <span class="ribbon__item">Лабиринты</span>
-    <span class="ribbon__item">Батуты</span>
-    <span class="ribbon__item">Сухой бассейн</span>
-    <span class="ribbon__item">Аэрохоккей</span>
-    <span class="ribbon__item">Мастер-классы</span>
-    <span class="ribbon__item">Дни рождения</span>
-    <span class="ribbon__item">Иль Патио</span>
-    <span class="ribbon__item">Аниматоры</span>
-    <span class="ribbon__item">Лабиринты</span>
-    <span class="ribbon__item">Батуты</span>
-    <span class="ribbon__item">Сухой бассейн</span>
-    <span class="ribbon__item">Аэрохоккей</span>
-    <span class="ribbon__item">Мастер-классы</span>
-    <span class="ribbon__item">Дни рождения</span>
-    <span class="ribbon__item">Иль Патио</span>
-    <span class="ribbon__item">Аниматоры</span>
-  </div>
-</div>
+
 
 <!-- ============== ABOUT / 4 ПРИНЦИПА ============== -->
 <template id="legacy-about">
@@ -3443,20 +3470,11 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
     <div class="sect__head r">
       <div class="sect__head-left">
         <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f131">№02 / Расписание</span></div>
-        <h2 class="sect__title" data-cms="f4">Что у&nbsp;нас<br>на&nbsp;<em>этой</em> неделе</h2>
+        <h2 class="sect__title" data-cms="f4">Наши<br><em>новости</em></h2>
       </div>
-      <p class="sect__sub" data-cms="f15">Аниматоры и&nbsp;мастер-классы идут постоянно, раз в&nbsp;месяц собираем большое событие. Участие бесплатное — нужна только запись.</p>
     </div>
 
-    <div class="schedule-brand r">
-      <div class="schedule-brand__mark">
-        <img src="photos/w/place-smiles.webp" alt="Место ярких улыбок" width="926" height="878" loading="lazy" decoding="async">
-      </div>
-      <div class="schedule-brand__copy">
-        <span class="schedule-brand__eyebrow">MEOW — семейный парк</span>
-        <p>Пространство, где игры, праздники и&nbsp;новые впечатления собираются в&nbsp;одном месте.</p>
-      </div>
-    </div>
+    
 
     <div class="schedule-board">
       <article class="schedule-feature r">
@@ -3502,14 +3520,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
       </div>
     </div>
 
-    <div class="sched__foot r">
-      <b>Участие бесплатное</b>
-      <span>Запись по&nbsp;номеру в&nbsp;WhatsApp — напишите, кого и&nbsp;на&nbsp;какое событие записать.</span>
-      <a href="https://wa.me/79882938008" class="btn btn--ink" id="schedWa" target="_blank" rel="noopener">
-        Записаться в&nbsp;WhatsApp
-        <span class="btn__arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-      </a>
-    </div>
+    
   </div>
 </section>
 
@@ -3613,10 +3624,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
       <div class="patio__visual">
         <img src="photos/w/m01.webp" alt="Ресторан Иль Патио" width="1580" height="2370" loading="lazy" decoding="async" data-cms="i12">
         <span class="patio__visual-tag" data-cms="f166">★ Часть сети «Иль Патио» с&nbsp;1993</span>
-        <div class="patio__visual-overlay">
-          <h4 data-cms="f163">На территории центра</h4>
-          <p>Махачкала, ТРЦ «Этажи», 4 этаж · работает до&nbsp;22:00</p>
-        </div>
+        
       </div>
       <div class="patio__content">
         <div class="patio__label" data-cms="f161">Ресторан на&nbsp;территории</div>
@@ -3679,23 +3687,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
     </div>
 
     <!-- Авторские торты — мини-блок с галереей -->
-    <div class="cakes r">
-      <div class="cakes__head">
-        <div class="cakes__caption" data-cms="f174">
-          <span class="line" style="background:rgba(255,255,255,0.6)"></span>
-          <span class="cap cap--white" data-cms="f134">Авторские торты от&nbsp;шеф-кондитера</span>
-        </div>
-        <h3 class="cakes__title" data-cms="f175">Торт под&nbsp;<em>событие</em>&nbsp;— на&nbsp;заказ</h3>
-      </div>
-      <div class="cakes__slider" id="cakesSlider">
-        <div class="cakes__cell"><img src="photos/w/cake01.webp" alt="Авторский торт" width="660" height="991" loading="lazy" decoding="async" data-cms="i16"></div>
-        <div class="cakes__cell"><img src="photos/w/cake02.webp" alt="Авторский торт" width="660" height="880" loading="lazy" decoding="async" data-cms="i17"></div>
-        <div class="cakes__cell"><img src="photos/w/cake03.webp" alt="Авторский торт" width="660" height="880" loading="lazy" decoding="async" data-cms="i18"></div>
-        <div class="cakes__cell"><img src="photos/w/cake04.webp" alt="Авторский торт" width="660" height="880" loading="lazy" decoding="async" data-cms="i19"></div>
-        <div class="cakes__cell"><img src="photos/w/cake05.webp" alt="Авторский торт" width="660" height="880" loading="lazy" decoding="async" data-cms="i20"></div>
-        <div class="cakes__cell"><img src="photos/w/cake06.webp" alt="Авторский торт" width="660" height="880" loading="lazy" decoding="async" data-cms="i21"></div>
-      </div>
-    </div>
+    
   </div>
 </section>
 
@@ -3790,76 +3782,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   </div>
 </section>
 
-<!-- ============== ПРОГРАММЫ ============== -->
-<section class="sect progs" id="progs">
-  <div class="wrap">
-    <div class="sect__head r">
-      <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f137">№06 / Мастер-классы</span></div>
-        <h2 class="sect__title" data-cms="f9">Каждый день<br>— <em>новое</em></h2>
-      </div>
-      <p class="sect__sub" data-cms="f19">Расписание обновляется еженедельно. Можно записаться отдельно или включить в&nbsp;программу праздника.</p>
-    </div>
 
-    <div class="progs__grid">
-      <div class="prog prog--lg prog--ink r">
-        <div class="prog__icon"><svg><use href="#ic-star"/></svg></div>
-        <div class="prog__name" data-cms="f41">Тематические дни</div>
-        <div class="prog__desc" data-cms="f49">Каждые выходные — новая тема: пираты, космос, единороги, супергерои. Костюмы, реквизит, фотозона.</div>
-        <div class="prog__age" data-cms="f57">Все возрасты</div>
-      </div>
-
-      <div class="prog prog--pink r" data-d="1">
-        <div class="prog__icon"><svg fill="none" stroke="currentColor"><use href="#ic-brush"/></svg></div>
-        <div class="prog__name" data-cms="f42">Рисование на&nbsp;холсте</div>
-        <div class="prog__desc" data-cms="f50">Акрил, мини-холст 20×30.</div>
-        <div class="prog__age" data-cms="f58">4+</div>
-      </div>
-
-      <div class="prog prog--cyan r" data-d="2">
-        <div class="prog__icon"><svg fill="none" stroke="currentColor"><use href="#ic-flask"/></svg></div>
-        <div class="prog__name" data-cms="f43">Слайм-LAB</div>
-        <div class="prog__desc" data-cms="f51">Свой слайм с&nbsp;блёстками.</div>
-        <div class="prog__age" data-cms="f59">5+</div>
-      </div>
-
-      <div class="prog prog--yellow r" data-d="3">
-        <div class="prog__icon"><svg fill="none" stroke="currentColor"><use href="#ic-chef"/></svg></div>
-        <div class="prog__name" data-cms="f44">Кулинария</div>
-        <div class="prog__desc" data-cms="f52">Печенье, кексы, мороженое.</div>
-        <div class="prog__age" data-cms="f60">5+</div>
-      </div>
-
-      <div class="prog r" data-d="1">
-        <div class="prog__icon"><svg fill="none" stroke="currentColor"><use href="#ic-pizza"/></svg></div>
-        <div class="prog__name" data-cms="f45">Пицца-мейкер</div>
-        <div class="prog__desc" data-cms="f53">Раскатают тесто, выберут начинку.</div>
-        <div class="prog__age" data-cms="f61">4+</div>
-      </div>
-
-      <div class="prog r" data-d="2">
-        <div class="prog__icon"><svg fill="none" stroke="currentColor"><use href="#ic-mask"/></svg></div>
-        <div class="prog__name" data-cms="f46">Квест с&nbsp;героем</div>
-        <div class="prog__desc" data-cms="f54">Сюжетный квест по&nbsp;центру.</div>
-        <div class="prog__age" data-cms="f62">6+</div>
-      </div>
-
-      <div class="prog r" data-d="3">
-        <div class="prog__icon"><svg fill="none" stroke="currentColor"><use href="#ic-sci"/></svg></div>
-        <div class="prog__name" data-cms="f47">Научное шоу</div>
-        <div class="prog__desc" data-cms="f55">Сухой лёд, пузыри, бенгальские.</div>
-        <div class="prog__age" data-cms="f63">4+</div>
-      </div>
-
-      <div class="prog r" data-d="4">
-        <div class="prog__icon"><svg fill="none" stroke="currentColor"><use href="#ic-music"/></svg></div>
-        <div class="prog__name" data-cms="f48">Караоке-баттл</div>
-        <div class="prog__desc" data-cms="f56">Микрофоны, экран, призы.</div>
-        <div class="prog__age" data-cms="f64">6+</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ============== ЦЕНЫ ============== -->
 <section class="sect prices" id="prices">
@@ -3997,22 +3920,12 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
         <img src="photos/w/m02.webp" alt="Игровые автоматы" width="1020" height="1530" loading="lazy" decoding="async">
         <span class="direction-card__shade"></span>
         <span class="direction-card__age">1–99 лет</span>
-        <span class="direction-card__content"><strong>Игровые автоматы</strong><span>Аэрохоккей, гонки и призовые аппараты</span><b>Оплата игровой картой</b></span>
+        <span class="direction-card__content"><strong>Зона игровых аппаратов</strong><span>Аэрохоккей, гонки и призовые аппараты</span><b>Оплата игровой картой</b></span>
       </a>
 
-      <a class="direction-card r" href="#booking" data-d="1">
-        <img src="photos/w/m10.webp" alt="Ниндзя-парк" width="1080" height="720" loading="lazy" decoding="async">
-        <span class="direction-card__shade"></span>
-        <span class="direction-card__age">5–12 лет</span>
-        <span class="direction-card__content"><strong>Ниндзя-парк</strong><span>Подвесные мосты и полоса препятствий</span><b>Входит в билет Большого парка</b></span>
-      </a>
+      
 
-      <a class="direction-card direction-card--wide r" href="#booking" data-d="2">
-        <img src="photos/w/m29.webp" alt="Лазертаг в MEOW" width="1600" height="1067" loading="lazy" decoding="async">
-        <span class="direction-card__shade"></span>
-        <span class="direction-card__age">командная игра</span>
-        <span class="direction-card__content"><strong>Лазертаг</strong><span>Динамичная игра для компании и праздника</span><b>Стоимость по запросу</b></span>
-      </a>
+      
 
       <a class="direction-card direction-card--restaurant r" href="menu/il-patio.pdf" target="_blank" rel="noopener" data-d="3">
         <img src="photos/w/m01.webp" alt="Ресторан IL PATIO" width="1580" height="2370" loading="lazy" decoding="async">
@@ -4028,12 +3941,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
         <span class="direction-card__content"><strong>Планета Суши</strong><span>Роллы, суши, сеты и горячие блюда</span><b>Открыть меню ↗</b></span>
       </a>
 
-      <a class="direction-card direction-card--wide r" href="#booking" data-d="3">
-        <img src="photos/w/m18.webp" alt="Детский день рождения в MEOW" width="1480" height="2220" loading="lazy" decoding="async">
-        <span class="direction-card__shade"></span>
-        <span class="direction-card__age">праздник под ключ</span>
-        <span class="direction-card__content"><strong>Детские праздники</strong><span>День рождения, выпускной или семейное событие</span><b>Рассчитать программу</b></span>
-      </a>
+      
 
       <a class="direction-card r" href="#booking" data-d="1">
         <img src="photos/w/m26.webp" alt="Мастер-класс в MEOW" width="580" height="870" loading="lazy" decoding="async">
@@ -4060,33 +3968,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   </div>
 </section>
 
-<!-- ============== НОВОСТИ ============== -->
-<section class="sect news" id="news">
-  <div class="wrap">
-    <div class="sect__head r">
-      <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap cap--white">№08 / Новости и события</span></div>
-        <h2 class="sect__title">Сейчас<br><em>в MEOW</em></h2>
-      </div>
-      <p class="sect__sub">Актуальная жизнь центра: встречи с героями, новые программы и идеи для вашего следующего семейного дня.</p>
-    </div>
 
-    <div class="news__grid">
-      <article class="news-card news-card--lead r" data-d="1">
-        <div class="news-card__photo"><img src="photos/w/m08.webp" alt="Аниматоры в MEOW" width="1600" height="1067" loading="lazy" decoding="async"><span class="news-card__date">Пятница и суббота</span></div>
-        <div class="news-card__body"><span>События</span><h3>Любимые герои уже ждут</h3><p>Каждую пятницу и субботу в центре проходят программы с аниматорами.</p><a href="#booking">Узнать программу <b>↗</b></a></div>
-      </article>
-      <article class="news-card r" data-d="2">
-        <div class="news-card__photo"><img src="photos/w/m26.webp" alt="Мастер-класс в MEOW" width="580" height="870" loading="lazy" decoding="async"><span class="news-card__date">По воскресеньям</span></div>
-        <div class="news-card__body"><span>Мастер-классы</span><h3>Создаём своими руками</h3><p>Новая тема каждую неделю. Готовую работу ребёнок забирает с собой.</p><a href="#booking">Записаться <b>↗</b></a></div>
-      </article>
-      <article class="news-card r" data-d="3">
-        <div class="news-card__photo"><img src="photos/w/m18.webp" alt="День рождения в MEOW" width="1480" height="2220" loading="lazy" decoding="async"><span class="news-card__date">По записи</span></div>
-        <div class="news-card__body"><span>Праздники</span><h3>День рождения без хлопот</h3><p>Соберём программу, ресторан, торт и развлечения в одном месте.</p><a href="#booking">Обсудить праздник <b>↗</b></a></div>
-      </article>
-    </div>
-  </div>
-</section>
 
 <!-- ============== ОТЗЫВЫ ============== -->
 <section class="sect reviews-section" id="reviews">
@@ -4268,9 +4150,9 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
       <div class="foot__col">
         <h5 data-cms="f191">Навигация</h5>
         <ul>
-          <li><a href="#zones">Игровые зоны</a></li>
+          <li><a href="#directions">Направления</a></li>
           <li><a href="#party">Праздники</a></li>
-          <li><a href="#progs">Мастер-классы</a></li>
+          <li><a href="#schedule">Афиша</a></li>
           <li><a href="#patio">Иль Патио</a></li>
           <li><a href="#prices">Цены</a></li>
         </ul>
