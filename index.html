@@ -3289,6 +3289,25 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
 .mob-menu__brand span { white-space: nowrap; }
 .mob-menu__head { gap: 14px; }
 .mob-menu__close { flex: none; }
+
+/* Карточки направлений: горизонтальные, без цены и возраста на лицевой стороне */
+.directions__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.direction-card,
+.direction-card--wide,
+.direction-card:nth-child(10),
+.direction-card:nth-child(11) {
+  grid-column: span 1;
+  min-height: 0;
+  aspect-ratio: 16 / 10;
+}
+.direction-card__age { display: none; }
+.direction-card__content b { display: none; }
+@media (max-width: 1100px) { .directions__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 720px) {
+  .directions__grid { grid-template-columns: 1fr; }
+  .direction-card, .direction-card--wide { aspect-ratio: 16 / 11; min-height: 0; }
+}
+body.is-locked { overflow: hidden; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": ["ChildCare", "AmusementPark", "LocalBusiness"], "name": "MEOW — детский развлекательный центр", "alternateName": "МЯУ", "description": "Детский развлекательный центр в Махачкале: игровые парки для разного возраста, ниндзя-парк, игровые автоматы, дни рождения под ключ, аниматоры и мастер-классы.", "url": "https://meow-mkh.ru/", "telephone": "+79882938008", "email": "meow_mkh@mail.ru", "image": "https://meow-mkh.ru/photos/og-cover.jpg", "priceRange": "400–1200 ₽", "currenciesAccepted": "RUB", "address": {"@type": "PostalAddress", "streetAddress": "проспект Гамидова, 61, ТРЦ «Этажи», 4 этаж", "addressLocality": "Махачкала", "addressRegion": "Республика Дагестан", "postalCode": "367000", "addressCountry": "RU"}, "geo": {"@type": "GeoCoordinates", "latitude": 42.976, "longitude": 47.502}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "10:00", "closes": "22:00"}], "areaServed": {"@type": "City", "name": "Махачкала"}, "sameAs": ["https://wa.me/79882938008"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит билет?", "acceptedAnswer": {"@type": "Answer", "text": "У нас два парка. Малый парк (до 5 лет): от 400 ₽ в будни до 600 ₽ в выходные. Большой парк (5–12 лет): от 650 ₽ до 1 200 ₽. Для семей с 3+ детьми — особая цена за каждого. Точный прайс — в разделе «Цены»."}}, {"@type": "Question", "name": "Какие есть абонементы?", "acceptedAnswer": {"@type": "Answer", "text": "Три варианта: 8 посещений за 4 800 ₽ (на 2 месяца), 20 посещений за 10 000 ₽ (на 6 месяцев), 40 посещений за 16 000 ₽ (на 12 месяцев). Оформляется в центре при первом визите. Не более 5 посещений за раз, абонемент привязан к одному ребёнку."}}, {"@type": "Question", "name": "С какого возраста можно прийти?", "acceptedAnswer": {"@type": "Answer", "text": "С любого. Малый парк — для детей до 5 лет: мягкая сенсорная зона, развивающие модули, тёплый пол. Большой парк — для 5–12 лет: батуты, аэрохоккей, лабиринт, VR-зона и спорт."}}, {"@type": "Question", "name": "Как заказать день рождения?", "acceptedAnswer": {"@type": "Answer", "text": "Оставьте заявку в форме справа или позвоните +7 988 293 80 08 — менеджер свяжется за 15 минут. Можем добавить аниматора, мастер-класс или фотографа."}}, {"@type": "Question", "name": "Что есть для взрослых?", "acceptedAnswer": {"@type": "Answer", "text": "На территории работает итальянский ресторан «Иль Патио» — паста ручной работы, кофе LavAzza. Можно наблюдать за игровой зоной. Wi-Fi бесплатный."}}, {"@type": "Question", "name": "Где вы находитесь и как добраться?", "acceptedAnswer": {"@type": "Answer", "text": "Махачкала, проспект Гамидова, 61. ТРЦ «Этажи», 4 этаж. Удобный заезд с Гамидова, парковка на 200 мест. Работаем ежедневно с 10:00 до 22:00."}}, {"@type": "Question", "name": "Нужна ли сменная обувь?", "acceptedAnswer": {"@type": "Answer", "text": "В игровых зонах дети играют в носочках — так чище и безопаснее на мягких покрытиях. В ресторане «Иль Патио» — в своей обуви."}}]}</script>
@@ -3627,7 +3646,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
         
       </div>
       <div class="patio__content">
-        <div class="patio__label" data-cms="f161">Ресторан на&nbsp;территории</div>
+        <div class="patio__label" data-cms="f161">Итальянский ресторан</div>
         <img class="patio__logo" src="photos/w/IP_logo.webp" alt="iL Патио 1993 — итальянский ресторан" width="489" height="138" loading="lazy" decoding="async" data-cms="i13">
         <p class="patio__copy" data-cms="f162">
           Итальянский ресторан внутри центра. Печь, паста, авторские торты на&nbsp;заказ. Пока ребёнок играет — вы&nbsp;спокойно ужинаете.
@@ -3697,7 +3716,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
     <div class="sect__head r">
       <div class="sect__head-left">
         <div class="sect__caption"><span class="line"></span><span class="cap cap--white" data-cms="f135">№04 / Атмосфера</span></div>
-        <h2 class="sect__title" data-cms="f7">Как у&nbsp;нас<br><em>весело</em></h2>
+        <h2 class="sect__title" data-cms="f7">Фото<br><em>из центра</em></h2>
       </div>
       <p class="sect__sub" data-cms="f17">В&nbsp;Instagram @meow_mkh — новые фото каждый день, расписание мастер-классов и&nbsp;истории про&nbsp;маленьких гостей.</p>
     </div>
@@ -3753,7 +3772,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
     <div class="sect__head r">
       <div class="sect__head-left">
         <div class="sect__caption"><span class="line" style="background:rgba(255,255,255,0.6)"></span><span class="cap cap--white" data-cms="f136">№05 / Праздники</span></div>
-        <h2 class="sect__title" data-cms="f8"><span class="party__title-line">Большой день</span><span class="party__title-line"><em>в&nbsp;одном</em>&nbsp;звонке</span></h2>
+        <h2 class="sect__title" data-cms="f8"><span class="party__title-line">Праздники</span><span class="party__title-line"><em>под ключ</em></span></h2>
       </div>
       <p class="sect__sub" style="color:rgba(255,255,255,0.8);" data-cms="f18">День рождения, выпускной, корпоратив. Берём организацию на&nbsp;себя — вам остаётся только наслаждаться.</p>
     </div>
@@ -3976,7 +3995,7 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
     <div class="sect__head r">
       <div class="sect__head-left">
         <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f140">№09 / Отзывы</span></div>
-        <h2 class="sect__title" data-cms="f11">Говорят<br><em>родители</em></h2>
+        <h2 class="sect__title" data-cms="f11">Отзывы<br><em>родителей</em></h2>
       </div>
       <p class="sect__sub" data-cms="f21">★ 4.9 на&nbsp;Google&nbsp;Maps, Яндекс.Картах и&nbsp;2ГИС. Больше 600&nbsp;отзывов от&nbsp;родителей.</p>
     </div>
@@ -4575,7 +4594,7 @@ document.querySelectorAll('[data-conf]').forEach(b => {
       text: 'Безопасное пространство для малышей: невысокие модули, мягкое покрытие, тоннели, горки, батуты и сухие бассейны.',
       facts: [['Возраст', 'до 5 лет'], ['Пн — Пт', '500 ₽ / 400 ₽'], ['Выходные', '600 ₽ / 500 ₽'], ['Для банкета', '400 ₽']]
     },
-    'Игровые автоматы': {
+    'Зона игровых аппаратов': {
       text: 'Зона для детей и взрослых с аэрохоккеем, настольным футболом, гоночными симуляторами, качалками и призовыми аппаратами.',
       facts: [['Возраст', '1–99 лет'], ['Оплата', 'игровой картой'], ['Формат', 'отдельные игровые сессии']]
     },
@@ -4641,10 +4660,12 @@ document.querySelectorAll('[data-conf]').forEach(b => {
       }
       facts.innerHTML = info.facts.map(([label, value]) => '<div class="direction-dialog__fact"><span>' + label + '</span><b>' + value + '</b></div>').join('');
       const href = card.getAttribute('href') || '#booking';
-      action.href = href;
-      action.textContent = href.endsWith('.pdf') ? 'Открыть меню' : 'Записаться / узнать больше';
-      if (href.endsWith('.pdf')) { action.target = '_blank'; action.rel = 'noopener'; }
-      else { action.removeAttribute('target'); action.removeAttribute('rel'); }
+      const isPdf = href.endsWith('.pdf');
+      action.href = isPdf ? href : 'https://wa.me/79882938008?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%B5%D0%B5';
+      action.textContent = isPdf ? 'Открыть меню' : 'Написать в WhatsApp';
+      action.target = '_blank';
+      action.rel = 'noopener';
+      document.body.classList.add('is-locked');
       dialog.showModal();
       window.requestAnimationFrame(() => {
         window.requestAnimationFrame(() => dialog.classList.add('is-open'));
@@ -4655,6 +4676,7 @@ document.querySelectorAll('[data-conf]').forEach(b => {
   close.addEventListener('click', shut);
   dialog.addEventListener('click', event => { if (event.target === dialog) shut(); });
   dialog.addEventListener('close', () => {
+    document.body.classList.remove('is-locked');
     window.clearTimeout(closeTimer);
     dialog.classList.remove('is-open');
     if (activeCard) activeCard.classList.remove('is-active');
