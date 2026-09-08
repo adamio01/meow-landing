@@ -3308,6 +3308,58 @@ background: linear-gradient(135deg, #F8F4EC 0%, #EFEAE0 52%, #F5F1E8 100%);
   .direction-card, .direction-card--wide { aspect-ratio: 16 / 11; min-height: 0; }
 }
 body.is-locked { overflow: hidden; }
+
+/* Ресторан: два логотипа на белых плашках — читаются на любом фоне */
+.patio__brands { display: flex; flex-wrap: wrap; gap: 14px; align-items: stretch; }
+.patio__brand {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 20px 26px; min-width: 190px; flex: 1 1 190px;
+  background: var(--white);
+  border-radius: 20px;
+}
+.patio__brand img { height: 46px; width: auto; display: block; }
+.menus__cta { margin-top: 22px; display: flex; }
+@media (max-width: 720px) {
+  .patio__brand { padding: 16px 18px; min-width: 0; }
+  .patio__brand img { height: 34px; }
+  .menus__cta .btn { width: 100%; justify-content: center; }
+}
+
+/* ===== Яркие фоны вместо тёмно-фиолетового ===== */
+.patio {
+  background: linear-gradient(150deg, #2A68E1 0%, #3FBEC8 100%);
+  color: var(--white);
+}
+.atm {
+  background: linear-gradient(150deg, #FC1751 0%, #F46221 55%, #F9C930 100%);
+  color: var(--white);
+}
+.patio .sect__title, .atm .sect__title,
+.patio h3, .atm h3, .patio h4, .atm h4 { color: var(--white); }
+.patio .sect__sub, .atm .sect__sub { color: rgba(255,255,255,.85); }
+.patio .cap, .atm .cap, .patio .cap--white, .atm .cap--white { color: rgba(255,255,255,.8); }
+/* Карточки меню на ярком фоне — плотнее, чтобы текст читался */
+.menu-card { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.34); }
+.menu-card:hover { background: rgba(255,255,255,.22); }
+.menu-card__name, .menus__title { color: var(--white); }
+.menus__sub, .menu-card__meta { color: rgba(255,255,255,.8); }
+.menu-card__btn { color: var(--white); }
+.menu-card__kind { background: var(--white); color: var(--ink); }
+/* Праздники — тёплый фирменный градиент */
+.party { background: linear-gradient(140deg, #7A2BD6 0%, #FC1751 60%, #F46221 100%); }
+
+/* Кнопка записи у события расписания */
+.schedule-item__wa {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 12px; padding: 11px 18px;
+  border-radius: 999px;
+  background: #25D366; color: #06331A;
+  font-family: var(--ff-body); font-weight: 800;
+  font-size: 12px; letter-spacing: .04em; text-transform: uppercase;
+  transition: transform .2s;
+}
+.schedule-item__wa:hover { transform: translateY(-2px); }
+@media (max-width: 860px) { .schedule-item__wa { width: 100%; justify-content: center; } }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": ["ChildCare", "AmusementPark", "LocalBusiness"], "name": "MEOW — детский развлекательный центр", "alternateName": "МЯУ", "description": "Детский развлекательный центр в Махачкале: игровые парки для разного возраста, ниндзя-парк, игровые автоматы, дни рождения под ключ, аниматоры и мастер-классы.", "url": "https://meow-mkh.ru/", "telephone": "+79882938008", "email": "meow_mkh@mail.ru", "image": "https://meow-mkh.ru/photos/og-cover.jpg", "priceRange": "400–1200 ₽", "currenciesAccepted": "RUB", "address": {"@type": "PostalAddress", "streetAddress": "проспект Гамидова, 61, ТРЦ «Этажи», 4 этаж", "addressLocality": "Махачкала", "addressRegion": "Республика Дагестан", "postalCode": "367000", "addressCountry": "RU"}, "geo": {"@type": "GeoCoordinates", "latitude": 42.976, "longitude": 47.502}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "10:00", "closes": "22:00"}], "areaServed": {"@type": "City", "name": "Махачкала"}, "sameAs": ["https://wa.me/79882938008"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит билет?", "acceptedAnswer": {"@type": "Answer", "text": "У нас два парка. Малый парк (до 5 лет): от 400 ₽ в будни до 600 ₽ в выходные. Большой парк (5–12 лет): от 650 ₽ до 1 200 ₽. Для семей с 3+ детьми — особая цена за каждого. Точный прайс — в разделе «Цены»."}}, {"@type": "Question", "name": "Какие есть абонементы?", "acceptedAnswer": {"@type": "Answer", "text": "Три варианта: 8 посещений за 4 800 ₽ (на 2 месяца), 20 посещений за 10 000 ₽ (на 6 месяцев), 40 посещений за 16 000 ₽ (на 12 месяцев). Оформляется в центре при первом визите. Не более 5 посещений за раз, абонемент привязан к одному ребёнку."}}, {"@type": "Question", "name": "С какого возраста можно прийти?", "acceptedAnswer": {"@type": "Answer", "text": "С любого. Малый парк — для детей до 5 лет: мягкая сенсорная зона, развивающие модули, тёплый пол. Большой парк — для 5–12 лет: батуты, аэрохоккей, лабиринт, VR-зона и спорт."}}, {"@type": "Question", "name": "Как заказать день рождения?", "acceptedAnswer": {"@type": "Answer", "text": "Оставьте заявку в форме справа или позвоните +7 988 293 80 08 — менеджер свяжется за 15 минут. Можем добавить аниматора, мастер-класс или фотографа."}}, {"@type": "Question", "name": "Что есть для взрослых?", "acceptedAnswer": {"@type": "Answer", "text": "На территории работает итальянский ресторан «Иль Патио» — паста ручной работы, кофе LavAzza. Можно наблюдать за игровой зоной. Wi-Fi бесплатный."}}, {"@type": "Question", "name": "Где вы находитесь и как добраться?", "acceptedAnswer": {"@type": "Answer", "text": "Махачкала, проспект Гамидова, 61. ТРЦ «Этажи», 4 этаж. Удобный заезд с Гамидова, парковка на 200 мест. Работаем ежедневно с 10:00 до 22:00."}}, {"@type": "Question", "name": "Нужна ли сменная обувь?", "acceptedAnswer": {"@type": "Answer", "text": "В игровых зонах дети играют в носочках — так чище и безопаснее на мягких покрытиях. В ресторане «Иль Патио» — в своей обуви."}}]}</script>
@@ -3334,7 +3386,8 @@ body.is-locked { overflow: hidden; }
 <nav class="nav" id="nav">
   <div class="wrap nav__inner">
     <a href="#" class="nav__brand">
-      <img class="nav__cat" src="photos/w/cat-mascot.webp" alt="MEOW" width="360" height="157" data-cms="i1">
+      <img class="nav__cat" src="photos/w/cat-mascot.webp" alt="МЯУ" width="360" height="157" data-cms="i1">
+      <span class="nav__brand-name">МЯУ</span>
     </a>
     <span class="nav__partner">
       <img src="photos/w/IP_logo.webp" alt="iL Патио — итальянский ресторан" width="489" height="138">
@@ -3400,13 +3453,7 @@ body.is-locked { overflow: hidden; }
       <img class="hero__mark" src="photos/w/place-smiles-ink.webp"
            alt="Место ярких улыбок" width="926" height="878" fetchpriority="high">
 
-      <h1 class="hero__title hero__title--place" aria-label="Время играть, есть и веселиться">
-        <span class="hero__title-desktop">Время</span>
-        <span class="hero__title-desktop hero__title-desktop--middle"><em class="w-pink">играть</em>, есть</span>
-        <span class="hero__title-desktop hero__title-desktop--last">и <em class="w-blue">веселиться.</em></span>
-        <span class="hero__title-mobile">Время <em class="w-pink">играть</em>,</span>
-        <span class="hero__title-mobile hero__title-fun">есть и <em class="w-blue">веселиться.</em></span>
-      </h1>
+      
 
       <p class="hero__sub">
         <b>MEOW</b> — развлекательный центр для&nbsp;всей семьи. Игровые зоны под&nbsp;каждый возраст, ресторан «Иль&nbsp;Патио», праздники и&nbsp;мастер-классы.
@@ -3488,7 +3535,7 @@ body.is-locked { overflow: hidden; }
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f131">№02 / Расписание</span></div>
+        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f131">Расписание</span></div>
         <h2 class="sect__title" data-cms="f4">Наши<br><em>новости</em></h2>
       </div>
     </div>
@@ -3509,33 +3556,19 @@ body.is-locked { overflow: hidden; }
       </article>
 
       <div class="schedule-list r" data-d="1">
+        
+        
         <article class="schedule-item">
           <span class="schedule-item__number">01</span>
-          <div class="schedule-item__content">
-            <span>Постоянное</span>
-            <h3>Аниматоры</h3>
-            <p>Тема: уточняем</p>
-          </div>
-          <strong>Каждую пятницу</strong>
-        </article>
-        <article class="schedule-item">
-          <span class="schedule-item__number">02</span>
-          <div class="schedule-item__content">
-            <span>Постоянное</span>
-            <h3>Аниматоры</h3>
-            <p>Тема: уточняем</p>
-          </div>
-          <strong>Каждую субботу</strong>
-        </article>
-        <article class="schedule-item">
-          <span class="schedule-item__number">03</span>
           <div class="schedule-item__content">
             <span>Постоянное</span>
             <h3>Лапка-табалапка</h3>
             <p>Мастер-класс</p>
           </div>
           <strong>В&nbsp;это воскресенье</strong>
-        </article>
+        
+            <a class="schedule-item__wa" href="https://wa.me/79882938008?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%BA%D0%BB%D0%B0%D1%81%D1%81" target="_blank" rel="noopener">Записаться в&nbsp;WhatsApp</a>
+          </article>
       </div>
     </div>
 
@@ -3548,7 +3581,7 @@ body.is-locked { overflow: hidden; }
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f132">№02 / Зоны</span></div>
+        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f132">Зоны</span></div>
         <h2 class="sect__title" data-cms="f5">3&nbsp;мира<br>для <em>всех</em> возрастов</h2>
       </div>
       <p class="sect__sub" data-cms="f16">Три отдельных парка под&nbsp;разный возраст и&nbsp;рост. Безопасное мягкое покрытие, видеонаблюдение и&nbsp;аниматоры всегда рядом.</p>
@@ -3632,12 +3665,7 @@ body.is-locked { overflow: hidden; }
 <!-- ============== IL PATIO ============== -->
 <section class="sect patio" id="patio">
   <div class="wrap">
-    <div class="sect__head r">
-      <div class="sect__head-left">
-        <div class="sect__caption"><span class="line" style="background:rgba(255,255,255,0.6)"></span><span class="cap cap--white" data-cms="f133">№03 / Ресторан</span></div>
-        <h2 class="sect__title" data-cms="f6">Едим всей<br><em>семьёй</em></h2>
-      </div>
-    </div>
+    
 
     <div class="patio__hero r">
       <div class="patio__visual">
@@ -3646,24 +3674,15 @@ body.is-locked { overflow: hidden; }
         
       </div>
       <div class="patio__content">
-        <div class="patio__label" data-cms="f161">Итальянский ресторан</div>
-        <img class="patio__logo" src="photos/w/IP_logo.webp" alt="iL Патио 1993 — итальянский ресторан" width="489" height="138" loading="lazy" decoding="async" data-cms="i13">
-        <p class="patio__copy" data-cms="f162">
-          Итальянский ресторан внутри центра. Печь, паста, авторские торты на&nbsp;заказ. Пока ребёнок играет — вы&nbsp;спокойно ужинаете.
-        </p>
-        <div class="patio__chips">
-          <span class="patio__chip" data-cms="f127">Халяль</span>
-          <span class="patio__chip" data-cms="f128">Детское меню</span>
-          <span class="patio__chip" data-cms="f129">Авторские торты</span>
+          <div class="patio__brands">
+            <span class="patio__brand">
+              <img src="photos/w/IP_logo.webp" alt="iL Патио — итальянский ресторан" width="489" height="138" loading="lazy">
+            </span>
+            <span class="patio__brand">
+              <img src="photos/w/sushi_logo_ink.webp" alt="Планета Суши — японская кухня" width="532" height="195" loading="lazy">
+            </span>
+          </div>
         </div>
-        <div class="hero__ctas">
-          <a href="#menus" class="btn btn--white">
-            Посмотреть меню
-            <span class="btn__arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-          </a>
-          <a href="#booking" class="btn btn--line-white" data-conf>Забронировать</a>
-        </div>
-      </div>
     </div>
 
 
@@ -3703,6 +3722,9 @@ body.is-locked { overflow: hidden; }
           </div>
         </a>
       </div>
+      <div class="menus__cta">
+        <a href="#booking" class="btn btn--white" data-conf>Забронировать</a>
+      </div>
     </div>
 
     <!-- Авторские торты — мини-блок с галереей -->
@@ -3715,7 +3737,7 @@ body.is-locked { overflow: hidden; }
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap cap--white" data-cms="f135">№04 / Атмосфера</span></div>
+        <div class="sect__caption"><span class="line"></span><span class="cap cap--white" data-cms="f135">Атмосфера</span></div>
         <h2 class="sect__title" data-cms="f7">Фото<br><em>из центра</em></h2>
       </div>
       <p class="sect__sub" data-cms="f17">В&nbsp;Instagram @meow_mkh — новые фото каждый день, расписание мастер-классов и&nbsp;истории про&nbsp;маленьких гостей.</p>
@@ -3771,7 +3793,7 @@ body.is-locked { overflow: hidden; }
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line" style="background:rgba(255,255,255,0.6)"></span><span class="cap cap--white" data-cms="f136">№05 / Праздники</span></div>
+        <div class="sect__caption"><span class="line" style="background:rgba(255,255,255,0.6)"></span><span class="cap cap--white" data-cms="f136">Праздники</span></div>
         <h2 class="sect__title" data-cms="f8"><span class="party__title-line">Праздники</span><span class="party__title-line"><em>под ключ</em></span></h2>
       </div>
       <p class="sect__sub" style="color:rgba(255,255,255,0.8);" data-cms="f18">День рождения, выпускной, корпоратив. Берём организацию на&nbsp;себя — вам остаётся только наслаждаться.</p>
@@ -3808,7 +3830,7 @@ body.is-locked { overflow: hidden; }
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f138">№07 / Цены</span></div>
+        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f138">Цены</span></div>
         <h2 class="sect__title" data-cms="f10">Прайс на&nbsp;<em>посещение</em></h2>
       </div>
       <p class="sect__sub" data-cms="f20">Два парка под&nbsp;разный возраст. Для&nbsp;семей с&nbsp;3+&nbsp;детьми — специальная цена за&nbsp;каждого ребёнка.</p>
@@ -3914,7 +3936,7 @@ body.is-locked { overflow: hidden; }
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap">№01 / Направления и цены</span></div>
+        <div class="sect__caption"><span class="line"></span><span class="cap">Направления и цены</span></div>
         <h2 class="sect__title">Выбирайте свой<br><em>яркий день</em></h2>
       </div>
       <p class="sect__sub">Парки, игры, ресторан и&nbsp;праздники — всё в&nbsp;одном месте. Вторая цена в&nbsp;парках действует для семей с&nbsp;тремя и&nbsp;более детьми.</p>
@@ -3994,7 +4016,7 @@ body.is-locked { overflow: hidden; }
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f140">№09 / Отзывы</span></div>
+        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f140">Отзывы</span></div>
         <h2 class="sect__title" data-cms="f11">Отзывы<br><em>родителей</em></h2>
       </div>
       <p class="sect__sub" data-cms="f21">★ 4.9 на&nbsp;Google&nbsp;Maps, Яндекс.Картах и&nbsp;2ГИС. Больше 600&nbsp;отзывов от&nbsp;родителей.</p>
@@ -4050,7 +4072,7 @@ body.is-locked { overflow: hidden; }
 <section class="sect" id="cta">
   <div class="wrap contact">
     <div class="faq r">
-      <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f141">№10 / FAQ</span></div>
+      <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f141">FAQ</span></div>
       <h3 class="faq__title">Часто спрашивают</h3>
       <ul class="faq__list">
         <li><details class="faq__item" open><summary data-cms="f106">Сколько стоит билет?</summary><div class="faq__answer" data-cms="f113">У&nbsp;нас два парка. <b>Малый парк</b> (до 5&nbsp;лет): от&nbsp;400&nbsp;₽ в&nbsp;будни до&nbsp;600&nbsp;₽ в&nbsp;выходные. <b>Большой парк</b> (5–12&nbsp;лет): от&nbsp;650&nbsp;₽ до&nbsp;1&nbsp;200&nbsp;₽. Для&nbsp;семей с&nbsp;3+&nbsp;детьми — особая цена за&nbsp;каждого. Точный прайс — в&nbsp;разделе «Цены».</div></details></li>
@@ -4085,7 +4107,7 @@ body.is-locked { overflow: hidden; }
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f143">№11 / Правила</span></div>
+        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f143">Правила</span></div>
         <h2 class="sect__title" data-cms="f12">Правила <em>посещения</em><br>центра</h2>
       </div>
       <p class="sect__sub" data-cms="f22">Ознакомьтесь, пожалуйста, перед визитом. Правила созданы для&nbsp;комфорта и&nbsp;безопасности всех гостей.</p>
@@ -4114,7 +4136,7 @@ body.is-locked { overflow: hidden; }
   <div class="wrap">
     <div class="sect__head r">
       <div class="sect__head-left">
-        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f144">№12 / Контакты</span></div>
+        <div class="sect__caption"><span class="line"></span><span class="cap" data-cms="f144">Контакты</span></div>
         <h2 class="sect__title" data-cms="f13">Найти нас<br><em>в&nbsp;Махачкале</em></h2>
       </div>
       <p class="sect__sub" data-cms="f23">ТРЦ «Этажи», 4&nbsp;этаж. Удобный заезд с&nbsp;проспекта Гамидова. Парковка на&nbsp;200&nbsp;мест.</p>
